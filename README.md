@@ -6,7 +6,7 @@
 
 ## 当前版本
 
-**v0.9.2 · 路线史深化完成**
+**v0.10 · 商业机会深化已发布**
 
 平台已经从框架 Demo 进入正式正文建设。第 0 章《AI 世界全地图》已上线，包含概念地图、系统分层、能力树、极简历史线、2026 前沿快照、误区、Lab 与自测。
 
@@ -41,6 +41,7 @@ https://templehao.github.io/ai-learning-platform/
 
 - Deep Dive 01：神经网络、Transformer 与 Scaling
 - Deep Dive 02：AI 路线战争、寒冬与复兴
+- Deep Dive 03：AI 利润池、商品化与商业机会
 - 案例库：20 个成功与失败案例
 - Lab Track：7 关连续实战
 - Review：术语与综合题库
