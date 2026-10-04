@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="AI Learning OS：AI 能力地图与应用演进" />
+  <title>第 3 章 · AI 能力地图与应用演进 | AI Learning OS</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/chapter.css" />
+</head>
+<body data-chapter="03">
+<div class="chapter-shell">
+  <aside class="chapter-toc" id="chapterToc">
+    <a class="chapter-brand" href="../index.html"><span>AI</span><div><b>Learning OS</b><small>v0.5 · Capability Map</small></div></a>
+    <div class="toc-label">第 3 章</div>
+    <nav>
+      <a href="#start" class="active">3.0 从模型转向能力</a>
+      <a href="#ladder">3.1 能力阶梯</a>
+      <a href="#perception">3.2 感知与预测</a>
+      <a href="#generation">3.3 生成与泛化</a>
+      <a href="#reasoning">3.4 推理、工具与 Agent</a>
+      <a href="#physical">3.5 进入物理世界</a>
+      <a href="#eras">3.6 应用演进六阶段</a>
+      <a href="#value">3.7 价值是怎么产生的</a>
+      <a href="#business">3.8 商业机会判断</a>
+      <a href="#frontier">3.9 2026 前沿快照</a>
+      <a href="#lab">3.10 本章 Lab</a>
+      <a href="#check">3.11 自测</a>
+    </nav>
+    <div class="toc-progress"><span>本章状态</span><b id="chapterStatus">未完成</b><button id="completeChapter">标记本章完成</button></div>
+  </aside>
+
+  <main class="chapter-main">
+    <header class="chapter-top">
+      <button class="icon-btn chapter-menu" id="chapterMenu">☰</button>
+      <a href="../index.html">← 返回总览</a>
+      <span>Stable + Frontier · 能力与价值</span>
+    </header>
+
+    <article class="chapter-article">
+      <section class="chapter-hero" id="start">
+        <div class="chapter-no">CHAPTER 03</div>
+        <h1>AI 能力地图<br>与应用演进</h1>
+        <p class="lead">研究 AI 最容易被产品名带着走。更稳的办法是先问：<strong>这次进步到底让机器新增了什么能力？这种能力把哪一种人类成本压低了？</strong></p>
+        <div class="objective-grid">
+          <div><b>能力视角</b><span>把 AI 看成预测、感知、生成、推理、行动等能力组合。</span></div>
+          <div><b>应用视角</b><span>理解能力何时第一次变成大规模可用产品。</span></div>
+          <div><b>商业视角</b><span>判断新能力究竟创造新市场，还是被既有平台吸收。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section">
+        <div class="callout idea"><b>最重要的分析公式</b><p>AI 的产业影响 ≈ 新增能力 × 可靠性 × 成本下降 × 分发能力 × 工作流嵌入。</p></div>
+        <p>一个能力在实验室出现，不等于它已经形成产业价值。只有当能力足够可靠、价格足够低，并且被嵌入真实工作流，才会从“技术演示”变成“经济基础设施”。</p>
+      </section>
+
+      <section class="chapter-section" id="ladder">
+        <div class="section-kicker">3.1 · CAPABILITY LADDER</div>
+        <h2>能力不是一个总分，而是一层层扩出来的</h2>
+        <div class="cap-controls" aria-label="能力筛选">
+          <button class="active" data-cap-filter="all">全部</button>
+          <button data-cap-filter="sense">感知 / 预测</button>
+          <button data-cap-filter="create">生成 / 泛化</button>
+          <button data-cap-filter="act">推理 / 行动</button>
+        </div>
+        <div class="capability-ladder">
+          <article data-cap-group="sense"><b>01</b><span>Prediction</span><h3>预测 / 分类 / 排序</h3><p>从数据中估计概率：哪个结果更可能、哪个内容更相关、哪个用户更可能点击。</p><small>价值：降低决策和匹配成本</small></article>
+          <article data-cap-group="sense"><b>02</b><span>Perception</span><h3>看见与听见</h3><p>图像、语音、视频和传感器信息被机器直接识别和表征。</p><small>价值：把现实世界变成可计算数据</small></article>
+          <article data-cap-group="create"><b>03</b><span>Generation</span><h3>生成内容</h3><p>不再只选择答案，而是生成文本、代码、图像、音频、视频等新内容。</p><small>价值：降低内容生产边际成本</small></article>
+          <article data-cap-group="create"><b>04</b><span>Generalization</span><h3>指令与上下文泛化</h3><p>同一个模型通过自然语言说明或少量示例，临时适应大量不同任务。</p><small>价值：降低“为每个任务单独开发模型”的成本</small></article>
+          <article data-cap-group="act"><b>05</b><span>Reasoning</span><h3>多步推理与规划</h3><p>对数学、代码、搜索、复杂问题进行中间步骤推演和计划。</p><small>价值：进入高认知复杂度任务</small></article>
+          <article data-cap-group="act"><b>06</b><span>Tool Use</span><h3>调用外部工具</h3><p>搜索网页、查询数据库、运行代码、操作 API，而不是仅凭内部参数回答。</p><small>价值：连接实时世界与企业系统</small></article>
+          <article data-cap-group="act"><b>07</b><span>Agent</span><h3>持续执行任务</h3><p>围绕一个目标，观察环境、拆分任务、选择工具、执行、检查、继续。</p><small>价值：从“回答”升级到“完成工作”</small></article>
+          <article data-cap-group="act"><b>08</b><span>Embodiment</span><h3>物理行动</h3><p>感知、规划和控制机器人、车辆或其他物理设备。</p><small>价值：开始替代或增强物理劳动</small></article>
+        </div>
+        <div class="callout warn"><b>能力是“锯齿状”的</b><p>不要想象 AI 沿着一条统一智商曲线上升。模型可能在奥数、代码上极强，却在读模拟钟、空间操作或真实家庭机器人任务上明显更弱。</p></div>
+      </section>
+
+      <section class="chapter-section" id="perception">
+        <div class="section-kicker">3.2 · PERCEPTION + PREDICTION</div>
+        <h2>第一波巨大经济价值，不来自聊天，而来自“更会预测”</h2>
+        <p>20 世纪 90 年代到 2010 年代，大量 AI 商业价值来自狭窄但高频的预测任务：搜索排序、广告点击率、推荐、垃圾邮件过滤、信用风险、欺诈识别、需求预测。</p>
+        <div class="value-chain-mini">
+          <div><span>用户行为数据</span><b>→</b><span>预测模型</span><b>→</b><span>排序 / 推荐</span><b>→</b><span>更多点击与交易</span></div>
+        </div>
+        <p>这一阶段的革命非常重要：AI 不需要“像人一样通用”也能产生数千亿美元级产业价值。只要一个预测在每天数十亿次决策中提升一点点，经济效果就可能极大。</p>
+        <p>2012 年 AlexNet 在 ImageNet 图像识别上的突破又推动感知能力跃升。机器视觉、语音识别逐步从“需要大量手工特征工程”转向深度网络自动学习表示。</p>
+      </section>
+
+      <section class="chapter-section" id="generation">
+        <div class="section-kicker">3.3 · GENERATION + GENERALIZATION</div>
+        <h2>真正改变大众体验的是：AI 开始“生成”，并能临时学会新任务</h2>
+        <p>传统机器学习往往是“一种任务训练一个模型”。2020 年 GPT-3 展示了一个重要转折：大型语言模型可以只通过文字指令和少量示例，在不更新参数的情况下完成多种新任务。</p>
+        <div class="definition-box">
+          <span>这件事为什么商业上重要？</span>
+          <strong>自然语言第一次大规模成为“通用软件接口”。</strong>
+        </div>
+        <p>过去，用户想让软件做新事情，往往需要工程师写新功能；现在，越来越多任务可以先用自然语言描述，再由通用模型解释并生成结果。</p>
+        <p>2021 年 GitHub Copilot 技术预览把这种能力嵌进 IDE：模型不只是“聊天”，而是在程序员正在工作的界面里读取代码上下文并建议整行或完整函数。2022 年 11 月 ChatGPT 又把指令模型通过对话界面交付给大众，极大降低了普通人使用生成式 AI 的门槛。</p>
+      </section>
+
+      <section class="chapter-section" id="reasoning">
+        <div class="section-kicker">3.4 · REASONING → TOOLS → AGENT</div>
+        <h2>下一次跃迁：不只是生成答案，而是为了目标连续做事</h2>
+        <div class="agent-loop">
+          <div><b>目标</b><span>“帮我分析这家公司”</span></div><i>→</i>
+          <div><b>计划</b><span>需要财报、竞品、行业数据</span></div><i>→</i>
+          <div><b>工具</b><span>搜索、浏览器、代码、数据库</span></div><i>→</i>
+          <div><b>观察</b><span>检查结果与缺失信息</span></div><i>→</i>
+          <div><b>继续行动</b><span>补查、计算、写报告</span></div>
+        </div>
+        <p>这就是“Agent”与普通聊天机器人的核心差异。聊天机器人通常完成一次输入→输出；Agent 更接近一个运行中的控制循环。</p>
+        <div class="business-lens"><b>商业意义</b><p>如果 AI 只能生成建议，它主要提高个人生产率；如果 AI 能可靠完成多步工作流，它开始改变组织结构、软件席位、BPO、外包和知识劳动的成本结构。</p></div>
+      </section>
+
+      <section class="chapter-section" id="physical">
+        <div class="section-kicker">3.5 · PHYSICAL WORLD</div>
+        <h2>数字世界进步很快，物理世界慢得多</h2>
+        <p>机器人和自动驾驶需要同时解决感知、世界建模、规划、控制、安全和长尾异常。现实环境不可复制、成本高、失败会造成物理损害，因此难度远高于纯软件任务。</p>
+        <div class="compare-grid">
+          <article><span>DIGITAL</span><h3>数字 Agent</h3><p>软件界面可复制，失败成本相对低，训练与测试可以大规模自动化。</p></article>
+          <article><span>PHYSICAL</span><h3>机器人 / 自动驾驶</h3><p>传感器噪声、摩擦、遮挡、人类行为、天气和安全约束让长尾问题极难穷尽。</p></article>
+        </div>
+        <p>但一旦物理智能跨过可靠性阈值，它的市场上限也可能比纯数字应用更高，因为它触及制造、物流、交通、建筑、护理和家庭劳动。</p>
+      </section>
+
+      <section class="chapter-section" id="eras">
+        <div class="section-kicker">3.6 · APPLICATION ERAS</div>
+        <h2>AI 应用史可以压缩成六次“价值形态迁移”</h2>
+        <div class="era-timeline" id="eraTimeline">
+          <button class="active" data-era="rules"><b>1960s–1980s</b><span>专家系统</span></button>
+          <button data-era="ranking"><b>1990s–2010s</b><span>搜索 / 广告 / 推荐</span></button>
+          <button data-era="perception"><b>2012–2019</b><span>视觉 / 语音</span></button>
+          <button data-era="gen"><b>2020–2022</b><span>Foundation / GenAI</span></button>
+          <button data-era="copilot"><b>2021–2024</b><span>Copilot</span></button>
+          <button data-era="agent"><b>2025–</b><span>Agent / Physical AI</span></button>
+        </div>
+        <div class="era-detail" id="eraDetail"></div>
+      </section>
+
+      <section class="chapter-section" id="value">
+        <div class="section-kicker">3.7 · VALUE MECHANISMS</div>
+        <h2>AI 的价值不是一个“自动化”词就能概括</h2>
+        <div class="value-mechanisms">
+          <article><span>01</span><h3>降低搜索成本</h3><p>更快找到网页、商品、知识、代码和答案。</p><b>搜索 / 推荐 / RAG</b></article>
+          <article><span>02</span><h3>提高匹配效率</h3><p>让广告、信贷、招聘、内容和供需匹配更准确。</p><b>Ranking / Prediction</b></article>
+          <article><span>03</span><h3>降低生产边际成本</h3><p>文本、设计、代码、视频等内容第一次接近“机器批量生成”。</p><b>Generative AI</b></article>
+          <article><span>04</span><h3>提高专家杠杆</h3><p>一个程序员、分析师、医生或销售可以同时处理更多信息和任务。</p><b>Copilot</b></article>
+          <article><span>05</span><h3>替代流程执行成本</h3><p>从建议转向实际操作软件、跑流程、跟进异常。</p><b>Agent</b></article>
+          <article><span>06</span><h3>降低物理劳动成本</h3><p>进入运输、制造、仓储、护理和家庭环境。</p><b>Robotics</b></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="business">
+        <div class="section-kicker">3.8 · BUSINESS LENS</div>
+        <h2>看到“新能力”时，用六个问题判断商业机会</h2>
+        <div class="decision-grid">
+          <div><b>1. 能力增益</b><span>过去做不到，现在是真能做，还是只提升 5%？</span></div>
+          <div><b>2. 可靠性阈值</b><span>这个任务允许 70% 正确，还是必须 99.99%？</span></div>
+          <div><b>3. 价值密度</b><span>一次成功输出值 1 元、100 元还是 10 万元？</span></div>
+          <div><b>4. 工作流嵌入</b><span>结果能否直接进入真实软件、组织和权限系统？</span></div>
+          <div><b>5. 分发与数据</b><span>谁拥有用户入口、专有数据和反馈闭环？</span></div>
+          <div><b>6. 模型吞噬风险</b><span>这个功能会不会下一代基础模型原生免费提供？</span></div>
+        </div>
+        <div class="callout idea"><b>一个重要结论</b><p>越靠近“单次生成”的应用，越容易被模型平台商品化；越深入真实工作流、专有数据、权限、责任和结果交付，通常越可能形成长期壁垒。</p></div>
+      </section>
+
+      <section class="chapter-section frontier-section" id="frontier">
+        <div class="section-kicker">3.9 · FRONTIER SNAPSHOT · 2026</div>
+        <h2>今天最大的能力鸿沟：会做题 ≠ 会稳定做事</h2>
+        <p>Stanford 2026 AI Index 显示，Agent 在 OSWorld 这类真实电脑操作基准上的成功率已经从大约 12% 上升到 66.3%，但仍大约每三次失败一次；真实家庭机器人任务成功率则只有约 12%。同时，全球受访组织中 88% 报告已在至少一个业务功能使用 AI，但 Agent 在多数业务职能的实际部署仍处在个位数比例。</p>
+        <div class="frontier-grid">
+          <article><strong>66.3%</strong><span>OSWorld Agent 成功率</span><small>数字任务已明显跨越“演示期”，但可靠性仍不足。</small></article>
+          <article><strong>12%</strong><span>真实家庭机器人任务成功率</span><small>物理智能与数字 Agent 仍有巨大鸿沟。</small></article>
+          <article><strong>88%</strong><span>组织报告使用 AI</span><small>采用很广，但深度流程自动化明显滞后。</small></article>
+        </div>
+        <div class="callout frontier-note"><b>2026–未来几年的核心观察点</b><p>不是再问“AI 会不会写东西”，而是追踪：可靠性、长任务长度、工具权限、安全、单位推理成本和物理世界成功率是否跨过经济阈值。</p></div>
+      </section>
+
+      <section class="chapter-section" id="lab">
+        <div class="section-kicker">3.10 · LAB 03</div>
+        <h2>选一个行业，画出“能力 → 工作流 → 价值”的链条</h2>
+        <p>建议直接选你熟悉的行业。不要从“我要做一个 AI 产品”开始，而从下面四步开始：</p>
+        <div class="drawer-grid">
+          <div><b>A · 工作是什么？</b><span>把岗位拆成高频任务，而不是岗位名称。</span></div>
+          <div><b>B · 需要哪种能力？</b><span>预测、生成、推理、工具、Agent 还是物理行动？</span></div>
+          <div><b>C · 最大瓶颈是什么？</b><span>准确率、数据、权限、成本、法规还是组织接受度？</span></div>
+          <div><b>D · 谁拿走价值？</b><span>基础模型、软件平台、垂直公司、服务商还是最终企业？</span></div>
+        </div>
+        <label class="lab-check"><input type="checkbox" data-lab="03"><span>我已经能用“新增能力 → 改造任务 → 降低某种成本 → 形成商业价值”的方式分析一个 AI 应用。</span></label>
+      </section>
+
+      <section class="chapter-section" id="check">
+        <div class="section-kicker">3.11 · SELF CHECK</div>
+        <h2>本章自测</h2>
+        <details><summary>Q1：为什么搜索、广告、推荐是 AI 商业史的重要阶段？</summary><p>它们证明了 AI 不需要通用智能也能创造巨量价值。高频决策中很小的预测提升，可以通过规模被放大。</p></details>
+        <details><summary>Q2：生成式 AI 相比传统预测模型，最大的产品变化是什么？</summary><p>模型从“在固定选项里判断”变成直接生成新内容，并且大模型可以通过自然语言指令临时适应大量任务。</p></details>
+        <details><summary>Q3：Copilot 和 Agent 的边界是什么？</summary><p>Copilot 主要增强人在环工作；Agent 更强调围绕目标自行选择行动并持续执行。现实产品通常处在两者之间的连续谱上。</p></details>
+        <details><summary>Q4：为什么机器人商业化可能比软件 Agent 更慢？</summary><p>现实世界不可完全复制，长尾复杂、数据收集昂贵、动作失败有物理成本，而且安全可靠性阈值通常更高。</p></details>
+      </section>
+
+      <section class="chapter-section sources">
+        <div class="section-kicker">SOURCES</div>
+        <h2>本章基线来源</h2>
+        <ol>
+          <li><a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks" target="_blank" rel="noreferrer">Krizhevsky, Sutskever & Hinton (2012) · AlexNet</a></li>
+          <li><a href="https://www.nature.com/articles/nature16961" target="_blank" rel="noreferrer">Silver et al. (2016) · AlphaGo</a></li>
+          <li><a href="https://arxiv.org/abs/2005.14165" target="_blank" rel="noreferrer">Brown et al. (2020) · GPT-3 / Few-Shot Learning</a></li>
+          <li><a href="https://github.blog/news-insights/product-news/introducing-github-copilot-ai-pair-programmer/" target="_blank" rel="noreferrer">GitHub (2021) · Introducing GitHub Copilot</a></li>
+          <li><a href="https://openai.com/index/chatgpt/" target="_blank" rel="noreferrer">OpenAI (2022) · Introducing ChatGPT</a></li>
+          <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance" target="_blank" rel="noreferrer">Stanford HAI · 2026 AI Index Technical Performance</a></li>
+          <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/economy" target="_blank" rel="noreferrer">Stanford HAI · 2026 AI Index Economy</a></li>
+        </ol>
+      </section>
+
+      <div class="chapter-next">
+        <span>NEXT · APPLICATION EXPERT</span>
+        <h2>下一步：真正学习“怎么把 AI 用到很深”。</h2>
+        <p>从 Prompt 进入 Context Engineering、文件与搜索、RAG、结构化输出、工具调用、工作流、Agent、Eval 和可靠性工程。</p>
+      </div>
+    </article>
+  </main>
+</div>
+<script src="../assets/chapter.js"></script>
+<script src="../assets/capability-map.js"></script>
+</body>
+</html>
