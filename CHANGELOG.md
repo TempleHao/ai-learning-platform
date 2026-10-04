@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 2026-10-05 · v0.14 AI Coding / Vibe Coding
+- 新增 Deep Dive 06《AI Coding、Vibe Coding 与软件工程新范式》
+- 从 Autocomplete → Chat → Vibe Coding → Agentic Coding → Parallel Agents → AI-native Software Factory 建立成熟度阶梯
+- 增加 Agent-ready Repo、Spec-first、Tests as machine acceptance、权限 / blast radius 等工程方法
+- 新增交互式 Agent Readiness 评分器
+- 新增 Lab 08：把真实 Repo 改造成 Agent-ready
+- 增加中文 AI 编程视频、Codex / Claude Code / GitHub / SWE-bench 延伸资源
+
+
 ## 2026-10-05 · v0.13 AI-native Organization
 - 新增 Deep Dive 05《AI-native Organization》
 - 用“任务”而非“岗位”作为 AI 劳动影响分析单位
