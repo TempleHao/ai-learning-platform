@@ -23,3 +23,15 @@ if(document.body.dataset.chapter && !document.querySelector('script[data-explore
   exploreScript.dataset.exploreNodes='1';
   document.body.appendChild(exploreScript);
 }
+
+
+function ensureGlobalCornerLogo(){
+  if(document.querySelector('.global-corner-logo')) return;
+  const a=document.createElement('a');
+  a.className='global-corner-logo';
+  a.href='/ai-learning-platform/';
+  a.setAttribute('aria-label','AI Learning OS 首页');
+  a.innerHTML='<img src="/ai-learning-platform/assets/brand/favicon-64.png" alt="AI Learning OS" />';
+  document.body.appendChild(a);
+}
+ensureGlobalCornerLogo();
