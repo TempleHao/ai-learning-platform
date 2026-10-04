@@ -1798,6 +1798,188 @@
           }
         ]
       }
+    ],
+    "deep06": [
+      {
+        "anchor": "vibe",
+        "topic": "Vibe Coding：从想法到软件",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文官方",
+            "title": "Codex 中文产品页",
+            "source": "OpenAI",
+            "url": "https://openai.com/zh-Hans-CN/codex/",
+            "why": "先看 2026 coding agent 已经能覆盖哪些工程任务。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文视频",
+            "title": "AI 编程全流程：Claude Code + Codex + Vibe Coding",
+            "source": "Bilibili",
+            "url": "https://www.bilibili.com/video/BV1Zru766ER9",
+            "why": "把 Vibe Coding 放进更完整的工程化工作流里学习。"
+          },
+          {
+            "depth": "原典",
+            "type": "工程文章",
+            "title": "Introducing the Codex app",
+            "source": "OpenAI",
+            "url": "https://openai.com/index/introducing-the-codex-app/",
+            "why": "理解软件开发为什么从单 Agent 配对走向多 Agent 调度。"
+          }
+        ]
+      },
+      {
+        "anchor": "context",
+        "topic": "Agent-friendly Repository",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "官方指南",
+            "title": "Claude Code: Foundations",
+            "source": "Anthropic",
+            "url": "https://www.anthropic.com/webinars/claude-code-foundations",
+            "why": "重点看项目 briefing、CLAUDE.md、Skills 与 Subagents。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文视频",
+            "title": "Codex + Claude Code 项目实战",
+            "source": "Bilibili",
+            "url": "https://www.bilibili.com/video/BV1Hsup6oEQA/",
+            "why": "实操会话管理、Skills、MCP、计划和仓库协作。"
+          },
+          {
+            "depth": "原典",
+            "type": "工程实践",
+            "title": "Symphony: Codex orchestration",
+            "source": "OpenAI",
+            "url": "https://openai.com/index/open-source-codex-orchestration-symphony/",
+            "why": "看一个“无人工写代码”项目为什么反而需要更强的测试、Guardrails 与仓库结构。"
+          }
+        ]
+      },
+      {
+        "anchor": "tests",
+        "topic": "测试、Eval 与机器验收",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "官方",
+            "title": "GitHub Copilot Agent Mode",
+            "source": "GitHub Docs",
+            "url": "https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/use-copilot-agents/use-agent-mode",
+            "why": "看 coding agent 如何修改文件、运行命令并迭代。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "基准",
+            "title": "SWE-bench Verified",
+            "source": "SWE-bench",
+            "url": "https://www.swebench.com/verified.html",
+            "why": "理解真实 GitHub issue + tests 如何构成 Agent 的验收环境。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "SWE-bench: Can Language Models Resolve Real-world GitHub Issues?",
+            "source": "Jimenez et al.",
+            "url": "https://openreview.net/forum?id=VTF8yNQM66",
+            "why": "Coding Agent 真实工程评测的基础论文。"
+          }
+        ]
+      },
+      {
+        "anchor": "security",
+        "topic": "Coding Agent 权限与安全半径",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "官方文章",
+            "title": "Running Codex safely at OpenAI",
+            "source": "OpenAI",
+            "url": "https://openai.com/index/running-codex-safely/",
+            "why": "直接看权限、审批、边界和遥测如何设计。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "官方文章",
+            "title": "How we contain Claude across products",
+            "source": "Anthropic",
+            "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+            "why": "理解 Agent 越强，为什么 blast radius 反而成为核心工程问题。"
+          },
+          {
+            "depth": "原典",
+            "type": "治理研究",
+            "title": "Trustworthy agents in practice",
+            "source": "Anthropic",
+            "url": "https://www.anthropic.com/research/trustworthy-agents",
+            "why": "把 Coding Agent 风险放进更广的 agent governance 框架。"
+          }
+        ]
+      },
+      {
+        "anchor": "parallel",
+        "topic": "并行 Agent 与 Software Factory",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文官方",
+            "title": "Codex：全能型助手",
+            "source": "OpenAI",
+            "url": "https://openai.com/zh-Hans-CN/index/codex-for-almost-everything/",
+            "why": "看 Codex 如何从单次开发进入长期、重复和多工具任务。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "官方文章",
+            "title": "Introducing the Codex app",
+            "source": "OpenAI",
+            "url": "https://openai.com/index/introducing-the-codex-app/",
+            "why": "多 Agent、独立线程和长任务是 2026 软件生产方式的重要变化。"
+          },
+          {
+            "depth": "原典",
+            "type": "编排规范",
+            "title": "Symphony",
+            "source": "OpenAI",
+            "url": "https://openai.com/index/open-source-codex-orchestration-symphony/",
+            "why": "看 project board 如何变成 coding agent control plane。"
+          }
+        ]
+      },
+      {
+        "anchor": "nondev",
+        "topic": "非程序员如何成为 AI Builder",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "零基础 AI 编程路线",
+            "source": "Bilibili",
+            "url": "https://www.bilibili.com/video/BV1jaun65Ekg/",
+            "why": "先快速理解环境、计划、Subagent 和部署这些最低工程概念。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文视频",
+            "title": "Codex + Claude Code 保姆级教程",
+            "source": "Bilibili",
+            "url": "https://www.bilibili.com/video/BV1Hsup6oEQA/",
+            "why": "适合把 Git、权限、会话、MCP、Skills 等系统感补起来。"
+          },
+          {
+            "depth": "原典",
+            "type": "中文官方",
+            "title": "Codex 中文文档入口",
+            "source": "OpenAI Help",
+            "url": "https://help.openai.com/zh-hans-cn/collections/14937394-codex",
+            "why": "以后真正使用 Codex 时，优先回到官方当前文档。"
+          }
+        ]
+      }
     ]
   }
 }
