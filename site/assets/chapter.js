@@ -10,3 +10,9 @@ function render(){const done=localStorage.getItem(doneKey)==='1';if(status)statu
 render();
 btn?.addEventListener('click',()=>{localStorage.setItem(doneKey,localStorage.getItem(doneKey)==='1'?'0':'1');document.querySelector('.toc-progress')?.classList.add('complete-flash');setTimeout(()=>document.querySelector('.toc-progress')?.classList.remove('complete-flash'),850);render()});
 lab?.addEventListener('change',()=>localStorage.setItem(`ai-learning-lab${lab.dataset.lab}`,lab.checked?'1':'0'));
+if(document.body.dataset.chapter && !document.querySelector('script[data-extension-resources]')){
+  const resourceScript=document.createElement('script');
+  resourceScript.src='/ai-learning-platform/assets/resources.js';
+  resourceScript.dataset.extensionResources='1';
+  document.body.appendChild(resourceScript);
+}
