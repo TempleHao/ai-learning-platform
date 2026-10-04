@@ -1,0 +1,1469 @@
+{
+  "reviewed_at": "2026-10-05",
+  "nodes": {
+    "00": [
+      {
+        "anchor": "hierarchy",
+        "topic": "AI / ML / DL / Foundation Model 的层级关系",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "一堂课搞懂生成式 AI 的原理",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1nkTj6PEpb/",
+            "why": "先用中文把 AI、机器学习、大模型的关系建立成直觉。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文课程",
+            "title": "生成式人工智能导论",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1BJ4m1e7g8/",
+            "why": "适合把“AI 世界地图”继续扩成完整生成式 AI 地图。"
+          },
+          {
+            "depth": "原典",
+            "type": "标准定义",
+            "title": "Artificial Intelligence Glossary",
+            "source": "NIST",
+            "url": "https://csrc.nist.gov/glossary/term/artificial_intelligence",
+            "why": "用严谨定义校准日常语境里的“AI”。"
+          }
+        ]
+      },
+      {
+        "anchor": "model",
+        "topic": "模型、系统与产品不是一回事",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内",
+            "title": "Deep Dive 03 · AI 利润池与商品化",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/deep-dives/03-ai-profit-pools.html",
+            "why": "看模型层、基础设施层与应用层如何分工和捕获价值。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文视频",
+            "title": "营销过后，AI 应用如何落地？解析巨头们的全栈之战",
+            "source": "硅谷101",
+            "url": "https://www.bilibili.com/video/BV1bdTvz7EPx/",
+            "why": "从产业角度看模型、云、芯片和应用为什么正在重新组合。"
+          },
+          {
+            "depth": "原典",
+            "type": "年度报告",
+            "title": "AI Index 2026 · Economy",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/economy",
+            "why": "用真实采用和投资数据理解 AI 系统从模型走向组织部署。"
+          }
+        ]
+      },
+      {
+        "anchor": "timeline",
+        "topic": "AI 历史主线",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "人工智能简史（上）",
+            "source": "清华 AIR",
+            "url": "https://www.bilibili.com/video/BV1Ze4y1V74w/",
+            "why": "快速把几条技术路线放进历史时间线。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "站内",
+            "title": "Deep Dive 02 · AI 路线战争、寒冬与复兴",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/deep-dives/02-route-wars-winters.html",
+            "why": "专门补路线兴衰、AI Winter 与关键人物。"
+          },
+          {
+            "depth": "原典",
+            "type": "历史资料",
+            "title": "Where AI Was Born",
+            "source": "Dartmouth",
+            "url": "https://ai.dartmouth.edu/our-story",
+            "why": "回到 1956 年 AI 领域形成的历史现场。"
+          }
+        ]
+      }
+    ],
+    "01": [
+      {
+        "anchor": "symbolic",
+        "topic": "符号主义与专家系统",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "人工智能简史（上）",
+            "source": "清华 AIR",
+            "url": "https://www.bilibili.com/video/BV1Ze4y1V74w/",
+            "why": "先把符号派、专家系统和后续路线放在同一张历史图上。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "英文阅读",
+            "title": "A Short History of AI",
+            "source": "Stanford AI100",
+            "url": "https://ai100.stanford.edu/2016-report/appendix-i-short-history-ai",
+            "why": "系统理解早期符号主义为何强势、又为何遇到现实世界瓶颈。"
+          },
+          {
+            "depth": "原典",
+            "type": "历史资料",
+            "title": "Dartmouth AI Project",
+            "source": "Dartmouth",
+            "url": "https://ai.dartmouth.edu/our-story",
+            "why": "看早期研究者如何定义机器学习、推理和智能。"
+          }
+        ]
+      },
+      {
+        "anchor": "reinforcement",
+        "topic": "强化学习与搜索",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "强化学习概述",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1QJuyzSEck/",
+            "why": "从奖励、Policy Gradient、Actor-Critic 建立直觉。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文课程",
+            "title": "强化学习完整课程",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1ou411874G/",
+            "why": "从基本概念继续深入到策略、Q-learning 与模仿学习。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "Mastering the game of Go with deep neural networks and tree search",
+            "source": "Nature / DeepMind",
+            "url": "https://www.nature.com/articles/nature16961",
+            "why": "AlphaGo 是理解神经网络、强化学习和搜索融合的经典原典。"
+          }
+        ]
+      },
+      {
+        "anchor": "turning",
+        "topic": "2012–2017：深度学习与 Transformer 拐点",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "GPT 与 Transformer 可视化理解",
+            "source": "3Blue1Brown 中文配音",
+            "url": "https://www.bilibili.com/video/BV1szpFedEV2/",
+            "why": "用动画建立神经网络、梯度与 Transformer 的连续直觉。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "站内",
+            "title": "Deep Dive 01 · 神经网络、Transformer 与 Scaling",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/deep-dives/01-neural-transformer.html",
+            "why": "把 2012 后深度学习复兴一路串到大模型。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "Attention Is All You Need",
+            "source": "Vaswani et al.",
+            "url": "https://arxiv.org/abs/1706.03762",
+            "why": "Transformer 的原始论文。"
+          }
+        ]
+      },
+      {
+        "anchor": "today",
+        "topic": "现代 AI 为什么重新走向混合系统",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内",
+            "title": "AI Agent 核心：Context Engineering",
+            "source": "李宏毅 / Bilibili",
+            "url": "https://www.bilibili.com/video/BV1WgTL6TEaA/",
+            "why": "看大模型如何与上下文、工具和规划组合成系统。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "官方指南",
+            "title": "Building Effective Agents",
+            "source": "Anthropic",
+            "url": "https://www.anthropic.com/engineering/building-effective-agents",
+            "why": "从工程角度理解 workflow、tool use 与 agent 的组合。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+            "source": "Yao et al.",
+            "url": "https://arxiv.org/abs/2210.03629",
+            "why": "推理 + 行动这一现代 Agent 组合范式的代表论文。"
+          }
+        ]
+      }
+    ],
+    "02": [
+      {
+        "anchor": "backprop",
+        "topic": "反向传播与梯度下降",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "梯度下降 + 反向传播",
+            "source": "3Blue1Brown 中文配音",
+            "url": "https://www.bilibili.com/video/BV1szpFedEV2/",
+            "why": "第 2–4 集用动画把梯度和 Backprop 讲得非常直观。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文课程",
+            "title": "机器学习与深度学习基本原理",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1nkTj6PEpb/",
+            "why": "从损失函数、优化到神经网络训练形成系统理解。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "Learning representations by back-propagating errors",
+            "source": "Rumelhart · Hinton · Williams",
+            "url": "https://www.nature.com/articles/323533a0",
+            "why": "1986 年 Backprop 经典论文。"
+          }
+        ]
+      },
+      {
+        "anchor": "transformer",
+        "topic": "Attention 与 Transformer",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "Attention in Transformers 可视化解释",
+            "source": "3Blue1Brown 中文配音",
+            "url": "https://www.bilibili.com/video/BV1szpFedEV2/",
+            "why": "非常适合先看懂“每个 Token 到底在看谁”。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文课程",
+            "title": "Self-Attention 与 Transformer",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1Xp4y1b7ih/",
+            "why": "进一步进入 Query / Key / Value、位置编码与 Transformer 结构。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "Attention Is All You Need",
+            "source": "Vaswani et al.",
+            "url": "https://arxiv.org/abs/1706.03762",
+            "why": "对照站内图解阅读架构图和核心章节。"
+          }
+        ]
+      },
+      {
+        "anchor": "pretrain",
+        "topic": "预训练、后训练与对齐",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "大型语言模型的学习历程",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1nkTj6PEpb/",
+            "why": "把预训练、指令学习和后训练放到一条学习历程里。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文课程",
+            "title": "解剖大型语言模型",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1WgTL6TEaA/",
+            "why": "从模型训练延伸到内部机制、能力评估与终身学习。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "Training language models to follow instructions with human feedback",
+            "source": "Ouyang et al.",
+            "url": "https://arxiv.org/abs/2203.02155",
+            "why": "理解 RLHF / InstructGPT 如何改变模型行为。"
+          }
+        ]
+      },
+      {
+        "anchor": "limits",
+        "topic": "幻觉、锯齿状能力与模型边界",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "评估生成式 AI 能力时可能遇到的各种坑",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1nkTj6PEpb/",
+            "why": "建立“不用单一 Benchmark 判断模型”的直觉。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "年度报告",
+            "title": "AI Index 2026 · Technical Performance",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance",
+            "why": "看不同能力为什么表现出明显不均衡。"
+          },
+          {
+            "depth": "原典",
+            "type": "工程方法",
+            "title": "Evaluation best practices",
+            "source": "OpenAI Developers",
+            "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+            "why": "把“模型会不会错”转成可设计、可重复的 Eval。"
+          }
+        ]
+      }
+    ],
+    "03": [
+      {
+        "anchor": "perception",
+        "topic": "感知 AI：视觉与语音",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "神经网络与卷积可视化",
+            "source": "3Blue1Brown 中文配音",
+            "url": "https://www.bilibili.com/video/BV1idpkzsEwZ/",
+            "why": "快速理解深度学习为什么适合感知任务。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "站内",
+            "title": "AI 应用案例库",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/cases/",
+            "why": "结合 OCR、自动驾驶、医学影像等案例看能力如何变成应用。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "ImageNet Classification with Deep Convolutional Neural Networks",
+            "source": "AlexNet",
+            "url": "https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks",
+            "why": "2012 深度视觉突破的代表原典。"
+          }
+        ]
+      },
+      {
+        "anchor": "generation",
+        "topic": "生成式 AI 的产品跃迁",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "一堂课搞懂生成式人工智能的原理",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1nkTj6PEpb/",
+            "why": "快速理解从预测一个类别到生成完整内容的变化。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文课程",
+            "title": "生成式人工智能导论",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1BJ4m1e7g8/",
+            "why": "系统理解文本、图像、语言模型与生成策略。"
+          },
+          {
+            "depth": "原典",
+            "type": "年度报告",
+            "title": "AI Index 2026",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report",
+            "why": "用年度数据观察生成式 AI 的能力、采用与产业影响。"
+          }
+        ]
+      },
+      {
+        "anchor": "reasoning",
+        "topic": "推理模型与问题解决",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "大型语言模型如何进行深度思考",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1WgTL6TEaA/",
+            "why": "理解推理时计算和“多想一会儿”为什么成为新变量。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "前沿报告",
+            "title": "AI Index 2026 · Technical Performance",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance",
+            "why": "看推理能力提升和锯齿状边界。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+            "source": "DeepSeek",
+            "url": "https://arxiv.org/abs/2501.12948",
+            "why": "理解强化学习如何塑造显式推理能力的代表材料。"
+          }
+        ]
+      },
+      {
+        "anchor": "physical",
+        "topic": "机器人与 Physical AI",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "前沿数据",
+            "title": "Robotics / Agents 2026 快照",
+            "source": "AI Learning OS Frontier",
+            "url": "/ai-learning-platform/frontier/",
+            "why": "先看数字 Agent 与真实物理机器人的能力差距。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "年度报告",
+            "title": "AI Index 2026 · Technical Performance",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance",
+            "why": "用 OSWorld、真实家庭机器人与自动驾驶数据建立现实尺度。"
+          },
+          {
+            "depth": "原典",
+            "type": "案例",
+            "title": "Waymo Safety Impact",
+            "source": "Waymo",
+            "url": "https://waymo.com/safety/impact/",
+            "why": "观察 Physical AI 商业化时如何处理安全与现实运营。"
+          }
+        ]
+      },
+      {
+        "anchor": "value",
+        "topic": "AI 能力如何变成生产率和经济价值",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "案例",
+            "title": "GitHub Copilot productivity research",
+            "source": "GitHub",
+            "url": "https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/",
+            "why": "看生成能力如何转化成专业劳动效率。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "案例库",
+            "title": "20 个 AI 成功与限制案例",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/cases/",
+            "why": "用统一框架比较不同能力的价值机制。"
+          },
+          {
+            "depth": "原典",
+            "type": "年度报告",
+            "title": "AI Index 2026 · Economy",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/economy",
+            "why": "从企业采用、投资和劳动影响判断价值是否真的落地。"
+          }
+        ]
+      }
+    ],
+    "04": [
+      {
+        "anchor": "context",
+        "topic": "Context Engineering",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "AI Agent 核心技术：Context Engineering",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1WgTL6TEaA/",
+            "why": "第一讲约 53 分钟，可先看前半建立基本框架。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文课程",
+            "title": "上下文工程 — AI Agent 背后的关键技术",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1nkTj6PEpb/",
+            "why": "完整理解 Prompt、Context、工具和 Agent 为什么是同一个系统问题。"
+          },
+          {
+            "depth": "原典",
+            "type": "工程指南",
+            "title": "A practical guide to building AI agents",
+            "source": "OpenAI",
+            "url": "https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/",
+            "why": "从生产工程视角看 Agent use case 与 orchestration。"
+          }
+        ]
+      },
+      {
+        "anchor": "rag",
+        "topic": "RAG：给模型接外部知识",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "什么是 RAG？RAG 的大致架构是什么？",
+            "source": "Bilibili / 作者武辰",
+            "url": "https://www.bilibili.com/video/BV1VCdXYSEAG/",
+            "why": "20 分钟左右快速建立检索—增强—生成流程。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中英双语课程",
+            "title": "吴恩达详解 RAG 检索增强生成",
+            "source": "Bilibili",
+            "url": "https://www.bilibili.com/video/BV1KFb6z2EFE/",
+            "why": "从检索、BM25、语义搜索、Embedding 到完整 RAG 架构。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+            "source": "Lewis et al.",
+            "url": "https://arxiv.org/abs/2005.11401",
+            "why": "RAG 范式的经典原始论文。"
+          }
+        ]
+      },
+      {
+        "anchor": "tools",
+        "topic": "Tool Use 与 Agent",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "一堂课搞懂 AI Agent 的原理",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1WgTL6TEaA/",
+            "why": "理解经验、工具和计划如何组合。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "工程指南",
+            "title": "Building Effective Agents",
+            "source": "Anthropic",
+            "url": "https://www.anthropic.com/engineering/building-effective-agents",
+            "why": "重点看 workflow、routing、orchestrator-worker 与 evaluator 模式。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "ReAct",
+            "source": "Yao et al.",
+            "url": "https://arxiv.org/abs/2210.03629",
+            "why": "Reasoning + Acting 的代表原典。"
+          }
+        ]
+      },
+      {
+        "anchor": "eval",
+        "topic": "Eval：如何知道系统真的变好了",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "官方指南",
+            "title": "Evaluation best practices",
+            "source": "OpenAI Developers",
+            "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+            "why": "先掌握最小 Eval 集、评分标准和回归测试。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文视频",
+            "title": "评估生成式人工智能能力时可能遇到的各种坑",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1nkTj6PEpb/",
+            "why": "理解 Benchmark、数据污染和评测失真的常见陷阱。"
+          },
+          {
+            "depth": "原典",
+            "type": "标准框架",
+            "title": "AI Risk Management Framework",
+            "source": "NIST",
+            "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+            "why": "把能力评测扩展到风险、治理与生产责任。"
+          }
+        ]
+      },
+      {
+        "anchor": "reliability",
+        "topic": "生产级可靠性",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内",
+            "title": "第 6 章 · AI 风险与治理地图",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/chapters/06-risk-governance.html",
+            "why": "快速把模型错误、工具权限和社会风险放进统一风险半径。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "工程指南",
+            "title": "Building Effective Agents",
+            "source": "Anthropic",
+            "url": "https://www.anthropic.com/engineering/building-effective-agents",
+            "why": "看为什么简单、可组合、可验证比复杂框架更可靠。"
+          },
+          {
+            "depth": "原典",
+            "type": "标准框架",
+            "title": "NIST AI RMF",
+            "source": "NIST",
+            "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+            "why": "把可靠性设计纳入组织级风险管理。"
+          }
+        ]
+      }
+    ],
+    "05": [
+      {
+        "anchor": "bottleneck",
+        "topic": "AI 基础设施瓶颈",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "AI 最烧钱的战场：数据中心的真实账单",
+            "source": "硅谷101",
+            "url": "https://www.bilibili.com/video/BV1DcSkBxE7E/",
+            "why": "直观看懂 GPU 之外的电力、冷却、数据中心和资本开支。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "站内",
+            "title": "Deep Dive 03 · AI 利润池与商业机会",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/deep-dives/03-ai-profit-pools.html",
+            "why": "从稀缺性和利润池理解基础设施为何阶段性高利润。"
+          },
+          {
+            "depth": "原典",
+            "type": "报告",
+            "title": "Energy and AI",
+            "source": "IEA",
+            "url": "https://www.iea.org/reports/energy-and-ai",
+            "why": "能源系统如何约束 AI 扩张的一手基线。"
+          }
+        ]
+      },
+      {
+        "anchor": "moat",
+        "topic": "应用层护城河与模型商品化",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内",
+            "title": "Deep Dive 03 · 应用层真正的护城河",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/deep-dives/03-ai-profit-pools.html#apps",
+            "why": "快速回到工作流、数据、分发、责任和反馈闭环。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文视频",
+            "title": "AI 应用如何落地？巨头们的全栈之战",
+            "source": "硅谷101",
+            "url": "https://www.bilibili.com/video/BV1bdTvz7EPx/",
+            "why": "看云、模型、应用和分发正在怎样互相侵入。"
+          },
+          {
+            "depth": "原典",
+            "type": "年度报告",
+            "title": "AI Index 2026 · Economy",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/economy",
+            "why": "验证采用率、Agent 部署和资本投入，而不是只听商业叙事。"
+          }
+        ]
+      },
+      {
+        "anchor": "economics",
+        "topic": "AI 单位经济性",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内",
+            "title": "AI 利润池与模型商品化",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/deep-dives/03-ai-profit-pools.html#models",
+            "why": "理解单位智能变便宜为什么会压缩薄封装应用毛利。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "年度报告",
+            "title": "AI Index 2025 · R&D / inference cost",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development",
+            "why": "看推理成本下降如何改变产品经济性。"
+          },
+          {
+            "depth": "原典",
+            "type": "财报",
+            "title": "NVIDIA FY2026 10-K",
+            "source": "SEC",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+            "why": "直接看基础设施瓶颈中的收入、毛利和资本周期。"
+          }
+        ]
+      },
+      {
+        "anchor": "scenarios",
+        "topic": "未来商业情景树",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "前沿雷达",
+            "title": "AI Frontier Radar",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/frontier/",
+            "why": "先看能力、Agent、投资、能源和风险信号是否支持某个情景。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "年度报告",
+            "title": "AI Index 2026",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report",
+            "why": "用跨技术、经济、政策的数据校准未来判断。"
+          },
+          {
+            "depth": "原典",
+            "type": "报告",
+            "title": "Energy and AI",
+            "source": "IEA",
+            "url": "https://www.iea.org/reports/energy-and-ai",
+            "why": "把电力、数据中心建设周期等硬约束纳入情景推演。"
+          }
+        ]
+      }
+    ],
+    "06": [
+      {
+        "anchor": "security",
+        "topic": "Agent 与系统安全",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内",
+            "title": "风险半径：为什么 Tool Use 会放大错误",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/chapters/06-risk-governance.html#security",
+            "why": "先把模型错误和行动权限区分开。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文报告",
+            "title": "人工智能治理蓝皮书（2024）",
+            "source": "中国信通院",
+            "url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202412/P020241227660032159191.pdf",
+            "why": "从技术、组织和社会多个层级看 AI 风险。"
+          },
+          {
+            "depth": "原典",
+            "type": "标准框架",
+            "title": "AI Risk Management Framework",
+            "source": "NIST",
+            "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+            "why": "用于构建风险识别、测量、治理和持续管理体系。"
+          }
+        ]
+      },
+      {
+        "anchor": "data",
+        "topic": "数据、隐私与知识产权",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文报告",
+            "title": "人工智能治理蓝皮书（2024）",
+            "source": "中国信通院",
+            "url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202412/P020241227660032159191.pdf",
+            "why": "先看中文框架中数据治理、模型治理和应用治理如何衔接。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文研究",
+            "title": "全球人工智能治理体系",
+            "source": "清华 AIIG",
+            "url": "https://aiig.tsinghua.edu.cn/info/1025/2151.htm",
+            "why": "把数据、算法、安全与全球治理放到更大的制度框架。"
+          },
+          {
+            "depth": "原典",
+            "type": "标准框架",
+            "title": "NIST AI RMF",
+            "source": "NIST",
+            "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+            "why": "作为企业级风险治理基线。"
+          }
+        ]
+      },
+      {
+        "anchor": "economy",
+        "topic": "就业、生产率与分配",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "年度数据",
+            "title": "AI Index 2026 · Economy",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/economy",
+            "why": "先看企业采用、岗位和投资的真实数据。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "站内",
+            "title": "Deep Dive 03 · AI-native Services",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/deep-dives/03-ai-profit-pools.html#services",
+            "why": "理解 AI 如何从软件预算进入人工服务和岗位成本。"
+          },
+          {
+            "depth": "原典",
+            "type": "研究案例",
+            "title": "GitHub Copilot productivity research",
+            "source": "GitHub",
+            "url": "https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/",
+            "why": "观察 AI 对具体知识劳动生产率的实验性证据。"
+          }
+        ]
+      },
+      {
+        "anchor": "manage",
+        "topic": "如何把风险治理变成管理流程",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "什么是人工智能治理？",
+            "source": "清华 AIIG / 薛澜",
+            "url": "https://www.bilibili.com/video/BV1SL4y1q7zv/",
+            "why": "先建立治理对象、治理主体与敏捷治理的基本概念。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文报告",
+            "title": "人工智能治理蓝皮书（2024）",
+            "source": "中国信通院",
+            "url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202412/P020241227660032159191.pdf",
+            "why": "建立中文治理框架全景。"
+          },
+          {
+            "depth": "原典",
+            "type": "标准框架",
+            "title": "NIST AI RMF",
+            "source": "NIST",
+            "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+            "why": "把风险治理落成可操作的组织流程。"
+          }
+        ]
+      }
+    ],
+    "07": [
+      {
+        "anchor": "drivers",
+        "topic": "决定未来 AI 走向的关键驱动因素",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "前沿雷达",
+            "title": "AI Frontier Radar",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/frontier/",
+            "why": "用实时能力、Agent、能源和商业信号看未来驱动是否变化。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "年度报告",
+            "title": "AI Index 2026",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report",
+            "why": "把技术能力、经济、政策与责任 AI 放在同一年度基线里。"
+          },
+          {
+            "depth": "原典",
+            "type": "报告",
+            "title": "Energy and AI",
+            "source": "IEA",
+            "url": "https://www.iea.org/reports/energy-and-ai",
+            "why": "未来 AI 的硬约束之一不是模型，而是能源和基础设施。"
+          }
+        ]
+      },
+      {
+        "anchor": "scenarios",
+        "topic": "Agent / Physical AI / 商品化的情景分叉",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "2026 AI Agent 系列课程",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1WgTL6TEaA/",
+            "why": "看 Agent 技术是否已具备改变工作流的条件。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文课程",
+            "title": "CMU 2026 AI Agents（中配）",
+            "source": "CMU / Bilibili",
+            "url": "https://www.bilibili.com/video/BV1a6Yx62EH4/",
+            "why": "从学术前沿看 Agent 正在研究哪些真实难题。"
+          },
+          {
+            "depth": "原典",
+            "type": "年度报告",
+            "title": "AI Index 2026 · Technical Performance",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance",
+            "why": "验证数字 Agent 与 Physical AI 的现实进度。"
+          }
+        ]
+      },
+      {
+        "anchor": "signals",
+        "topic": "领先指标与信号更新",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内",
+            "title": "Frontier Radar",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/frontier/",
+            "why": "直接查看项目正在维护的领先指标。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "年度报告",
+            "title": "AI Index 2026 · Economy",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/economy",
+            "why": "跟踪采用、投资与组织部署。"
+          },
+          {
+            "depth": "原典",
+            "type": "更新机制",
+            "title": "Frontier Snapshot / CHANGELOG",
+            "source": "AI Learning OS",
+            "url": "https://github.com/TempleHao/ai-learning-platform/blob/main/CHANGELOG.md",
+            "why": "回看我们自己的判断是如何随着证据变化而更新的。"
+          }
+        ]
+      }
+    ],
+    "08": [
+      {
+        "anchor": "system",
+        "topic": "从模型风险升级到系统风险",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "可信智能的建立",
+            "source": "清华 AIIG",
+            "url": "https://www.bilibili.com/video/BV1gW4y1s7ZJ/",
+            "why": "从可信、可解释、可回溯理解系统级风险。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文报告",
+            "title": "人工智能治理蓝皮书（2024）",
+            "source": "中国信通院",
+            "url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202412/P020241227660032159191.pdf",
+            "why": "把模型、组织、社会风险连接起来。"
+          },
+          {
+            "depth": "原典",
+            "type": "标准框架",
+            "title": "NIST AI RMF",
+            "source": "NIST",
+            "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+            "why": "系统治理的国际常用基线之一。"
+          }
+        ]
+      },
+      {
+        "anchor": "society",
+        "topic": "信息生态、就业与社会结构",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "年度报告",
+            "title": "AI Index 2026 · Responsible AI",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/responsible-ai",
+            "why": "先看事故、治理和责任披露数据。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文研究",
+            "title": "从共识到行动：全球人工智能治理体系",
+            "source": "清华 AIIG",
+            "url": "https://aiig.tsinghua.edu.cn/info/1025/2151.htm",
+            "why": "从发展、安全、公平三个维度讨论治理。"
+          },
+          {
+            "depth": "原典",
+            "type": "年度报告",
+            "title": "AI Index 2026",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report",
+            "why": "把社会风险放回技术和经济发展的同一数据背景。"
+          }
+        ]
+      },
+      {
+        "anchor": "governance",
+        "topic": "治理体系如何设计",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "如何构建平衡包容的人工智能治理体系",
+            "source": "清华 AIIG / 薛澜",
+            "url": "https://www.bilibili.com/video/BV1CZ4y1z71L/",
+            "why": "理解多主体治理和动态平衡。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文报告",
+            "title": "人工智能治理蓝皮书（2024）",
+            "source": "中国信通院",
+            "url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202412/P020241227660032159191.pdf",
+            "why": "中文治理框架的系统阅读入口。"
+          },
+          {
+            "depth": "原典",
+            "type": "标准框架",
+            "title": "NIST AI RMF",
+            "source": "NIST",
+            "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+            "why": "对照不同治理体系的共同问题：识别、测量、管理与问责。"
+          }
+        ]
+      }
+    ],
+    "deep01": [
+      {
+        "anchor": "attention",
+        "topic": "Attention 机制",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "Transformers 中的注意力机制，可视化解释",
+            "source": "3Blue1Brown 中文配音",
+            "url": "https://www.bilibili.com/video/BV1szpFedEV2/",
+            "why": "Attention 最适合先用动态图理解。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文课程",
+            "title": "Self-Attention 与 Transformer",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1Xp4y1b7ih/",
+            "why": "继续深入 Q/K/V、位置编码和模型结构。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "Attention Is All You Need",
+            "source": "Vaswani et al.",
+            "url": "https://arxiv.org/abs/1706.03762",
+            "why": "原始论文。"
+          }
+        ]
+      },
+      {
+        "anchor": "scale",
+        "topic": "Scaling Laws",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内",
+            "title": "Scaling 为什么成为大模型时代主轴",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/deep-dives/01-neural-transformer.html#scale",
+            "why": "先复习参数、数据、计算之间的直觉关系。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "英文阅读",
+            "title": "Scaling Laws for Neural Language Models",
+            "source": "OpenAI / Kaplan et al.",
+            "url": "https://arxiv.org/abs/2001.08361",
+            "why": "理解性能与模型规模、数据、算力之间的经验规律。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "Training Compute-Optimal Large Language Models",
+            "source": "Hoffmann et al. / Chinchilla",
+            "url": "https://arxiv.org/abs/2203.15556",
+            "why": "进一步理解模型大小和训练数据的最优配比。"
+          }
+        ]
+      },
+      {
+        "anchor": "moe",
+        "topic": "Mixture of Experts",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内",
+            "title": "MoE 的核心直觉",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/deep-dives/01-neural-transformer.html#moe",
+            "why": "先理解为什么不是每个 Token 都要激活全部参数。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "论文导读",
+            "title": "Switch Transformers",
+            "source": "Google Research",
+            "url": "https://arxiv.org/abs/2101.03961",
+            "why": "MoE 在大规模 Transformer 中的代表工作。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer",
+            "source": "Shazeer et al.",
+            "url": "https://arxiv.org/abs/1701.06538",
+            "why": "稀疏专家路由的重要早期工作。"
+          }
+        ]
+      },
+      {
+        "anchor": "reasoning",
+        "topic": "推理时计算与 Reasoning",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "大型语言模型如何进行深度思考",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1WgTL6TEaA/",
+            "why": "直观看 reasoning / test-time compute 的核心问题。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "前沿报告",
+            "title": "AI Index 2026 · Technical Performance",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance",
+            "why": "看 reasoning 能力提升与现实边界。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "DeepSeek-R1",
+            "source": "DeepSeek",
+            "url": "https://arxiv.org/abs/2501.12948",
+            "why": "强化学习驱动 reasoning 的代表公开论文。"
+          }
+        ]
+      }
+    ],
+    "deep02": [
+      {
+        "anchor": "winter",
+        "topic": "AI Winter",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "人工智能简史（上）",
+            "source": "清华 AIR",
+            "url": "https://www.bilibili.com/video/BV1Ze4y1V74w/",
+            "why": "快速回到专家系统、神经网络与寒冬的历史背景。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "英文阅读",
+            "title": "A Short History of AI",
+            "source": "Stanford AI100",
+            "url": "https://ai100.stanford.edu/2016-report/appendix-i-short-history-ai",
+            "why": "理解寒冬不是单一技术路线“输掉”的结果。"
+          },
+          {
+            "depth": "原典",
+            "type": "历史资料",
+            "title": "Dartmouth AI history",
+            "source": "Dartmouth",
+            "url": "https://ai.dartmouth.edu/our-story",
+            "why": "从最初乐观目标对照后来现实落差。"
+          }
+        ]
+      },
+      {
+        "anchor": "statistical",
+        "topic": "统计学习与概率转向",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内",
+            "title": "统计学习为什么适合互联网",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/deep-dives/02-route-wars-winters.html#statistical",
+            "why": "先抓住“海量数据 + 可量化反馈”的工业逻辑。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "英文教材",
+            "title": "Probabilistic Reasoning in Intelligent Systems",
+            "source": "Judea Pearl",
+            "url": "https://shop.elsevier.com/books/probabilistic-reasoning-in-intelligent-systems/pearl/978-0-08-051489-5",
+            "why": "概率 AI 的经典著作。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "Support-Vector Networks",
+            "source": "Cortes & Vapnik",
+            "url": "https://doi.org/10.1007/BF00994018",
+            "why": "统计学习时代的代表工作。"
+          }
+        ]
+      },
+      {
+        "anchor": "neural",
+        "topic": "神经网络复兴",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "神经网络如何学习",
+            "source": "3Blue1Brown 中文配音",
+            "url": "https://www.bilibili.com/video/BV1szpFedEV2/",
+            "why": "把神经网络、梯度和表示学习重新建立成直觉。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文课程",
+            "title": "机器学习与深度学习基本原理",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1nkTj6PEpb/",
+            "why": "看算法、训练技巧和规模化条件如何共同成熟。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "AlexNet (2012)",
+            "source": "Krizhevsky · Sutskever · Hinton",
+            "url": "https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks",
+            "why": "深度学习产业拐点代表论文。"
+          }
+        ]
+      },
+      {
+        "anchor": "fusion",
+        "topic": "路线融合：神经网络 + 搜索 + 规则 + RL",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "案例",
+            "title": "AlphaGo 路线融合",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/deep-dives/02-route-wars-winters.html#fusion",
+            "why": "用一个系统看多条路线如何各司其职。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文课程",
+            "title": "强化学习完整课程",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1ou411874G/",
+            "why": "理解反馈学习为什么能与神经模型、搜索结合。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "AlphaGo",
+            "source": "Silver et al.",
+            "url": "https://www.nature.com/articles/nature16961",
+            "why": "现代混合 AI 的经典系统论文。"
+          }
+        ]
+      }
+    ],
+    "deep03": [
+      {
+        "anchor": "infra",
+        "topic": "基础设施利润池",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "AI 最烧钱的战场：数据中心的真实账单",
+            "source": "硅谷101",
+            "url": "https://www.bilibili.com/video/BV1DcSkBxE7E/",
+            "why": "直观看懂 GPU、电力、冷却和资本开支。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "报告",
+            "title": "Energy and AI",
+            "source": "IEA",
+            "url": "https://www.iea.org/reports/energy-and-ai",
+            "why": "理解数据中心和能源供给的硬约束。"
+          },
+          {
+            "depth": "原典",
+            "type": "财报",
+            "title": "NVIDIA FY2026 10-K",
+            "source": "SEC",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+            "why": "直接看瓶颈供应商如何体现收入和利润。"
+          }
+        ]
+      },
+      {
+        "anchor": "models",
+        "topic": "模型层商品化",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内",
+            "title": "模型能力为什么越强，单位智能反而可能越便宜",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/deep-dives/03-ai-profit-pools.html#models",
+            "why": "先抓住商品化悖论。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "年度报告",
+            "title": "AI Index 2025 · Research & Development",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development",
+            "why": "看推理成本和前沿模型差距如何变化。"
+          },
+          {
+            "depth": "原典",
+            "type": "市场数据",
+            "title": "AI Index 2026 · Technical Performance",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance",
+            "why": "验证顶级模型性能收敛和能力边界。"
+          }
+        ]
+      },
+      {
+        "anchor": "apps",
+        "topic": "应用层护城河",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "AI 应用如何落地？巨头们的全栈之战",
+            "source": "硅谷101",
+            "url": "https://www.bilibili.com/video/BV1bdTvz7EPx/",
+            "why": "从现实竞争看分发、云、模型和应用如何互相侵入。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "案例库",
+            "title": "AI 应用案例库",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/cases/",
+            "why": "比较不同垂直应用真正形成壁垒的机制。"
+          },
+          {
+            "depth": "原典",
+            "type": "年度报告",
+            "title": "AI Index 2026 · Economy",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/economy",
+            "why": "用企业采用和部署数据校准“应用爆发”叙事。"
+          }
+        ]
+      },
+      {
+        "anchor": "services",
+        "topic": "AI-native Services 与数字劳动力",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "AI Agent 对工作带来的冲击",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1WgTL6TEaA/",
+            "why": "从学术研究等案例看 Agent 如何改变任务分工。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文课程",
+            "title": "AI Agent 系列课程",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1nkTj6PEpb/",
+            "why": "理解任务执行、工具、记忆、计划和组织工作流。"
+          },
+          {
+            "depth": "原典",
+            "type": "经济数据",
+            "title": "AI Index 2026 · Economy",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/economy",
+            "why": "观察 Agent 部署和企业采用到底走到哪一步。"
+          }
+        ]
+      },
+      {
+        "anchor": "academia",
+        "topic": "学界与产业边界",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "年度数据",
+            "title": "AI Index 2026 · R&D",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report",
+            "why": "先看前沿模型由谁训练、资源如何集中。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文课程",
+            "title": "CMU 2026 AI Agents（中配）",
+            "source": "CMU / Bilibili",
+            "url": "https://www.bilibili.com/video/BV1a6Yx62EH4/",
+            "why": "直接看顶尖大学 Agent 课程如何定义前沿问题。"
+          },
+          {
+            "depth": "原典",
+            "type": "学术前沿",
+            "title": "arXiv Artificial Intelligence",
+            "source": "arXiv",
+            "url": "https://arxiv.org/list/cs.AI/recent",
+            "why": "长期观察学术路线变化最直接的入口之一。"
+          }
+        ]
+      }
+    ]
+  }
+}
