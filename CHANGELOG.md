@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 2026-10-05 · v0.11 Hypertext Learning
+- 全站增加固定右上角 AI 品牌角标
+- 新增节点级「继续探索」系统
+- 关键知识点提供 20 分钟 / 2 小时 / 原典三档延伸路径
+- 延伸资源以独立数据 `site/resources/explore-data.json` 维护
+- 覆盖核心课程 00–08 与 3 个 Deep Dive 的关键节点
+
+
 ## 2026-10-05 · v0.10 Business Deep Dive
 - 新增 Deep Dive 03《AI 利润池、商品化与商业机会》
 - 增加基础设施稀缺、模型商品化、应用护城河与 AI-native Services 分析
