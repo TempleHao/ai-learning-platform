@@ -20,3 +20,14 @@ document.querySelectorAll('[data-progress]').forEach(box => {
   box.checked = localStorage.getItem(key) === '1';
   box.addEventListener('change', () => localStorage.setItem(key, box.checked ? '1' : '0'));
 });
+
+function ensureGlobalCornerLogo(){
+  if(document.querySelector('.global-corner-logo')) return;
+  const a=document.createElement('a');
+  a.className='global-corner-logo';
+  a.href='/ai-learning-platform/';
+  a.setAttribute('aria-label','AI Learning OS 首页');
+  a.innerHTML='<img src="/ai-learning-platform/assets/brand/favicon-64.png" alt="AI Learning OS" />';
+  document.body.appendChild(a);
+}
+ensureGlobalCornerLogo();
