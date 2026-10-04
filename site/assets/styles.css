@@ -19,4 +19,3 @@
 .global-corner-logo img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 12px rgba(35,211,255,.34))}
 .topbar,.chapter-top,.cases-top,.frontier-top,.labs-top,.progress-top,.review-top,.resources-top{padding-right:72px!important}
 @media(max-width:760px){.global-corner-logo{width:29px;height:29px;top:17px;right:14px}.topbar,.chapter-top,.cases-top,.frontier-top,.labs-top,.progress-top,.review-top,.resources-top{padding-right:56px!important}}
-.topbar,.chapter-top,.cases-top,.frontier-top,.labs-top,.progress-top,.review-top,.resources-top{padding-right:56px!important}}
