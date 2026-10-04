@@ -6,16 +6,16 @@
 
 ## 当前版本
 
-**v0.14 · AI Coding / Vibe Coding 已发布**
+**v0.15 · RAG / Memory / Knowledge Systems 已发布**
 
 平台已经形成“主干教材 + Deep Dive + Lab + 案例库 + Frontier Radar + Review + 延伸阅读 + 超文本探索”的完整学习骨架，并进入持续深化阶段。
 
 - 4 个贯穿问题：AI 从哪里来 / 能做什么 / 将去哪里 / 有什么风险
 - 9 个核心正文节点（00–08）
 - Stable / Frontier / Lab 三层知识结构
-- 6 个 Deep Dive
+- 7 个 Deep Dive
 - 20 个案例
-- 8 关 Lab Track
+- 9 关 Lab Track
 - 50+ 术语 / 15 综合题
 - Frontier Radar + 90 天复核机制
 - 节点级“继续探索”与中文优先延伸阅读
@@ -32,7 +32,8 @@ https://templehao.github.io/ai-learning-platform/
 - `v0.11`：品牌系统、延伸阅读、超文本“继续探索” ✅
 - `v0.12`：Agent 系统、可靠性、单位经济性与数字劳动力 ✅
 - `v0.13`：AI-native Organization、人机任务分工与未来工作 ✅
-- `v0.14`：AI Coding、Vibe Coding 与 Agentic Software Engineering ✅（当前）
+- `v0.14`：AI Coding、Vibe Coding 与 Agentic Software Engineering ✅
+- `v0.15`：RAG、Memory 与企业 Knowledge Systems ✅（当前）
 - `v1.0`：完成首轮内容审校、导航统一与学习闭环
 
 ## 深化学习
@@ -43,8 +44,9 @@ https://templehao.github.io/ai-learning-platform/
 - Deep Dive 04：Agent：从软件工具到数字劳动力
 - Deep Dive 05：AI-native Organization
 - Deep Dive 06：AI Coding、Vibe Coding 与软件工程新范式
+- Deep Dive 07：RAG、Memory 与 Knowledge Systems
 - 案例库：20 个成功与失败案例
-- Lab Track：8 关连续实战
+- Lab Track：9 关连续实战
 - Review：术语与综合题库
 
 ## Frontier Radar 数据层
