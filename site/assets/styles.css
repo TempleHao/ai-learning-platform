@@ -4,3 +4,9 @@
 .brand-home .brand-wordmark{display:block;width:218px;max-width:100%;height:auto;filter:drop-shadow(0 0 14px rgba(36,202,255,.18))}
 .brand-home .brand-version{display:block;margin-top:3px;padding-left:4px;font-size:9px;letter-spacing:.06em;color:#60717f}
 @media(max-width:760px){.brand-home .brand-wordmark{width:195px}}
+
+/* Compact brand link used by utility pages */
+.top-brand-link{display:inline-flex!important;align-items:center;gap:8px;color:#cbd6df!important;text-decoration:none}
+.top-brand-link img{width:25px;height:25px;object-fit:contain;filter:drop-shadow(0 0 9px rgba(35,211,255,.30))}
+.top-brand-link span{font-size:10px;letter-spacing:.02em}
+.top-brand-link:hover span{color:#fff}
