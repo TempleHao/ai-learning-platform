@@ -516,6 +516,44 @@
           "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report"
         }
       ]
+    },
+    "deep05": {
+      "title": "Deep Dive 05 · AI-native Organization",
+      "intro": "未来工作不是简单“被 AI 取代 / 不被取代”，而是任务拆分、组织重构和责任变化。",
+      "items": [
+        {
+          "type": "中文视频",
+          "level": "优先",
+          "title": "AI Agent 对工作带来的冲击",
+          "source": "李宏毅 / Bilibili",
+          "why": "从 Agent 实际能力出发讨论工作变化，比抽象谈“AI 取代人”更具体。",
+          "url": "https://www.bilibili.com/video/BV1WgTL6TEaA/"
+        },
+        {
+          "type": "英文报告",
+          "level": "进阶",
+          "title": "Generative AI and jobs: A 2025 update",
+          "source": "ILO",
+          "why": "以任务级数据分析全球职业暴露，核心结论是转型通常比整体替代更可能。",
+          "url": "https://www.ilo.org/publications/generative-ai-and-jobs-2025-update"
+        },
+        {
+          "type": "英文报告",
+          "level": "进阶",
+          "title": "AI Index 2026 · Economy",
+          "source": "Stanford HAI",
+          "why": "跟踪年轻员工、岗位、企业减员预期和 Agent 部署等最新劳动市场信号。",
+          "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/economy"
+        },
+        {
+          "type": "官方指南",
+          "level": "进阶",
+          "title": "A business leader’s guide to working with agents",
+          "source": "OpenAI",
+          "why": "从管理者视角理解如何让团队与 Agent 协作、训练委托与判断能力。",
+          "url": "https://cdn.openai.com/business-guides-and-resources/a-business-leaders-guide-to-working-with-agents.pdf"
+        }
+      ]
     }
   }
 }
