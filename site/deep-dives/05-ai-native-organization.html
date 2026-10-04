@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="AI Learning OS Deep Dive：AI-native Organization，人和 Agent 如何重新分工" />
+  <title>Deep Dive 05 · AI-native Organization | AI Learning OS</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/chapter.css" />
+  <link rel="stylesheet" href="../assets/organization.css" />
+  <link rel="icon" type="image/png" sizes="64x64" href="/ai-learning-platform/assets/brand/favicon-64.png" />
+  <meta name="theme-color" content="#07111f" />
+</head>
+<body data-chapter="deep05">
+<div class="chapter-shell">
+  <aside class="chapter-toc" id="chapterToc">
+    <a class="chapter-brand" href="../index.html"><img class="brand-icon" src="/ai-learning-platform/assets/brand/favicon-64.png" alt="" aria-hidden="true" /><div><b>Learning OS</b><small>v0.13 · AI-native Organization</small></div></a>
+    <div class="toc-label">Deep Dive 05</div>
+    <nav>
+      <a href="#start" class="active">D5.0 从岗位拆到任务</a>
+      <a href="#exposure">D5.1 暴露 ≠ 替代</a>
+      <a href="#allocation">D5.2 人机任务分配</a>
+      <a href="#matrix">D5.3 委托矩阵</a>
+      <a href="#manager">D5.4 管理半径</a>
+      <a href="#junior">D5.5 初级岗位悖论</a>
+      <a href="#roles">D5.6 新角色</a>
+      <a href="#governance">D5.7 责任与治理</a>
+      <a href="#procurement">D5.8 采购与定价</a>
+      <a href="#transition">D5.9 组织迁移路径</a>
+      <a href="#frontier">D5.10 2026 信号</a>
+      <a href="#skills">D5.11 个人能力变化</a>
+      <a href="#risks">D5.12 风险</a>
+      <a href="#check">D5.13 自测</a>
+    </nav>
+    <div class="toc-progress"><span>Deep Dive 状态</span><b id="chapterStatus">未完成</b><button id="completeChapter">标记本页完成</button></div>
+  </aside>
+
+  <main class="chapter-main">
+    <header class="chapter-top">
+      <button class="icon-btn chapter-menu" id="chapterMenu">☰</button>
+      <a href="04-agent-economy.html">← 返回 Agent Economy</a>
+      <span>Business + Society · Organization Design</span>
+    </header>
+
+    <article class="chapter-article">
+      <section class="chapter-hero" id="start">
+        <div class="chapter-no">DEEP DIVE 05</div>
+        <h1>AI-native Organization</h1>
+        <p class="lead">“AI 会不会取代这个岗位？”通常问错了。更好的问题是：<strong>这个岗位由哪些任务组成？哪些任务可以自动化、哪些只能增强、哪些必须保留人的判断与责任？</strong></p>
+        <div class="objective-grid">
+          <div><b>组织视角</b><span>把岗位拆成任务，再设计人、Workflow、Agent 的边界。</span></div>
+          <div><b>管理视角</b><span>理解 Agent 如何改变管理半径、异常处理和绩效衡量。</span></div>
+          <div><b>个人视角</b><span>知道哪些能力因为 AI 更值钱，而不是只问“什么工作会消失”。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section">
+        <div class="callout idea"><b>先改变分析单位</b><p>岗位不是一个原子。一个岗位通常同时包含重复执行、信息整理、判断、沟通、关系、创意、责任和异常处理。AI 对这些任务的影响速度并不一样。</p></div>
+      </section>
+
+      <section class="chapter-section" id="exposure">
+        <div class="section-kicker">D5.1 · EXPOSURE ≠ REPLACEMENT</div>
+        <h2>“这个岗位暴露于 AI”不等于“这个岗位会消失”</h2>
+        <p>ILO 2025 年的全球研究把分析做到了接近 3 万项职业任务，结论之一是：全球约四分之一劳动者所在职业对生成式 AI 存在某种程度的暴露，但由于大量任务仍需要人类输入，最可能发生的是<strong>工作内容转型</strong>，而不是岗位整体自动消失。</p>
+        <div class="compare-grid">
+          <article><span>AUTOMATION</span><h3>任务被自动完成</h3><p>重复、标准化、结果容易验收的任务最先进入这一区域。</p></article>
+          <article><span>AUGMENTATION</span><h3>人 + AI 共同完成</h3><p>AI 做草稿、检索、分析，人负责判断、沟通、责任与例外。</p></article>
+        </div>
+        <p>因此，未来的就业冲击更可能首先表现为：岗位内部任务占比变化、入门岗位减少、一个人管理更多产出，以及某些岗位的招聘需求下降，而不是所有职业同时消失。</p>
+      </section>
+
+      <section class="chapter-section" id="allocation">
+        <div class="section-kicker">D5.2 · TASK ALLOCATION</div>
+        <h2>人和 AI 的分工，取决于六个变量</h2>
+        <div class="decision-grid">
+          <div><b>结构化程度</b><span>输入、步骤和输出是否相对稳定？</span></div>
+          <div><b>可验收程度</b><span>机器能否判断结果“对不对”？</span></div>
+          <div><b>错误代价</b><span>错一次是多花十分钟，还是造成法律 / 财务 / 安全后果？</span></div>
+          <div><b>异常率</b><span>标准流程之外的长尾情况有多少？</span></div>
+          <div><b>隐性知识</b><span>是否依赖关系、组织政治、经验或难以写下来的判断？</span></div>
+          <div><b>系统接入</b><span>AI 是否真的能访问所需数据和工具？</span></div>
+        </div>
+        <div class="definition-box"><span>基本原则</span><strong>越结构化、越可验收、错误越可逆、系统接入越完整，就越适合把执行权交给 AI。</strong></div>
+      </section>
+
+      <section class="chapter-section" id="matrix">
+        <div class="section-kicker">D5.3 · INTERACTIVE DELEGATION MATRIX</div>
+        <h2>这个任务该给 Copilot、Workflow、Agent，还是人？</h2>
+        <p>拖动下面六个变量。它不是“自动化真理”，而是强迫你把直觉拆成明确条件。</p>
+        <div class="delegation-card">
+          <div class="delegation-inputs">
+            <label>结构化程度 <input type="range" min="1" max="5" value="3" data-delegate="structure"><b>3</b></label>
+            <label>结果可验收 <input type="range" min="1" max="5" value="3" data-delegate="measurable"><b>3</b></label>
+            <label>系统 / 数据接入 <input type="range" min="1" max="5" value="3" data-delegate="access"><b>3</b></label>
+            <label>错误代价 <input type="range" min="1" max="5" value="3" data-delegate="risk"><b>3</b></label>
+            <label>异常 / 长尾程度 <input type="range" min="1" max="5" value="3" data-delegate="exceptions"><b>3</b></label>
+            <label>隐性知识依赖 <input type="range" min="1" max="5" value="3" data-delegate="tacit"><b>3</b></label>
+          </div>
+          <div class="delegation-output">
+            <span>RECOMMENDED MODE</span>
+            <strong id="delegationMode">Copilot + Human</strong>
+            <b id="delegationScore">50 / 100</b>
+            <p id="delegationReason"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="manager">
+        <div class="section-kicker">D5.4 · MANAGEMENT SPAN</div>
+        <h2>Agent 可能首先改变“一个人能管理多少工作”，而不是直接改变职位名称</h2>
+        <p>当标准执行步骤可以交给 Agent，人的工作会更像：定义目标、分配任务、审查结果、处理异常、决定高风险动作。管理半径因此可能扩大。</p>
+        <div class="org-shift">
+          <div><span>TRADITIONAL</span><b>1 位经理 → 多名执行人员 → 软件工具</b></div><i>→</i>
+          <div><span>AI-AUGMENTED</span><b>1 位专家 → AI Copilot + 更少重复执行</b></div><i>→</i>
+          <div><span>AGENT-NATIVE</span><b>1 位负责人 → 多个数字执行单元 + 少量异常处理</b></div>
+        </div>
+        <div class="business-lens"><b>组织指标也要变化</b><p>如果人不再亲自完成每一步，绩效不能只看“工作时长”或“处理量”，而要看目标设定质量、Agent 成功率、异常率、错误损失和最终业务结果。</p></div>
+      </section>
+
+      <section class="chapter-section" id="junior">
+        <div class="section-kicker">D5.5 · THE JUNIOR-LADDER PROBLEM</div>
+        <h2>最棘手的问题之一：如果 AI 先吃掉初级任务，人靠什么成长成高级专家？</h2>
+        <p>很多职业的学习路径依赖“先做大量低风险、重复但能积累模式识别的工作”。如果这些任务被 AI 自动完成，企业短期效率可能提高，但长期可能削弱人才梯队。</p>
+        <div class="mechanism-grid">
+          <article><span>01</span><h3>旧学徒制</h3><p>新人通过大量基础任务获得情境和错误经验。</p></article>
+          <article><span>02</span><h3>AI 先做第一遍</h3><p>新人直接面对更复杂任务，却可能缺少底层经验。</p></article>
+          <article><span>03</span><h3>新训练机制</h3><p>企业需要刻意设计复盘、模拟、审阅与轮岗，而不能只追求自动化率。</p></article>
+          <article><span>04</span><h3>新的入门价值</h3><p>初级员工可能从“做产出”转向“检查 AI、整理 Context、构建 Eval、处理例外”。</p></article>
+        </div>
+        <p>Stanford AI Index 2026 报告中，部分 AI 暴露较高职业的年轻员工已经出现更明显的就业变化，例如 22–25 岁软件开发者的就业从 2024 年起明显下降；但整体劳动市场并没有出现同等规模的普遍失业。这种不均衡非常值得持续跟踪。</p>
+      </section>
+
+      <section class="chapter-section" id="roles">
+        <div class="section-kicker">D5.6 · NEW ROLES</div>
+        <h2>AI-native 组织会出现一批“连接模型与业务”的角色</h2>
+        <div class="application-grid">
+          <article><span>WORKFLOW</span><h3>AI Workflow Architect</h3><p>把业务流程拆成 Context、模型、工具、规则、审批和 Eval。</p><b>核心：流程与系统设计。</b></article>
+          <article><span>OPS</span><h3>Agent Operator</h3><p>管理 Agent 任务队列、异常、失败恢复、成本和权限。</p><b>核心：运行与例外管理。</b></article>
+          <article><span>EVAL</span><h3>Eval / Quality Engineer</h3><p>构建测试集、评分器、回归评测和生产监控。</p><b>核心：可测量的质量。</b></article>
+          <article><span>DOMAIN</span><h3>Domain Reviewer</h3><p>把专业责任留在人类专家手里，重点审查高风险输出。</p><b>核心：责任与专业判断。</b></article>
+          <article><span>PRODUCT</span><h3>AI Product Owner</h3><p>决定哪些任务值得自动化、价值在哪里、成功标准是什么。</p><b>核心：价值与取舍。</b></article>
+          <article><span>GOVERNANCE</span><h3>AI Governance / Control</h3><p>制定权限、模型准入、数据边界、审计和风险政策。</p><b>核心：制度与控制面。</b></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="governance">
+        <div class="section-kicker">D5.7 · RESPONSIBILITY</div>
+        <h2>组织设计的核心不是“谁用了 AI”，而是“谁对结果负责”</h2>
+        <div class="control-plane">
+          <div><span>OWNER</span><b>任务所有者</b><p>谁定义业务目标和完成标准？</p></div>
+          <div><span>OPERATOR</span><b>运行者</b><p>谁监控 Agent、处理异常、管理预算？</p></div>
+          <div><span>APPROVER</span><b>审批者</b><p>高风险动作由谁确认？</p></div>
+          <div><span>ACCOUNTABLE</span><b>责任人</b><p>系统出错造成损失后，谁承担最终责任？</p></div>
+        </div>
+        <p>当 Agent 跨多个系统执行任务时，传统“一个软件、一个用户、一个操作记录”的责任模型会变复杂。企业必须把身份、授权、审批、审计和责任映射到 Agent 运行链上。</p>
+      </section>
+
+      <section class="chapter-section" id="procurement">
+        <div class="section-kicker">D5.8 · PROCUREMENT + PRICING</div>
+        <h2>AI-native 组织会反过来改变企业软件采购</h2>
+        <p>如果一个 Agent 可以替多人执行标准流程，传统按 Seat 收费会越来越难完整表达价值。采购部门可能开始比较：</p>
+        <div class="value-flow">
+          <div><b>Seat Cost</b><span>每个用户多少钱</span></div><i>→</i>
+          <div><b>Task Cost</b><span>每个任务多少钱</span></div><i>→</i>
+          <div><b>Outcome Cost</b><span>每个结果多少钱</span></div><i>→</i>
+          <div><b>Total Labor Cost</b><span>与人工 / 外包一起比较</span></div>
+        </div>
+        <p>这意味着软件供应商会越来越需要证明“每个完成任务的完全成本”和实际业务结果，而不是只证明用户登录了多少次。</p>
+      </section>
+
+      <section class="chapter-section" id="transition">
+        <div class="section-kicker">D5.9 · TRANSITION PATH</div>
+        <h2>企业不会一夜之间变成 Agent-native，更可能经历四个阶段</h2>
+        <div class="autonomy-ladder org-ladder">
+          <article><span>PHASE 1</span><h3>个人工具化</h3><p>员工自行使用 Chat / Copilot，提高局部效率。</p><small>风险：影子 AI、数据边界模糊。</small></article>
+          <article><span>PHASE 2</span><h3>团队 Workflow</h3><p>高频任务形成标准 Prompt、RAG、工具和 Eval。</p><small>目标：可复用和可测量。</small></article>
+          <article><span>PHASE 3</span><h3>Agent 托管部分流程</h3><p>标准任务由 Agent 执行，人处理例外和审批。</p><small>目标：单位任务成本下降。</small></article>
+          <article><span>PHASE 4</span><h3>组织重构</h3><p>岗位、软件、预算与管理方式围绕“人 + 数字执行单元”重新设计。</p><small>目标：业务模型变化。</small></article>
+        </div>
+      </section>
+
+      <section class="chapter-section frontier-section" id="frontier">
+        <div class="section-kicker">D5.10 · FRONTIER SNAPSHOT · 2026</div>
+        <h2>当前证据更支持“任务结构变化”，而不是“已经发生全面岗位替代”</h2>
+        <div class="frontier-grid">
+          <article><strong>1 / 4</strong><span>全球劳动者所在职业对 GenAI 有一定暴露</span><small>ILO 认为转型比整体替代更可能。</small></article>
+          <article><strong>32%</strong><span>组织预计未来一年 AI 会减少员工规模</span><small>但约 43% 预计几乎没有变化，现实仍高度分化。</small></article>
+          <article><strong>88%</strong><span>受访组织报告已经使用 AI</span><small>采用很广，但 Agent 在多数业务职能仍处个位数部署。</small></article>
+        </div>
+        <p>这说明 2026 年仍是一个“能力和采用跑在组织设计前面”的阶段。企业已经普遍使用 AI，但真正把岗位、责任、预算和软件采购围绕 Agent 重构，仍处在非常早期。</p>
+      </section>
+
+      <section class="chapter-section" id="skills">
+        <div class="section-kicker">D5.11 · PERSONAL SKILLS</div>
+        <h2>对个人来说，AI 时代最稀缺的能力可能从“执行步骤”迁移到五类能力</h2>
+        <div class="mechanism-grid">
+          <article><span>01</span><h3>问题定义</h3><p>知道真正要解决什么，而不是只会接受任务。</p></article>
+          <article><span>02</span><h3>任务分解</h3><p>把目标拆成模型、工具、规则和人可以协作的模块。</p></article>
+          <article><span>03</span><h3>Context 构建</h3><p>给 AI 正确资料、状态、约束和示例。</p></article>
+          <article><span>04</span><h3>Eval 与判断</h3><p>能分辨“看起来不错”和“真的完成任务”。</p></article>
+          <article><span>05</span><h3>责任与关系</h3><p>沟通、信任、谈判、承担后果和处理例外仍高度人类化。</p></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="risks">
+        <div class="section-kicker">D5.12 · ORGANIZATIONAL RISKS</div>
+        <h2>高自动化组织也有新的脆弱性</h2>
+        <div class="risk-matrix">
+          <article><span>SKILL</span><h3>技能空心化</h3><p>人失去基础实践机会，出现“会审 AI 但不会自己做”的脆弱性。</p></article>
+          <article><span>CONCENTRATION</span><h3>关键人集中</h3><p>少数高级人员管理大量 Agent，错误决策的影响半径放大。</p></article>
+          <article><span>MEASUREMENT</span><h3>指标异化</h3><p>为了追求自动化率而把不适合的任务强行 Agent 化。</p></article>
+          <article><span>POWER</span><h3>权力重分配</h3><p>掌握模型、数据和控制面的人拥有更大组织权力。</p></article>
+          <article><span>VENDOR</span><h3>供应商锁定</h3><p>流程越来越依赖某个模型、云或 Agent 平台。</p></article>
+          <article><span>RESPONSIBILITY</span><h3>责任模糊</h3><p>“AI 做的”可能成为规避责任的借口。</p></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="check">
+        <div class="section-kicker">D5.13 · SELF CHECK</div>
+        <h2>本页自测</h2>
+        <details><summary>为什么应该分析任务，而不是直接分析岗位？</summary><p>因为同一岗位内部包含自动化难度完全不同的任务。AI 可能自动化其中一部分、增强另一部分，同时保留需要关系、责任和异常判断的部分。</p></details>
+        <details><summary>什么任务最适合 Agent 化？</summary><p>目标清晰、路径有不确定性、结果可验收、错误可恢复、系统接入完善，而且单位经济性成立的任务。</p></details>
+        <details><summary>为什么初级岗位自动化可能产生长期组织问题？</summary><p>很多高级能力来自早期基础工作积累。如果低级任务全部被 AI 吃掉，企业需要重新设计训练、复盘和人才成长路径。</p></details>
+        <details><summary>AI-native Organization 最关键的新管理能力是什么？</summary><p>目标定义、任务分解、Context、Eval、异常管理、权限控制和责任设计。</p></details>
+      </section>
+
+      <section class="chapter-section sources">
+        <div class="section-kicker">SOURCES</div>
+        <h2>本页基线来源</h2>
+        <ol>
+          <li><a href="https://www.ilo.org/publications/generative-ai-and-jobs-2025-update" target="_blank" rel="noreferrer">ILO · Generative AI and jobs: A 2025 update</a></li>
+          <li><a href="https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure" target="_blank" rel="noreferrer">ILO · Refined Global Index of Occupational Exposure</a></li>
+          <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/economy" target="_blank" rel="noreferrer">Stanford HAI · 2026 AI Index — Economy</a></li>
+          <li><a href="https://cdn.openai.com/business-guides-and-resources/a-business-leaders-guide-to-working-with-agents.pdf" target="_blank" rel="noreferrer">OpenAI · A business leader’s guide to working with agents</a></li>
+        </ol>
+      </section>
+    </article>
+  </main>
+</div>
+<script src="../assets/chapter.js"></script>
+<script src="../assets/organization.js"></script>
+</body>
+</html>
