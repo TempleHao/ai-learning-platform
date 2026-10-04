@@ -10,3 +10,8 @@
 .top-brand-link img{width:25px;height:25px;object-fit:contain;filter:drop-shadow(0 0 9px rgba(35,211,255,.30))}
 .top-brand-link span{font-size:10px;letter-spacing:.02em}
 .top-brand-link:hover span{color:#fff}
+
+/* Global fixed AI corner mark */
+body::after{content:"";position:fixed;top:14px;right:18px;width:34px;height:34px;background:url('/ai-learning-platform/assets/brand/favicon-64.png') center/contain no-repeat;z-index:999;pointer-events:none;filter:drop-shadow(0 0 12px rgba(35,211,255,.34));opacity:.96}
+.topbar,.chapter-top,.cases-top,.frontier-top,.labs-top,.progress-top,.review-top,.resources-top{padding-right:70px!important}
+@media(max-width:760px){body::after{width:28px;height:28px;top:18px;right:14px}.topbar,.chapter-top,.cases-top,.frontier-top,.labs-top,.progress-top,.review-top,.resources-top{padding-right:56px!important}}
