@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>第 8 章 · AI 风险与治理地图 | AI Learning OS</title><link rel="stylesheet" href="../assets/styles.css"/><link rel="stylesheet" href="../assets/chapter.css"/></head>
+<body data-chapter="08"><div class="chapter-shell">
+<aside class="chapter-toc" id="chapterToc"><a class="chapter-brand" href="../index.html"><span>AI</span><div><b>Learning OS</b><small>v0.7 · Risk Map</small></div></a>
+<div class="toc-label">第 8 章</div><nav>
+<a href="#start" class="active">8.0 风险不是一个问题</a><a href="#model">8.1 模型风险</a><a href="#system">8.2 Agent 系统风险</a><a href="#society">8.3 社会与就业</a><a href="#power">8.4 权力与集中</a><a href="#frontier">8.5 前沿系统性风险</a><a href="#governance">8.6 治理原则</a><a href="#lab">8.7 本章 Lab</a>
+</nav><div class="toc-progress"><span>本章状态</span><b id="chapterStatus">未完成</b><button id="completeChapter">标记本章完成</button></div></aside>
+<main class="chapter-main"><header class="chapter-top"><button class="icon-btn chapter-menu" id="chapterMenu">☰</button><a href="../index.html">← 返回总览</a><span>Stable + Frontier · 风险治理</span></header>
+<article class="chapter-article">
+<section class="chapter-hero" id="start"><div class="chapter-no">CHAPTER 08</div><h1>AI 风险与治理地图</h1>
+<p class="lead">AI 风险不是“支持 AI”与“反对 AI”的立场问题。专业做法是把风险拆层：<strong>模型会错、系统会越权、市场会重组、社会会受冲击，前沿能力还可能带来新的系统性风险。</strong></p>
+</section>
+
+<section class="chapter-section"><p>2026 AI Index 显示，记录在案的 AI 事故从 2024 年的 233 起升至 2025 年的 362 起，同时领先模型开发者对能力基准的报告明显多于负责任 AI 基准。能力增长和治理成熟度并不同步。</p></section>
+
+<section class="chapter-section" id="model"><div class="section-kicker">8.1 · MODEL RISK</div><h2>模型风险：错误、偏差、幻觉与不可预测性</h2>
+<div class="myth-list"><div><b>事实错误</b><p>生成合理但错误的信息。</p></div><div><b>偏差</b><p>训练数据和设计选择可能放大社会偏见。</p></div><div><b>鲁棒性</b><p>输入稍有变化，表现可能大幅波动。</p></div><div><b>可解释性</b><p>复杂模型内部决策难以完全解释。</p></div></div></section>
+
+<section class="chapter-section" id="system"><div class="section-kicker">8.2 · AGENT RISK</div><h2>Agent 风险：从“说错”升级为“做错”</h2>
+<p>当 AI 能发送邮件、改代码、访问数据库、支付或删除文件时，错误的影响半径显著扩大。</p>
+<div class="route-card"><div><b>越权</b><p>获得了任务不需要的权限。</p></div><div><b>连锁错误</b><p>一次错误成为下一步输入，持续放大。</p></div><div><b>不可逆操作</b><p>付款、删除、发布等动作可能难以回滚。</p></div></div></section>
+
+<section class="chapter-section" id="society"><div class="section-kicker">8.3 · SOCIETY</div><h2>就业风险不是“有没有工作”这么简单</h2>
+<p>更现实的问题包括：任务被重组、技能折旧、岗位入口减少、监督劳动增加、收入分配变化，以及不同职业和地区承受不均衡冲击。</p>
+<div class="business-lens"><b>重要区分</b><p>AI 可以同时提高总体生产率，并让某些群体短期受损。总量收益和分配问题必须分开讨论。</p></div></section>
+
+<section class="chapter-section" id="power"><div class="section-kicker">8.4 · CONCENTRATION</div><h2>权力风险：算力、模型、数据和分发可能高度集中</h2>
+<p>领先 AI 系统依赖昂贵训练、先进芯片、云和数据中心。基础设施高度集中可能让少数企业或国家获得更强议价权；另一方面，开放模型和低成本推理又可能推动能力扩散。</p></section>
+
+<section class="chapter-section" id="frontier"><div class="section-kicker">8.5 · FRONTIER RISK</div><h2>前沿系统性风险：当能力超过监督能力</h2>
+<p>最具争议、也最需要认真研究的风险包括：高级网络攻击自动化、生物安全滥用、军事自主系统、大规模欺骗，以及高自主系统在目标、权限和控制机制不足时造成严重后果。</p>
+<div class="callout warn"><b>学习原则</b><p>既不要把极端风险当成必然发生，也不要因为它们尚未发生就忽略。应研究能力证据、攻击路径、缓解措施和概率，而不是只做立场表达。</p></div></section>
+
+<section class="chapter-section" id="governance"><div class="section-kicker">8.6 · GOVERNANCE</div><h2>治理的目标不是让 AI 停止，而是让风险与能力匹配</h2>
+<div class="stage-grid">
+<article><b>Eval</b><p>部署前后持续测量能力与风险。</p></article>
+<article><b>Access Control</b><p>按风险给予最小权限。</p></article>
+<article><b>Human Oversight</b><p>高风险操作保留人工确认。</p></article>
+<article><b>Incident Response</b><p>可记录、暂停、回滚和追责。</p></article>
+</div>
+<p>好的治理不是只有法律。企业内部的 Eval、权限、日志、红队、安全流程和责任边界，同样是治理的一部分。</p></section>
+
+<section class="chapter-section" id="lab"><div class="section-kicker">8.7 · LAB 08</div><h2>给一个 AI 系统做风险登记表</h2>
+<p>列出至少 10 个风险，并给每个风险标注：发生概率、影响程度、检测方式、缓解措施、责任人和是否需要人工确认。</p>
+<label class="lab-check"><input type="checkbox" data-lab="08"><span>我已经为一个真实 AI 应用建立过风险登记表。</span></label></section>
+
+<section class="chapter-section sources"><div class="section-kicker">SOURCES</div><h2>本章前沿来源</h2><ol>
+<li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report" target="_blank" rel="noreferrer">Stanford HAI · 2026 AI Index</a></li>
+</ol></section>
+<div class="chapter-next"><span>NEXT · LAB SYSTEM</span><h2>理论骨架已经贯通，下一步把它变成真正的训练系统。</h2><p>项目将进入 Lab、测验、项目作品、复盘和前沿更新机制建设。</p></div>
+</article></main></div><script src="../assets/chapter.js"></script></body></html>
