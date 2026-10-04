@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="AI Learning OS Deep Dive：AI Coding、Vibe Coding 与 Agentic Software Engineering" />
+  <title>Deep Dive 06 · AI Coding 与 Vibe Coding | AI Learning OS</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/chapter.css" />
+  <link rel="stylesheet" href="../assets/ai-coding.css" />
+  <link rel="icon" type="image/png" sizes="64x64" href="/ai-learning-platform/assets/brand/favicon-64.png" />
+  <meta name="theme-color" content="#07111f" />
+</head>
+<body data-chapter="deep06">
+<div class="chapter-shell">
+  <aside class="chapter-toc" id="chapterToc">
+    <a class="chapter-brand" href="../index.html"><img class="brand-icon" src="/ai-learning-platform/assets/brand/favicon-64.png" alt="" aria-hidden="true" /><div><b>Learning OS</b><small>v0.14 · AI Coding</small></div></a>
+    <div class="toc-label">Deep Dive 06</div>
+    <nav>
+      <a href="#start" class="active">D6.0 软件开发范式变了什么</a>
+      <a href="#ladder">D6.1 AI Coding 成熟度阶梯</a>
+      <a href="#vibe">D6.2 Vibe Coding 为什么有效</a>
+      <a href="#failure">D6.3 为什么会越写越烂</a>
+      <a href="#context">D6.4 Agent-friendly Repo</a>
+      <a href="#spec">D6.5 Spec-first 工作流</a>
+      <a href="#tests">D6.6 测试是机器的验收语言</a>
+      <a href="#review">D6.7 Review 与人类角色</a>
+      <a href="#security">D6.8 权限与安全半径</a>
+      <a href="#parallel">D6.9 并行 Agent 与软件工厂</a>
+      <a href="#economics">D6.10 软件经济学变化</a>
+      <a href="#nondev">D6.11 非程序员 Builder</a>
+      <a href="#matrix">D6.12 交互式工程成熟度</a>
+      <a href="#lab">D6.13 Lab：把一个 Repo 改造成 Agent-ready</a>
+      <a href="#frontier">D6.14 2026 Frontier</a>
+      <a href="#check">D6.15 自测</a>
+    </nav>
+    <div class="toc-progress"><span>Deep Dive 状态</span><b id="chapterStatus">未完成</b><button id="completeChapter">标记本页完成</button></div>
+  </aside>
+
+  <main class="chapter-main">
+    <header class="chapter-top">
+      <button class="icon-btn chapter-menu" id="chapterMenu">☰</button>
+      <a href="../chapters/04-application-expert.html">← 返回 AI 运用层专家</a>
+      <span>Builder · Software Engineering · Agentic Coding</span>
+    </header>
+
+    <article class="chapter-article">
+      <section class="chapter-hero" id="start">
+        <div class="chapter-no">DEEP DIVE 06</div>
+        <h1>AI Coding、Vibe Coding 与软件工程新范式</h1>
+        <p class="lead">AI 编程真正改变的，不只是“写代码更快”。当 Agent 可以读仓库、改多个文件、运行命令、执行测试、修 Bug、提 PR，人的核心工作开始从<strong>亲手写每一行代码</strong>转向<strong>定义问题、提供上下文、设计验收、控制风险和审查结果</strong>。</p>
+        <div class="objective-grid">
+          <div><b>使用者</b><span>知道什么时候可以大胆 Vibe，什么时候必须收紧工程约束。</span></div>
+          <div><b>Builder</b><span>学会把仓库、测试、文档和任务拆解改造成适合 Agent 工作的环境。</span></div>
+          <div><b>商业判断</b><span>理解为什么软件供给成本下降，会同时创造新产品和摧毁旧壁垒。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section">
+        <div class="callout idea"><b>核心变化</b><p>过去 IDE 的中心是“文件”。Agentic Coding 的中心越来越像“任务”。用户描述目标，Agent 自己读取仓库、选择文件、运行工具并迭代，最终交付一个可审查的结果。</p></div>
+        <p>2026 年的主流 coding agent 已经明显超出补全代码的范畴。GitHub 的 Agent Mode 可以自行决定修改哪些文件并运行命令；OpenAI Codex 面向从 issue 到 tested PR 的完整工程任务；Claude Code 也强调 read → plan → act → observe 的 agent loop。软件工程正在从“人驱动每个步骤”转向“人监督任务闭环”。</p>
+      </section>
+
+      <section class="chapter-section" id="ladder">
+        <div class="section-kicker">D6.1 · MATURITY LADDER</div>
+        <h2>从代码补全到 AI-native Software Factory</h2>
+        <div class="coding-ladder">
+          <article><span>LEVEL 1</span><h3>Autocomplete</h3><p>AI 猜下一行 / 下一段代码。</p><b>人负责全部架构与执行。</b></article>
+          <article><span>LEVEL 2</span><h3>Chat Coding</h3><p>解释代码、生成函数、帮忙 Debug。</p><b>AI 是问答助手。</b></article>
+          <article><span>LEVEL 3</span><h3>Vibe Coding</h3><p>人描述想要的结果，AI 快速生成和修改产品。</p><b>适合探索与低风险原型。</b></article>
+          <article><span>LEVEL 4</span><h3>Agentic Coding</h3><p>Agent 读仓库、改文件、跑测试、执行终端并反复修正。</p><b>任务成为基本单位。</b></article>
+          <article><span>LEVEL 5</span><h3>Parallel Agents</h3><p>多个 Agent 并行处理 Bug、测试、迁移、功能和 Review。</p><b>人负责调度与合并。</b></article>
+          <article><span>LEVEL 6</span><h3>AI-native Factory</h3><p>Issue / 需求进入系统后，由 Agent 持续执行、验证、提 PR、监控和维护。</p><b>软件生产流程本身被重构。</b></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="vibe">
+        <div class="section-kicker">D6.2 · WHY VIBE CODING WORKS</div>
+        <h2>Vibe Coding 为什么突然变得可行？</h2>
+        <p>传统编程要求人把“想做什么”翻译成精确语法。大模型降低了这层翻译成本：人可以先表达目标、界面、业务逻辑和错误现象，再让模型把意图转成代码。</p>
+        <div class="mechanism-grid">
+          <article><span>01</span><h3>自然语言变成接口</h3><p>需求不必先被完全翻译成代码语法，人可以直接表达业务意图。</p></article>
+          <article><span>02</span><h3>代码先验极强</h3><p>模型训练中见过大量库、框架、模式和常见错误，可以快速组合成熟结构。</p></article>
+          <article><span>03</span><h3>反馈周期缩短</h3><p>“改一下 → 跑一下 → 看结果 → 再改”可以在分钟级反复进行。</p></article>
+          <article><span>04</span><h3>探索成本下降</h3><p>以前不值得专门排期的小工具、内部应用和一次性自动化，现在可能值得做。</p></article>
+        </div>
+        <div class="business-lens"><b>最深的商业变化</b><p>软件开发成本下降，不只是让已有软件公司利润更高，也会让一大批过去“不值得开发”的长尾软件变得经济可行。</p></div>
+      </section>
+
+      <section class="chapter-section" id="failure">
+        <div class="section-kicker">D6.3 · WHY VIBE CODING BREAKS</div>
+        <h2>Vibe Coding 最大的危险：局部看起来都对，整体越来越不可控</h2>
+        <p>Agent 非常擅长在局部上下文里完成一个具体改动，但软件系统会积累状态、依赖、约束和历史决策。如果每次只说“这里再改一下”，模型可能不断叠加补丁，最终形成隐藏耦合和不可预测行为。</p>
+        <div class="failure-grid">
+          <div><b>需求漂移</b><span>每轮 Prompt 都改变一点目标，却没有统一 Spec。</span></div>
+          <div><b>上下文丢失</b><span>Agent 不知道几周前为什么做了某个架构选择。</span></div>
+          <div><b>重复实现</b><span>没找到已有模块，又写一套类似逻辑。</span></div>
+          <div><b>隐性回归</b><span>当前功能好了，却悄悄破坏其他路径。</span></div>
+          <div><b>安全债务</b><span>为了“先跑起来”绕过权限、校验、密钥或输入安全。</span></div>
+          <div><b>不可解释技术债</b><span>用户不知道代码为何这样写，也不知道哪里不能动。</span></div>
+        </div>
+        <div class="definition-box"><span>成熟 Vibe Coding 的分水岭</span><strong>不是你会不会 Prompt，而是你的系统有没有“机器可以读取的工程约束”。</strong></div>
+      </section>
+
+      <section class="chapter-section" id="context">
+        <div class="section-kicker">D6.4 · AGENT-FRIENDLY REPOSITORY</div>
+        <h2>未来的好仓库，不只要让人看懂，也要让 Agent 看懂</h2>
+        <p>Agent 每次开始工作都需要重新建立世界模型。仓库越清晰，它花在“猜这项目到底怎么回事”上的 Token 和错误就越少。</p>
+        <div class="repo-stack">
+          <div><span>MISSION</span><b>README / 产品目标</b><p>这个项目解决什么问题，不解决什么问题。</p></div>
+          <div><span>RULES</span><b>AGENTS.md / CLAUDE.md / Instructions</b><p>代码规范、禁止事项、运行方式、架构原则。</p></div>
+          <div><span>MAP</span><b>架构图 / 目录说明</b><p>模块边界、数据流、关键依赖。</p></div>
+          <div><span>VERIFY</span><b>Tests / Lint / Typecheck / Eval</b><p>什么叫“改对了”，最好由机器自己验证。</p></div>
+          <div><span>STATE</span><b>Issues / ADR / Changelog</b><p>为什么这样设计、当前欠账、历史决策。</p></div>
+        </div>
+        <p>这类文档过去常被视为“工程洁癖”，在 Agent 时代却直接影响产能：它们其实是在给 AI 构建长期 Context。</p>
+      </section>
+
+      <section class="chapter-section" id="spec">
+        <div class="section-kicker">D6.5 · SPEC-FIRST</div>
+        <h2>复杂任务不要从“开始写代码”开始，要从“验收标准”开始</h2>
+        <div class="spec-flow">
+          <div><b>① Goal</b><span>用户最终想得到什么？</span></div><i>→</i>
+          <div><b>② Constraints</b><span>不能破坏什么？权限和技术限制是什么？</span></div><i>→</i>
+          <div><b>③ Acceptance</b><span>怎样证明任务完成？</span></div><i>→</i>
+          <div><b>④ Plan</b><span>哪些文件 / 模块需要变化？</span></div><i>→</i>
+          <div><b>⑤ Execute</b><span>Agent 修改和验证。</span></div>
+        </div>
+        <p>一个成熟任务描述应该尽量包含：现状、目标、非目标、边界条件、示例、验收标准、允许修改范围。这样 Agent 面对的是一个工程问题，而不是猜谜。</p>
+        <div class="callout frontier-note"><b>Prompt 不是越长越好</b><p>关键是把高价值 Context 放到正确位置。稳定规则进仓库说明，单次任务进 Issue / Spec，动态状态通过工具读取，不要每次把整个世界塞进 Prompt。</p></div>
+      </section>
+
+      <section class="chapter-section" id="tests">
+        <div class="section-kicker">D6.6 · TESTS AS MACHINE LANGUAGE</div>
+        <h2>在 Agent 时代，测试不只是质量工具，也是“机器验收语言”</h2>
+        <p>人可以看界面说“差不多对了”，Agent 需要更明确的反馈。如果测试、类型检查、Lint、截图比较、性能基准或业务 Eval 可以自动运行，Agent 就能形成闭环：</p>
+        <div class="agent-loop">
+          <div><b>实现</b><span>修改代码</span></div><i>→</i>
+          <div><b>运行验证</b><span>Tests / Build / Eval</span></div><i>→</i>
+          <div><b>读取失败</b><span>错误日志</span></div><i>→</i>
+          <div><b>修正</b><span>再次修改</span></div><i>↺</i>
+        </div>
+        <p>OpenAI 在介绍其 agent orchestration 实践时特别强调了 agent-friendly repository、自动测试和 guardrails。原因很简单：如果系统自己不知道“成功是什么”，Agent 只能不断凭感觉写代码。</p>
+      </section>
+
+      <section class="chapter-section" id="review">
+        <div class="section-kicker">D6.7 · HUMAN REVIEW</div>
+        <h2>AI 写更多代码后，人类工程师的价值不会等比例下降</h2>
+        <p>Anthropic 对约 40 万次 Claude Code 会话的研究发现，一个有意思的分工模式是：人类通常做更多“做什么”的规划决策，Agent 做更多“怎么做”的执行决策；而领域经验更高的人，往往能让 Agent 每次指令完成更多工作。</p>
+        <div class="compare-grid">
+          <article><span>AI 更适合</span><h3>执行密集工作</h3><ul><li>搜代码</li><li>机械迁移</li><li>生成测试</li><li>重构</li><li>修重复 Bug</li><li>文档同步</li></ul></article>
+          <article><span>人更关键</span><h3>高杠杆判断</h3><ul><li>需求取舍</li><li>架构边界</li><li>安全 / 风险</li><li>异常判断</li><li>产品体验</li><li>最终责任</li></ul></article>
+        </div>
+        <div class="business-lens"><b>专家不会失去价值，而是杠杆变大</b><p>当执行变便宜，能够定义正确问题、识别坏方案和设计验证机制的人，可能控制更多软件产出。</p></div>
+      </section>
+
+      <section class="chapter-section" id="security">
+        <div class="section-kicker">D6.8 · BLAST RADIUS</div>
+        <h2>Agent 越强，权限设计越重要</h2>
+        <p>一个只能给代码建议的 AI，最坏通常只是建议错；一个能运行 Shell、访问云资源、修改数据库和发布生产环境的 Agent，错误半径完全不同。</p>
+        <div class="risk-ladder">
+          <div><span>LOW</span><b>只读仓库</b><p>解释、搜索、Review。</p></div>
+          <div><span>MEDIUM</span><b>可修改本地文件</b><p>代码编辑、测试、构建。</p></div>
+          <div><span>HIGH</span><b>可访问外部服务</b><p>GitHub、数据库、云、内部 API。</p></div>
+          <div><span>CRITICAL</span><b>可写生产环境</b><p>部署、删除、付款、敏感数据。</p></div>
+        </div>
+        <p>Anthropic 2026 年关于 agent containment 的工程文章直接把问题描述成“如何限制 blast radius”。成熟系统不是不给 Agent 权限，而是让权限按任务最小化、可审批、可追踪、可回滚。</p>
+      </section>
+
+      <section class="chapter-section" id="parallel">
+        <div class="section-kicker">D6.9 · PARALLEL AGENTS</div>
+        <h2>真正的下一步不是“一个 Agent 更聪明”，而是多个任务可以并行</h2>
+        <p>传统开发的很多瓶颈来自人类注意力串行：一个人同一时刻只能深度处理少量问题。Coding Agent 可以在独立 worktree / environment 中并行工作。</p>
+        <div class="parallel-board">
+          <div><span>AGENT A</span><b>修支付 Bug</b><i>Running tests…</i></div>
+          <div><span>AGENT B</span><b>补 API 测试</b><i>PR ready</i></div>
+          <div><span>AGENT C</span><b>升级依赖</b><i>Resolving conflict…</i></div>
+          <div><span>AGENT D</span><b>做代码 Review</b><i>3 risks found</i></div>
+        </div>
+        <p>这会把人的瓶颈从“写代码速度”转移到：任务拆解、上下文准备、Review 带宽、测试基础设施和合并冲突。</p>
+      </section>
+
+      <section class="chapter-section" id="economics">
+        <div class="section-kicker">D6.10 · SOFTWARE ECONOMICS</div>
+        <h2>当软件供给成本下降，会发生什么？</h2>
+        <div class="mechanism-grid">
+          <article><span>01</span><h3>长尾软件爆发</h3><p>公司内部几十个人才会用的小工具，也可能值得专门开发。</p></article>
+          <article><span>02</span><h3>原型 → 产品更快</h3><p>创业者验证需求所需的工程资本下降。</p></article>
+          <article><span>03</span><h3>定制化增加</h3><p>“买通用 SaaS 并忍受不合适”与“自己做一个”之间的成本差缩小。</p></article>
+          <article><span>04</span><h3>维护需求暴涨</h3><p>软件数量越多，安全、测试、升级、可观测和技术债治理越重要。</p></article>
+          <article><span>05</span><h3>代码本身贬值</h3><p>“有一堆代码”越来越不是壁垒，用户、数据、工作流和分发更重要。</p></article>
+          <article><span>06</span><h3>工程管理成为杠杆</h3><p>能让多个 Agent 安全并行的人，产出边界可能明显扩大。</p></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="nondev">
+        <div class="section-kicker">D6.11 · NON-DEVELOPER BUILDERS</div>
+        <h2>非程序员真正该学什么？不是背语法，而是获得“软件系统感”</h2>
+        <p>AI 降低了语法门槛，但没有消灭系统思维。对非程序员 Builder，最值得学的不是先背完整语言，而是下面这些概念：</p>
+        <div class="builder-skills">
+          <div><b>文件与目录</b><span>知道代码大致放在哪里。</span></div>
+          <div><b>前端 / 后端 / 数据库</b><span>知道一条请求经过哪些层。</span></div>
+          <div><b>API</b><span>系统之间如何交换数据和动作。</span></div>
+          <div><b>状态</b><span>哪些信息只在当前页面，哪些会持久保存。</span></div>
+          <div><b>权限</b><span>谁能读、谁能写、哪些密钥不能暴露。</span></div>
+          <div><b>测试</b><span>如何证明“改完没有把别的东西弄坏”。</span></div>
+          <div><b>日志</b><span>出错时去哪找证据。</span></div>
+          <div><b>版本控制</b><span>如何回滚、比较和审查改动。</span></div>
+        </div>
+        <div class="definition-box"><span>目标</span><strong>你不需要亲手写完所有代码，但你必须逐渐拥有“看得懂系统、能判断风险、能验收结果”的能力。</strong></div>
+      </section>
+
+      <section class="chapter-section" id="matrix">
+        <div class="section-kicker">D6.12 · INTERACTIVE MATURITY SCORE</div>
+        <h2>这个项目适合“放手给 Agent”到什么程度？</h2>
+        <p>调整下面六项。分数越高，不代表项目越“高级”，而代表它越适合让 Coding Agent 承担长任务。</p>
+        <div class="coding-score-card">
+          <div class="coding-score-inputs">
+            <label>需求清晰度 <input type="range" min="1" max="5" value="3" data-coding-score="spec"><b>3</b></label>
+            <label>自动测试覆盖 <input type="range" min="1" max="5" value="2" data-coding-score="tests"><b>2</b></label>
+            <label>仓库文档 / Context <input type="range" min="1" max="5" value="2" data-coding-score="context"><b>2</b></label>
+            <label>模块边界清晰 <input type="range" min="1" max="5" value="3" data-coding-score="architecture"><b>3</b></label>
+            <label>错误可回滚性 <input type="range" min="1" max="5" value="4" data-coding-score="reversible"><b>4</b></label>
+            <label>生产权限风险 <input type="range" min="1" max="5" value="2" data-coding-score="risk"><b>2</b></label>
+          </div>
+          <div class="coding-score-output">
+            <span>AGENT READINESS</span>
+            <strong id="codingMode">Guided Vibe Coding</strong>
+            <b id="codingScore">50 / 100</b>
+            <p id="codingReason"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="lab">
+        <div class="section-kicker">D6.13 · LAB 08</div>
+        <h2>把一个现有 Repo 改造成 Agent-ready</h2>
+        <p>不要新做一个 Demo。选一个你已经在用的项目，完成下面这组改造：</p>
+        <div class="lab-checklist">
+          <label><input type="checkbox" data-coding-lab="1"><span>写一页项目 Mission：解决什么问题、主要用户、非目标。</span></label>
+          <label><input type="checkbox" data-coding-lab="2"><span>增加 AGENTS.md / Instructions：启动命令、目录结构、代码规范、禁止事项。</span></label>
+          <label><input type="checkbox" data-coding-lab="3"><span>画出最简架构：UI → API → 数据 → 外部系统。</span></label>
+          <label><input type="checkbox" data-coding-lab="4"><span>为一个核心流程补至少 3 个自动化测试 / Eval。</span></label>
+          <label><input type="checkbox" data-coding-lab="5"><span>写一个包含 Goal / Constraints / Acceptance 的真实 Issue。</span></label>
+          <label><input type="checkbox" data-coding-lab="6"><span>让 Coding Agent 完成该 Issue，并只通过测试 + Diff + 实际体验验收。</span></label>
+          <label><input type="checkbox" data-coding-lab="7"><span>复盘：Agent 哪里猜错？下次应该把什么变成仓库级 Context？</span></label>
+        </div>
+        <div class="lab-progress"><span>Lab 08</span><b id="codingLabProgress">0 / 7</b><i><em id="codingLabBar"></em></i></div>
+      </section>
+
+      <section class="chapter-section frontier-section" id="frontier">
+        <div class="section-kicker">D6.14 · FRONTIER · 2026</div>
+        <h2>2026：Coding Agent 已进入“工程执行者”阶段</h2>
+        <div class="frontier-grid">
+          <article><strong>5M+</strong><span>Codex weekly users（2026 年 6 月披露）</span><small>AI coding 已从开发者小众工具进入大规模使用。</small></article>
+          <article><strong>≈400k</strong><span>Claude Code sessions 被用于人机协作研究</span><small>数据显示领域经验仍能显著提高 Agent 的杠杆。</small></article>
+          <article><strong>70%+</strong><span>SWE-bench Verified 顶级 Agent / 模型已解决的大致区间</span><small>Benchmark 已很强，但真实仓库仍受 Context、工具、测试和权限影响。</small></article>
+        </div>
+        <p>因此，真正的竞争焦点正在从“模型会不会写代码”迁移到 <strong>Harness、Context、Testing、Parallelism、Review 和 Governance</strong>。模型能力只是软件生产系统的一层。</p>
+      </section>
+
+      <section class="chapter-section" id="check">
+        <div class="section-kicker">D6.15 · SELF CHECK</div>
+        <h2>本页自测</h2>
+        <details><summary>为什么 Vibe Coding 特别适合原型，却容易在长期项目中失控？</summary><p>原型更关注快速验证，错误可逆且系统较小；长期项目会积累隐性约束、依赖和历史决策。如果没有 Spec、测试、架构和仓库级 Context，Agent 容易不断叠加局部正确但整体混乱的改动。</p></details>
+        <details><summary>为什么测试在 Coding Agent 时代比以前更重要？</summary><p>测试把“是否完成”变成机器可读取的反馈，让 Agent 能自动运行—失败—修正，形成闭环，而不是依赖人每次手工检查。</p></details>
+        <details><summary>非程序员使用 AI 编程，最需要补的能力是什么？</summary><p>不是先背大量语法，而是系统感：前后端、数据、API、状态、权限、版本控制、测试、日志和验收。</p></details>
+        <details><summary>并行 Agent 最可能把新的瓶颈推到哪里？</summary><p>任务拆解、Context 准备、测试基础设施、Review 带宽、冲突合并、权限和成本治理。</p></details>
+      </section>
+
+      <section class="chapter-section sources">
+        <div class="section-kicker">SOURCES</div>
+        <h2>本页来源</h2>
+        <ol>
+          <li><a href="https://openai.com/index/introducing-the-codex-app/" target="_blank" rel="noreferrer">OpenAI · Introducing the Codex app (2026)</a></li>
+          <li><a href="https://openai.com/zh-Hans-CN/index/codex-for-almost-everything/" target="_blank" rel="noreferrer">OpenAI · Codex：全能型助手 (2026)</a></li>
+          <li><a href="https://openai.com/index/open-source-codex-orchestration-symphony/" target="_blank" rel="noreferrer">OpenAI · Symphony / Codex orchestration</a></li>
+          <li><a href="https://openai.com/index/running-codex-safely/" target="_blank" rel="noreferrer">OpenAI · Running Codex safely</a></li>
+          <li><a href="https://www.anthropic.com/webinars/claude-code-foundations" target="_blank" rel="noreferrer">Anthropic · Claude Code: Foundations</a></li>
+          <li><a href="https://www.anthropic.com/research/claude-code-expertise" target="_blank" rel="noreferrer">Anthropic · Agentic coding and persistent returns to expertise</a></li>
+          <li><a href="https://www.anthropic.com/engineering/how-we-contain-claude" target="_blank" rel="noreferrer">Anthropic · How we contain Claude across products</a></li>
+          <li><a href="https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/use-copilot-agents/use-agent-mode" target="_blank" rel="noreferrer">GitHub Docs · Copilot Agent Mode</a></li>
+          <li><a href="https://www.swebench.com/verified.html" target="_blank" rel="noreferrer">SWE-bench Verified</a></li>
+        </ol>
+      </section>
+
+      <div class="chapter-next">
+        <span>NEXT · KNOWLEDGE SYSTEMS</span>
+        <h2>下一步：RAG、企业知识库、Memory 与“让 AI 知道你的世界”。</h2>
+        <p>AI Coding 解决“怎么让 AI 帮你造系统”；下一块会解决“怎么让 AI 获得可信、实时、组织私有的知识”。</p>
+      </div>
+    </article>
+  </main>
+</div>
+<script src="../assets/chapter.js"></script>
+<script src="../assets/ai-coding.js"></script>
+</body>
+</html>
