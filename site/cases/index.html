@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="AI Learning OS 应用案例库" />
+  <title>AI 应用案例库 | AI Learning OS</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/cases.css" />
+</head>
+<body>
+<main class="cases-page">
+  <header class="cases-top"><a href="../index.html">← 返回 AI Learning OS</a><span>CASE LIBRARY · v0.9</span></header>
+  <section class="cases-hero">
+    <span>FROM CAPABILITY TO VALUE</span>
+    <h1>AI 应用案例库</h1>
+    <p>不要只研究“谁赢了”。每个案例都用同一张表拆：<strong>能力跃迁 → 应用形态 → 价值机制 → 壁垒 → 限制 / 风险。</strong></p>
+    <div class="cases-stats"><div><strong>20</strong><span>首批案例</span></div><div><strong>1970s–2026</strong><span>时间跨度</span></div><div><strong>Success + Limits</strong><span>不做赢家偏差</span></div></div>
+  </section>
+
+  <section class="cases-section">
+    <div class="cases-head"><div><span>FILTER</span><h2>按能力与结果看案例</h2></div></div>
+    <div class="case-filters">
+      <button class="active" data-case-filter="all">全部</button>
+      <button data-case-filter="prediction">预测 / 推荐</button>
+      <button data-case-filter="perception">感知</button>
+      <button data-case-filter="generation">生成 / 通用模型</button>
+      <button data-case-filter="action">Agent / Physical</button>
+      <button data-case-filter="science">Science / Health</button>
+      <button data-case-filter="lesson">受限 / 失败教训</button>
+    </div>
+
+    <div class="case-grid">
+      <article class="case-card" data-case="lesson">
+        <div class="case-meta"><b>1970s</b><span>Expert System</span></div><h3>MYCIN</h3>
+        <p class="case-thesis">规则系统证明：狭窄领域里，机器可以复制相当复杂的专家推理；但也暴露了知识工程和部署责任的天花板。</p>
+        <dl><dt>能力</dt><dd>规则推理 / 解释</dd><dt>价值</dt><dd>医疗专家决策支持</dd><dt>限制</dt><dd>约 450 条规则、领域窄；知识维护与临床责任阻碍实际部署</dd></dl>
+        <a href="https://i.stanford.edu/pub/cstr/reports/cs/tr/82/926/CS-TR-82-926.pdf" target="_blank" rel="noreferrer">Stanford source ↗</a>
+      </article>
+
+      <article class="case-card" data-case="lesson">
+        <div class="case-meta"><b>1997</b><span>Search</span></div><h3>IBM Deep Blue</h3>
+        <p class="case-thesis">超级计算 + 专用搜索在封闭规则环境里击败世界冠军，但它不是通用智能。</p>
+        <dl><dt>能力</dt><dd>大规模搜索 / 评估函数</dd><dt>价值</dt><dd>计算与 AI 的公共认知拐点</dd><dt>限制</dt><dd>能力高度局限于棋类问题</dd></dl>
+        <a href="https://www.ibm.com/history/deep-blue" target="_blank" rel="noreferrer">IBM ↗</a>
+      </article>
+
+      <article class="case-card" data-case="prediction">
+        <div class="case-meta"><b>2003</b><span>Recommendation</span></div><h3>Amazon Item-to-Item 推荐</h3>
+        <p class="case-thesis">AI 巨大经济价值可以来自一个极窄问题：在海量商品里更准确地匹配“你可能还会买什么”。</p>
+        <dl><dt>能力</dt><dd>协同过滤 / 实时个性化</dd><dt>价值</dt><dd>降低商品搜索成本、提升交叉销售</dd><dt>壁垒</dt><dd>行为数据 + 电商分发 + 实时反馈闭环</dd></dl>
+        <a href="https://ieeexplore.ieee.org/document/1167344" target="_blank" rel="noreferrer">IEEE paper ↗</a>
+      </article>
+
+      <article class="case-card" data-case="prediction">
+        <div class="case-meta"><b>2000s–</b><span>Recommendation</span></div><h3>Netflix 个性化推荐</h3>
+        <p class="case-thesis">推荐不只是“猜你喜欢”：行、标题排序、位置等整个界面都可成为预测系统。</p>
+        <dl><dt>能力</dt><dd>偏好预测 / 排序</dd><dt>价值</dt><dd>降低选择成本、提高观看与留存</dd><dt>壁垒</dt><dd>大规模消费行为反馈</dd></dl>
+        <a href="https://help.netflix.com/en/node/100639/" target="_blank" rel="noreferrer">Netflix ↗</a>
+      </article>
+
+      <article class="case-card" data-case="perception">
+        <div class="case-meta"><b>2012</b><span>Vision</span></div><h3>AlexNet</h3>
+        <p class="case-thesis">GPU、数据和深度卷积网络跨过阈值，机器视觉开始从研究突破快速进入产业。</p>
+        <dl><dt>能力</dt><dd>图像识别 / 表示学习</dd><dt>价值</dt><dd>视觉感知自动化</dd><dt>意义</dt><dd>深度学习产业拐点</dd></dl>
+        <a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks" target="_blank" rel="noreferrer">NeurIPS paper ↗</a>
+      </article>
+
+      <article class="case-card" data-case="prediction">
+        <div class="case-meta"><b>2016</b><span>Language</span></div><h3>Google Neural Machine Translation</h3>
+        <p class="case-thesis">端到端神经网络减少传统翻译流水线的人工作件，让语言转换成为大规模神经模型问题。</p>
+        <dl><dt>能力</dt><dd>序列建模 / 翻译</dd><dt>价值</dt><dd>跨语言沟通成本下降</dd><dt>限制</dt><dd>训练与推理计算昂贵，长尾语言质量不均</dd></dl>
+        <a href="https://research.google/pubs/googles-neural-machine-translation-system-bridging-the-gap-between-human-and-machine-translation/" target="_blank" rel="noreferrer">Google Research ↗</a>
+      </article>
+
+      <article class="case-card" data-case="action">
+        <div class="case-meta"><b>2016</b><span>RL + Search</span></div><h3>AlphaGo</h3>
+        <p class="case-thesis">神经网络、强化学习与树搜索的组合击败顶尖棋手，是“混合技术路线”价值的经典案例。</p>
+        <dl><dt>能力</dt><dd>策略 / 搜索 / 自我对弈</dd><dt>价值</dt><dd>强化学习与规划的可信度跃迁</dd><dt>限制</dt><dd>封闭规则环境，不等于开放世界 Agent</dd></dl>
+        <a href="https://www.nature.com/articles/nature16961" target="_blank" rel="noreferrer">Nature ↗</a>
+      </article>
+
+      <article class="case-card" data-case="lesson">
+        <div class="case-meta"><b>2016</b><span>Social Bot</span></div><h3>Microsoft Tay</h3>
+        <p class="case-thesis">开放社交环境里的恶意输入迅速改变系统行为，说明“能聊天”远不等于“能安全上线”。</p>
+        <dl><dt>能力</dt><dd>开放式对话</dd><dt>教训</dt><dd>安全、滥用、在线反馈</dd><dt>价值</dt><dd>成为产品安全设计的典型反例</dd></dl>
+        <a href="https://news.microsoft.com/speeches/satya-nadella-and-terry-myerson-build-2016/" target="_blank" rel="noreferrer">Microsoft ↗</a>
+      </article>
+
+      <article class="case-card" data-case="science">
+        <div class="case-meta"><b>2018</b><span>Medical AI</span></div><h3>IDx-DR</h3>
+        <p class="case-thesis">AI 从“医生的辅助工具”向某些受监管的自主诊断设备迈进，说明价值高的场景需要同时跨过监管与责任阈值。</p>
+        <dl><dt>能力</dt><dd>视网膜图像检测</dd><dt>价值</dt><dd>扩大筛查能力</dd><dt>壁垒</dt><dd>临床验证、监管授权、责任体系</dd></dl>
+        <a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfPMN/denovo.cfm?ID=DEN180001" target="_blank" rel="noreferrer">FDA ↗</a>
+      </article>
+
+      <article class="case-card" data-case="generation">
+        <div class="case-meta"><b>2020</b><span>Foundation Model</span></div><h3>GPT-3</h3>
+        <p class="case-thesis">同一语言模型通过自然语言说明和 few-shot 示例完成多任务，软件接口开始从 API 参数向自然语言迁移。</p>
+        <dl><dt>能力</dt><dd>In-context / Few-shot 泛化</dd><dt>价值</dt><dd>降低新任务定制成本</dd><dt>限制</dt><dd>事实性、推理和训练语料偏差</dd></dl>
+        <a href="https://arxiv.org/abs/2005.14165" target="_blank" rel="noreferrer">Paper ↗</a>
+      </article>
+
+      <article class="case-card" data-case="science">
+        <div class="case-meta"><b>2021</b><span>AI for Science</span></div><h3>AlphaFold2</h3>
+        <p class="case-thesis">AI 不只是替代办公室任务，也可以压缩科学研究中的昂贵瓶颈：蛋白质结构预测。</p>
+        <dl><dt>能力</dt><dd>结构预测 / 科学建模</dd><dt>价值</dt><dd>加速结构生物学研究</dd><dt>壁垒</dt><dd>数据、科学验证、专业知识</dd></dl>
+        <a href="https://www.nature.com/articles/s41586-021-03819-2" target="_blank" rel="noreferrer">Nature ↗</a>
+      </article>
+
+      <article class="case-card" data-case="generation">
+        <div class="case-meta"><b>2021</b><span>Copilot</span></div><h3>GitHub Copilot</h3>
+        <p class="case-thesis">生成模型真正嵌入专业工作界面：AI 不取代 IDE，而是在 IDE 里放大程序员产出。</p>
+        <dl><dt>能力</dt><dd>代码生成 / Context</dd><dt>价值</dt><dd>专家杠杆</dd><dt>证据</dt><dd>GitHub 一项实验中完成指定任务平均快 55%</dd></dl>
+        <a href="https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/" target="_blank" rel="noreferrer">GitHub research ↗</a>
+      </article>
+
+      <article class="case-card" data-case="generation">
+        <div class="case-meta"><b>2022</b><span>Image Generation</span></div><h3>DALL·E 2</h3>
+        <p class="case-thesis">自然语言直接成为视觉创作接口，图片生产从软件技能问题转向“意图表达 + 模型生成 + 编辑”。</p>
+        <dl><dt>能力</dt><dd>Text-to-image / 编辑</dd><dt>价值</dt><dd>降低视觉内容生产成本</dd><dt>风险</dt><dd>版权、真实性、创作者分工</dd></dl>
+        <a href="https://openai.com/index/dall-e-2/" target="_blank" rel="noreferrer">OpenAI ↗</a>
+      </article>
+
+      <article class="case-card" data-case="generation">
+        <div class="case-meta"><b>2022</b><span>Open Model</span></div><h3>Stable Diffusion</h3>
+        <p class="case-thesis">可下载权重把生成式图像能力扩散到开发者生态，展示“开放模型”如何重塑创新与治理边界。</p>
+        <dl><dt>能力</dt><dd>Text-to-image</dd><dt>价值</dt><dd>本地部署、二次开发、创作生态</dd><dt>风险</dt><dd>安全控制更分散</dd></dl>
+        <a href="https://stability.ai/news-updates/stable-diffusion-announcement" target="_blank" rel="noreferrer">Stability AI ↗</a>
+      </article>
+
+      <article class="case-card" data-case="generation">
+        <div class="case-meta"><b>2022</b><span>Consumer GenAI</span></div><h3>ChatGPT</h3>
+        <p class="case-thesis">技术并非只靠 Benchmark 扩散；“对话界面 + 指令跟随”极大降低普通人的使用门槛。</p>
+        <dl><dt>能力</dt><dd>对话 / 指令 / 多任务</dd><dt>价值</dt><dd>通用认知工具的大众分发</dd><dt>风险</dt><dd>幻觉、过度信任、隐私</dd></dl>
+        <a href="https://openai.com/index/chatgpt/" target="_blank" rel="noreferrer">OpenAI ↗</a>
+      </article>
+
+      <article class="case-card" data-case="action">
+        <div class="case-meta"><b>2012–</b><span>Industrial Robotics</span></div><h3>Amazon Robotics</h3>
+        <p class="case-thesis">机器人商业化往往不是“人形机器人替代所有人”，而是针对仓储中的搬运、排序、取放等具体瓶颈逐步扩张。</p>
+        <dl><dt>能力</dt><dd>导航 / 搬运 / 视觉 / 调度</dd><dt>价值</dt><dd>履约速度、劳动强度、仓储效率</dd><dt>规模</dt><dd>Amazon 2026 称已部署超过 100 万台机器人</dd></dl>
+        <a href="https://www.aboutamazon.com/news/operations/amazon-robotics-robots-fulfillment-center" target="_blank" rel="noreferrer">Amazon ↗</a>
+      </article>
+
+      <article class="case-card" data-case="science">
+        <div class="case-meta"><b>2023</b><span>Weather</span></div><h3>GraphCast</h3>
+        <p class="case-thesis">AI for Science 的另一条路线：机器学习不仅生成内容，也能替代部分昂贵数值模拟流程。</p>
+        <dl><dt>能力</dt><dd>全球天气预测</dd><dt>价值</dt><dd>速度、计算效率、预测精度</dd><dt>限制</dt><dd>科学系统仍需验证、校准与传统基础设施</dd></dl>
+        <a href="https://deepmind.google/research/publications/22598/" target="_blank" rel="noreferrer">Google DeepMind ↗</a>
+      </article>
+
+      <article class="case-card" data-case="action">
+        <div class="case-meta"><b>2024–2026</b><span>Autonomous Driving</span></div><h3>Waymo 商业无人驾驶</h3>
+        <p class="case-thesis">自动驾驶展示 Physical AI 的真正门槛：技术之外，还需要安全证据、运营、车队、地图、监管与城市级扩张。</p>
+        <dl><dt>能力</dt><dd>感知 / 规划 / 控制</dd><dt>价值</dt><dd>交通自动化</dd><dt>规模</dt><dd>2025 已达到数十万级周自动驾驶行程</dd></dl>
+        <a href="https://waymo.com/blog/2025/07/bringing-waymo-to-more-people-sooner/" target="_blank" rel="noreferrer">Waymo ↗</a>
+      </article>
+
+      <article class="case-card" data-case="lesson">
+        <div class="case-meta"><b>2025</b><span>Computer Agent</span></div><h3>OSWorld：Agent 跨过演示期，但还没跨过可靠性阈值</h3>
+        <p class="case-thesis">电脑 Agent 在结构化基准上大幅进步，但约三分之一任务仍会失败；“能操作”与“可托管”之间还有巨大距离。</p>
+        <dl><dt>能力</dt><dd>Computer Use / Agent</dd><dt>进展</dt><dd>2025 成功率约 66.3%</dd><dt>限制</dt><dd>长链错误、UI 变化、恢复能力</dd></dl>
+        <a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance" target="_blank" rel="noreferrer">Stanford AI Index ↗</a>
+      </article>
+
+      <article class="case-card" data-case="lesson">
+        <div class="case-meta"><b>2025</b><span>Household Robotics</span></div><h3>家庭机器人：真实世界仍是最难的考场</h3>
+        <p class="case-thesis">模拟环境中的机器人表现可以很高，但 Stanford AI Index 汇总的真实家庭任务成功率仅约 12%。</p>
+        <dl><dt>能力</dt><dd>开放环境操作</dd><dt>机会</dt><dd>家庭 / 护理 / 服务机器人</dd><dt>限制</dt><dd>长尾物理环境、安全、硬件成本与可靠性</dd></dl>
+        <a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance" target="_blank" rel="noreferrer">Stanford AI Index ↗</a>
+      </article>
+    </div>
+  </section>
+  <footer>AI Learning OS · Case Library v0.1 · 案例会持续扩展和纠错。</footer>
+</main>
+<script src="../assets/cases.js"></script>
+</body>
+</html>
