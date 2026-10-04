@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lab Track | AI Learning OS</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/labs.css" />
+</head>
+<body>
+<main class="labs-page">
+  <header class="labs-top"><a href="../index.html">← 返回 AI Learning OS</a><span>BUILD TRACK · v0.9</span></header>
+  <section class="labs-hero">
+    <span>LEARN BY BUILDING</span>
+    <h1>AI Lab Track</h1>
+    <p>从“会使用 ChatGPT”到真正能设计 AI 系统。每个 Lab 必须留下可验证产物，并记录失败点。</p>
+    <div class="labs-progress"><strong id="trackProgress">0 / 7</strong><div><i id="trackBar"></i></div><span>完成度保存在当前浏览器</span></div>
+  </section>
+
+  <section class="labs-section">
+    <article class="track-lab" data-track-lab="01">
+      <div class="track-index">LAB 01</div><div class="track-body"><span>CONTEXT</span><h2>同一个任务：Prompt vs Context Engineering</h2>
+      <p>选一个你真实做过的研究/分析任务。第一轮只写详细 Prompt；第二轮额外提供结构化背景、目标、历史决策、样例和必要文件。比较两轮结果。</p>
+      <div class="deliverables"><b>产物</b><span>两组输入、两组输出、差异表、你的结论。</span><b>验收</b><span>你能指出至少 3 个“不是模型变强，而是 Context 变好”带来的改进。</span></div></div>
+      <label><input type="checkbox">完成</label>
+    </article>
+
+    <article class="track-lab" data-track-lab="02">
+      <div class="track-index">LAB 02</div><div class="track-body"><span>STRUCTURED OUTPUT</span><h2>把自然语言变成可供程序消费的数据</h2>
+      <p>找 20 条半结构化文本，例如订单、客户需求、会议记录或商品信息，让模型稳定抽取成固定 JSON Schema。</p>
+      <div class="deliverables"><b>产物</b><span>Schema、20 条样本、解析结果。</span><b>验收</b><span>JSON 全部可解析；关键字段正确率有人工检查记录；异常输入有明确处理。</span></div></div>
+      <label><input type="checkbox">完成</label>
+    </article>
+
+    <article class="track-lab" data-track-lab="03">
+      <div class="track-index">LAB 03</div><div class="track-body"><span>RAG</span><h2>做一个“只基于资料回答”的知识库</h2>
+      <p>选择一组你熟悉的文档，完成切块、检索、上下文组装和带来源回答。重点不是做漂亮界面，而是证明检索真的找对证据。</p>
+      <div class="deliverables"><b>产物</b><span>文档集、至少 30 个问题、检索结果、回答和引用。</span><b>验收</b><span>分别记录 Retrieval 命中率和最终 Answer 正确率，不把两者混在一起。</span></div></div>
+      <label><input type="checkbox">完成</label>
+    </article>
+
+    <article class="track-lab" data-track-lab="04">
+      <div class="track-index">LAB 04</div><div class="track-body"><span>TOOLS + WORKFLOW</span><h2>让模型真正调用一个外部工具</h2>
+      <p>让模型负责判断意图和参数，让确定性工具负责执行，例如计算器、数据库查询、网页搜索、日历或内部 API。</p>
+      <div class="deliverables"><b>产物</b><span>工具定义、参数 Schema、调用日志、错误路径。</span><b>验收</b><span>模型不能靠“编造工具结果”完成任务；工具失败时系统有清晰反馈和停止机制。</span></div></div>
+      <label><input type="checkbox">完成</label>
+    </article>
+
+    <article class="track-lab" data-track-lab="05">
+      <div class="track-index">LAB 05</div><div class="track-body"><span>EVAL</span><h2>给你的 AI 系统建立回归测试</h2>
+      <p>把前面任意一个项目变成可评测系统。收集至少 30 个代表真实任务分布的案例，并明确成功标准。</p>
+      <div class="deliverables"><b>产物</b><span>Eval dataset、评分规则、Baseline、改版结果。</span><b>验收</b><span>改 Prompt / 模型 / RAG 后能一键或半自动重跑，并看出提升还是回归。</span></div></div>
+      <label><input type="checkbox">完成</label>
+    </article>
+
+    <article class="track-lab" data-track-lab="06">
+      <div class="track-index">LAB 06</div><div class="track-body"><span>AGENT</span><h2>构建一个会“观察—行动—检查”的 Agent</h2>
+      <p>选择开放路径任务，例如跨多源研究、代码修复或软件操作。Agent 可以动态选工具，但必须有限权、有限步数、有日志。</p>
+      <div class="deliverables"><b>产物</b><span>Agent Loop、工具、状态、检查点、停止条件、20 个任务。</span><b>验收</b><span>报告任务成功率、平均步骤数、失败类型和人工接管位置；不能只展示一次成功 Demo。</span></div></div>
+      <label><input type="checkbox">完成</label>
+    </article>
+
+    <article class="track-lab capstone" data-track-lab="07">
+      <div class="track-index">CAPSTONE</div><div class="track-body"><span>SHIP</span><h2>发布一个真实 AI 产品</h2>
+      <p>选择一个真实用户和真实问题。至少包含：模型、Context/Data、一个可验证的系统能力，以及 Eval。是否使用 RAG、Tool 或 Agent 由任务决定，不为了堆技术而堆技术。</p>
+      <div class="deliverables"><b>必须回答</b><span>谁用？为什么付出时间/金钱？Baseline 是什么？AI 提升多少？最严重错误是什么？单位任务成本是多少？</span><b>验收</b><span>有可访问产品或可运行仓库；有真实使用反馈；有失败复盘；有下一版本决策。</span></div></div>
+      <label><input type="checkbox">完成</label>
+    </article>
+  </section>
+
+  <section class="labs-section lab-template">
+    <span>RETROSPECTIVE TEMPLATE</span><h2>每个 Lab 都用同一张复盘表</h2>
+    <div class="template-grid">
+      <div><b>Problem</b><span>真正要解决的任务是什么？</span></div>
+      <div><b>Baseline</b><span>不用 AI 时怎么做？</span></div>
+      <div><b>Architecture</b><span>模型 / Context / RAG / Tool / Workflow / Agent。</span></div>
+      <div><b>Eval</b><span>成功标准和测试集。</span></div>
+      <div><b>Failure</b><span>最常见的失败模式。</span></div>
+      <div><b>Economics</b><span>延迟、调用、人审和错误成本。</span></div>
+      <div><b>Learning</b><span>这次真正学到了什么？</span></div>
+      <div><b>Next</b><span>下一个版本最值得改什么？</span></div>
+    </div>
+  </section>
+  <footer>AI Learning OS · Lab Track v0.1</footer>
+</main>
+<script src="../assets/labs.js"></script>
+</body>
+</html>
