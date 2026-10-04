@@ -554,6 +554,52 @@
           "url": "https://cdn.openai.com/business-guides-and-resources/a-business-leaders-guide-to-working-with-agents.pdf"
         }
       ]
+    },
+    "deep06": {
+      "title": "Deep Dive 06 · AI Coding、Vibe Coding 与软件工程新范式",
+      "intro": "这一页最适合“边学边做”。中文实战优先，再用官方 Codex / GitHub / Claude Code 材料校准工程边界。",
+      "items": [
+        {
+          "type": "中文视频",
+          "level": "优先",
+          "title": "2026 AI 编程全流程：Claude Code + Codex + Vibe Coding",
+          "source": "Bilibili",
+          "why": "覆盖学习路线、工程化框架、计划、Subagent 和项目实战，适合作为中文视听入门。",
+          "url": "https://www.bilibili.com/video/BV1Zru766ER9"
+        },
+        {
+          "type": "中文视频",
+          "level": "进阶",
+          "title": "Codex + Claude Code 零基础到项目实战",
+          "source": "Bilibili",
+          "why": "包含权限模式、多任务并行、计划模式、Skills、MCP 和会话管理，适合边操作边学。",
+          "url": "https://www.bilibili.com/video/BV1Hsup6oEQA/"
+        },
+        {
+          "type": "中文官方",
+          "level": "优先",
+          "title": "Codex：AI 编程智能体",
+          "source": "OpenAI 中文",
+          "why": "直接看 Codex 如何从补全工具走向多智能体、后台任务、测试与工程交付。",
+          "url": "https://openai.com/zh-Hans-CN/codex/"
+        },
+        {
+          "type": "英文官方",
+          "level": "进阶",
+          "title": "Claude Code: Foundations",
+          "source": "Anthropic",
+          "why": "一小时官方课程，围绕 read → plan → act → observe、项目规则、MCP 与并行 Agent。",
+          "url": "https://www.anthropic.com/webinars/claude-code-foundations"
+        },
+        {
+          "type": "英文基准",
+          "level": "进阶",
+          "title": "SWE-bench Verified",
+          "source": "SWE-bench",
+          "why": "理解“Coding Agent 会不会做真实软件工程任务”是如何被评估的，也能看到模型与 Harness 的差异。",
+          "url": "https://www.swebench.com/verified.html"
+        }
+      ]
     }
   }
 }
