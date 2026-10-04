@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="AI Learning OS：模型为什么能学会东西" />
+  <title>第 2 章 · 模型为什么能学会东西 | AI Learning OS</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/chapter.css" />
+</head>
+<body data-chapter="02">
+<div class="chapter-shell">
+  <aside class="chapter-toc" id="chapterToc">
+    <a class="chapter-brand" href="../index.html"><span>AI</span><div><b>Learning OS</b><small>v0.4.1 · Fundamentals</small></div></a>
+    <div class="toc-label">第 2 章</div>
+    <nav>
+      <a href="#start" class="active">2.0 一句话模型观</a>
+      <a href="#function">2.1 模型 = 带参数的函数</a>
+      <a href="#train">2.2 训练到底在做什么</a>
+      <a href="#backprop">2.3 反向传播</a>
+      <a href="#inference">2.4 训练 vs 推理</a>
+      <a href="#token">2.5 Token 与 Embedding</a>
+      <a href="#transformer">2.6 Transformer 与 Attention</a>
+      <a href="#pretrain">2.7 预训练与后训练</a>
+      <a href="#llm">2.8 为什么“猜下一个词”这么强</a>
+      <a href="#limits">2.9 模型为什么会犯错</a>
+      <a href="#lab">2.10 本章 Lab</a>
+      <a href="#check">2.11 自测</a>
+    </nav>
+    <div class="toc-progress"><span>本章状态</span><b id="chapterStatus">未完成</b><button id="completeChapter">标记本章完成</button></div>
+  </aside>
+
+  <main class="chapter-main">
+    <header class="chapter-top">
+      <button class="icon-btn chapter-menu" id="chapterMenu">☰</button>
+      <a href="../index.html">← 返回总览</a>
+      <span>Stable Core · 原理直觉</span>
+    </header>
+
+    <article class="chapter-article">
+      <section class="chapter-hero" id="start">
+        <div class="chapter-no">CHAPTER 02</div>
+        <h1>模型为什么能学会东西？</h1>
+        <p class="lead">这一章只建立一个底层直觉：<strong>模型并不是被“灌入答案”，而是在大量例子和反馈中不断调整参数，让预测越来越符合目标。</strong></p>
+        <div class="objective-grid">
+          <div><b>你会理解</b><span>参数、训练、损失、梯度、反向传播和推理的关系。</span></div>
+          <div><b>你会看懂</b><span>Token、Embedding、Attention、预训练和后训练在系统中的位置。</span></div>
+          <div><b>你暂时不用</b><span>手算矩阵、微积分证明或自己训练大模型。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section">
+        <div class="callout idea"><b>先记住一句话</b><p>模型可以先理解成：一个输入 → 输出的函数；“训练”就是寻找一组更好的参数，让这个函数在大量例子上表现更好。</p></div>
+        <p>无论是判断邮件是不是垃圾邮件、识别图片里是不是猫，还是让语言模型预测下一段文字，底层都可以抽象成同一个过程：输入信息，经过一组参数化计算，得到输出，再根据输出好不好调整参数。</p>
+      </section>
+
+      <section class="chapter-section" id="function">
+        <div class="section-kicker">2.1 · PARAMETERIZED FUNCTION</div>
+        <h2>模型 = 一个带很多“旋钮”的函数</h2>
+        <p>先想一个只有一个参数的模型：</p>
+        <div class="formula-box"><span>预测：</span><strong>ŷ = w × x</strong></div>
+        <p>如果真实世界的规律是 <strong>y = 2x</strong>，那么最好的参数就是 w ≈ 2。w 就像一个旋钮：太小会低估，太大会高估。</p>
+        <p>现代神经网络做的事情本质类似，只是“旋钮”不再是一个，而可能是数十亿甚至更多参数，并且它们之间通过很多层复杂计算相互作用。</p>
+        <div class="callout warn"><b>参数不是“知识条目”</b><p>不能把 10 亿参数理解成 10 亿条事实。参数是模型内部计算结构里的数字，它们共同决定模型如何把输入映射成输出。</p></div>
+      </section>
+
+      <section class="chapter-section" id="train">
+        <div class="section-kicker">2.2 · TRAINING LOOP</div>
+        <h2>训练的核心循环：预测 → 计算误差 → 调参数 → 再预测</h2>
+        <div class="train-loop">
+          <div><b>① 输入数据</b><span>x 与目标 y</span></div><i>→</i>
+          <div><b>② 模型预测</b><span>ŷ = f(x; θ)</span></div><i>→</i>
+          <div><b>③ 计算 Loss</b><span>预测离目标多远</span></div><i>→</i>
+          <div><b>④ 算梯度</b><span>每个参数该往哪边改</span></div><i>→</i>
+          <div><b>⑤ 更新参数</b><span>让下一次更好</span></div>
+        </div>
+
+        <div class="interactive-card">
+          <div class="interactive-head"><div><span>MINI LAB</span><h3>亲眼看一个参数被“训练”出来</h3></div><button id="resetTrain">重置</button></div>
+          <p>目标规律固定为 <code>y = 2x</code>。模型一开始只有参数 <code>w</code>，预测公式为 <code>ŷ = w × x</code>。点击训练，观察 w 如何向 2 靠近。</p>
+          <div class="training-metrics">
+            <div><span>当前参数 w</span><strong id="weightVal">-1.00</strong></div>
+            <div><span>平均 Loss</span><strong id="lossVal">--</strong></div>
+            <div><span>训练步数</span><strong id="stepVal">0</strong></div>
+          </div>
+          <div class="loss-bar"><i id="lossBar"></i></div>
+          <div class="sample-table" id="sampleTable"></div>
+          <div class="interactive-actions">
+            <button id="trainOne">训练 1 步</button>
+            <button class="primary-mini" id="trainTwenty">连续训练 20 步</button>
+          </div>
+          <div class="lab-explain" id="trainExplain">现在 w = -1，模型方向都猜反了。训练会根据误差来调整它。</div>
+        </div>
+
+        <p>这里的 Loss（损失函数）只是一个“有多错”的数字。训练算法的目标不是让模型理解“我错了”，而是把这个数字变小。</p>
+      </section>
+
+      <section class="chapter-section" id="backprop">
+        <div class="section-kicker">2.3 · BACKPROP</div>
+        <h2>反向传播：高效计算“每个参数对错误负多少责任”</h2>
+        <p>在深层神经网络里，一个输出往往经过很多层计算。模型出错时，我们需要知道：前面每一层、每一个参数如果稍微变化一点，会让最终 Loss 变大还是变小？</p>
+        <div class="definition-box">
+          <span>最实用的理解</span>
+          <strong>Backprop 不是“学习本身”，而是高效计算梯度的方法。</strong>
+        </div>
+        <p>梯度告诉优化器：哪些参数该增加、哪些该减小，以及敏感程度。Goodfellow、Bengio 和 Courville 的《Deep Learning》也特别区分了这两件事：反向传播负责计算梯度，优化算法再利用梯度更新参数。</p>
+        <div class="train-loop compact">
+          <div><b>Forward</b><span>从输入算到预测和 Loss</span></div><i>→</i>
+          <div><b>Backprop</b><span>从 Loss 反推参数梯度</span></div><i>→</i>
+          <div><b>Optimizer</b><span>根据梯度更新参数</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="inference">
+        <div class="section-kicker">2.4 · TRAINING vs INFERENCE</div>
+        <h2>训练和推理，是两种完全不同的经济活动</h2>
+        <div class="compare-grid">
+          <article><span>TRAINING</span><h3>训练</h3><p>用大量数据反复计算 Loss、梯度和参数更新，得到模型权重。</p><ul><li>计算量极大</li><li>需要训练数据</li><li>会改变模型参数</li><li>一次训练可服务很多次使用</li></ul></article>
+          <article><span>INFERENCE</span><h3>推理</h3><p>参数基本固定，输入新的 Prompt / 图片 / 数据，让模型产生输出。</p><ul><li>发生在每次实际使用时</li><li>决定延迟与单位调用成本</li><li>通常不改变基础权重</li><li>规模化产品里成本可能极大</li></ul></article>
+        </div>
+        <div class="business-lens"><b>商业视角</b><p>训练成本决定谁能做前沿基础模型；推理成本决定 AI 产品能否大规模赚钱。未来硬件、模型压缩、缓存、路由和小模型的重要性，很大程度都来自推理经济学。</p></div>
+      </section>
+
+      <section class="chapter-section" id="token">
+        <div class="section-kicker">2.5 · TOKEN + EMBEDDING</div>
+        <h2>语言先被切成 Token，再变成向量</h2>
+        <p>语言模型不能直接处理“文字的意义”。它先把文字切成 Token。Token 不一定等于一个汉字或一个英文单词，它是模型词表里的离散单位。</p>
+        <div class="concept-flow">
+          <div><b>原始文本</b><span>“AI 正在改变软件”</span></div><i>→</i>
+          <div><b>Tokenization</b><span>切成模型可识别的离散编号</span></div><i>→</i>
+          <div><b>Embedding</b><span>编号映射成高维向量</span></div><i>→</i>
+          <div><b>Transformer</b><span>让每个位置结合上下文更新表示</span></div>
+        </div>
+        <p>Embedding 可以理解成“把离散符号放进一个连续的高维空间”。相似的用法和语义可能形成相近的内部表示，但不要把它想象成一个简单二维词义地图。</p>
+      </section>
+
+      <section class="chapter-section" id="transformer">
+        <div class="section-kicker">2.6 · TRANSFORMER</div>
+        <h2>Attention 的直觉：处理一个 Token 时，动态判断“该看上下文里的谁”</h2>
+        <p>2017 年《Attention Is All You Need》提出 Transformer，核心创新之一是以 Attention 为中心处理序列。相比依赖循环一步步传递信息的架构，它更容易并行训练，也更适合规模扩张。</p>
+        <div class="attention-demo">
+          <p>例句：“小王把杯子放到桌上，因为<strong>它</strong>很稳。”</p>
+          <div><span>小王</span><span>杯子</span><span class="hot">桌上</span><span>因为</span><span class="focus">它</span><span class="hot">很稳</span></div>
+          <small>这里的“它”究竟指什么，需要结合上下文关系。Attention 的思想就是让当前位置动态聚合其他位置的信息。</small>
+        </div>
+        <p>Transformer 并不等于 LLM，但今天绝大多数主流 LLM 都建立在 Transformer 或其变体上。</p>
+      </section>
+
+      <section class="chapter-section" id="pretrain">
+        <div class="section-kicker">2.7 · PRETRAIN + POST-TRAIN</div>
+        <h2>大模型通常不是“一次训练完成”，而是多阶段塑形</h2>
+        <div class="stage-grid">
+          <article><b>1 · 预训练</b><p>在巨大语料上学习语言、知识、模式和广泛能力。通常是成本最高的阶段。</p></article>
+          <article><b>2 · 指令 / 监督微调</b><p>让模型更会理解人类任务格式和期望回答方式。</p></article>
+          <article><b>3 · 偏好 / 强化后训练</b><p>利用人类或模型反馈，让回答更有帮助、更安全、更符合目标。</p></article>
+          <article><b>4 · 推理时增强</b><p>搜索、工具、RAG、更长计算、Agent 工作流等，可以在不重新训练基础模型的情况下提升结果。</p></article>
+        </div>
+        <p>因此，当你比较两个 AI 产品时，不能只问“底层是什么模型”。同一个基础模型，在不同后训练、系统提示、工具、检索和工作流下，可以表现得像完全不同的产品。</p>
+      </section>
+
+      <section class="chapter-section" id="llm">
+        <div class="section-kicker">2.8 · NEXT TOKEN PREDICTION</div>
+        <h2>为什么“预测下一个 Token”会涌现出这么多能力？</h2>
+        <p>语言里压缩了大量关于世界的信息：事实、因果、逻辑、人物行为、代码结构、数学表达、写作方式。如果模型要在极大规模文本上持续预测“接下来最可能是什么”，它就被迫学习大量隐含结构。</p>
+        <div class="callout idea"><b>但不要神化</b><p>“预测下一个 Token”描述的是训练目标的一部分，不等于模型只会机械补词。复杂能力来自模型规模、数据分布、架构、优化和后训练共同作用；同时，这种训练目标也解释了为什么模型会生成“听起来合理但实际上错误”的内容。</p></div>
+        <p>从运用层看，这一点非常重要：LLM 首先是一个<strong>生成概率分布的模型</strong>，不是天然的事实数据库、搜索引擎或确定性规则引擎。</p>
+      </section>
+
+      <section class="chapter-section" id="limits">
+        <div class="section-kicker">2.9 · WHY MODELS FAIL</div>
+        <h2>理解训练方式，就能理解很多失败模式</h2>
+        <div class="myth-list">
+          <div><b>幻觉</b><p>模型优化的是生成合理输出，不是“每句话必须来自数据库中的已验证事实”。</p></div>
+          <div><b>上下文失误</b><p>模型只看到当前提供的信息和内部参数，没有自动拥有完整企业背景与实时世界状态。</p></div>
+          <div><b>分布外问题</b><p>训练中很少见的输入、任务或环境可能让模型表现骤降。</p></div>
+          <div><b>非确定性</b><p>生成通常涉及概率采样，同一问题不一定每次得到完全相同结果。</p></div>
+          <div><b>能力锯齿</b><p>一个模型可能会高难度代码，却在简单计数、空间关系或特定边界条件上失败。</p></div>
+          <div><b>系统错误</b><p>即使模型本身正确，工具权限、检索数据、Prompt、解析器和下游软件也可能出错。</p></div>
+        </div>
+        <div class="business-lens"><b>运用层专家真正关心什么？</b><p>不是“模型是不是聪明”，而是：在我的任务分布上，正确率多少？失败能否检测？错误代价多大？是否需要检索、工具、规则、人审或多模型协作？</p></div>
+      </section>
+
+      <section class="chapter-section" id="lab">
+        <div class="section-kicker">2.10 · LAB 02</div>
+        <h2>从模型直觉到真实工作</h2>
+        <p>选一个你真实工作中的 AI 任务，比如数据分析、写邮件、市场研究或代码。把系统拆成四层：</p>
+        <div class="drawer-grid">
+          <div><b>输入是什么？</b><span>用户问题、文件、数据库还是实时网页？</span></div>
+          <div><b>模型负责什么？</b><span>生成、分类、抽取、推理还是规划？</span></div>
+          <div><b>模型不知道什么？</b><span>哪些事实必须从外部检索或工具获得？</span></div>
+          <div><b>怎么知道它错了？</b><span>设计一个最简单的 Eval / 人审机制。</span></div>
+        </div>
+        <label class="lab-check"><input type="checkbox" data-lab="02"><span>我已经能用“输入 → 参数化模型 → 输出 → Eval / 反馈”的方式拆解一个真实 AI 应用。</span></label>
+      </section>
+
+      <section class="chapter-section" id="check">
+        <div class="section-kicker">2.11 · SELF CHECK</div>
+        <h2>本章自测</h2>
+        <details><summary>Q1：参数、训练、推理三者分别是什么？</summary><p>参数是模型内部可调整的数值；训练根据数据和 Loss 更新参数；推理是在参数基本固定后，用新输入计算输出。</p></details>
+        <details><summary>Q2：反向传播是不是训练算法的全部？</summary><p>不是。Backprop 负责高效计算梯度；优化器利用梯度更新参数；训练还包含数据、目标函数、批次、正则化等很多环节。</p></details>
+        <details><summary>Q3：为什么 Token 成本会成为商业问题？</summary><p>推理时输入和输出 Token 都需要计算。高频、大上下文、长输出的产品会放大单位调用成本和延迟。</p></details>
+        <details><summary>Q4：为什么 RAG 和工具调用不是“模型训练”的同一件事？</summary><p>它们通常是在推理时给模型提供外部信息或行动能力，并不必然修改基础模型权重。</p></details>
+      </section>
+
+      <section class="chapter-section sources">
+        <div class="section-kicker">SOURCES</div>
+        <h2>本章基线来源</h2>
+        <ol>
+          <li><a href="https://www.deeplearningbook.org/" target="_blank" rel="noreferrer">Goodfellow, Bengio & Courville · Deep Learning</a></li>
+          <li><a href="https://www.deeplearningbook.org/contents/mlp.html" target="_blank" rel="noreferrer">Deep Learning · Back-Propagation section</a></li>
+          <li><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noreferrer">Vaswani et al. (2017) · Attention Is All You Need</a></li>
+        </ol>
+      </section>
+
+      <div class="chapter-next">
+        <span>NEXT · CAPABILITY MAP</span>
+        <h2>下一步：从“模型怎么学”转向“今天的 AI 到底会做什么”。</h2>
+        <p>我们会把语言、视觉、语音、代码、推理、搜索、工具、Agent 与机器人做成能力地图，并把每种能力对应到真实应用和商业价值。</p>
+      </div>
+    </article>
+  </main>
+</div>
+<script src="../assets/chapter.js"></script>
+<script src="../assets/fundamentals.js"></script>
+</body>
+</html>
