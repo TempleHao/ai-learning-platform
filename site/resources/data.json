@@ -600,6 +600,52 @@
           "url": "https://www.swebench.com/verified.html"
         }
       ]
+    },
+    "deep07": {
+      "title": "Deep Dive 07 · RAG、Memory 与 Knowledge Systems",
+      "intro": "这一页建议先用中文 RAG 课程建立结构，再用官方 File Search / Memory 文档和原始论文校准。",
+      "items": [
+        {
+          "type": "中文视频",
+          "level": "优先",
+          "title": "什么是 RAG？RAG 的大致架构是什么？",
+          "source": "Bilibili",
+          "why": "20 分钟左右快速建立 Ingest → Retrieve → Generate 的基本结构。",
+          "url": "https://www.bilibili.com/video/BV1VCdXYSEAG/"
+        },
+        {
+          "type": "中英双语",
+          "level": "进阶",
+          "title": "吴恩达详解 RAG 检索增强生成",
+          "source": "Bilibili",
+          "why": "覆盖检索、Embedding、BM25、语义搜索与完整 RAG 架构，适合系统深化。",
+          "url": "https://www.bilibili.com/video/BV1KFb6z2EFE/"
+        },
+        {
+          "type": "英文官方",
+          "level": "优先",
+          "title": "File Search",
+          "source": "OpenAI Developers",
+          "why": "看生产级托管检索如何使用 vector store、语义 + 关键词搜索和 Metadata Filtering。",
+          "url": "https://developers.openai.com/api/docs/guides/tools-file-search"
+        },
+        {
+          "type": "英文官方",
+          "level": "进阶",
+          "title": "Memory Tool",
+          "source": "Anthropic",
+          "why": "理解跨会话持久状态与 Just-in-Time Context，而不是把所有历史塞进窗口。",
+          "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool"
+        },
+        {
+          "type": "英文论文",
+          "level": "原典",
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+          "source": "Lewis et al. (2020)",
+          "why": "RAG 经典原始论文，重点看 Parametric / Non-parametric Memory 的区分。",
+          "url": "https://arxiv.org/abs/2005.11401"
+        }
+      ]
     }
   }
 }
