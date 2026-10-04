@@ -1646,6 +1646,158 @@
           }
         ]
       }
+    ],
+    "deep05": [
+      {
+        "anchor": "exposure",
+        "topic": "AI 暴露、自动化与岗位转型",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内",
+            "title": "岗位不是原子：先拆任务",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/deep-dives/05-ai-native-organization.html#allocation",
+            "why": "先用任务分解避免“整个职业会不会消失”的二元判断。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "英文报告",
+            "title": "Generative AI and jobs: A 2025 update",
+            "source": "ILO",
+            "url": "https://www.ilo.org/publications/generative-ai-and-jobs-2025-update",
+            "why": "全球任务级职业暴露研究。"
+          },
+          {
+            "depth": "原典",
+            "type": "工作论文",
+            "title": "Refined Global Index of Occupational Exposure",
+            "source": "ILO",
+            "url": "https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure",
+            "why": "查看方法、任务样本和暴露梯度。"
+          }
+        ]
+      },
+      {
+        "anchor": "matrix",
+        "topic": "人机委托与自动化边界",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内实验",
+            "title": "任务委托矩阵",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/deep-dives/05-ai-native-organization.html#matrix",
+            "why": "用结构化、可验收、风险、长尾等变量决定任务模式。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "站内",
+            "title": "Deep Dive 04 · Agent Economy",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/deep-dives/04-agent-economy.html",
+            "why": "进一步理解 Workflow / Agent、自主性和生产控制面。"
+          },
+          {
+            "depth": "原典",
+            "type": "工程指南",
+            "title": "Building Effective Agents",
+            "source": "Anthropic",
+            "url": "https://www.anthropic.com/engineering/building-effective-agents",
+            "why": "用简单、可组合模式约束自动化复杂度。"
+          }
+        ]
+      },
+      {
+        "anchor": "junior",
+        "topic": "初级岗位与人才梯队",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "年度数据",
+            "title": "AI Index 2026 · Jobs",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/economy",
+            "why": "观察年轻员工和暴露职业中不均衡的劳动市场变化。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "英文报告",
+            "title": "Generative AI and Jobs 2025",
+            "source": "ILO",
+            "url": "https://www.ilo.org/publications/generative-ai-and-jobs-2025-update",
+            "why": "区分任务转型与职位冗余。"
+          },
+          {
+            "depth": "原典",
+            "type": "组织指南",
+            "title": "A business leader’s guide to working with agents",
+            "source": "OpenAI",
+            "url": "https://cdn.openai.com/business-guides-and-resources/a-business-leaders-guide-to-working-with-agents.pdf",
+            "why": "看企业如何培养员工的委托、判断和 Agent 协作能力。"
+          }
+        ]
+      },
+      {
+        "anchor": "roles",
+        "topic": "AI-native 新角色",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内",
+            "title": "AI Workflow Architect / Agent Operator / Eval Engineer",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/deep-dives/05-ai-native-organization.html#roles",
+            "why": "把“学 AI”转成具体组织角色能力。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文课程",
+            "title": "AI Agent 系列课程",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1WgTL6TEaA/",
+            "why": "从技术底层理解这些新角色到底在管理什么。"
+          },
+          {
+            "depth": "原典",
+            "type": "年度数据",
+            "title": "AI agent skills in job postings",
+            "source": "Stanford AI Index 2026",
+            "url": "https://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_4_economy.pdf",
+            "why": "观察 Agentic AI、AI agents 等技能在招聘中的增长。"
+          }
+        ]
+      },
+      {
+        "anchor": "transition",
+        "topic": "企业从 Copilot 走向 Agent-native 的迁移",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内",
+            "title": "四阶段组织迁移路径",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/deep-dives/05-ai-native-organization.html#transition",
+            "why": "先看从个人工具化到组织重构的阶段差异。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "官方指南",
+            "title": "Business leader’s guide to agents",
+            "source": "OpenAI",
+            "url": "https://cdn.openai.com/business-guides-and-resources/a-business-leaders-guide-to-working-with-agents.pdf",
+            "why": "从领导者视角思考员工 Agent 如何进入日常工作。"
+          },
+          {
+            "depth": "原典",
+            "type": "年度报告",
+            "title": "AI Index 2026 · Economy",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/economy",
+            "why": "用 adoption、agent deployment、workforce expectations 校准迁移速度。"
+          }
+        ]
+      }
     ]
   }
 }
