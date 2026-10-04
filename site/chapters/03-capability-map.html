@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="AI Learning OS：AI 能力地图" />
+  <title>第 3 章 · AI 能力地图 | AI Learning OS</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/chapter.css" />
+</head>
+<body data-chapter="03">
+<div class="chapter-shell">
+  <aside class="chapter-toc" id="chapterToc">
+    <a class="chapter-brand" href="../index.html"><span>AI</span><div><b>Learning OS</b><small>v0.5 · Capability Map</small></div></a>
+    <div class="toc-label">第 3 章</div>
+    <nav>
+      <a href="#start" class="active">3.0 能力不是一条线</a>
+      <a href="#perception">3.1 感知</a>
+      <a href="#prediction">3.2 预测与排序</a>
+      <a href="#generation">3.3 生成</a>
+      <a href="#reasoning">3.4 推理与规划</a>
+      <a href="#tools">3.5 工具与 Agent</a>
+      <a href="#physical">3.6 物理世界</a>
+      <a href="#jagged">3.7 锯齿状前沿</a>
+      <a href="#business">3.8 商业判断</a>
+      <a href="#lab">3.9 本章 Lab</a>
+    </nav>
+    <div class="toc-progress"><span>本章状态</span><b id="chapterStatus">未完成</b><button id="completeChapter">标记本章完成</button></div>
+  </aside>
+  <main class="chapter-main">
+    <header class="chapter-top"><button class="icon-btn chapter-menu" id="chapterMenu">☰</button><a href="../index.html">← 返回总览</a><span>Stable + Frontier · 能力地图</span></header>
+    <article class="chapter-article">
+      <section class="chapter-hero" id="start">
+        <div class="chapter-no">CHAPTER 03</div>
+        <h1>AI 能力地图</h1>
+        <p class="lead">不要再问“AI 聪不聪明”。更专业的问法是：<strong>它在哪类能力上强？在哪类环境里可靠？能不能持续行动？失败时会以什么方式失败？</strong></p>
+        <div class="objective-grid">
+          <div><b>六类能力</b><span>感知、预测、生成、推理、工具行动、物理行动。</span></div>
+          <div><b>两个维度</b><span>峰值能力 ≠ 稳定可靠性。</span></div>
+          <div><b>一个商业原则</b><span>真正值钱的是“可靠完成任务”，不是“偶尔惊艳”。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section">
+        <div class="callout idea"><b>能力地图的用途</b><p>以后遇到任何模型更新，不先看品牌，而问：它究竟让哪一类能力前沿向前移动？感知、生成、推理、工具调用，还是长期任务可靠性？</p></div>
+      </section>
+
+      <section class="chapter-section" id="perception">
+        <div class="section-kicker">3.1 · PERCEPTION</div>
+        <h2>感知：让机器“看见、听见、读懂信号”</h2>
+        <div class="cap-grid">
+          <article><span>VISION</span><h3>视觉</h3><p>分类、检测、分割、OCR、视频理解、医学影像。</p></article>
+          <article><span>SPEECH</span><h3>语音</h3><p>语音识别、说话人识别、语音合成、实时翻译。</p></article>
+          <article><span>SENSOR</span><h3>传感器</h3><p>雷达、激光雷达、工业传感、机器人状态与环境感知。</p></article>
+        </div>
+        <p>2012 年 AlexNet 被视为视觉深度学习产业拐点之一：神经网络在大规模图像分类上形成显著优势，并展示了 GPU 训练深层模型的价值。感知能力随后快速进入手机、安防、医疗影像、工业检测和自动驾驶。</p>
+      </section>
+
+      <section class="chapter-section" id="prediction">
+        <div class="section-kicker">3.2 · PREDICTION + RANKING</div>
+        <h2>预测与排序：AI 最早大规模赚钱的地方</h2>
+        <p>很多最赚钱的 AI 并不“会聊天”。搜索排序、推荐、广告点击率、风控、欺诈识别、需求预测，本质都是在大量候选中估计概率或排序。</p>
+        <div class="business-lens"><b>经济意义</b><p>互联网时代，预测能力直接影响流量分配、广告变现、库存、授信与风险成本。AI 的第一次大规模商业胜利，远早于生成式 AI。</p></div>
+      </section>
+
+      <section class="chapter-section" id="generation">
+        <div class="section-kicker">3.3 · GENERATION</div>
+        <h2>生成：从“判断世界”转向“创造候选答案”</h2>
+        <div class="stage-grid">
+          <article><b>文本</b><p>写作、总结、翻译、问答、结构化提取。</p></article>
+          <article><b>代码</b><p>补全、生成、重构、测试、调试和解释。</p></article>
+          <article><b>图像 / 视频 / 音频</b><p>设计、广告、影视预演、配音、音乐与内容生产。</p></article>
+          <article><b>合成数据</b><p>生成训练样本、模拟环境和测试数据。</p></article>
+        </div>
+        <p>2022 年 ChatGPT 的发布，使“自然语言界面 + 通用生成模型”进入大众使用阶段。真正的变化不是第一次有聊天机器人，而是普通人第一次能用日常语言调用一个相对通用的生成模型。</p>
+      </section>
+
+      <section class="chapter-section" id="reasoning">
+        <div class="section-kicker">3.4 · REASONING + PLANNING</div>
+        <h2>推理与规划：从模式生成走向多步解决问题</h2>
+        <p>今天前沿模型已在数学、科学问答和代码等高难任务上达到非常高的基准成绩，但这并不意味着“通用可靠推理”已经解决。2026 AI Index 特别强调：能力增长很快，但同一个模型可能在高难数学上极强，却在看钟表等简单任务上表现不稳。</p>
+        <div class="callout warn"><b>推理能力的核心风险</b><p>复杂推理常常给人“它真的懂了”的印象，但单个成功案例不能代表稳定性。要看任务分布、重复测试和失败模式。</p></div>
+      </section>
+
+      <section class="chapter-section" id="tools">
+        <div class="section-kicker">3.5 · TOOL USE + AGENTS</div>
+        <h2>工具与 Agent：从“给答案”转向“完成任务”</h2>
+        <div class="concept-flow">
+          <div><b>理解目标</b><span>用户到底要什么</span></div><i>→</i>
+          <div><b>拆解计划</b><span>需要哪些步骤</span></div><i>→</i>
+          <div><b>调用工具</b><span>搜索、代码、文件、软件</span></div><i>→</i>
+          <div><b>观察结果</b><span>成功还是失败</span></div><i>→</i>
+          <div><b>继续行动</b><span>直到任务完成或退出</span></div>
+        </div>
+        <p>这就是 Agent 与聊天机器人的关键差异：Agent 不只生成语言，而是围绕目标持续选择行动。2026 AI Index 显示，OSWorld 上 Agent 的电脑操作成功率已从约 12% 提升到 66.3%，但仍约三分之一失败。</p>
+        <div class="business-lens"><b>为什么 Agent 重要</b><p>聊天助手提高“人的生产率”；Agent 试图直接完成一段工作。若可靠性跨过阈值，价值捕获方式会从“辅助工具订阅费”转向“按任务/结果收费”。</p></div>
+      </section>
+
+      <section class="chapter-section" id="physical">
+        <div class="section-kicker">3.6 · PHYSICAL WORLD</div>
+        <h2>物理世界：数字 Agent 进步快，机器人仍难得多</h2>
+        <p>现实世界比网页和软件复杂得多：光照、摩擦、遮挡、物体形变、意外、人类行为和安全要求都会改变任务。</p>
+        <div class="frontier-grid">
+          <article><strong>89.4%</strong><span>RLBench 仿真机器人任务成功率量级</span><small>受控环境中进步很快。</small></article>
+          <article><strong>12%</strong><span>真实家庭任务成功率量级</span><small>开放物理环境仍然非常困难。</small></article>
+          <article><strong>450k</strong><span>Waymo 2025 年每周出行量级</span><small>自动驾驶已在限定城市环境达到大规模部署。</small></article>
+        </div>
+        <p>这说明“机器人”不能简单理解成“给 LLM 装上手脚”。物理智能还需要感知、控制、硬件可靠性、实时性、安全与大量真实环境数据。</p>
+      </section>
+
+      <section class="chapter-section" id="jagged">
+        <div class="section-kicker">3.7 · JAGGED FRONTIER</div>
+        <h2>锯齿状前沿：能力增长极不均匀</h2>
+        <div class="definition-box"><span>必须形成的专业直觉</span><strong>AI 不是一条“智力分数”曲线，而是一张高低不平的能力地形图。</strong></div>
+        <p>这也是为什么企业评估 AI 时不能问“这个模型是不是最强”，而要问“在我的任务集合上，它能稳定到什么程度”。模型可能在编码基准几乎满分，但在某些简单视觉、时间读取或长流程中仍然出错。</p>
+      </section>
+
+      <section class="chapter-section" id="business">
+        <div class="section-kicker">3.8 · BUSINESS LENS</div>
+        <h2>商业价值 = 能力 × 可靠性 × 工作流接入 × 错误成本</h2>
+        <div class="route-card">
+          <div><b>能力</b><p>模型是否具备完成任务的基本能力？</p></div>
+          <div><b>可靠性</b><p>是否能重复完成，而不是偶尔成功？</p></div>
+          <div><b>工作流</b><p>能否接入真实数据、权限和软件系统？</p></div>
+        </div>
+        <p>因此，“能力突破”只是商业化第一步。真正的机会往往出现在：能力刚刚越过可用阈值，而传统工作流还没来得及重构的地方。</p>
+      </section>
+
+      <section class="chapter-section" id="lab">
+        <div class="section-kicker">3.9 · LAB 03</div>
+        <h2>给你常用的 AI 做一次“能力审计”</h2>
+        <p>挑一个你最常用的 AI 工具，用 10 个真实任务测试：哪些任务稳定、哪些偶尔成功、哪些经常失败。不要凭印象。</p>
+        <label class="lab-check"><input type="checkbox" data-lab="03"><span>我已经做过一次真实任务集测试，并能区分“峰值能力”和“稳定可靠性”。</span></label>
+      </section>
+
+      <section class="chapter-section sources">
+        <div class="section-kicker">SOURCES</div><h2>本章基线来源</h2>
+        <ol>
+          <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance" target="_blank" rel="noreferrer">Stanford HAI · 2026 AI Index — Technical Performance</a></li>
+          <li><a href="https://openai.com/index/chatgpt/" target="_blank" rel="noreferrer">OpenAI · Introducing ChatGPT (2022)</a></li>
+          <li><a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks" target="_blank" rel="noreferrer">AlexNet (2012)</a></li>
+        </ol>
+      </section>
+
+      <a class="chapter-next" href="04-application-evolution.html"><span>NEXT · CHAPTER 04</span><h2>下一步：这些能力是怎样一步步变成真实产业的？ →</h2><p>进入应用演进史：专家系统、搜索推荐、深度学习、AlphaGo、AlphaFold、生成式 AI、Copilot、Agent 与机器人。</p></a>
+    </article>
+  </main>
+</div>
+<script src="../assets/chapter.js"></script>
+</body>
+</html>
