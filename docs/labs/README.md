@@ -9,6 +9,7 @@
 6. Agent：动态行动 + 检查点 + 成功率
 7. Capstone：发布一个真实 AI 产品
 8. AI Coding Specialization：把真实 Repo 改造成 Agent-ready
+9. Knowledge Systems Specialization：构建可信 RAG / 企业知识库
 
 原则：
 - 每个 Lab 必须有真实产物。
@@ -21,3 +22,8 @@
 ## Lab 08 · AI Coding Specialization
 
 目标不是“让 AI 再写一个 Demo”，而是把一个长期维护项目升级成 Agent-ready 仓库：Mission、Instructions、架构边界、Tests、Spec / Issue、Agent 执行与失败复盘。
+
+
+## Lab 09 · Knowledge Systems Specialization
+
+使用真实文档构建可信知识库。必须将 Retrieval 与 Answer 分开 Eval，并处理 Metadata、权限、版本与来源追踪；目标不是“能聊天”，而是能证明证据链可靠。
