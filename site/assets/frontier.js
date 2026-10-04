@@ -1,0 +1,2 @@
+const btns=[...document.querySelectorAll('[data-radar]')],cards=[...document.querySelectorAll('[data-domain]')];
+btns.forEach(btn=>btn.addEventListener('click',()=>{btns.forEach(b=>b.classList.toggle('active',b===btn));const f=btn.dataset.radar;cards.forEach(c=>c.classList.toggle('radar-hidden',f!=='all'&&c.dataset.domain!==f))}));
