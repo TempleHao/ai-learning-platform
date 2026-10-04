@@ -1,3 +1,10 @@
+if(!document.querySelector('link[data-extension-resources]')){
+  const l=document.createElement('link');
+  l.rel='stylesheet';
+  l.href='/ai-learning-platform/assets/resources.css';
+  l.dataset.extensionResources='1';
+  document.head.appendChild(l);
+}
 const RESOURCE_BASE='/ai-learning-platform/';
 async function loadResourceData(){
   const r=await fetch(RESOURCE_BASE+'resources/data.json',{cache:'no-store'});
