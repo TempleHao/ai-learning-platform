@@ -6,7 +6,7 @@
 
 ## 当前版本
 
-**v0.9.1 · Frontier Radar 生命周期完成**
+**v0.9.2 · 路线史深化完成**
 
 平台已经从框架 Demo 进入正式正文建设。第 0 章《AI 世界全地图》已上线，包含概念地图、系统分层、能力树、极简历史线、2026 前沿快照、误区、Lab 与自测。
 
@@ -36,6 +36,14 @@ https://templehao.github.io/ai-learning-platform/
 - `v0.9`：深化 Stable Core、案例库（20 案例已上线）、Lab Track（7 关已上线）、术语与题库（50+ 术语 / 15 综合题）🟡 进行中
 - `v0.8`：学习进度中心 + Lab 汇总 ✅（当前）
 - `v1.0`：形成可系统学习、练习、复盘和持续更新的完整平台
+
+## 深化学习
+
+- Deep Dive 01：神经网络、Transformer 与 Scaling
+- Deep Dive 02：AI 路线战争、寒冬与复兴
+- 案例库：20 个成功与失败案例
+- Lab Track：7 关连续实战
+- Review：术语与综合题库
 
 ## Frontier Radar 数据层
 
