@@ -1464,6 +1464,188 @@
           }
         ]
       }
+    ],
+    "deep04": [
+      {
+        "anchor": "anatomy",
+        "topic": "Agent Anatomy",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "一堂课搞懂 AI Agent 的原理",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1WgTL6TEaA/",
+            "why": "先用中文把工具、计划和 Agent loop 建立成整体直觉。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "官方指南",
+            "title": "A practical guide to building agents",
+            "source": "OpenAI",
+            "url": "https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/",
+            "why": "从模型、工具、orchestration、guardrails 进入生产结构。"
+          },
+          {
+            "depth": "原典",
+            "type": "工程指南",
+            "title": "Building Effective Agents",
+            "source": "Anthropic",
+            "url": "https://www.anthropic.com/engineering/building-effective-agents",
+            "why": "对 workflow / agent 的经典工程拆分。"
+          }
+        ]
+      },
+      {
+        "anchor": "reliability",
+        "topic": "长任务可靠性与 Eval",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内实验",
+            "title": "长任务成功率直觉实验",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/deep-dives/04-agent-economy.html#reliability",
+            "why": "用连乘直觉理解为什么 Agent 需要检查点和失败恢复。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "官方指南",
+            "title": "Evaluation best practices",
+            "source": "OpenAI Developers",
+            "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+            "why": "把可靠性从感觉变成可回归测试的指标。"
+          },
+          {
+            "depth": "原典",
+            "type": "年度报告",
+            "title": "AI Index 2026 · Technical Performance",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance",
+            "why": "OSWorld 等真实 Agent benchmark 的前沿基线。"
+          }
+        ]
+      },
+      {
+        "anchor": "tools",
+        "topic": "Tool Use 与 Computer Use",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "Agent 工具使用与计划",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1WgTL6TEaA/",
+            "why": "先看工具调用为何改变 LLM 的能力边界。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "官方文档",
+            "title": "Computer use",
+            "source": "OpenAI Developers",
+            "url": "https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use",
+            "why": "理解浏览器 / UI Agent 如何观察、行动与恢复会话。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "ReAct",
+            "source": "Yao et al.",
+            "url": "https://arxiv.org/abs/2210.03629",
+            "why": "Reasoning + Acting 的代表原始论文。"
+          }
+        ]
+      },
+      {
+        "anchor": "control",
+        "topic": "Guardrails、审批与生产控制面",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "官方指南",
+            "title": "Guardrails and human review",
+            "source": "OpenAI Developers",
+            "url": "https://developers.openai.com/api/docs/guides/agents/guardrails-approvals",
+            "why": "快速掌握输入/输出/工具 guardrail 与 human approval 的边界。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "官方指南",
+            "title": "Building Effective Agents",
+            "source": "Anthropic",
+            "url": "https://www.anthropic.com/engineering/building-effective-agents",
+            "why": "从可组合模式理解如何控制复杂度。"
+          },
+          {
+            "depth": "原典",
+            "type": "标准框架",
+            "title": "NIST AI Risk Management Framework",
+            "source": "NIST",
+            "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+            "why": "把 Agent 工程风险上升到组织治理层。"
+          }
+        ]
+      },
+      {
+        "anchor": "economics",
+        "topic": "Agent 单位经济性",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内实验",
+            "title": "Agent 单位经济性计算器",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/deep-dives/04-agent-economy.html#economics",
+            "why": "把模型调用、人审和失败重做放到同一张成本表。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "年度报告",
+            "title": "AI Index 2026 · Economy",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/economy",
+            "why": "看组织采用与 Agent 部署是否支持商业叙事。"
+          },
+          {
+            "depth": "原典",
+            "type": "工程资源",
+            "title": "Agents Cookbook",
+            "source": "OpenAI Developers",
+            "url": "https://developers.openai.com/cookbook/topic/agents",
+            "why": "观察真实 Agent 系统如何处理 cost、eval、memory、security 和 deployment。"
+          }
+        ]
+      },
+      {
+        "anchor": "economy",
+        "topic": "Agent Economy 与数字劳动力",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内",
+            "title": "Deep Dive 03 · AI-native Services",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/deep-dives/03-ai-profit-pools.html#services",
+            "why": "先理解软件预算如何进入人工与服务预算。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文课程",
+            "title": "AI Agent 系列课程",
+            "source": "李宏毅",
+            "url": "https://www.bilibili.com/video/BV1WgTL6TEaA/",
+            "why": "从技术变化理解为什么工作单位可能从“工具使用”转成“任务委托”。"
+          },
+          {
+            "depth": "原典",
+            "type": "年度报告",
+            "title": "AI Index 2026 · Economy",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/economy",
+            "why": "用企业实际部署数据约束对数字劳动力的预测。"
+          }
+        ]
+      }
     ]
   }
 }
