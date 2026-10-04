@@ -1980,6 +1980,158 @@
           }
         ]
       }
+    ],
+    "deep07": [
+      {
+        "anchor": "rag",
+        "topic": "RAG 基本结构",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "什么是 RAG？",
+            "source": "Bilibili",
+            "url": "https://www.bilibili.com/video/BV1VCdXYSEAG/",
+            "why": "先建立 Ingest、检索与生成的基本流程。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "课程",
+            "title": "RAG 检索增强生成系统课程",
+            "source": "Bilibili",
+            "url": "https://www.bilibili.com/video/BV1KFb6z2EFE/",
+            "why": "进一步理解语义检索、BM25、Embedding 与完整架构。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "Retrieval-Augmented Generation",
+            "source": "Lewis et al.",
+            "url": "https://arxiv.org/abs/2005.11401",
+            "why": "理解 Parametric 与 Non-parametric Memory 的原始定义。"
+          }
+        ]
+      },
+      {
+        "anchor": "retrieval",
+        "topic": "检索质量与 Hybrid Retrieval",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "官方",
+            "title": "File Search",
+            "source": "OpenAI Developers",
+            "url": "https://developers.openai.com/api/docs/guides/tools-file-search",
+            "why": "直接看语义 + 关键词 + Metadata Filter 的生产形态。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "企业指南",
+            "title": "Enterprise RAG Retrieval",
+            "source": "NVIDIA",
+            "url": "https://docs.nvidia.com/enterprise-reference-architectures/enterprise-rag-retrieval-scaling-and-sizing-guide/latest/summary.html",
+            "why": "把 Accuracy、Latency、Throughput 与 TCO 一起看。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "RAG",
+            "source": "Lewis et al.",
+            "url": "https://arxiv.org/abs/2005.11401",
+            "why": "回到检索增强生成的原始问题定义。"
+          }
+        ]
+      },
+      {
+        "anchor": "memory",
+        "topic": "Memory 与长期 Agent 状态",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "官方",
+            "title": "Memory Tool",
+            "source": "Anthropic",
+            "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool",
+            "why": "看 Agent 如何把状态留在外部并按需读取。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "官方文章",
+            "title": "Managing context on Claude Developer Platform",
+            "source": "Anthropic",
+            "url": "https://claude.com/blog/context-management",
+            "why": "把 Memory、Context Editing 与长任务联系起来。"
+          },
+          {
+            "depth": "原典",
+            "type": "工程文章",
+            "title": "New rules of context engineering",
+            "source": "Anthropic",
+            "url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
+            "why": "理解更强模型为什么反而需要更精细的 Context 设计。"
+          }
+        ]
+      },
+      {
+        "anchor": "permissions",
+        "topic": "权限、版本与知识治理",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内",
+            "title": "第 6 章 · AI 风险与治理地图",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/chapters/06-risk-governance.html",
+            "why": "把知识权限放回整体风险半径。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "企业指南",
+            "title": "Enterprise RAG Deployment",
+            "source": "NVIDIA",
+            "url": "https://docs.nvidia.com/enterprise-reference-architectures/enterprise-rag-deployment-guide/latest/summary.html",
+            "why": "看企业级 RAG 生命周期和组件管理。"
+          },
+          {
+            "depth": "原典",
+            "type": "标准框架",
+            "title": "NIST AI RMF",
+            "source": "NIST",
+            "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+            "why": "把数据、来源和权限问题纳入组织治理。"
+          }
+        ]
+      },
+      {
+        "anchor": "eval",
+        "topic": "Retrieval Eval 与 Answer Eval",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内",
+            "title": "第 4 章 · Eval",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/chapters/04-application-expert.html#eval",
+            "why": "先复习“系统是否真的变好”的基本方法。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "企业指南",
+            "title": "Enterprise RAG Retrieval Accuracy",
+            "source": "NVIDIA",
+            "url": "https://docs.nvidia.com/enterprise-reference-architectures/enterprise-rag-retrieval-scaling-and-sizing-guide/latest/rag-retrieval-accuracy-performance.html",
+            "why": "看企业 RAG 如何同时衡量准确、性能和成本。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "RAG",
+            "source": "Lewis et al.",
+            "url": "https://arxiv.org/abs/2005.11401",
+            "why": "理解为什么外部证据和可更新知识本身就是设计目标。"
+          }
+        ]
+      }
     ]
   }
 }
