@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="AI Learning OS：AI 商业机会与未来情景" />
+  <title>第 5 章 · AI 商业机会与未来情景 | AI Learning OS</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/chapter.css" />
+</head>
+<body data-chapter="05">
+<div class="chapter-shell">
+  <aside class="chapter-toc" id="chapterToc">
+    <a class="chapter-brand" href="../index.html"><span>AI</span><div><b>Learning OS</b><small>v0.7 · Business Radar</small></div></a>
+    <div class="toc-label">第 5 章</div>
+    <nav>
+      <a href="#start" class="active">5.0 先看价值链</a>
+      <a href="#chain">5.1 AI 产业链</a>
+      <a href="#bottleneck">5.2 瓶颈与利润池</a>
+      <a href="#zones">5.3 十类机会区</a>
+      <a href="#moat">5.4 AI 时代的护城河</a>
+      <a href="#economics">5.5 单位经济性</a>
+      <a href="#score">5.6 机会评分器</a>
+      <a href="#scenarios">5.7 四种未来情景</a>
+      <a href="#signals">5.8 领先指标</a>
+      <a href="#frontier">5.9 2026 商业快照</a>
+      <a href="#lab">5.10 本章 Lab</a>
+      <a href="#check">5.11 自测</a>
+    </nav>
+    <div class="toc-progress"><span>本章状态</span><b id="chapterStatus">未完成</b><button id="completeChapter">标记本章完成</button></div>
+  </aside>
+
+  <main class="chapter-main">
+    <header class="chapter-top">
+      <button class="icon-btn chapter-menu" id="chapterMenu">☰</button>
+      <a href="../index.html">← 返回总览</a>
+      <span>Frontier-heavy · 商业与未来</span>
+    </header>
+
+    <article class="chapter-article">
+      <section class="chapter-hero" id="start">
+        <div class="chapter-no">CHAPTER 05</div>
+        <h1>AI 商业机会<br>与未来情景</h1>
+        <p class="lead">“AI 很火”不是商业判断。真正要问的是：<strong>新增价值在哪里产生？哪个环节暂时稀缺？谁拥有分发、数据、工作流和资本？当基础模型继续变强时，这个利润池会扩大、迁移还是消失？</strong></p>
+        <div class="objective-grid">
+          <div><b>产业视角</b><span>看懂电力、芯片、云、模型、Infra、应用和机器人之间的价值传导。</span></div>
+          <div><b>公司视角</b><span>用护城河、单位经济性和模型吞噬风险判断项目。</span></div>
+          <div><b>未来视角</b><span>不用单线 AGI 预测，而用情景树和领先指标更新判断。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section">
+        <div class="callout idea"><b>商业判断的底层公式</b><p>机会质量 ≈ 市场价值密度 × AI 带来的能力跃迁 × 可占有利润 × 持续壁垒 ÷ 执行与资本风险。</p></div>
+        <p>技术越热，越需要区分“社会价值”与“可被某家公司长期捕获的利润”。一个技术可以极大提升生产率，却因为竞争、开源、模型商品化或分发平台抽走价值，而让应用公司很难赚钱。</p>
+      </section>
+
+      <section class="chapter-section" id="chain">
+        <div class="section-kicker">5.1 · VALUE CHAIN</div>
+        <h2>先看完整 AI 价值链：软件只是中间一层</h2>
+        <div class="ai-chain">
+          <article><span>01</span><h3>能源 / 土地 / 数据中心</h3><p>电力、变电、冷却、机房、光纤与建设。</p></article>
+          <article><span>02</span><h3>半导体 / HBM / 网络</h3><p>加速器、先进制程、内存、封装、互连。</p></article>
+          <article><span>03</span><h3>云 / 推理基础设施</h3><p>训练集群、推理、调度、模型服务与成本优化。</p></article>
+          <article><span>04</span><h3>基础模型</h3><p>语言、视觉、语音、多模态、世界模型。</p></article>
+          <article><span>05</span><h3>AI Infra</h3><p>数据、RAG、Eval、Observability、安全、权限、Agent Runtime。</p></article>
+          <article><span>06</span><h3>Horizontal Apps</h3><p>办公、编程、设计、搜索、客服等横向应用。</p></article>
+          <article><span>07</span><h3>Vertical AI</h3><p>医疗、法律、金融、电商、制造、物流等垂直场景。</p></article>
+          <article><span>08</span><h3>AI-native Services</h3><p>不是卖软件席位，而是用 AI 直接交付结果。</p></article>
+          <article><span>09</span><h3>Robotics / Autonomous</h3><p>车辆、仓储、工业、服务和通用机器人。</p></article>
+          <article><span>10</span><h3>AI for Science</h3><p>药物、材料、气候、物理、化学和科研自动化。</p></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="bottleneck">
+        <div class="section-kicker">5.2 · BOTTLENECKS</div>
+        <h2>利润池通常向“最稀缺的瓶颈”移动</h2>
+        <p>产业发展初期，最稀缺的东西往往拥有最强议价权。AI 训练扩张时可能是先进芯片、HBM 和数据中心；模型能力趋同后，价值可能向分发、专有数据、工作流和结果责任迁移。</p>
+        <div class="bottleneck-grid">
+          <div><b>供给受限</b><span>先进芯片、HBM、电力、土地、人才</span><p>稀缺时容易形成高利润，但也吸引大规模资本扩产。</p></div>
+          <div><b>技术难度</b><span>前沿训练、推理优化、安全、机器人</span><p>难复制带来壁垒，但技术迭代可能迅速重置领先。</p></div>
+          <div><b>分发稀缺</b><span>操作系统、办公套件、搜索、CRM、开发者入口</span><p>已有用户入口能把新 AI 功能低成本分发给亿级用户。</p></div>
+          <div><b>数据 / 工作流稀缺</b><span>企业私有数据、行业流程、许可与责任</span><p>越接近真实业务结果，通用模型越难单独替代。</p></div>
+        </div>
+        <div class="callout warn"><b>但瓶颈会移动</b><p>今天的高毛利环节可能因为扩产、开源、标准化或模型进步迅速商品化。投资和创业判断必须看“瓶颈还能维持多久”。</p></div>
+      </section>
+
+      <section class="chapter-section" id="zones">
+        <div class="section-kicker">5.3 · OPPORTUNITY ZONES</div>
+        <h2>十类机会，不代表十类都同样适合创业</h2>
+        <div class="opportunity-grid">
+          <article><b>基础设施扩容</b><span>电力 / DC / Cooling</span><p>资本重、周期长，但 AI 扩张会传导到物理基础设施。</p></article>
+          <article><b>计算供应链</b><span>Chip / HBM / Network</span><p>技术和资本壁垒高，利润集中，但供应链与周期风险大。</p></article>
+          <article><b>推理降本</b><span>Serving / Routing / Small Models</span><p>当调用规模扩大，单位推理成本本身就是巨大市场。</p></article>
+          <article><b>可信 AI Infra</b><span>Eval / Security / Observability</span><p>Agent 越深入生产，测试、权限与审计越刚需。</p></article>
+          <article><b>垂直 Copilot</b><span>专业知识工作</span><p>先增强专家，不急于完全自动化，更容易跨过可靠性门槛。</p></article>
+          <article><b>垂直 Agent</b><span>流程执行</span><p>价值更高，但要解决权限、数据、责任和长任务成功率。</p></article>
+          <article><b>AI-native Service</b><span>按结果收费</span><p>用 AI 重构服务交付成本，而不是只卖软件账号。</p></article>
+          <article><b>Robotics</b><span>Physical Labor</span><p>市场巨大，但可靠性、硬件、现场部署和售后极重。</p></article>
+          <article><b>AI for Science</b><span>研发生产率</span><p>价值密度极高，但验证周期、专业门槛和监管也更高。</p></article>
+          <article><b>新分发入口</b><span>Agent / Search / OS</span><p>如果用户从“点 App”转向“给 Agent 下目标”，现有软件分发格局可能重排。</p></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="moat">
+        <div class="section-kicker">5.4 · MOATS</div>
+        <h2>AI 时代，最脆弱的护城河是“我会调用一个模型 API”</h2>
+        <div class="moat-layers">
+          <div><b>弱</b><span>Prompt / UI 包装</span><p>容易复制，基础模型升级可能直接吸收功能。</p></div>
+          <div><b>中</b><span>工作流集成 / 体验 / 品牌</span><p>更靠近用户习惯，但仍可能被大平台分发优势挤压。</p></div>
+          <div><b>强</b><span>专有数据 / 反馈闭环 / 权限入口</span><p>使用越多越能积累特定任务优势。</p></div>
+          <div><b>更强</b><span>系统-of-record / 责任 / 网络效应</span><p>掌握关键业务记录、许可、交易关系或结果责任，迁移成本更高。</p></div>
+        </div>
+        <p>“模型吞噬风险”指的是：今天你收费提供的功能，下一代基础模型可能直接原生支持。真正稳健的产品要问：<strong>即使底层模型能力翻倍，我的价值是否反而增加？</strong></p>
+      </section>
+
+      <section class="chapter-section" id="economics">
+        <div class="section-kicker">5.5 · UNIT ECONOMICS</div>
+        <h2>AI 软件不一定天然拥有传统 SaaS 的边际成本结构</h2>
+        <div class="economics-equation"><span>单位贡献利润</span><strong>= 收入 − 推理 − 检索/工具 − 重试 − 人审 − 错误损失 − 服务成本</strong></div>
+        <p>传统 SaaS 增加一个用户的计算成本通常相对低；生成式 AI 和 Agent 每一次使用都可能产生显著推理、搜索、工具和长任务成本。因此“收入增长很快”不等于商业模式已经成立。</p>
+        <div class="business-lens"><b>运用到公司分析</b><p>看 AI 公司不能只看 ARR。要看每次任务真实成本、模型降价能否传导给公司、是否需要大量人工兜底、客户愿意为“结果”还是“席位”付费。</p></div>
+      </section>
+
+      <section class="chapter-section" id="score">
+        <div class="section-kicker">5.6 · INTERACTIVE SCORE</div>
+        <h2>机会评分器：强迫自己把“兴奋”拆成变量</h2>
+        <p>这不是投资模型，只是一个思考工具。给你正在研究的 AI 机会打分。</p>
+        <div class="score-card">
+          <div class="score-inputs">
+            <label>价值密度 <input type="range" min="1" max="5" value="3" data-score="value"><b>3</b></label>
+            <label>工作流锁定 <input type="range" min="1" max="5" value="3" data-score="workflow"><b>3</b></label>
+            <label>专有数据 / 反馈 <input type="range" min="1" max="5" value="3" data-score="data"><b>3</b></label>
+            <label>分发优势 <input type="range" min="1" max="5" value="3" data-score="distribution"><b>3</b></label>
+            <label>模型吞噬风险 <input type="range" min="1" max="5" value="3" data-score="absorb"><b>3</b></label>
+            <label>执行 / 资本难度 <input type="range" min="1" max="5" value="3" data-score="execution"><b>3</b></label>
+          </div>
+          <div class="score-output"><span>HEURISTIC SCORE</span><strong id="opportunityScore">50</strong><b>/ 100</b><p id="scoreText"></p></div>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="scenarios">
+        <div class="section-kicker">5.7 · SCENARIO TREE</div>
+        <h2>不要预测一个未来，至少准备四个世界</h2>
+        <div class="scenario-grid">
+          <article><span>A</span><h3>模型快速商品化</h3><p>开源与闭源能力趋同、价格持续下降。</p><b>受益：应用、分发、服务重构、推理规模。</b><small>风险：纯模型溢价和薄包装应用。</small></article>
+          <article><span>B</span><h3>Agent 可靠性跨阈值</h3><p>长任务成功率、电脑操作和工具调用显著提升。</p><b>受益：企业自动化、Agent Infra、AI-native Service。</b><small>风险：传统按席位收费的软件。</small></article>
+          <article><span>C</span><h3>Physical AI 加速</h3><p>机器人和自动驾驶的泛化、成本与安全快速改善。</p><b>受益：传感器、机器人供应链、制造、物流、能源。</b><small>风险：物理劳动密集型商业模式。</small></article>
+          <article><span>D</span><h3>监管与主权碎片化</h3><p>数据、本地部署、模型合规与国家算力政策分化。</p><b>受益：安全、治理、本地云、主权模型。</b><small>风险：全球“一套模型一套产品”复制。</small></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="signals">
+        <div class="section-kicker">5.8 · LEADING SIGNALS</div>
+        <h2>未来判断不要盯新闻标题，要盯领先指标</h2>
+        <div class="signal-list">
+          <div><b>模型经济学</b><span>每百万 Token / 每个任务的真实成本是否继续快速下降？</span></div>
+          <div><b>Agent 成功率</b><span>长任务成功率、可恢复性和人类接管频率。</span></div>
+          <div><b>企业替换</b><span>AI 是新增预算，还是开始替代软件席位、外包和岗位成本？</span></div>
+          <div><b>基础设施</b><span>GPU/HBM 供给、电网接入、数据中心建设与利用率。</span></div>
+          <div><b>Physical AI</b><span>真实环境成功率、硬件 BOM、维护和部署周期。</span></div>
+          <div><b>监管</b><span>责任、版权、数据、模型审计和跨境限制是否改变单位经济性？</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section frontier-section" id="frontier">
+        <div class="section-kicker">5.9 · FRONTIER SNAPSHOT · 2026</div>
+        <h2>资本已经大规模下注，但商业兑现仍高度不均</h2>
+        <p>Stanford 2026 AI Index 统计，2025 年全球企业 AI 投资达到约 5816.9 亿美元，同比大幅增长；组织层面的 AI 使用率达到 88%，但 Agent 在多数企业职能里的实际部署仍处于个位数。这意味着“采用 AI”已经很普遍，但“把 AI 变成自主生产流程”仍处在早期。</p>
+        <p>与此同时，IEA 的《Energy and AI》基准情景预计，为数据中心供电所需的全球发电量将从 2024 年约 460 TWh 增至 2030 年超过 1000 TWh。AI 的经济影响因此会穿透软件，进入电力、建设、制冷和能源结构。</p>
+        <div class="frontier-grid">
+          <article><strong>$581.69B</strong><span>2025 全球企业 AI 投资</span><small>资本投入已进入基础设施级别。</small></article>
+          <article><strong>88%</strong><span>组织报告使用 AI</span><small>广泛采用与深度自动化之间仍有距离。</small></article>
+          <article><strong>&gt;1000 TWh</strong><span>IEA 2030 数据中心供电需求基准情景</span><small>AI 同时是能源和工业基础设施问题。</small></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="lab">
+        <div class="section-kicker">5.10 · LAB 05</div>
+        <h2>选一个 AI 公司或机会，写一页“反营销”投资备忘录</h2>
+        <p>禁止写“市场空间巨大、AI 改变世界”。必须回答：</p>
+        <div class="drawer-grid">
+          <div><b>价值池</b><span>客户为什么愿意付钱？减少了什么真实成本？</span></div>
+          <div><b>壁垒</b><span>模型更强、更便宜后，它的优势还剩什么？</span></div>
+          <div><b>单位经济</b><span>推理、人审、销售、部署和支持成本是多少？</span></div>
+          <div><b>反例</b><span>什么情景发生时，这家公司最容易失去价值？</span></div>
+        </div>
+        <label class="lab-check"><input type="checkbox" data-lab="05"><span>我已经能把一个 AI 商业机会放进价值链，并分析瓶颈、利润池、护城河、单位经济和模型吞噬风险。</span></label>
+      </section>
+
+      <section class="chapter-section" id="check">
+        <div class="section-kicker">5.11 · SELF CHECK</div>
+        <h2>本章自测</h2>
+        <details><summary>Q1：为什么“市场很大”不等于“公司能赚钱”？</summary><p>社会价值可能被客户、平台、基础模型、硬件供应商或竞争者分走。商业价值取决于公司能否长期占有利润，而不只是行业总价值。</p></details>
+        <details><summary>Q2：什么是模型吞噬风险？</summary><p>应用今天收费提供的功能，未来可能直接成为基础模型原生能力或平台免费功能，使产品差异化消失。</p></details>
+        <details><summary>Q3：为什么 Agent 成熟可能冲击传统 SaaS 席位模式？</summary><p>如果 Agent 能跨软件完成目标，客户购买价值可能从“给每个人一个软件账号”转向“直接购买完成的任务或结果”。</p></details>
+        <details><summary>Q4：为什么 AI 机会必须看电力和数据中心？</summary><p>训练和推理最终依赖物理算力与能源。规模扩大时，电网、冷却、土地和建设会成为真实约束和利润池。</p></details>
+      </section>
+
+      <section class="chapter-section sources">
+        <div class="section-kicker">SOURCES</div>
+        <h2>本章基线来源</h2>
+        <ol>
+          <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/economy" target="_blank" rel="noreferrer">Stanford HAI · 2026 AI Index Economy</a></li>
+          <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance" target="_blank" rel="noreferrer">Stanford HAI · 2026 AI Index Technical Performance</a></li>
+          <li><a href="https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai" target="_blank" rel="noreferrer">IEA · Energy and AI</a></li>
+          <li><a href="https://www.iea.org/reports/energy-and-ai/energy-supply-for-ai" target="_blank" rel="noreferrer">IEA · Energy supply for AI</a></li>
+        </ol>
+      </section>
+
+      <div class="chapter-next">
+        <span>NEXT · RISK</span>
+        <h2>机会越大，风险半径也越大。</h2>
+        <p>下一章建立 AI 风险地图：模型错误、Agent 权限、网络安全、隐私、就业、信息生态、垄断、治理与更前沿的系统性风险。</p>
+      </div>
+    </article>
+  </main>
+</div>
+<script src="../assets/chapter.js"></script>
+<script src="../assets/business-radar.js"></script>
+</body>
+</html>
