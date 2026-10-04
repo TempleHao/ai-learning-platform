@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>术语与复习系统 | AI Learning OS</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/review.css" />
+</head>
+<body>
+<main class="review-page">
+  <header class="review-top"><a href="../index.html">← 返回 AI Learning OS</a><span>REVIEW SYSTEM · v0.9</span></header>
+  <section class="review-hero">
+    <span>GLOSSARY + QUIZ</span><h1>术语与复习系统</h1>
+    <p>术语表不是为了背单词，而是为了让你在任何新文章里都能快速定位概念。综合题则检查“概念之间的关系”和“系统判断”。</p>
+    <div class="review-tabs"><button class="active" data-tab="glossary">术语表</button><button data-tab="quiz">综合题</button><button data-tab="wrong">错题本</button></div>
+  </section>
+
+  <section class="review-panel active" id="panel-glossary">
+    <div class="glossary-tools"><input id="glossarySearch" placeholder="搜索 AI、RAG、Agent、HBM..." /><span id="termCount"></span></div>
+    <div class="glossary-grid" id="glossaryGrid"></div>
+  </section>
+
+  <section class="review-panel" id="panel-quiz">
+    <div class="quiz-summary"><span>COMPREHENSIVE CHECK</span><strong id="quizProgress">1 / 15</strong><p>每题提交后立即显示解释；错误会自动进入本地错题本。</p></div>
+    <div class="quiz-card" id="quizCard"></div>
+    <div class="quiz-actions"><button id="prevQuiz">上一题</button><button id="nextQuiz">下一题</button></div>
+  </section>
+
+  <section class="review-panel" id="panel-wrong">
+    <div class="wrong-head"><div><span>LOCAL WRONG ANSWERS</span><h2>错题本</h2></div><button id="clearWrong">清空错题</button></div>
+    <div id="wrongList" class="wrong-list"></div>
+  </section>
+  <footer>AI Learning OS · Review System v0.1 · 错题只保存在当前浏览器。</footer>
+</main>
+<script src="../assets/review.js"></script>
+</body>
+</html>
