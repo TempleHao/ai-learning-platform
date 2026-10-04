@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="AI Learning OS：AI 风险与治理地图" />
+  <title>第 6 章 · AI 风险与治理地图 | AI Learning OS</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/chapter.css" />
+</head>
+<body data-chapter="06">
+<div class="chapter-shell">
+  <aside class="chapter-toc" id="chapterToc">
+    <a class="chapter-brand" href="../index.html"><span>AI</span><div><b>Learning OS</b><small>v0.7 · Risk Radar</small></div></a>
+    <div class="toc-label">第 6 章</div>
+    <nav>
+      <a href="#start" class="active">6.0 风险不是“反 AI”</a>
+      <a href="#formula">6.1 风险半径</a>
+      <a href="#model">6.2 模型风险</a>
+      <a href="#security">6.3 Agent 与安全</a>
+      <a href="#data">6.4 数据、隐私与版权</a>
+      <a href="#economy">6.5 就业与分配</a>
+      <a href="#information">6.6 信息生态</a>
+      <a href="#power">6.7 权力与治理</a>
+      <a href="#frontier-risk">6.8 前沿系统性风险</a>
+      <a href="#manage">6.9 风险管理</a>
+      <a href="#assessor">6.10 风险评估器</a>
+      <a href="#frontier">6.11 2026 风险快照</a>
+      <a href="#lab">6.12 本章 Lab</a>
+    </nav>
+    <div class="toc-progress"><span>本章状态</span><b id="chapterStatus">未完成</b><button id="completeChapter">标记本章完成</button></div>
+  </aside>
+
+  <main class="chapter-main">
+    <header class="chapter-top">
+      <button class="icon-btn chapter-menu" id="chapterMenu">☰</button>
+      <a href="../index.html">← 返回总览</a>
+      <span>Stable + Frontier · 风险与治理</span>
+    </header>
+
+    <article class="chapter-article">
+      <section class="chapter-hero" id="start">
+        <div class="chapter-no">CHAPTER 06</div>
+        <h1>AI 风险<br>与治理地图</h1>
+        <p class="lead">讨论风险不是为了否定 AI，而是为了知道：<strong>能力越强、权限越大、部署越广，错误和滥用的影响半径也会同步扩大。</strong> 真正成熟的 AI 运用能力，必须同时包括风险控制。</p>
+        <div class="objective-grid">
+          <div><b>技术层</b><span>理解幻觉、鲁棒性、Prompt Injection、Agent 权限等风险。</span></div>
+          <div><b>社会层</b><span>理解就业、分配、信息生态、垄断和治理问题。</span></div>
+          <div><b>实践层</b><span>学会用最小权限、Eval、审批、日志和回滚降低风险。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section">
+        <div class="callout idea"><b>先区分两类问题</b><p>“AI 会犯错”是可靠性问题；“AI 被故意用于坏事”是滥用问题。真实系统通常同时面对两者，而且系统权限越高，两类风险越容易叠加。</p></div>
+      </section>
+
+      <section class="chapter-section" id="formula">
+        <div class="section-kicker">6.1 · RISK RADIUS</div>
+        <h2>一个实用的风险公式：别只看模型有多聪明</h2>
+        <div class="risk-formula"><strong>风险半径</strong><span>≈ 能力 × 自主性 × 权限 × 部署规模 × 不可逆性</span></div>
+        <p>同一个模型，用来润色一封邮件和用来自动执行百万美元付款，风险完全不是一个量级。关键差别不是模型版本，而是系统给了它多少自主权、能接触什么资源、错误能影响多少人，以及能否轻易撤销。</p>
+      </section>
+
+      <section class="chapter-section" id="model">
+        <div class="section-kicker">6.2 · MODEL RISK</div>
+        <h2>模型层：最常见的不是“邪恶 AI”，而是自信地错</h2>
+        <div class="risk-cards">
+          <article><span>Hallucination</span><h3>幻觉</h3><p>语言上流畅，不代表事实正确。模型会在证据不足时生成合理形式的内容。</p></article>
+          <article><span>Bias</span><h3>偏差</h3><p>训练数据、标注、评价标准和部署环境都可能放大系统性偏差。</p></article>
+          <article><span>Robustness</span><h3>脆弱性</h3><p>稍微改变措辞、输入顺序、环境或任务分布，表现可能显著变化。</p></article>
+          <article><span>Jagged Frontier</span><h3>能力锯齿</h3><p>高难任务强，不代表低级任务必然可靠；能力边界常常不直观。</p></article>
+        </div>
+        <div class="business-lens"><b>落地原则</b><p>高价值场景不应该问“平均准确率是多少”，而应问：失败主要发生在哪些子任务？能否检测？错误是否可逆？</p></div>
+      </section>
+
+      <section class="chapter-section" id="security">
+        <div class="section-kicker">6.3 · AGENT + SECURITY</div>
+        <h2>Agent 把“错误输出”升级成“错误行动”</h2>
+        <p>当模型可以读邮件、浏览网页、执行代码、调用支付或修改数据库，它面对的不再只是普通 Prompt，而是来自外部世界的潜在恶意输入。</p>
+        <div class="attack-flow">
+          <div><b>恶意内容</b><span>网页 / 文件 / 邮件</span></div><i>→</i>
+          <div><b>Prompt Injection</b><span>诱导模型忽略原任务</span></div><i>→</i>
+          <div><b>越权工具</b><span>读取秘密 / 修改状态</span></div><i>→</i>
+          <div><b>真实损害</b><span>泄露、转账、删除、传播</span></div>
+        </div>
+        <div class="control-grid">
+          <div><b>最小权限</b><span>默认只能读，写入和高风险操作单独授权。</span></div>
+          <div><b>工具白名单</b><span>只允许明确工具和参数范围。</span></div>
+          <div><b>人类审批</b><span>付款、删除、发布等不可逆动作设置闸门。</span></div>
+          <div><b>沙箱与隔离</b><span>代码、浏览器、文件执行尽量限制影响范围。</span></div>
+          <div><b>日志</b><span>保留模型、工具、输入与动作轨迹。</span></div>
+          <div><b>停止条件</b><span>预算、步数、异常与权限失败时强制停止。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="data">
+        <div class="section-kicker">6.4 · DATA / PRIVACY / IP</div>
+        <h2>模型之外，还有“数据能不能进去、结果能不能出去”</h2>
+        <div class="myth-list">
+          <div><b>隐私</b><p>敏感个人信息、客户数据、员工数据进入第三方模型或日志后，可能形成合规与泄露风险。</p></div>
+          <div><b>商业秘密</b><p>源代码、策略、报价、未公开财务数据可能被错误共享给不应访问的人或服务。</p></div>
+          <div><b>版权 / 来源</b><p>训练数据、检索材料和生成输出的权利边界仍在不断演化，不同司法辖区差异明显。</p></div>
+          <div><b>数据投毒</b><p>攻击者可以通过恶意文档、网页、反馈或训练数据影响模型行为和检索结果。</p></div>
+        </div>
+        <p>所以“企业 AI”很大一部分工程不是模型，而是身份、权限、数据分类、日志保留、来源追踪和删除机制。</p>
+      </section>
+
+      <section class="chapter-section" id="economy">
+        <div class="section-kicker">6.5 · LABOR + DISTRIBUTION</div>
+        <h2>生产率提高以后，收益由谁拿走？</h2>
+        <p>AI 对就业的影响不能简单写成“创造岗位”或“消灭岗位”。更准确的单位是<strong>任务</strong>：同一个岗位里，一部分任务被自动化，一部分被增强，一部分因 AI 出现而新增。</p>
+        <div class="labor-grid">
+          <article><b>自动化</b><p>某些重复认知任务直接减少人工工时。</p></article>
+          <article><b>增强</b><p>同一个人可以完成更多案例、更大客户量或更复杂工作。</p></article>
+          <article><b>重组</b><p>岗位职责、初级/高级人才结构和管理跨度改变。</p></article>
+          <article><b>分配</b><p>生产率收益可能流向员工、消费者、平台、资本或拥有稀缺技能的人。</p></article>
+        </div>
+        <div class="callout warn"><b>技能退化风险</b><p>如果新人长期只负责审核 AI，而不亲自完成底层任务，组织可能失去培养高级专家的“学徒路径”。这是自动化之外更隐蔽的长期风险。</p></div>
+      </section>
+
+      <section class="chapter-section" id="information">
+        <div class="section-kicker">6.6 · INFORMATION ECOSYSTEM</div>
+        <h2>当生成成本趋近于零，稀缺品从“内容”变成“可信度”</h2>
+        <p>文本、图片、语音和视频生成成本下降后，垃圾内容、诈骗、深伪和规模化舆论操纵的成本也下降。问题不只是“假内容更多”，而是任何真实证据都更容易被质疑。</p>
+        <div class="definition-box">
+          <span>信息经济的变化</span>
+          <strong>过去稀缺的是生产内容；未来越来越稀缺的是验证来源、身份和真实性。</strong>
+        </div>
+        <p>这会提高可信身份、出处追踪、签名、验证、品牌信誉和高质量策展的价值。</p>
+      </section>
+
+      <section class="chapter-section" id="power">
+        <div class="section-kicker">6.7 · POWER + GOVERNANCE</div>
+        <h2>AI 是一种通用基础能力，因此也会重新分配权力</h2>
+        <div class="power-grid">
+          <div><b>算力集中</b><span>前沿模型需要巨大资本和基础设施，可能加强大公司与大国优势。</span></div>
+          <div><b>平台集中</b><span>拥有操作系统、搜索、云和企业软件入口的平台能快速分发 AI。</span></div>
+          <div><b>数据集中</b><span>掌握用户行为和行业数据的机构可能获得额外优势。</span></div>
+          <div><b>国家主权</b><span>模型、芯片、数据与能源逐渐进入国家战略与跨境政策。</span></div>
+        </div>
+        <p>治理难点在于：监管太慢可能让风险外溢，过早锁死技术又可能抑制创新。不同国家因此会在安全、竞争、主权和开放之间做不同权衡。</p>
+      </section>
+
+      <section class="chapter-section" id="frontier-risk">
+        <div class="section-kicker">6.8 · FRONTIER / SYSTEMIC</div>
+        <h2>前沿风险：当系统更自主、更强、更难监督</h2>
+        <p>更前沿的讨论包括高级系统是否会出现难以控制的目标追求、欺骗、网络攻击自动化、军事升级、生物风险或关键基础设施依赖。这些风险的概率和严重程度存在很大争议，但不能因为不确定就简单忽略。</p>
+        <div class="scenario-grid">
+          <article><span>A</span><h3>低概率 / 高损失</h3><p>即使概率很低，只要潜在损失巨大，也值得提前建立监测和缓解机制。</p></article>
+          <article><span>B</span><h3>能力突增</h3><p>如果某些能力提升快于治理和测试体系，部署可能在风险评估之前发生。</p></article>
+          <article><span>C</span><h3>竞争压力</h3><p>公司或国家担心落后，可能降低安全测试与谨慎部署的激励。</p></article>
+          <article><span>D</span><h3>系统依赖</h3><p>越多关键流程依赖少数模型或云，单点故障与供应链风险越大。</p></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="manage">
+        <div class="section-kicker">6.9 · GOVERN / MAP / MEASURE / MANAGE</div>
+        <h2>风险治理不是写一份原则，而是形成闭环</h2>
+        <p>NIST AI Risk Management Framework 把核心组织为 Govern、Map、Measure、Manage。对运用层可以翻译成：</p>
+        <div class="risk-loop">
+          <div><b>GOVERN</b><span>谁负责？哪些用途禁止？风险接受度多高？</span></div><i>→</i>
+          <div><b>MAP</b><span>系统给谁用、接什么数据、能做哪些动作？</span></div><i>→</i>
+          <div><b>MEASURE</b><span>建立 Eval、红队、监控、事故指标。</span></div><i>→</i>
+          <div><b>MANAGE</b><span>权限、审批、Fallback、修复、回滚与事故响应。</span></div>
+        </div>
+        <div class="callout idea"><b>真正重要的是风险与收益一起设计</b><p>不是“先把 AI 做出来，再让安全团队审核”，而是在任务设计阶段就决定哪些动作自动化、哪些必须由人承担最终责任。</p></div>
+      </section>
+
+      <section class="chapter-section" id="assessor">
+        <div class="section-kicker">6.10 · INTERACTIVE RISK ASSESSOR</div>
+        <h2>风险评估器：同一个模型，放进不同系统风险完全不同</h2>
+        <div class="risk-assessor">
+          <div class="risk-options">
+            <label><input type="checkbox" data-risk="autonomy">模型可自主执行多步任务</label>
+            <label><input type="checkbox" data-risk="write">拥有写入 / 删除 / 付款权限</label>
+            <label><input type="checkbox" data-risk="sensitive">接触敏感或私有数据</label>
+            <label><input type="checkbox" data-risk="scale">一次错误会影响大量用户</label>
+            <label><input type="checkbox" data-risk="irreversible">行动难撤销或有物理后果</label>
+            <label><input type="checkbox" data-risk="highstakes">医疗 / 金融 / 法律 / 安全等高风险决策</label>
+          </div>
+          <div class="risk-output"><span>RISK RADIUS</span><strong id="riskScore">LOW</strong><p id="riskAdvice"></p></div>
+        </div>
+      </section>
+
+      <section class="chapter-section frontier-section" id="frontier">
+        <div class="section-kicker">6.11 · FRONTIER SNAPSHOT · 2026</div>
+        <h2>风险管理速度仍落后于能力与部署速度</h2>
+        <p>Stanford 2026 AI Index 报告称，AI Incident Database 记录的 AI 事故从 2024 年的 233 起增加到 2025 年的 362 起。报告同时指出，前沿模型开发者几乎都会报告能力基准，但 Responsible AI 基准报告仍不充分。</p>
+        <p>NIST 的 AI RMF 仍在持续更新；2026 年又发布了面向关键基础设施可信 AI 的概念说明。这个趋势说明，AI 风险治理正在从一般性原则逐渐进入特定行业与关键基础设施的操作层。</p>
+        <div class="frontier-grid">
+          <article><strong>362</strong><span>2025 记录的 AI incidents</span><small>高于 2024 年的 233。</small></article>
+          <article><strong>↑</strong><span>能力增长快于责任评测</span><small>“会什么”通常比“安全吗”更容易被系统测量和宣传。</small></article>
+          <article><strong>Lifecycle</strong><span>风险治理进入全生命周期</span><small>设计、采购、部署、监控和事故响应都需要控制。</small></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="lab">
+        <div class="section-kicker">6.12 · LAB 06</div>
+        <h2>给你自己的 AI Workflow 做一次“事故前复盘”</h2>
+        <p>假设系统已经造成一次严重事故，倒推最可能的原因：</p>
+        <div class="drawer-grid">
+          <div><b>模型怎么错？</b><span>幻觉、歧义、分布外、工具选择错误？</span></div>
+          <div><b>为什么没拦住？</b><span>没有 Eval、没有审批、权限过大、日志不足？</span></div>
+          <div><b>损害怎么扩大？</b><span>自动重复、规模化用户、不可逆动作？</span></div>
+          <div><b>最小控制是什么？</b><span>哪一个校验或权限闸门能显著缩小风险半径？</span></div>
+        </div>
+        <label class="lab-check"><input type="checkbox" data-lab="06"><span>我已经能同时从能力、自主性、权限、规模和不可逆性分析一个 AI 系统的风险，而不是只说“模型可能幻觉”。</span></label>
+      </section>
+
+      <section class="chapter-section sources">
+        <div class="section-kicker">SOURCES</div>
+        <h2>本章基线来源</h2>
+        <ol>
+          <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noreferrer">NIST · AI Risk Management Framework</a></li>
+          <li><a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence" target="_blank" rel="noreferrer">NIST · Generative AI Profile</a></li>
+          <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/responsible-ai" target="_blank" rel="noreferrer">Stanford HAI · 2026 AI Index Responsible AI</a></li>
+          <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/policy-and-governance" target="_blank" rel="noreferrer">Stanford HAI · 2026 AI Index Policy and Governance</a></li>
+        </ol>
+      </section>
+
+      <div class="chapter-next">
+        <span>CORE MAP COMPLETE</span>
+        <h2>至此，第一轮“完整地图”闭环完成。</h2>
+        <p>下一阶段不再只是继续加章节，而是深化：补技术路线细节、人物与论文、专项商业研究、案例库、题库、Lab 项目和持续更新的 Frontier Radar。</p>
+      </div>
+    </article>
+  </main>
+</div>
+<script src="../assets/chapter.js"></script>
+<script src="../assets/risk-radar.js"></script>
+</body>
+</html>
