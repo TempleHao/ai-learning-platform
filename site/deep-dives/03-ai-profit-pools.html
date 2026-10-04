@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="AI Learning OS Deep Dive：AI 利润池、商品化与商业机会" />
+  <title>Deep Dive 03 · AI 利润池与商业机会 | AI Learning OS</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/chapter.css" />
+</head>
+<body data-chapter="deep03">
+<div class="chapter-shell">
+  <aside class="chapter-toc" id="chapterToc">
+    <a class="chapter-brand" href="../index.html"><span>AI</span><div><b>Learning OS</b><small>v0.10 · Business Deep Dive</small></div></a>
+    <div class="toc-label">Deep Dive 03</div>
+    <nav>
+      <a href="#start" class="active">D3.0 利润池而不是热点</a>
+      <a href="#scarcity">D3.1 稀缺决定利润池</a>
+      <a href="#infra">D3.2 基础设施为什么赚钱</a>
+      <a href="#models">D3.3 模型层的商品化压力</a>
+      <a href="#apps">D3.4 应用层的真正壁垒</a>
+      <a href="#services">D3.5 AI-native 服务</a>
+      <a href="#physical">D3.6 机器人 / 科学</a>
+      <a href="#academia">D3.7 学界与产业边界</a>
+      <a href="#framework">D3.8 机会评分框架</a>
+      <a href="#signals">D3.9 2026 商业信号</a>
+      <a href="#check">D3.10 自测</a>
+    </nav>
+    <div class="toc-progress"><span>Deep Dive 状态</span><b id="chapterStatus">未完成</b><button id="completeChapter">标记本页完成</button></div>
+  </aside>
+
+  <main class="chapter-main">
+    <header class="chapter-top">
+      <button class="icon-btn chapter-menu" id="chapterMenu">☰</button>
+      <a href="../chapters/06-business-map.html">← 返回第 6 章</a>
+      <span>Frontier + Business · Opportunity Economics</span>
+    </header>
+
+    <article class="chapter-article">
+      <section class="chapter-hero" id="start">
+        <div class="chapter-no">DEEP DIVE 03</div>
+        <h1>AI 利润池、商品化与商业机会</h1>
+        <p class="lead">不要问“AI 哪个赛道最火”。更好的问题是：<strong>哪一种稀缺资源正在成为瓶颈？谁拥有议价权？谁会被更便宜、更强的基础能力商品化？</strong></p>
+        <div class="objective-grid">
+          <div><b>利润池</b><span>理解为什么价值创造和利润捕获经常不在同一层。</span></div>
+          <div><b>商品化</b><span>理解模型降价、开源与平台捆绑如何压缩中间层。</span></div>
+          <div><b>机会判断</b><span>建立“稀缺 × 嵌入 × 责任 × 分发”的商业框架。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section">
+        <div class="callout idea"><b>最重要的经济学直觉</b><p>AI 价值链上的利润不会平均分配。利润倾向于流向短期最稀缺、最难替代、最能控制分发或结果责任的环节。</p></div>
+      </section>
+
+      <section class="chapter-section" id="scarcity">
+        <div class="section-kicker">D3.1 · SCARCITY</div>
+        <h2>技术革命的利润池，经常围绕“瓶颈”移动</h2>
+        <p>当某一层供给极其稀缺，而下游需求爆发时，这一层往往拥有超额议价权。但一旦供给扩张、技术替代或标准化发生，利润池会转移。</p>
+        <div class="mechanism-grid">
+          <article><span>01</span><h3>算力稀缺</h3><p>先进加速器、HBM、互连、先进封装和数据中心容量在需求爆发期获得强议价权。</p></article>
+          <article><span>02</span><h3>模型能力稀缺</h3><p>当只有极少数模型能完成高价值任务，模型提供商可以收取能力溢价。</p></article>
+          <article><span>03</span><h3>分发稀缺</h3><p>当模型趋同时，拥有操作系统、云、办公软件、搜索入口或行业客户关系的一方更容易捕获价值。</p></article>
+          <article><span>04</span><h3>责任稀缺</h3><p>医疗、金融、法律、工业等高风险场景里，“谁敢为结果负责”本身就是壁垒。</p></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="infra">
+        <div class="section-kicker">D3.2 · INFRASTRUCTURE PROFIT POOL</div>
+        <h2>为什么基础设施层可以获得极高利润？因为它卡住整个扩张速度</h2>
+        <p>AI 是软件体验，但底层是非常重的物理基础设施。IEA 基准情景预计，全球数据中心用电量到 2030 年约 945 TWh；为满足这些数据中心需求所需的发电量则超过 1000 TWh。两者口径不同，但都指向同一件事：AI 扩张正在把电力、冷却、数据中心和网络变成战略约束。</p>
+        <div class="business-lens"><b>重要区别</b><p>“行业需求很大”不等于“所有基础设施公司都高回报”。高回报来自供给受限、替代少、资本效率高、客户锁定强的具体环节。</p></div>
+        <p>NVIDIA 2026 财年报告显示营收约 2159 亿美元、毛利率 71.1%。这不是“芯片行业天然高毛利”的证明，而是说明在当前加速计算瓶颈中，具有强平台、软件生态和产品领先的供应商可以获得极强议价能力。</p>
+      </section>
+
+      <section class="chapter-section" id="models">
+        <div class="section-kicker">D3.3 · MODEL COMMODITIZATION</div>
+        <h2>模型层的悖论：能力越来越重要，但单位能力可能越来越便宜</h2>
+        <p>Stanford 2026 AI Index 显示，前沿模型性能正在收敛，顶级厂商在 Arena 排名上的差距变得很小。与此同时，2025 AI Index 记录到达到 GPT-3.5 级能力的推理成本在约 18 个月内下降超过 280 倍。</p>
+        <div class="definition-box">
+          <span>商业含义</span>
+          <strong>如果“同样的智能能力”持续降价，单纯转售模型能力的产品会承受持续毛利压力。</strong>
+        </div>
+        <div class="compare-grid">
+          <article><span>容易商品化</span><h3>薄封装</h3><p>一个 Prompt + 通用模型 + 简单 UI。</p><ul><li>模型切换容易</li><li>功能易被平台内置</li><li>缺少专有数据</li></ul></article>
+          <article><span>更难商品化</span><h3>深工作流</h3><p>模型 + 数据 + 权限 + 集成 + 评测 + 人审 + 结果责任。</p><ul><li>切换成本更高</li><li>过程数据持续积累</li><li>真正改变业务流程</li></ul></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="apps">
+        <div class="section-kicker">D3.4 · APPLICATION MOATS</div>
+        <h2>应用层真正的护城河，不是“我们用了最强模型”</h2>
+        <div class="decision-grid">
+          <div><b>工作流嵌入</b><span>产品是否成为用户每天完成任务的必经路径？</span></div>
+          <div><b>专有数据</b><span>是否拥有通用模型拿不到的高质量反馈与业务状态？</span></div>
+          <div><b>分发</b><span>获客是不是比技术本身更难复制？</span></div>
+          <div><b>切换成本</b><span>历史记录、权限、流程、团队协作是否形成锁定？</span></div>
+          <div><b>结果责任</b><span>客户买的是一个工具，还是“把结果交给你”？</span></div>
+          <div><b>合规与信任</b><span>在高风险行业里，认证、审计和品牌是否成为准入门槛？</span></div>
+        </div>
+        <p>因此，最有价值的垂直 AI 往往不是“更会聊天”，而是能接入行业系统、理解专有流程、自动验收结果，并在错误时知道如何升级给人。</p>
+      </section>
+
+      <section class="chapter-section" id="services">
+        <div class="section-kicker">D3.5 · AI-NATIVE SERVICES</div>
+        <h2>一个可能被低估的方向：AI 让“服务业”重新软件化</h2>
+        <p>传统 SaaS 卖工具，BPO / 咨询 / 外包卖结果。Agent 如果能承担大量执行步骤，会让两者边界变模糊。</p>
+        <div class="value-flow">
+          <div><b>传统 SaaS</b><span>客户自己操作软件</span></div><i>→</i>
+          <div><b>Copilot</b><span>AI 帮客户操作</span></div><i>→</i>
+          <div><b>Agent Service</b><span>客户只提交目标</span></div><i>→</i>
+          <div><b>Outcome Pricing</b><span>按结果 / 交易 / 节省收费</span></div>
+        </div>
+        <p>如果这种模式成立，AI 的 TAM 不再只对应软件预算，还可能侵入人工服务预算、外包预算和内部岗位成本。</p>
+      </section>
+
+      <section class="chapter-section" id="physical">
+        <div class="section-kicker">D3.6 · PHYSICAL + SCIENCE</div>
+        <h2>机器人和 AI for Science：潜在价值极大，但验证周期也更长</h2>
+        <p>软件 Agent 的错误通常可以撤销；机器人、自动驾驶、药物和材料的错误会产生现实成本。因此这些领域的商业化速度不应简单套用 SaaS 的节奏。</p>
+        <div class="route-card">
+          <div><b>Robotics</b><p>机会在结构化场景先成熟：仓储、制造、固定路线、特定任务。</p></div>
+          <div><b>Autonomy</b><p>真正壁垒不仅是模型，还包括地图、车队运营、安全体系、监管与资本。</p></div>
+          <div><b>AI for Science</b><p>价值在于把“昂贵实验 / 搜索”变成更便宜的计算候选，再与真实实验闭环。</p></div>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="academia">
+        <div class="section-kicker">D3.7 · ACADEMIA × INDUSTRY</div>
+        <h2>学界机会正在重新分层：前沿训练越来越工业化，长周期探索仍需要大学</h2>
+        <p>Stanford AI Index 2026 指出，2025 年超过 90% 的 notable frontier models 由产业界产生。原因很直接：前沿训练所需算力、数据工程和资本规模越来越大。</p>
+        <p>但这不意味着学界失去意义。大学在长期基础研究、理论、跨学科、公开评测、社会影响和不以短期收入为目标的探索上仍有结构性优势。</p>
+        <div class="business-lens"><b>产业化机会</b><p>未来很多“学界 → 商业”的机会不一定是再训练一个通用大模型，而可能是新架构、推理方法、数据、科学模型、机器人算法、评测、安全、材料和专用硬件。</p></div>
+      </section>
+
+      <section class="chapter-section" id="framework">
+        <div class="section-kicker">D3.8 · OPPORTUNITY SCORE</div>
+        <h2>一个比“市场大不大”更实用的评分框架</h2>
+        <div class="myth-list">
+          <div><b>稀缺性</b><p>你控制的是一个真正短缺的资源，还是随时可替换的 API？</p></div>
+          <div><b>AI 增益</b><p>AI 是锦上添花，还是让成本 / 时间下降一个数量级？</p></div>
+          <div><b>可靠性门槛</b><p>当前技术离“客户敢托管”还有多远？</p></div>
+          <div><b>分发</b><p>用户为什么会选择你，而不是基础模型厂商或原有软件巨头？</p></div>
+          <div><b>单位经济性</b><p>模型、算力、人审、销售和支持全部算完后，毛利结构是否成立？</p></div>
+          <div><b>吞噬风险</b><p>未来 12–24 个月模型原生能力升级，会让你的核心功能免费化吗？</p></div>
+          <div><b>责任与合规</b><p>行业是否需要认证、审计、赔付、牌照或专业责任？</p></div>
+          <div><b>反馈闭环</b><p>使用越多，是否能积累更好的数据与评测，让产品持续变强？</p></div>
+        </div>
+      </section>
+
+      <section class="chapter-section frontier-section" id="signals">
+        <div class="section-kicker">D3.9 · 2026 SIGNALS</div>
+        <h2>当前商业阶段：采用很广，流程重构还早，资本投入极重</h2>
+        <div class="frontier-grid">
+          <article><strong>$581.69B</strong><span>2025 全球 corporate AI investment</span><small>资本已经进入重基础设施周期。</small></article>
+          <article><strong>88%</strong><span>组织报告使用 AI</span><small>“有人在用”已不是瓶颈，深度工作流重构才是。</small></article>
+          <article><strong>single digits</strong><span>多数业务职能的 Agent 部署率</span><small>Agent 仍处在能力出现、组织部署尚未成熟的阶段。</small></article>
+        </div>
+        <p>这意味着近期最值得找的机会，往往不是再证明“AI 有用”，而是解决从 Demo 到生产的中间层：可靠性、权限、数据、评测、工作流、成本和责任。</p>
+      </section>
+
+      <section class="chapter-section" id="check">
+        <div class="section-kicker">D3.10 · SELF CHECK</div>
+        <h2>本页自测</h2>
+        <details><summary>为什么模型能力提升可能同时利好和伤害应用公司？</summary><p>更强模型会让新的工作流可行，扩大应用市场；但也会把一部分原本需要应用公司实现的功能变成基础模型原生能力，压缩差异化。</p></details>
+        <details><summary>为什么基础设施需求大，不代表所有基础设施公司都会赚高回报？</summary><p>高回报取决于供给约束、差异化、利用率、资本成本和议价权。重资产行业也可能因过度建设而回报下降。</p></details>
+        <details><summary>垂直 AI 最好的壁垒通常是什么？</summary><p>工作流嵌入、专有数据、分发、结果责任、合规和反馈闭环，而不是“用了某个模型”。</p></details>
+      </section>
+
+      <section class="chapter-section sources">
+        <div class="section-kicker">SOURCES</div>
+        <h2>前沿来源</h2>
+        <ol>
+          <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/economy" target="_blank" rel="noreferrer">Stanford HAI · 2026 AI Index — Economy</a></li>
+          <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance" target="_blank" rel="noreferrer">Stanford HAI · 2026 AI Index — Technical Performance</a></li>
+          <li><a href="https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development" target="_blank" rel="noreferrer">Stanford HAI · 2025 AI Index — Inference cost decline</a></li>
+          <li><a href="https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai" target="_blank" rel="noreferrer">IEA · Energy demand from AI</a></li>
+          <li><a href="https://www.iea.org/reports/energy-and-ai/energy-supply-for-ai" target="_blank" rel="noreferrer">IEA · Energy supply for AI</a></li>
+          <li><a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm" target="_blank" rel="noreferrer">NVIDIA FY2026 10-K</a></li>
+        </ol>
+      </section>
+    </article>
+  </main>
+</div>
+<script src="../assets/chapter.js"></script>
+</body>
+</html>
