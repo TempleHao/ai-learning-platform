@@ -16,3 +16,10 @@ if(document.body.dataset.chapter && !document.querySelector('script[data-extensi
   resourceScript.dataset.extensionResources='1';
   document.body.appendChild(resourceScript);
 }
+
+if(document.body.dataset.chapter && !document.querySelector('script[data-explore-nodes]')){
+  const exploreScript=document.createElement('script');
+  exploreScript.src='/ai-learning-platform/assets/explore.js';
+  exploreScript.dataset.exploreNodes='1';
+  document.body.appendChild(exploreScript);
+}
