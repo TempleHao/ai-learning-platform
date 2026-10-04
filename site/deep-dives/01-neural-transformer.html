@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="AI Learning OS Deep Dive：神经网络、Transformer 与 Scaling" />
+  <title>Deep Dive 01 · 神经网络与 Transformer | AI Learning OS</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/chapter.css" />
+</head>
+<body data-chapter="deep01">
+<div class="chapter-shell">
+  <aside class="chapter-toc" id="chapterToc">
+    <a class="chapter-brand" href="../index.html"><span>AI</span><div><b>Learning OS</b><small>v0.9 · Deep Dive</small></div></a>
+    <div class="toc-label">Deep Dive 01</div>
+    <nav>
+      <a href="#start" class="active">D1.0 深潜目标</a>
+      <a href="#neuron">D1.1 从线性模型到神经元</a>
+      <a href="#nonlinear">D1.2 为什么要非线性</a>
+      <a href="#representation">D1.3 表示学习</a>
+      <a href="#architectures">D1.4 CNN / RNN / Transformer</a>
+      <a href="#attention">D1.5 Attention</a>
+      <a href="#block">D1.6 Transformer Block</a>
+      <a href="#scale">D1.7 Scaling</a>
+      <a href="#moe">D1.8 MoE 与稀疏激活</a>
+      <a href="#reasoning">D1.9 推理时计算</a>
+      <a href="#compression">D1.10 效率工程</a>
+      <a href="#check">D1.11 自测</a>
+    </nav>
+    <div class="toc-progress"><span>Deep Dive 状态</span><b id="chapterStatus">未完成</b><button id="completeChapter">标记本页完成</button></div>
+  </aside>
+
+  <main class="chapter-main">
+    <header class="chapter-top">
+      <button class="icon-btn chapter-menu" id="chapterMenu">☰</button>
+      <a href="../index.html">← 返回总览</a>
+      <span>Optional Deep Dive · Stable Core</span>
+    </header>
+
+    <article class="chapter-article">
+      <section class="chapter-hero" id="start">
+        <div class="chapter-no">DEEP DIVE 01</div>
+        <h1>神经网络、Transformer<br>与 Scaling</h1>
+        <p class="lead">你不需要先成为算法工程师，但如果想成为真正的 AI 运用层专家，必须能看懂大模型内部的几个关键结构：<strong>参数如何组合成层、层如何形成表示、Attention 如何交换上下文，以及规模为什么会持续带来能力变化。</strong></p>
+        <div class="objective-grid">
+          <div><b>直觉</b><span>知道“神经元、层、表示、残差、Attention”分别在做什么。</span></div>
+          <div><b>结构</b><span>能画出一个简化 Transformer Block。</span></div>
+          <div><b>趋势</b><span>理解 Scaling、MoE、推理时计算和效率优化为何重要。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="neuron">
+        <div class="section-kicker">D1.1 · NEURON</div>
+        <h2>一个“神经元”本质上仍然是加权求和 + 变换</h2>
+        <div class="formula-box"><span>最简形式</span><strong>z = w₁x₁ + w₂x₂ + … + b</strong></div>
+        <p>输入 x 代表特征，权重 w 决定每个特征影响多大，b 是偏置。单个线性单元能力很有限，但大量单元组成多层网络，并加入非线性激活后，就可以表示非常复杂的函数。</p>
+        <div class="callout idea"><b>运用层需要抓住的点</b><p>“参数很多”不是为了存很多独立答案，而是让模型拥有更大的函数表示能力；真正的知识和能力分布在大量参数共同形成的计算结构中。</p></div>
+      </section>
+
+      <section class="chapter-section" id="nonlinear">
+        <div class="section-kicker">D1.2 · NONLINEARITY</div>
+        <h2>没有非线性，再多层也只是一个更大的线性函数</h2>
+        <p>如果每一层都只做线性变换，多层可以数学上合并成一层。激活函数引入非线性，让网络可以形成弯曲、分段和复杂的决策边界。</p>
+        <div class="compare-grid">
+          <article><span>LINEAR</span><h3>只能组合成直线/平面</h3><p>表达简单关系很有效，但无法表示复杂模式。</p></article>
+          <article><span>NONLINEAR</span><h3>可以逐层构造复杂函数</h3><p>神经网络因此能从像素、声音或 Token 中形成多层抽象。</p></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="representation">
+        <div class="section-kicker">D1.3 · REPRESENTATION LEARNING</div>
+        <h2>深度学习最关键的变化：特征不再主要由人手工设计</h2>
+        <p>传统机器学习经常依赖人先定义“哪些特征重要”；深度学习则让网络自己学习中间表示。</p>
+        <div class="representation-stack">
+          <div><span>Raw</span><b>原始像素 / Token / 波形</b></div>
+          <div><span>Low</span><b>边缘 / 局部模式 / 子词关系</b></div>
+          <div><span>Mid</span><b>形状 / 语法 / 语义关系</b></div>
+          <div><span>High</span><b>物体 / 概念 / 任务相关表示</b></div>
+        </div>
+        <p>这也是“Embedding”重要的原因：离散对象被映射到连续向量空间，后续层可以对这些表示进行组合和变换。</p>
+      </section>
+
+      <section class="chapter-section" id="architectures">
+        <div class="section-kicker">D1.4 · ARCHITECTURES</div>
+        <h2>不同架构，其实是在给模型不同“归纳偏置”</h2>
+        <div class="architecture-evolution">
+          <article><span>CNN</span><h3>卷积网络</h3><p>利用局部连接和共享权重，特别适合图像中的局部空间结构。</p></article>
+          <article><span>RNN / LSTM</span><h3>循环网络</h3><p>按序列一步步传递状态，适合语言和时间序列，但长距离依赖与并行训练较难。</p></article>
+          <article><span>Transformer</span><h3>Attention 驱动</h3><p>让序列位置直接彼此交互，更适合并行和大规模训练。</p></article>
+        </div>
+        <p>Transformer 的成功并不意味着 CNN / RNN 的所有思想“错误”，而是它在大规模通用序列建模上更适合当时的数据与硬件条件。</p>
+      </section>
+
+      <section class="chapter-section" id="attention">
+        <div class="section-kicker">D1.5 · ATTENTION</div>
+        <h2>Attention 的本质：当前 Token 应该从别的 Token 取多少信息？</h2>
+        <div class="formula-box"><span>经典写法</span><strong>Attention(Q,K,V) = softmax(QKᵀ / √d) V</strong></div>
+        <p>可以把 Q 看成“我在找什么”，K 看成“我能提供什么线索”，V 看成“真正要传递的信息”。Q 与 K 的匹配决定权重，再用这些权重加权汇总 V。</p>
+
+        <div class="attention-explorer">
+          <div class="attention-question">句子：<b>“银行在河边，因为它附近有一座桥。”</b></div>
+          <div class="attention-buttons">
+            <button data-attn="银行">银行</button><button data-attn="河边">河边</button><button data-attn="它" class="active">它</button><button data-attn="桥">桥</button>
+          </div>
+          <div class="attention-result" id="attentionResult"></div>
+        </div>
+        <p>真实模型不是简单地“找代词指代”，而是在很多 Attention Head 中同时学习不同关系。不同 Head 可能关注位置、语法、实体、局部模式或其他模型自行形成的结构。</p>
+      </section>
+
+      <section class="chapter-section" id="block">
+        <div class="section-kicker">D1.6 · TRANSFORMER BLOCK</div>
+        <h2>一个 Transformer Block 可以先记成四件事</h2>
+        <div class="block-explorer">
+          <button class="active" data-block="attention">1 · Attention</button>
+          <button data-block="mlp">2 · MLP</button>
+          <button data-block="residual">3 · Residual</button>
+          <button data-block="norm">4 · Normalization</button>
+          <div id="blockExplain"></div>
+        </div>
+        <div class="transformer-flow">
+          <div><b>输入表示</b></div><i>→</i>
+          <div><b>Self-Attention</b></div><i>→</i>
+          <div><b>Residual + Norm</b></div><i>→</i>
+          <div><b>MLP</b></div><i>→</i>
+          <div><b>Residual + Norm</b></div>
+        </div>
+        <p>现代模型具体顺序和实现会变化，但这个简图足以理解大多数讨论。残差连接之所以重要，是因为它让深层网络更容易优化；ResNet 早期已经展示了残差学习对于训练很深网络的重要性。</p>
+      </section>
+
+      <section class="chapter-section" id="scale">
+        <div class="section-kicker">D1.7 · SCALING</div>
+        <h2>为什么行业曾经疯狂“做大”？因为性能提升表现出可预测的 Scaling 规律</h2>
+        <p>2020 年 Scaling Laws 工作显示，语言模型 Loss 会随模型规模、数据规模和训练计算量按较稳定的幂律趋势下降。这给产业一个极强信号：只要继续投入更多计算和数据，性能很可能继续提升。</p>
+        <div class="scale-grid">
+          <div><b>Parameters</b><span>更大的函数容量</span></div>
+          <div><b>Data</b><span>更多模式与世界信息</span></div>
+          <div><b>Compute</b><span>允许更大模型在更多数据上训练</span></div>
+          <div><b>Quality</b><span>高质量数据和后训练决定“学到什么”</span></div>
+        </div>
+        <p>但“参数越多越好”仍是错误理解。2022 年 Chinchilla 工作强调，在固定计算预算下，模型大小和训练 Token 数需要更合理配比；一个更小、训练数据更多的模型可以胜过更大的但训练不足的模型。</p>
+      </section>
+
+      <section class="chapter-section" id="moe">
+        <div class="section-kicker">D1.8 · MIXTURE OF EXPERTS</div>
+        <h2>MoE：参数可以很多，但一次不必全部激活</h2>
+        <p>普通稠密模型通常每个 Token 都经过同一组参数。Mixture-of-Experts 会根据输入路由到部分“专家”子网络，从而让总参数规模增加，而单次计算只激活其中一部分。</p>
+        <div class="definition-box"><span>直觉</span><strong>“拥有更多专业团队”，但每个任务只叫相关团队来处理。</strong></div>
+        <p>Switch Transformer 等工作展示了稀疏激活在扩大参数规模与控制计算成本之间的潜力，但也带来路由、通信、负载均衡和训练稳定性等工程复杂度。</p>
+      </section>
+
+      <section class="chapter-section" id="reasoning">
+        <div class="section-kicker">D1.9 · INFERENCE-TIME COMPUTE</div>
+        <h2>能力提升不只来自“训练更大”，也来自“回答时多花计算”</h2>
+        <p>传统理解里，训练结束后模型能力大致固定。但推理阶段可以通过多步思考、搜索、验证、工具和候选答案比较，把更多计算投入到单个问题。</p>
+        <div class="compare-grid">
+          <article><span>TRAIN-TIME SCALE</span><h3>训练时投入更多</h3><p>更大模型、更多数据、更长训练，成本集中在预训练阶段。</p></article>
+          <article><span>INFERENCE-TIME SCALE</span><h3>回答时投入更多</h3><p>复杂问题多跑步骤、搜索、验证或工具，成本按任务发生。</p></article>
+        </div>
+        <p>这会改变 AI 的经济学：同一个模型可以对简单问题快速便宜回答，对高价值难题投入更多推理预算。</p>
+      </section>
+
+      <section class="chapter-section" id="compression">
+        <div class="section-kicker">D1.10 · EFFICIENCY</div>
+        <h2>前沿不只有“做大”，还有“把同样能力做便宜”</h2>
+        <div class="efficiency-grid">
+          <div><b>Distillation</b><span>让较小模型学习大模型能力。</span></div>
+          <div><b>Quantization</b><span>降低数值精度，减少显存和计算。</span></div>
+          <div><b>Pruning / Sparsity</b><span>减少不必要计算或连接。</span></div>
+          <div><b>Caching</b><span>复用重复上下文和中间结果。</span></div>
+          <div><b>Routing</b><span>简单任务给小模型，难题再给大模型。</span></div>
+          <div><b>Specialization</b><span>小而专的模型在特定任务可能更经济。</span></div>
+        </div>
+        <div class="business-lens"><b>为什么运用层必须懂这些词</b><p>它们最终会决定推理价格、设备端部署、隐私、本地化和某些 AI 产品是否能形成正毛利。</p></div>
+      </section>
+
+      <section class="chapter-section" id="check">
+        <div class="section-kicker">D1.11 · SELF CHECK</div>
+        <h2>深潜自测</h2>
+        <details><summary>Q1：为什么“模型参数 = 知识数据库”是错误类比？</summary><p>参数共同定义一个计算函数和表示空间，知识分散编码在大量权重交互中，并不能像数据库行那样逐条读取。</p></details>
+        <details><summary>Q2：Attention 的 Q / K / V 可以怎样理解？</summary><p>Q 表示当前位置想找什么，K 表示其他位置提供什么匹配线索，V 是被加权汇总的实际信息。</p></details>
+        <details><summary>Q3：Scaling Laws 为什么对产业资本开支如此重要？</summary><p>因为它让“投入更多计算、模型和数据通常能换来更低 Loss / 更高性能”变得相对可预测，从而支持巨额基础设施投资。</p></details>
+        <details><summary>Q4：MoE 为什么可能让“参数数”和“单次计算量”脱钩？</summary><p>因为每个输入只路由到部分专家参数，而不是激活整个模型。</p></details>
+      </section>
+
+      <section class="chapter-section sources">
+        <div class="section-kicker">SOURCES</div>
+        <h2>基线来源</h2>
+        <ol>
+          <li><a href="https://arxiv.org/abs/1512.03385" target="_blank" rel="noreferrer">He et al. (2015) · Deep Residual Learning</a></li>
+          <li><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noreferrer">Vaswani et al. (2017) · Attention Is All You Need</a></li>
+          <li><a href="https://arxiv.org/abs/2001.08361" target="_blank" rel="noreferrer">Kaplan et al. (2020) · Scaling Laws for Neural Language Models</a></li>
+          <li><a href="https://arxiv.org/abs/2203.15556" target="_blank" rel="noreferrer">Hoffmann et al. (2022) · Chinchilla / Compute-Optimal Training</a></li>
+          <li><a href="https://arxiv.org/abs/2101.03961" target="_blank" rel="noreferrer">Fedus et al. (2021) · Switch Transformer</a></li>
+        </ol>
+      </section>
+    </article>
+  </main>
+</div>
+<script src="../assets/chapter.js"></script>
+<script src="../assets/deep-transformer.js"></script>
+</body>
+</html>
