@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="AI Learning OS：从 Prompt 用户到 AI 系统设计者" />
+  <title>第 5 章 · 从 Prompt 用户到 AI 系统设计者 | AI Learning OS</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/chapter.css" />
+</head>
+<body data-chapter="05">
+<div class="chapter-shell">
+  <aside class="chapter-toc" id="chapterToc">
+    <a class="chapter-brand" href="../index.html"><span>AI</span><div><b>Learning OS</b><small>v0.6 · Builder Path</small></div></a>
+    <div class="toc-label">第 5 章</div>
+    <nav>
+      <a href="#start" class="active">5.0 Prompt 只是第一层</a>
+      <a href="#prompt">5.1 Prompt</a>
+      <a href="#context">5.2 Context Engineering</a>
+      <a href="#rag">5.3 RAG</a>
+      <a href="#tools">5.4 Tool Use</a>
+      <a href="#workflow">5.5 Workflow</a>
+      <a href="#agent">5.6 Agent</a>
+      <a href="#eval">5.7 Eval</a>
+      <a href="#guardrails">5.8 权限与安全</a>
+      <a href="#cost">5.9 成本与模型路由</a>
+      <a href="#maturity">5.10 能力成熟度</a>
+      <a href="#lab">5.11 本章 Lab</a>
+    </nav>
+    <div class="toc-progress"><span>本章状态</span><b id="chapterStatus">未完成</b><button id="completeChapter">标记本章完成</button></div>
+  </aside>
+
+  <main class="chapter-main">
+    <header class="chapter-top"><button class="icon-btn chapter-menu" id="chapterMenu">☰</button><a href="../index.html">← 返回总览</a><span>Practice Core · 运用层专家</span></header>
+    <article class="chapter-article">
+      <section class="chapter-hero" id="start">
+        <div class="chapter-no">CHAPTER 05</div>
+        <h1>从 Prompt 用户到 AI 系统设计者</h1>
+        <p class="lead">真正的 AI 运用能力，不是“会不会写神奇 Prompt”，而是<strong>能不能把模型放进一个有数据、有工具、有评测、有权限、有成本约束的系统里，稳定解决真实问题。</strong></p>
+        <div class="objective-grid">
+          <div><b>第一层</b><span>Prompt：说清楚任务。</span></div>
+          <div><b>中间层</b><span>Context / RAG / Tool / Workflow：让模型接触真实世界。</span></div>
+          <div><b>高级层</b><span>Agent / Eval / Guardrails：让系统可持续执行且可控。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section">
+        <div class="definition-box"><span>运用层专家的核心能力</span><strong>把“模型能力”转化成“可重复的业务结果”。</strong></div>
+        <p>很多 AI 项目失败，不是模型不够强，而是上下文不完整、数据接不上、输出不可验证、没有权限边界、错误没人兜底，或者单位经济性根本不成立。</p>
+      </section>
+
+      <section class="chapter-section" id="prompt">
+        <div class="section-kicker">5.1 · PROMPT</div>
+        <h2>Prompt：明确目标、约束和输出格式</h2>
+        <p>Prompt 是最外层的人机接口。一个好 Prompt 通常至少包含：任务目标、背景、约束、示例、输出格式和质量标准。</p>
+        <div class="drawer-grid">
+          <div><b>目标</b><span>到底要模型完成什么？</span></div>
+          <div><b>背景</b><span>为什么要做，面向谁？</span></div>
+          <div><b>约束</b><span>不能做什么，有什么限制？</span></div>
+          <div><b>格式</b><span>最终输出必须长什么样？</span></div>
+        </div>
+        <div class="callout warn"><b>Prompt 的边界</b><p>如果模型缺事实、缺文件、缺实时状态、缺工具权限，再好的 Prompt 也解决不了根本问题。</p></div>
+      </section>
+
+      <section class="chapter-section" id="context">
+        <div class="section-kicker">5.2 · CONTEXT ENGINEERING</div>
+        <h2>Context Engineering：决定模型“此刻知道什么”</h2>
+        <p>上下文工程比 Prompt 更大。它关心的不是一句话怎么写，而是一次任务执行时，模型应该看到哪些系统规则、历史记录、文件、用户状态、工具结果和中间产物。</p>
+        <div class="stack-diagram">
+          <div><span>System</span><b>角色、规则、边界、行为原则</b></div>
+          <div><span>User</span><b>当前任务与真实意图</b></div>
+          <div><span>Memory</span><b>相关历史、偏好和长期状态</b></div>
+          <div><span>Retrieval</span><b>当前任务需要的外部知识</b></div>
+          <div><span>Tool Results</span><b>实时搜索、数据库、计算和软件返回值</b></div>
+        </div>
+        <p>高手和普通用户的差距，往往不是谁更会“咒语”，而是谁更会组织高质量上下文。</p>
+      </section>
+
+      <section class="chapter-section" id="rag">
+        <div class="section-kicker">5.3 · RAG</div>
+        <h2>RAG：不要让模型凭记忆猜，把相关资料先找出来</h2>
+        <div class="concept-flow">
+          <div><b>用户问题</b><span>当前需求</span></div><i>→</i>
+          <div><b>检索</b><span>从知识库找到相关内容</span></div><i>→</i>
+          <div><b>拼接上下文</b><span>只给模型相关材料</span></div><i>→</i>
+          <div><b>生成回答</b><span>基于检索内容作答</span></div>
+        </div>
+        <p>RAG 特别适合企业知识、政策、产品文档、内部资料等会变化或不能完全依赖模型参数记忆的场景。</p>
+        <div class="business-lens"><b>RAG 的真正价值</b><p>不是“让模型更聪明”，而是把模型和企业自己的知识资产连接起来，并提高可追溯性与时效性。</p></div>
+      </section>
+
+      <section class="chapter-section" id="tools">
+        <div class="section-kicker">5.4 · TOOL USE</div>
+        <h2>Tool Use：模型不会的，不必都靠模型硬算</h2>
+        <p>模型可以调用计算器、搜索、数据库、代码执行、邮件、日历、CRM、支付系统等工具。工具让 AI 从“语言生成器”变成“系统协调者”。</p>
+        <div class="route-card">
+          <div><b>模型擅长</b><p>理解意图、生成语言、归纳、规划候选方案。</p></div>
+          <div><b>工具擅长</b><p>精确计算、实时数据、确定性操作、外部系统执行。</p></div>
+          <div><b>系统设计</b><p>决定什么时候该让模型想，什么时候该让工具做。</p></div>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="workflow">
+        <div class="section-kicker">5.5 · WORKFLOW</div>
+        <h2>Workflow：先把稳定流程自动化，再谈 Agent</h2>
+        <p>如果一个任务步骤明确、分支有限、规则稳定，那么确定性 Workflow 通常比完全自由的 Agent 更可靠。</p>
+        <div class="train-loop compact">
+          <div><b>Step 1</b><span>收集输入</span></div><i>→</i>
+          <div><b>Step 2</b><span>分类 / 提取</span></div><i>→</i>
+          <div><b>Step 3</b><span>调用数据库</span></div><i>→</i>
+          <div><b>Step 4</b><span>生成结果</span></div><i>→</i>
+          <div><b>Step 5</b><span>规则检查 / 人审</span></div>
+        </div>
+        <div class="callout idea"><b>工程原则</b><p>能用固定流程解决，就不要因为“Agent 很酷”而引入额外不确定性。</p></div>
+      </section>
+
+      <section class="chapter-section" id="agent">
+        <div class="section-kicker">5.6 · AGENT</div>
+        <h2>Agent：当任务路径无法提前写死</h2>
+        <p>Agent 适合目标明确、但完成路径需要动态选择的任务。它通常需要：目标、规划、工具、状态、观察、循环和退出条件。</p>
+        <div class="agent-loop">
+          <div><b>Goal</b><span>目标</span></div><i>→</i>
+          <div><b>Plan</b><span>下一步做什么</span></div><i>→</i>
+          <div><b>Act</b><span>调用工具</span></div><i>→</i>
+          <div><b>Observe</b><span>读取结果</span></div><i>↺</i>
+        </div>
+        <p>真正难的不是做出一个 Demo Agent，而是让它在长流程里不跑偏、不重复、不越权、能识别失败并正确终止。</p>
+      </section>
+
+      <section class="chapter-section" id="eval">
+        <div class="section-kicker">5.7 · EVAL</div>
+        <h2>Eval：没有评测，就没有“工程上的进步”</h2>
+        <p>如果你只凭“感觉这次回答不错”来判断系统质量，就无法知道修改 Prompt、换模型或加 RAG 后到底有没有变好。</p>
+        <div class="compare-grid">
+          <article><span>OFFLINE</span><h3>离线评测</h3><p>准备一组固定任务和标准，比较版本前后正确率、格式、事实性、延迟和成本。</p></article>
+          <article><span>ONLINE</span><h3>在线评测</h3><p>观察真实用户完成率、人工接管率、投诉、错误、转化、留存和单位成本。</p></article>
+        </div>
+        <div class="definition-box"><span>成为专家的分水岭</span><strong>你不再问“哪个模型最好”，而问“哪个方案在我的 Eval 上最好”。</strong></div>
+      </section>
+
+      <section class="chapter-section" id="guardrails">
+        <div class="section-kicker">5.8 · GUARDRAILS</div>
+        <h2>权限、安全与人类接管：能力越强，边界越重要</h2>
+        <p>AI 一旦能操作外部系统，错误不再只是“回答错一句话”。因此要遵循最小权限、明确确认、高风险动作人审、日志记录和失败回滚。</p>
+        <div class="myth-list">
+          <div><b>最小权限</b><p>Agent 只获得完成当前任务真正需要的权限。</p></div>
+          <div><b>高风险确认</b><p>付款、删除、发送、发布等不可逆操作应设置明确确认。</p></div>
+          <div><b>可追踪</b><p>记录工具调用、输入输出和关键决策。</p></div>
+          <div><b>可中止</b><p>系统需要明确的超时、循环上限、异常退出和人工接管。</p></div>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="cost">
+        <div class="section-kicker">5.9 · ECONOMICS</div>
+        <h2>成本：不是所有步骤都值得用最强模型</h2>
+        <p>一个成熟 AI 系统往往会做模型路由：简单分类交给便宜模型，复杂推理交给强模型，确定性计算交给工具，重复内容走缓存。</p>
+        <div class="business-lens"><b>单位经济性</b><p>真正可规模化的 AI 产品，要同时优化正确率、延迟、Token、工具调用次数、人工接管率和用户价值。</p></div>
+      </section>
+
+      <section class="chapter-section" id="maturity">
+        <div class="section-kicker">5.10 · MATURITY LADDER</div>
+        <h2>你的 AI 运用成熟度，可以这样分级</h2>
+        <div class="history-line">
+          <div><b>L0</b><span>把 AI 当搜索框：想到什么问什么。</span></div>
+          <div><b>L1</b><span>会写清晰 Prompt，控制格式和质量。</span></div>
+          <div><b>L2</b><span>会组织文件、历史、上下文和检索。</span></div>
+          <div><b>L3</b><span>会接 API、工具和固定 Workflow。</span></div>
+          <div><b>L4</b><span>会做 Agent、状态管理、异常处理和 Eval。</span></div>
+          <div><b>L5</b><span>会从业务结果、权限、成本和组织流程设计完整 AI 系统。</span></div>
+        </div>
+        <p>“AI 运用层专家”至少应该稳定站在 L4–L5，而不是停留在 Prompt 技巧。</p>
+      </section>
+
+      <section class="chapter-section" id="lab">
+        <div class="section-kicker">5.11 · LAB 05</div>
+        <h2>把一个真实工作任务升级成 AI Workflow</h2>
+        <p>选你每周都会做的一项工作，完成五步：</p>
+        <div class="drawer-grid">
+          <div><b>1 · 定义输入输出</b><span>什么进来，什么叫完成？</span></div>
+          <div><b>2 · 补上下文</b><span>模型必须知道哪些资料？</span></div>
+          <div><b>3 · 选工具</b><span>哪些步骤应交给搜索、数据库、代码或外部 App？</span></div>
+          <div><b>4 · 建 Eval</b><span>至少准备 10 个真实测试样本。</span></div>
+          <div><b>5 · 设边界</b><span>什么动作需要人工确认？</span></div>
+        </div>
+        <label class="lab-check"><input type="checkbox" data-lab="05"><span>我已经把一个真实任务从“问 AI”升级成一个有输入、上下文、工具、评测和边界的 Workflow。</span></label>
+      </section>
+
+      <section class="chapter-section sources">
+        <div class="section-kicker">SOURCES</div>
+        <h2>本章说明</h2>
+        <p>这一章主要是工程方法论，不依赖某个厂商的特定产品接口。后续 Lab 会逐步加入真实 API、RAG、工具调用、Agent 和 Eval 项目。</p>
+      </section>
+
+      <div class="chapter-next"><span>NEXT · BUSINESS</span><h2>下一步：AI 到底会把钱赚到哪里？</h2><p>我们将进入 AI 产业价值链：能源、数据中心、芯片、云、模型、基础设施、应用、垂直 AI、机器人与 AI for Science。</p></div>
+    </article>
+  </main>
+</div>
+<script src="../assets/chapter.js"></script>
+</body>
+</html>
