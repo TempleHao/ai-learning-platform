@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="AI Learning OS Deep Dive：AI 技术路线、AI Winter 与路线复兴" />
+  <title>Deep Dive 02 · AI 路线战争与寒冬 | AI Learning OS</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/chapter.css" />
+</head>
+<body data-chapter="deep02">
+<div class="chapter-shell">
+  <aside class="chapter-toc" id="chapterToc">
+    <a class="chapter-brand" href="../index.html"><span>AI</span><div><b>Learning OS</b><small>v0.9.2 · Deep Dive</small></div></a>
+    <div class="toc-label">Deep Dive 02</div>
+    <nav>
+      <a href="#start" class="active">D2.0 为什么要深挖路线史</a>
+      <a href="#routes">D2.1 五条主路线</a>
+      <a href="#timeline">D2.2 关键时间线</a>
+      <a href="#winter">D2.3 AI Winter 真正发生了什么</a>
+      <a href="#statistical">D2.4 统计学习崛起</a>
+      <a href="#neural">D2.5 神经网络复兴</a>
+      <a href="#fusion">D2.6 为什么最后是融合</a>
+      <a href="#people">D2.7 人物与关键作品</a>
+      <a href="#lessons">D2.8 对今天的启示</a>
+      <a href="#check">D2.9 自测</a>
+    </nav>
+    <div class="toc-progress"><span>Deep Dive 状态</span><b id="chapterStatus">未完成</b><button id="completeChapter">标记本页完成</button></div>
+  </aside>
+
+  <main class="chapter-main">
+    <header class="chapter-top">
+      <button class="icon-btn chapter-menu" id="chapterMenu">☰</button>
+      <a href="../chapters/01-history-routes.html">← 返回第 1 章</a>
+      <span>Optional Deep Dive · Stable Core</span>
+    </header>
+
+    <article class="chapter-article">
+      <section class="chapter-hero" id="start">
+        <div class="chapter-no">DEEP DIVE 02</div>
+        <h1>AI 路线战争、寒冬与复兴</h1>
+        <p class="lead">真正有用的 AI 历史，不是“1956、2012、2017”三个年份，而是理解：<strong>为什么一条路线会在某个时代显得正确，又为什么会在另一个时代失去优势。</strong></p>
+        <div class="objective-grid">
+          <div><b>你会看懂</b><span>符号主义、连接主义、概率方法、统计学习与强化学习如何相互竞争。</span></div>
+          <div><b>你会理解</b><span>AI Winter 不是“某个学派失败”这么简单，而是技术与经济条件共同失配。</span></div>
+          <div><b>你会获得</b><span>一种判断新技术路线是否可能跨越产业阈值的方法。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section">
+        <div class="callout idea"><b>历史的核心问题</b><p>当一个领域长期没有成功，不一定说明核心思想错了；可能只是算力、数据、传感器、工程方法、市场和成本结构还没到位。</p></div>
+      </section>
+
+      <section class="chapter-section" id="routes">
+        <div class="section-kicker">D2.1 · FIVE ROUTES</div>
+        <h2>五种“智能从哪里来”的回答</h2>
+        <div class="route-grid">
+          <article><span>SYMBOLIC</span><h3>符号主义</h3><p>知识 = 符号 + 规则 + 逻辑；智能来自显式推理与搜索。</p><b>强项：可解释、约束明确、适合规则稳定领域。</b></article>
+          <article><span>CONNECTIONIST</span><h3>连接主义</h3><p>知识分布在网络参数中，由数据驱动学习得到内部表示。</p><b>强项：模式识别、表示学习、规模化训练。</b></article>
+          <article><span>PROBABILISTIC</span><h3>概率主义</h3><p>世界本身不确定，智能需要用概率表达部分相信与证据更新。</p><b>强项：不确定性、因果/贝叶斯建模、决策支持。</b></article>
+          <article><span>STATISTICAL</span><h3>统计学习</h3><p>把问题转化成从样本到预测函数的学习，追求泛化能力。</p><b>强项：大规模真实数据、预测与分类。</b></article>
+          <article><span>REINFORCEMENT</span><h3>强化学习</h3><p>智能体通过行动、奖励和长期回报学习策略。</p><b>强项：决策、控制、博弈、连续行动。</b></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="timeline">
+        <div class="section-kicker">D2.2 · TIMELINE</div>
+        <h2>关键时间线：不是赢家替代输家，而是主导权不断迁移</h2>
+        <div class="history-line">
+          <div><b>1950</b><span>Turing 把“机器是否可能表现出智能”正式推到计算与哲学讨论中心。</span></div>
+          <div><b>1956</b><span>Dartmouth 夏季研究项目让 Artificial Intelligence 成为一个明确研究领域；McCarthy、Shannon 等人参与。</span></div>
+          <div><b>1950s–60s</b><span>Newell 与 Simon 的启发式搜索、Logic Theorist / General Problem Solver，Rosenblatt 的 Perceptron、Samuel 的跳棋程序等并行发展。</span></div>
+          <div><b>1970s–80s</b><span>专家系统成为商业热点，知识工程成为主流路径；与此同时神经网络路线进入低潮。</span></div>
+          <div><b>1986</b><span>Rumelhart、Hinton、Williams 系统展示反向传播如何学习隐藏表示，连接主义获得关键方法支撑。</span></div>
+          <div><b>late 1980s</b><span>AI 预期与现实应用之间落差扩大，融资与研究热度下降；“AI Winter”成为描述这一时期的常用说法。</span></div>
+          <div><b>1990s</b><span>概率模型、统计学习、SVM 等路线壮大；互联网和数字数据让“从数据学规律”更实用。</span></div>
+          <div><b>2000s</b><span>更便宜的计算、互联网数据、GPU、ImageNet 等条件逐步成熟。</span></div>
+          <div><b>2012</b><span>AlexNet 在 ImageNet 上形成显著突破，GPU 深度学习跨过产业关注阈值。</span></div>
+          <div><b>2016</b><span>AlphaGo 把深度神经网络、强化学习和搜索组合起来，证明“混合系统”可以突破复杂决策任务。</span></div>
+          <div><b>2017</b><span>Transformer 为大规模序列建模提供更适合并行和扩展的架构。</span></div>
+          <div><b>2020s</b><span>基础模型成为主干；但检索、规则、搜索、规划、强化学习又重新进入系统层。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="winter">
+        <div class="section-kicker">D2.3 · AI WINTER</div>
+        <h2>AI Winter 不是一句“专家系统失败了”</h2>
+        <p>Stanford AI100 对早期 AI 的回顾强调：到 1980 年代，很多理论进展并没有转化成足够显著的实际成功。问题包括系统缺乏现实世界 grounding、过度依赖布尔逻辑而难以处理不确定性，以及实际硬件、传感器和数据条件有限。</p>
+        <div class="decision-grid">
+          <div><b>能力错配</b><span>实验室 Demo 在狭窄问题上有效，但离开放世界应用很远。</span></div>
+          <div><b>知识工程瓶颈</b><span>专家知识难以完整显式化，规则维护成本随系统扩大迅速上升。</span></div>
+          <div><b>硬件限制</b><span>计算、存储、传感器与网络条件限制了真实系统规模。</span></div>
+          <div><b>不确定性问题</b><span>现实不是简单 True / False，噪声与不完整信息大量存在。</span></div>
+          <div><b>预期过高</b><span>早期承诺往往超出短期工程能力，形成“预期—现实”落差。</span></div>
+          <div><b>融资周期</b><span>当商业回报不足以支持高预期时，资金和人才快速离场。</span></div>
+        </div>
+        <div class="callout warn"><b>商业历史教训</b><p>技术泡沫破裂不一定意味着技术方向彻底错误。它可能意味着“能力已经出现，但成本、可靠性和配套生态还没到”。</p></div>
+      </section>
+
+      <section class="chapter-section" id="statistical">
+        <div class="section-kicker">D2.4 · STATISTICAL TURN</div>
+        <h2>为什么 1990 年代以后统计学习更像“工业方法”</h2>
+        <p>互联网带来了海量真实数据，硬件和存储也更便宜。AI 的目标逐步从“把完整知识写进机器”转向“让机器从数据中学习可验证的预测函数”。</p>
+        <div class="route-card">
+          <div><b>1988 · Pearl</b><p>概率推理与贝叶斯网络让“在不确定信息中推理”形成系统方法。</p></div>
+          <div><b>1995 · Cortes & Vapnik</b><p>Support Vector Networks 展示统计学习与泛化理论如何构造强分类器。</p></div>
+          <div><b>Internet Era</b><p>搜索、广告、推荐、反欺诈提供高频反馈和持续数据。</p></div>
+        </div>
+        <p>这是一种重要的范式变化：AI 不再必须先“理解整个世界”，只要能在一个经济价值很高的狭窄任务上稳定提高预测质量，就已经可以创造巨大商业价值。</p>
+      </section>
+
+      <section class="chapter-section" id="neural">
+        <div class="section-kicker">D2.5 · CONNECTIONIST RETURN</div>
+        <h2>神经网络复兴，不是因为 2012 年才发现神经网络</h2>
+        <p>1986 年 Rumelhart、Hinton 与 Williams 已经系统描述如何通过反向传播调整多层网络权重，使隐藏单元学习有用表示。真正让深度学习在 2010 年代爆发的，是多个条件同时成熟。</p>
+        <div class="constraints">
+          <b>深度学习跨越阈值所需的互补条件</b>
+          <div><span>Backprop / 优化方法</span><span>大规模标注数据</span><span>GPU / 并行计算</span><span>更深网络架构</span><span>开源软件</span><span>互联网与云</span></div>
+        </div>
+        <p>因此，“算法进步”只是解释的一部分。商业和产业判断必须看互补资产是否同时成熟。</p>
+      </section>
+
+      <section class="chapter-section" id="fusion">
+        <div class="section-kicker">D2.6 · FUSION</div>
+        <h2>今天最强系统越来越不像“某一学派的纯胜利”</h2>
+        <div class="stack-diagram">
+          <div><span>Neural Models</span><b>表示学习、语言、视觉、生成</b></div>
+          <div><span>Search / Planning</span><b>探索候选路径、推理、规划、树搜索</b></div>
+          <div><span>Probability / Uncertainty</span><b>风险、置信、决策与统计评估</b></div>
+          <div><span>Rules / Symbolic</span><b>权限、合规、业务约束、验证</b></div>
+          <div><span>RL / Feedback</span><b>偏好优化、策略学习、长期行动</b></div>
+        </div>
+        <p>AlphaGo 是经典例子：它没有证明“神经网络消灭搜索”，反而证明神经网络可以让搜索更强，搜索又可以让神经网络决策更强。</p>
+        <p>今天的 Agent 也类似：基础模型负责通用表示和推理，但工具、检索、规则、权限、安全和验证决定系统是否真的可用。</p>
+      </section>
+
+      <section class="chapter-section" id="people">
+        <div class="section-kicker">D2.7 · PEOPLE + WORKS</div>
+        <h2>这张人物表不是“名人堂”，而是路线转折点</h2>
+        <div class="application-grid">
+          <article><span>1950s</span><h3>Alan Turing</h3><p>把机器智能、学习与可测试性作为严肃计算问题提出。</p><b>关键词：机器智能问题框架</b></article>
+          <article><span>1956</span><h3>John McCarthy</h3><p>Dartmouth 项目组织者，“Artificial Intelligence”一词正式进入领域命名。</p><b>关键词：领域形成</b></article>
+          <article><span>1950s–60s</span><h3>Newell & Simon</h3><p>Logic Theorist、General Problem Solver，启发式搜索成为早期主线。</p><b>关键词：符号推理 / 搜索</b></article>
+          <article><span>1950s</span><h3>Frank Rosenblatt</h3><p>Perceptron 成为人工神经网络路线早期核心模型。</p><b>关键词：连接主义</b></article>
+          <article><span>1970s–80s</span><h3>Edward Feigenbaum</h3><p>推动专家系统与知识工程，把 AI 带向专业领域知识编码。</p><b>关键词：Expert Systems</b></article>
+          <article><span>1986</span><h3>Rumelhart · Hinton · Williams</h3><p>反向传播让多层网络学习隐藏表示成为关键研究路线。</p><b>关键词：Representation Learning</b></article>
+          <article><span>1988</span><h3>Judea Pearl</h3><p>概率推理、贝叶斯网络推动 AI 更系统地处理不确定性。</p><b>关键词：Probabilistic AI</b></article>
+          <article><span>1995</span><h3>Cortes & Vapnik</h3><p>SVM 成为统计学习时代极具影响力的方法之一。</p><b>关键词：Generalization</b></article>
+          <article><span>2012</span><h3>Krizhevsky · Sutskever · Hinton</h3><p>AlexNet 展示 GPU 深度网络在大规模视觉任务上的优势。</p><b>关键词：Deep Learning Breakout</b></article>
+          <article><span>2017</span><h3>Vaswani et al.</h3><p>Transformer 把 Attention 推到序列建模中心，成为大模型时代关键架构基础。</p><b>关键词：Scaling-friendly Architecture</b></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="lessons">
+        <div class="section-kicker">D2.8 · LESSONS</div>
+        <h2>从历史提炼四条“判断未来路线”的规则</h2>
+        <div class="mechanism-grid">
+          <article><span>01</span><h3>别只看论文指标</h3><p>技术必须同时跨过成本、可靠性、数据与工程门槛。</p></article>
+          <article><span>02</span><h3>互补资产决定爆发时点</h3><p>算法、芯片、数据、软件生态和分发需要一起成熟。</p></article>
+          <article><span>03</span><h3>旧路线会回来</h3><p>搜索、规则、强化学习、概率方法会在新系统里重新组合。</p></article>
+          <article><span>04</span><h3>主流 ≠ 终局</h3><p>当前最强路线可能继续扩张，也可能遇到新的成本、数据或可靠性上限。</p></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="check">
+        <div class="section-kicker">D2.9 · SELF CHECK</div>
+        <h2>本页自测</h2>
+        <details><summary>为什么 AI Winter 不能简单归因于符号主义？</summary><p>因为寒冬涉及预期、实际应用不足、硬件与传感器限制、不确定性处理、知识维护成本和融资周期等多因素；同时其他路线当时也未达到大规模产业可用条件。</p></details>
+        <details><summary>为什么 1990 年代统计学习适合互联网产业？</summary><p>互联网产生海量数据、高频反馈和可量化目标，统计学习可以持续优化搜索、推荐、广告、风控等预测任务。</p></details>
+        <details><summary>为什么 2012 是阈值事件而不是“神经网络诞生”？</summary><p>神经网络和反向传播早已存在。2012 的关键是数据、GPU、架构和训练工程共同使性能优势在大规模任务上非常明显。</p></details>
+      </section>
+
+      <section class="chapter-section sources">
+        <div class="section-kicker">SOURCES</div>
+        <h2>基线来源</h2>
+        <ol>
+          <li><a href="https://ai.dartmouth.edu/our-story" target="_blank" rel="noreferrer">Dartmouth · Our Story</a></li>
+          <li><a href="https://ai100.stanford.edu/2016-report/appendix-i-short-history-ai" target="_blank" rel="noreferrer">Stanford AI100 · A Short History of AI</a></li>
+          <li><a href="https://www.nature.com/articles/323533a0" target="_blank" rel="noreferrer">Rumelhart, Hinton & Williams (1986) · Learning representations by back-propagating errors</a></li>
+          <li><a href="https://doi.org/10.1007/BF00994018" target="_blank" rel="noreferrer">Cortes & Vapnik (1995) · Support-vector networks</a></li>
+          <li><a href="https://shop.elsevier.com/books/probabilistic-reasoning-in-intelligent-systems/pearl/978-0-08-051489-5" target="_blank" rel="noreferrer">Judea Pearl (1988) · Probabilistic Reasoning in Intelligent Systems</a></li>
+          <li><a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks" target="_blank" rel="noreferrer">AlexNet (2012)</a></li>
+          <li><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noreferrer">Attention Is All You Need (2017)</a></li>
+        </ol>
+      </section>
+    </article>
+  </main>
+</div>
+<script src="../assets/chapter.js"></script>
+</body>
+</html>
