@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 2026-10-05 · v0.12 Agent Economy
+- 新增 Deep Dive 04《Agent：从软件工具到数字劳动力》
+- 新增 Agent Anatomy 与自主性阶梯
+- 新增“长任务可靠性连乘”交互实验
+- 新增 Agent 单位经济性计算器
+- 增加 Computer Use、Memory、Multi-Agent、生产控制面
+- 增加 SaaS → Copilot → Agent → Outcome 的商业演化框架
+- 接入第 4 章、第 5 章、首页、延伸阅读与节点级继续探索
+
+
 ## 2026-10-05 · v0.11 Hypertext Learning
 - 全站增加固定右上角 AI 品牌角标
 - 新增节点级「继续探索」系统
