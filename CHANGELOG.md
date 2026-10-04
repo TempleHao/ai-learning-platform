@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 2026-10-05 · v0.13 AI-native Organization
+- 新增 Deep Dive 05《AI-native Organization》
+- 用“任务”而非“岗位”作为 AI 劳动影响分析单位
+- 新增人 / Copilot / Workflow / Agent 委托矩阵
+- 增加初级岗位悖论、管理半径、新角色与责任模型
+- 增加企业四阶段 Agent-native 迁移路径
+- 接入 Deep Dive 04、第 5 章、第 6 章、资源库与节点探索
+
+
 ## 2026-10-05 · v0.12 Agent Economy
 - 新增 Deep Dive 04《Agent：从软件工具到数字劳动力》
 - 新增 Agent Anatomy 与自主性阶梯
