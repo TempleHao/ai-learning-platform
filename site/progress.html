@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>学习进度 | AI Learning OS</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/progress.css" />
+</head>
+<body>
+  <main class="progress-page">
+    <header class="progress-top">
+      <a href="index.html">← 返回 AI Learning OS</a>
+      <span>Local Learning State · v0.8</span>
+    </header>
+    <section class="progress-hero">
+      <span>YOUR LEARNING STATE</span>
+      <h1>学习进度</h1>
+      <p>第一阶段进度保存在当前浏览器的 Local Storage 中，不上传个人数据。换浏览器或清除站点数据后会重置。</p>
+      <div class="progress-summary">
+        <div><strong id="chapterCount">0 / 7</strong><span>章节完成</span></div>
+        <div><strong id="labCount">0 / 7</strong><span>Lab 完成</span></div>
+        <div><strong id="overallPercent">0%</strong><span>核心地图进度</span></div>
+      </div>
+    </section>
+
+    <section class="progress-section">
+      <div class="progress-section-head"><div><span>CORE PATH</span><h2>第一轮核心地图</h2></div><button id="resetProgress">重置本地进度</button></div>
+      <div class="progress-list" id="progressList"></div>
+    </section>
+
+    <section class="progress-section">
+      <div class="progress-section-head"><div><span>NEXT PHASE</span><h2>接下来不只是“继续读章节”</h2></div></div>
+      <div class="next-phase-grid">
+        <article><b>Deepen</b><h3>深化 Stable Core</h3><p>补算法直觉、路线细节、关键论文和概念图。</p></article>
+        <article><b>Cases</b><h3>建立应用案例库</h3><p>按能力、行业、价值机制拆真实成功与失败案例。</p></article>
+        <article><b>Labs</b><h3>做真实项目</h3><p>从知识库、Vibe Coding 到 Agent 和 AI 产品。</p></article>
+        <article><b>Frontier</b><h3>持续更新雷达</h3><p>模型、Agent、机器人、商业、监管与风险。</p></article>
+      </div>
+    </section>
+
+    <footer>AI Learning OS · 本页只读取当前浏览器本地学习状态。</footer>
+  </main>
+<script src="assets/progress.js"></script>
+</body>
+</html>
