@@ -33,7 +33,7 @@ https://templehao.github.io/ai-learning-platform/
 - `v0.6`：AI 运用 / Builder 实战 ✅（当前）
 - `v0.7`：商业机会、未来与风险雷达 ✅
 - `v0.8`：来源规范、CHANGELOG、学习进度总览 ✅（当前）
-- `v0.9`：深化 Stable Core、案例库（20 案例已上线）、Lab Track（7 关已上线）、术语与题库 🟡 进行中
+- `v0.9`：深化 Stable Core、案例库（20 案例已上线）、Lab Track（7 关已上线）、术语与题库（50+ 术语 / 15 综合题）🟡 进行中
 - `v1.0`：形成可系统学习、练习、复盘和持续更新的完整平台
 
 ## 项目原则
