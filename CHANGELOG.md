@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 2026-10-05 · v0.15 RAG / Memory / Knowledge Systems
+- 新增 Deep Dive 07《RAG、Memory 与 Knowledge Systems》
+- 区分模型参数知识、当前 Context、外部 Knowledge / Memory
+- 补齐 RAG Pipeline、Hybrid Retrieval、Chunking、Metadata、Rerank、ACL / Version / Provenance
+- 增加 Retrieval Eval vs Answer Eval
+- 新增交互式 RAG 系统成熟度诊断
+- 新增 Lab 09：可信知识库 / 企业 RAG
+- 增加中文 RAG 课程与 OpenAI / Anthropic / NVIDIA / RAG 原论文延伸资料
+
+
 ## 2026-10-05 · v0.14 AI Coding / Vibe Coding
 - 新增 Deep Dive 06《AI Coding、Vibe Coding 与软件工程新范式》
 - 从 Autocomplete → Chat → Vibe Coding → Agentic Coding → Parallel Agents → AI-native Software Factory 建立成熟度阶梯
