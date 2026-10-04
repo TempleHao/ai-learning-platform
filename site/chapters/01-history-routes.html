@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="AI Learning OS：AI 历史与技术路线竞争" />
+  <title>第 1 章 · AI 技术路线战争 | AI Learning OS</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/chapter.css" />
+</head>
+<body data-chapter="01">
+<div class="chapter-shell">
+  <aside class="chapter-toc" id="chapterToc">
+    <a class="chapter-brand" href="../index.html"><span>AI</span><div><b>Learning OS</b><small>v0.4 · Route History</small></div></a>
+    <div class="toc-label">第 1 章</div>
+    <nav>
+      <a href="#start" class="active">1.0 历史不是年份表</a>
+      <a href="#question">1.1 五种智能观</a>
+      <a href="#symbolic">1.2 符号主义</a>
+      <a href="#connectionist">1.3 连接主义</a>
+      <a href="#statistical">1.4 统计学习</a>
+      <a href="#reinforcement">1.5 强化学习与搜索</a>
+      <a href="#turning">1.6 为什么 2012–2017 是拐点</a>
+      <a href="#unselected">1.7 次要与未被选择路线</a>
+      <a href="#today">1.8 今天其实是混合系统</a>
+      <a href="#lab">1.9 本章 Lab</a>
+      <a href="#check">1.10 自测</a>
+    </nav>
+    <div class="toc-progress"><span>本章状态</span><b id="chapterStatus">未完成</b><button id="completeChapter">标记本章完成</button></div>
+  </aside>
+
+  <main class="chapter-main">
+    <header class="chapter-top">
+      <button class="icon-btn chapter-menu" id="chapterMenu">☰</button>
+      <a href="../index.html">← 返回总览</a>
+      <span>Stable Core · 路线竞争史</span>
+    </header>
+
+    <article class="chapter-article">
+      <section class="chapter-hero" id="start">
+        <div class="chapter-no">CHAPTER 01</div>
+        <h1>AI 技术路线战争</h1>
+        <p class="lead">AI 历史不是“某年发明了什么”的流水账。真正应该追踪的是：<strong>人类对“智能从哪里来”给出了哪些不同答案，以及现实约束为什么让某些路线兴盛、衰退、复兴或融合。</strong></p>
+        <div class="objective-grid">
+          <div><b>核心问题</b><span>智能应该被人写出来，还是从数据里学出来？</span></div>
+          <div><b>分析框架</b><span>算法 × 数据 × 算力 × 任务 × 产品化成本。</span></div>
+          <div><b>商业意义</b><span>路线胜负会决定价值链、人才结构和创业机会迁移。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section">
+        <div class="callout idea"><b>这一章最重要的观点</b><p>没有一条路线因为“哲学上更正确”而永久获胜。路线能否成为主流，取决于当时可获得的数据、算力、算法、硬件、任务需求和工程成本。</p></div>
+        <p>1956 年 Dartmouth 夏季研究项目把 Artificial Intelligence 明确为一个研究领域。早期研究者对前景极其乐观，因为他们相信，只要把学习、推理等智能过程描述得足够精确，就能让机器模拟它们。</p>
+        <p>后来七十年的历史，本质上是在不断回答：<strong>我们到底应该如何把“智能”变成可计算的东西？</strong></p>
+      </section>
+
+      <section class="chapter-section" id="question">
+        <div class="section-kicker">1.1 · FIVE ANSWERS</div>
+        <h2>五种最重要的“智能观”</h2>
+        <div class="route-grid">
+          <article><span>SYMBOLIC</span><h3>智能来自规则与符号</h3><p>把世界表示成符号、知识、逻辑和规则，通过搜索与推理得到答案。</p><b>代表直觉：把专家脑中的知识写进机器。</b></article>
+          <article><span>CONNECTIONIST</span><h3>智能来自网络中的学习</h3><p>不手写全部规则，让神经网络通过数据调整内部参数，形成表示。</p><b>代表直觉：让机器自己“学会看模式”。</b></article>
+          <article><span>STATISTICAL</span><h3>智能来自概率与数据</h3><p>面对不确定世界，不追求绝对规则，而根据数据估计概率、分类和预测。</p><b>代表直觉：世界有噪声，要学概率规律。</b></article>
+          <article><span>REINFORCEMENT</span><h3>智能来自行动与反馈</h3><p>智能体在环境中尝试行动，通过奖励和后果学习策略。</p><b>代表直觉：像练技能一样，在试错中变强。</b></article>
+          <article><span>EVOLUTION / OTHERS</span><h3>智能也可来自搜索、进化与其他机制</h3><p>进化算法、模糊逻辑、贝叶斯模型、群体智能等长期构成重要支线。</p><b>代表直觉：不存在唯一的智能生成机制。</b></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="symbolic">
+        <div class="section-kicker">1.2 · SYMBOLIC AI</div>
+        <h2>符号主义：先把知识写清楚，再让机器推理</h2>
+        <p>早期 AI 很自然地从“人类如何显性解决问题”出发：我们会使用概念、规则、逻辑和目标，因此机器也可以把知识编码成符号，再通过搜索和推理解决问题。</p>
+        <div class="route-card">
+          <div><b>优势</b><p>可解释；规则清晰；在边界明确、知识稳定的任务上可以非常有效。</p></div>
+          <div><b>典型成果</b><p>定理证明、规划、博弈搜索、专家系统、知识库。</p></div>
+          <div><b>核心瓶颈</b><p>知识获取昂贵；规则数量爆炸；现实世界存在噪声、模糊和例外。</p></div>
+        </div>
+        <p>专家系统曾让企业看到 AI 商业化的希望：如果可以把医生、工程师、化学家等专家知识写入系统，机器就能复制专家判断。但这也暴露了“知识工程瓶颈”——专家知道怎么做，不代表能完整地把知识写成数万条稳定规则。</p>
+        <div class="callout warn"><b>不要把 AI Winter 简化成“符号主义失败”</b><p>AI 寒冬来自预期、科研承诺、算力、工程可用性、商业维护成本和资金周期等多种因素。符号方法今天仍然存在于规划、约束、知识表示、验证以及混合 AI 系统中。</p></div>
+      </section>
+
+      <section class="chapter-section" id="connectionist">
+        <div class="section-kicker">1.3 · CONNECTIONISM</div>
+        <h2>连接主义：不要告诉机器全部规则，让它从样本里形成表示</h2>
+        <p>连接主义借鉴神经系统的抽象思想，用大量简单计算单元组成网络，通过调整连接权重来学习。它的关键转变是：<strong>知识不再主要以人工可读规则存在，而分布在大量参数之中。</strong></p>
+        <p>神经网络并非 2010 年后才出现。它经历过多轮兴衰。长期限制它的，不只是理论，也包括训练深层网络的困难、数据规模和计算能力。</p>
+        <div class="definition-box">
+          <span>深度学习真正改变的事情</span>
+          <strong>从“人先设计特征，模型再学习”逐步转向“模型自己学习多层表示”。</strong>
+        </div>
+        <p>2015 年 LeCun、Bengio 与 Hinton 在 Nature 的综述指出，深度学习通过多层表示学习，在语音识别、视觉、目标检测等领域取得显著进展。这里的关键不是单一算法，而是表示学习、反向传播、数据和计算资源共同达到可用规模。</p>
+      </section>
+
+      <section class="chapter-section" id="statistical">
+        <div class="section-kicker">1.4 · STATISTICAL MACHINE LEARNING</div>
+        <h2>统计学习：现实不是逻辑题，而是充满不确定性的分布</h2>
+        <p>1990 年代以后，越来越多 AI 系统把任务转化成从数据中估计模式：哪个邮件更可能是垃圾邮件？哪个网页更相关？哪个广告更可能被点击？哪个用户更可能购买？</p>
+        <div class="business-lens"><b>为什么这条路线对互联网商业极其重要</b><p>搜索、推荐、广告、风控天然就是“大量数据 + 概率预测 + 在线反馈”的问题。统计学习因此不仅是学术路线，也直接进入大规模互联网商业系统。</p></div>
+        <p>这一阶段让 AI 从“试图复制完整人类思考”转向大量狭窄但有价值的预测任务。很多人第一次真正从 AI 获得巨大经济价值，并不是因为聊天机器人，而是因为排序、推荐、广告和预测。</p>
+      </section>
+
+      <section class="chapter-section" id="reinforcement">
+        <div class="section-kicker">1.5 · REINFORCEMENT + SEARCH</div>
+        <h2>强化学习与搜索：智能不仅要认识世界，还要在世界里行动</h2>
+        <p>监督学习通常告诉模型“正确答案是什么”；强化学习则更像教会一个主体做事：给它目标和反馈，让它通过行动获得奖励，逐渐学会策略。</p>
+        <p>AlphaGo 是理解“路线融合”的绝佳案例。2016 年发表的系统并不是只靠一种技术，而是结合深度神经网络、监督学习、强化学习与蒙特卡洛树搜索。它说明真正强大的 AI 系统往往不是路线纯洁主义，而是把不同技术组合在一起。</p>
+        <div class="route-card">
+          <div><b>搜索</b><p>在可能行动空间中向前探索。</p></div>
+          <div><b>神经网络</b><p>估计哪些局面、行动更有希望。</p></div>
+          <div><b>强化学习</b><p>通过自我对弈和奖励改进策略。</p></div>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="turning">
+        <div class="section-kicker">1.6 · TURNING POINTS</div>
+        <h2>为什么 2012–2017 是今天 AI 世界形成的关键拐点？</h2>
+        <div class="history-line">
+          <div><b>2012</b><span>AlexNet 在大规模图像分类上显著领先此前方法，并明确利用 GPU 高效训练深度卷积网络。深度学习开始成为产业关注焦点。</span></div>
+          <div><b>2015</b><span>深度学习已在视觉、语音等多个领域形成清晰优势；深度强化学习开始展示从高维输入直接学策略的能力。</span></div>
+          <div><b>2016</b><span>AlphaGo 展示深度学习 + 强化学习 + 搜索的系统级威力，AI 再次进入全球公众视野。</span></div>
+          <div><b>2017</b><span>Transformer 提出，以注意力机制为核心，减少序列模型对循环结构的依赖，更适合并行训练和规模扩展。</span></div>
+          <div><b>2020s</b><span>大规模预训练与基础模型把“一个模型服务大量任务”变成主流范式，生成式 AI 进入大众产品。</span></div>
+        </div>
+        <div class="constraints">
+          <b>为什么不是 1985 年就发生？</b>
+          <div><span>算法成熟</span><span>大规模数据</span><span>GPU / 加速器</span><span>云基础设施</span><span>互联网分发</span><span>资本投入</span></div>
+        </div>
+        <p>这给商业判断一个非常重要的启示：<strong>技术机会往往不是某个单点发明造成的，而是多个互补要素同时越过阈值。</strong></p>
+      </section>
+
+      <section class="chapter-section" id="unselected">
+        <div class="section-kicker">1.7 · ROADS LESS TAKEN</div>
+        <h2>“没有成为今天主干”的路线，也必须学</h2>
+        <div class="myth-list">
+          <div><b>进化计算</b><p>通过变异、选择、组合等机制搜索解决方案，在优化和特定设计问题仍有价值，但没有成为通用 AI 的主干。</p></div>
+          <div><b>模糊逻辑</b><p>适合处理模糊程度而非简单真假，在控制系统等场景有重要应用，但没有成为现代通用模型的核心范式。</p></div>
+          <div><b>经典概率模型</b><p>贝叶斯网络等方法对不确定性建模非常重要。今天它们的思想仍影响 AI，但产业热点被大规模神经模型盖过。</p></div>
+          <div><b>纯知识图谱路线</b><p>结构化知识在搜索、企业数据、检索与推理中仍重要，但“先把全世界知识结构化再获得智能”没有成为唯一主线。</p></div>
+          <div><b>神经形态 / 类脑计算</b><p>试图从硬件和计算机制上更接近生物神经系统，仍是值得长期观察的潜在分叉。</p></div>
+        </div>
+        <p>学习这些路线不是为了怀旧，而是为了防止“赢家偏差”：今天的大模型路线非常强，但历史反复证明，当前主流并不等于未来终局。</p>
+      </section>
+
+      <section class="chapter-section" id="today">
+        <div class="section-kicker">1.8 · SYNTHESIS</div>
+        <h2>今天最强的系统，其实越来越“混合”</h2>
+        <p>现代 AI 表面上由深度学习和大模型主导，但一个真正可工作的 Agent 或机器人，往往同时使用神经网络、搜索、规则、工具、数据库、检索、规划、验证和人类流程。</p>
+        <div class="stack-diagram">
+          <div><span>Neural</span><b>感知、语言、生成、表示学习</b></div>
+          <div><span>Search / Planning</span><b>探索候选方案、分解任务、规划行动</b></div>
+          <div><span>Symbolic / Rules</span><b>业务规则、权限、安全约束、形式验证</b></div>
+          <div><span>Retrieval / Data</span><b>外部事实、企业知识、实时状态</b></div>
+          <div><span>Feedback</span><b>强化学习、评测、人类反馈、运行结果</b></div>
+        </div>
+        <div class="callout frontier-note"><b>路线判断</b><p>未来值得关注的不是“神经网络会不会彻底消灭其他方法”，而是哪些组合能让 AI 更可靠、更便宜、更能持续行动。</p></div>
+      </section>
+
+      <section class="chapter-section" id="lab">
+        <div class="section-kicker">1.9 · LAB 01</div>
+        <h2>做一张自己的《AI 技术路线战争图》</h2>
+        <p>不用画得漂亮。至少画出五条路线：符号主义、连接主义、统计学习、强化学习、其他支线；然后标出它们的兴衰、融合点，以及 2012、2016、2017 三个关键节点。</p>
+        <label class="lab-check"><input type="checkbox" data-lab="01"><span>我已经能解释：为什么今天深度学习是主干，但这不等于其他路线已经消失。</span></label>
+      </section>
+
+      <section class="chapter-section" id="check">
+        <div class="section-kicker">1.10 · SELF CHECK</div>
+        <h2>本章自测</h2>
+        <details><summary>Q1：符号主义最大的优势和最大的工程问题分别是什么？</summary><p>优势是知识、逻辑和推理链条相对显式、可解释；工程问题是知识获取与维护成本高，面对开放世界的噪声、例外和组合爆炸时很脆弱。</p></details>
+        <details><summary>Q2：为什么说 2012 的突破不是“神经网络突然被发明”？</summary><p>神经网络早已存在。重要变化是算法、数据规模、GPU 计算能力和工程实现共同越过临界点，使深层网络在实际基准上形成明显优势。</p></details>
+        <details><summary>Q3：AlphaGo 为什么体现“混合路线”而不是单一路线胜利？</summary><p>因为它结合了深度神经网络、监督学习、强化学习和树搜索，不同组件承担不同功能。</p></details>
+        <details><summary>Q4：商业上为什么要研究“被淘汰的技术路线”？</summary><p>因为主流路线可能改变，旧路线也可能在新算力、新任务或与新模型结合后重新获得价值。理解失败原因比记住赢家更能帮助判断未来。</p></details>
+      </section>
+
+      <section class="chapter-section sources">
+        <div class="section-kicker">SOURCES</div>
+        <h2>本章基线来源</h2>
+        <ol>
+          <li><a href="https://ai.dartmouth.edu/our-story" target="_blank" rel="noreferrer">Dartmouth · Our Story / 1956 AI workshop</a></li>
+          <li><a href="https://ai100.stanford.edu/2016-report/appendix-i-short-history-ai" target="_blank" rel="noreferrer">Stanford AI100 · A Short History of AI</a></li>
+          <li><a href="https://www.nature.com/articles/nature14539" target="_blank" rel="noreferrer">LeCun, Bengio & Hinton (2015) · Deep learning</a></li>
+          <li><a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks" target="_blank" rel="noreferrer">Krizhevsky, Sutskever & Hinton (2012) · AlexNet</a></li>
+          <li><a href="https://www.nature.com/articles/nature16961" target="_blank" rel="noreferrer">Silver et al. (2016) · AlphaGo</a></li>
+          <li><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noreferrer">Vaswani et al. (2017) · Attention Is All You Need</a></li>
+        </ol>
+      </section>
+
+      <div class="chapter-next">
+        <span>NEXT</span>
+        <h2>下一步：理解模型为什么能“学会东西”。</h2>
+        <p>接下来进入基础原理：数据、参数、训练、损失函数、反向传播、Token、Embedding、预训练和推理。数学只学到足够建立真实直觉的程度。</p>
+      </div>
+    </article>
+  </main>
+</div>
+<script src="../assets/chapter.js"></script>
+</body>
+</html>
