@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="AI Learning OS：AI 应用演进史" />
+  <title>第 4 章 · AI 应用演进史 | AI Learning OS</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/chapter.css" />
+</head>
+<body data-chapter="04">
+<div class="chapter-shell">
+  <aside class="chapter-toc" id="chapterToc">
+    <a class="chapter-brand" href="../index.html"><span>AI</span><div><b>Learning OS</b><small>v0.5 · Application History</small></div></a>
+    <div class="toc-label">第 4 章</div>
+    <nav>
+      <a href="#start" class="active">4.0 应用史的真正主线</a>
+      <a href="#expert">4.1 专家系统</a>
+      <a href="#internet">4.2 搜索推荐广告</a>
+      <a href="#deep">4.3 深度学习应用</a>
+      <a href="#science">4.4 AI for Science</a>
+      <a href="#genai">4.5 生成式 AI</a>
+      <a href="#copilot">4.6 Copilot</a>
+      <a href="#agent">4.7 Agent</a>
+      <a href="#robotics">4.8 自动驾驶与机器人</a>
+      <a href="#economics">4.9 价值如何迁移</a>
+      <a href="#lab">4.10 本章 Lab</a>
+    </nav>
+    <div class="toc-progress"><span>本章状态</span><b id="chapterStatus">未完成</b><button id="completeChapter">标记本章完成</button></div>
+  </aside>
+  <main class="chapter-main">
+    <header class="chapter-top"><button class="icon-btn chapter-menu" id="chapterMenu">☰</button><a href="../index.html">← 返回总览</a><span>Stable + Frontier · 应用演进</span></header>
+    <article class="chapter-article">
+      <section class="chapter-hero" id="start">
+        <div class="chapter-no">CHAPTER 04</div>
+        <h1>AI 应用演进史</h1>
+        <p class="lead">AI 的商业史不是“模型越来越强”这么简单，而是<strong>能力不断跨过新的可用阈值，于是价值从预测、推荐，迁移到生成、协作，再向直接执行任务迁移。</strong></p>
+        <div class="objective-grid">
+          <div><b>第一阶段</b><span>把专家知识和预测能力软件化。</span></div>
+          <div><b>第二阶段</b><span>AI 成为互联网流量和交易分配引擎。</span></div>
+          <div><b>第三阶段</b><span>生成式 AI 进入知识工作与软件工作流。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section">
+        <div class="definition-box"><span>应用史主线</span><strong>规则自动化 → 预测自动化 → 内容生成 → 人机协作 → 任务执行 → 物理行动。</strong></div>
+      </section>
+
+      <section class="chapter-section" id="expert">
+        <div class="section-kicker">4.1 · EXPERT SYSTEMS</div>
+        <h2>第一波商业化：把专家判断编码成规则</h2>
+        <p>专家系统试图把医生、工程师、化学家等专业人士的规则和知识写入机器，让软件在狭窄领域给出接近专家的判断。</p>
+        <div class="business-lens"><b>价值来源</b><p>复制稀缺专家知识、标准化决策、提高一致性。但维护成本高，知识变化会导致规则迅速膨胀。</p></div>
+      </section>
+
+      <section class="chapter-section" id="internet">
+        <div class="section-kicker">4.2 · SEARCH / ADS / RECOMMENDATION</div>
+        <h2>AI 真正第一次成为“互联网利润机器”</h2>
+        <p>搜索排序、广告竞价、内容推荐和风控，把 AI 变成了隐藏在产品后台的决策引擎。它们不需要像人一样对话，只需要在数以亿计的候选中更准确地预测“什么更相关、谁更可能点击、谁更可能购买”。</p>
+        <div class="route-card">
+          <div><b>搜索</b><p>相关性排序决定用户能否找到答案。</p></div>
+          <div><b>广告</b><p>点击/转化预测决定流量变现效率。</p></div>
+          <div><b>推荐</b><p>兴趣预测决定停留时长和交易机会。</p></div>
+        </div>
+        <p>这是理解 AI 商业史的关键：在生成式 AI 爆发之前，AI 已经长期深度参与全球最大互联网公司的收入和用户增长。</p>
+      </section>
+
+      <section class="chapter-section" id="deep">
+        <div class="section-kicker">4.3 · DEEP LEARNING WAVE</div>
+        <h2>2010s：视觉、语音和复杂感知进入产品</h2>
+        <p>深度学习使图像识别、语音识别、机器翻译和复杂感知质量显著提升，于是 AI 从互联网“后台预测”进一步进入摄像头、手机、语音助手、医疗影像和自动驾驶。</p>
+        <div class="history-line">
+          <div><b>2012</b><span>AlexNet 让深度学习成为视觉主流路线。</span></div>
+          <div><b>2016</b><span>AlphaGo 4:1 击败李世石，展示深度神经网络、强化学习和搜索的组合力量。</span></div>
+          <div><b>Late 2010s</b><span>语音、翻译、视觉能力大规模进入消费电子和云服务。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="science">
+        <div class="section-kicker">4.4 · AI FOR SCIENCE</div>
+        <h2>AlphaFold：AI 不只替代劳动，也能扩大科学可计算范围</h2>
+        <p>蛋白质结构实验测定往往需要数月甚至数年。AlphaFold2 在 2021 年 Nature 论文中展示了高度准确的蛋白质结构预测，为大规模结构生物信息学打开新空间。</p>
+        <div class="business-lens"><b>社会价值视角</b><p>AI 的价值不只体现在“少用几个人”。当模型把一个原本稀缺、慢、昂贵的科学能力变得可规模化，它可能扩大整个研究空间。</p></div>
+      </section>
+
+      <section class="chapter-section" id="genai">
+        <div class="section-kicker">4.5 · GENERATIVE AI</div>
+        <h2>2022 之后：AI 第一次成为普通人的通用生产工具</h2>
+        <p>ChatGPT 于 2022 年 11 月 30 日公开发布。自然语言成为调用 AI 的通用界面，AI 使用门槛骤降：不会代码、不会机器学习，也能让模型写、改、总结、解释、生成和分析。</p>
+        <div class="frontier-grid">
+          <article><strong>53%</strong><span>三年内的全球生成式 AI 人口采用率量级</span><small>2026 AI Index：扩散速度快于 PC 或互联网。</small></article>
+          <article><strong>$172B</strong><span>美国消费者年度生成式 AI 剩余价值估计</span><small>说明免费/低价工具已经产生大量用户价值。</small></article>
+          <article><strong>88%</strong><span>调查组织报告使用 AI 的比例</span><small>但使用不等于深度流程重构。</small></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="copilot">
+        <div class="section-kicker">4.6 · COPILOT</div>
+        <h2>Copilot：AI 先进入工作流，成为“人旁边的第二大脑”</h2>
+        <p>软件开发是最早大规模验证 Copilot 模式的领域之一。GitHub 的早期受控研究中，使用 Copilot 的开发者完成特定编码任务的速度显著提高。更重要的不是那个单一百分比，而是产品形态发生了变化：AI 不再要求用户离开工作软件去“问问题”，而是嵌入 IDE、文档、邮箱和业务系统。</p>
+        <div class="definition-box"><span>Copilot 的本质</span><strong>人仍然负责目标、判断和最终责任；AI 在工作流中持续提供候选行动。</strong></div>
+      </section>
+
+      <section class="chapter-section" id="agent">
+        <div class="section-kicker">4.7 · AGENT</div>
+        <h2>Agent：下一步不是给建议，而是替你做一段工作</h2>
+        <p>Agent 把 AI 从“生成内容”推向“执行流程”：读取邮件、搜索资料、调用软件、写代码、填写表单、分析数据、检查结果并继续执行。</p>
+        <p>2026 AI Index 显示，组织 AI 使用率已达 88%，但 Agent 在绝大多数业务职能中的实际部署仍处个位数。这意味着一个很重要的商业窗口：<strong>能力已经出现，组织重构还没有完成。</strong></p>
+        <div class="callout frontier-note"><b>商业机会</b><p>真正稀缺的可能不再只是“更好的模型”，而是把 Agent 安全接入真实权限、数据、软件和责任体系的人。</p></div>
+      </section>
+
+      <section class="chapter-section" id="robotics">
+        <div class="section-kicker">4.8 · AUTONOMY + ROBOTICS</div>
+        <h2>自动驾驶已经规模化，通用家庭机器人仍很早</h2>
+        <p>2025 年 Waymo 已达到约 45 万次每周出行，说明在限定城市、地图、天气和运营体系内，自动驾驶可以形成大规模真实服务。但家庭机器人面对开放环境时仍远不可靠。</p>
+        <p>这说明物理 AI 的商业化不是简单“等模型再强一点”，还受制于硬件成本、安全、责任、维护、数据采集和现实环境复杂度。</p>
+      </section>
+
+      <section class="chapter-section" id="economics">
+        <div class="section-kicker">4.9 · VALUE MIGRATION</div>
+        <h2>AI 的价值捕获正在迁移</h2>
+        <div class="value-ladder">
+          <div><b>Predict</b><span>预测谁会点、买、违约</span></div>
+          <i>→</i><div><b>Generate</b><span>生成内容与代码</span></div>
+          <i>→</i><div><b>Assist</b><span>嵌入工作流提高个人生产率</span></div>
+          <i>→</i><div><b>Execute</b><span>直接完成一段任务</span></div>
+          <i>→</i><div><b>Act</b><span>进入物理世界</span></div>
+        </div>
+        <p>越往右走，潜在价值越大，但错误成本、责任和部署难度也越高。商业机会因此并不是“越自动化越好”，而是寻找<strong>能力、可靠性、责任成本三者的最佳平衡点</strong>。</p>
+      </section>
+
+      <section class="chapter-section" id="lab">
+        <div class="section-kicker">4.10 · LAB 04</div>
+        <h2>做一张“行业 AI 价值迁移图”</h2>
+        <p>任选一个行业，画出 AI 从预测 → 生成 → Copilot → Agent → 物理行动的可能路径，并标注每一级的最大收益和最大风险。</p>
+        <label class="lab-check"><input type="checkbox" data-lab="04"><span>我已经能把一个行业的 AI 机会放进“预测—生成—协作—执行—行动”这条价值链里。</span></label>
+      </section>
+
+      <section class="chapter-section sources">
+        <div class="section-kicker">SOURCES</div><h2>本章基线来源</h2>
+        <ol>
+          <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/economy" target="_blank" rel="noreferrer">Stanford HAI · 2026 AI Index — Economy</a></li>
+          <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance" target="_blank" rel="noreferrer">Stanford HAI · 2026 AI Index — Technical Performance</a></li>
+          <li><a href="https://openai.com/index/chatgpt/" target="_blank" rel="noreferrer">OpenAI · Introducing ChatGPT</a></li>
+          <li><a href="https://www.nature.com/articles/s41586-021-03819-2" target="_blank" rel="noreferrer">Nature · Highly accurate protein structure prediction with AlphaFold</a></li>
+          <li><a href="https://deepmind.google/research/alphago/" target="_blank" rel="noreferrer">Google DeepMind · AlphaGo</a></li>
+        </ol>
+      </section>
+
+      <div class="chapter-next"><span>NEXT · v0.6</span><h2>下一步：真正训练“AI 运用层专家”的工作方法。</h2><p>Prompt 只是起点。接下来进入 Context Engineering、RAG、工具、API、工作流、Agent、Eval、权限与成本。</p></div>
+    </article>
+  </main>
+</div>
+<script src="../assets/chapter.js"></script>
+</body>
+</html>
