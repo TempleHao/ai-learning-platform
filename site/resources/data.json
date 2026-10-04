@@ -1,0 +1,475 @@
+{
+  "reviewed_at": "2026-10-05",
+  "principles": [
+    "中文优先：同等质量下优先中文视频、中文课程和中文报告。",
+    "一手优先：论文、大学课程、官方白皮书、监管/研究机构原文优先。",
+    "少而精：每个节点只保留真正值得花时间的 3–6 个资源。",
+    "标注难度：优先 / 进阶 / 原典，避免初学者被直接扔进论文海里。"
+  ],
+  "chapters": {
+    "00": {
+      "title": "第 0 章 · AI 世界全地图",
+      "intro": "先建立全景认知，再决定往哪里深挖。这里以中文总览课程为主。",
+      "items": [
+        {
+          "type": "中文视频",
+          "level": "优先",
+          "title": "李宏毅 2024 春《生成式人工智能导论》",
+          "source": "李宏毅 / Bilibili",
+          "why": "对零基础非常友好，从“生成式 AI 是什么”讲到大语言模型训练史，是这一章最合适的中文视听延伸。",
+          "url": "https://www.bilibili.com/video/BV1BJ4m1e7g8/"
+        },
+        {
+          "type": "中文视频",
+          "level": "优先",
+          "title": "李宏毅《生成式人工智能与机器学习导论》2026 版",
+          "source": "李宏毅课程 / Bilibili",
+          "why": "比 2024 版更贴近 Agent、Context Engineering 与当下模型能力，适合建立 2026 视角。",
+          "url": "https://www.bilibili.com/video/BV1bDvHBhEhP/"
+        },
+        {
+          "type": "英文报告",
+          "level": "进阶",
+          "title": "2026 AI Index Report",
+          "source": "Stanford HAI",
+          "why": "目前最适合做“AI 世界年度地图”的综合报告之一。英文较多，但图表非常值得看。",
+          "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report"
+        },
+        {
+          "type": "英文参考",
+          "level": "原典",
+          "title": "Artificial Intelligence — NIST Glossary",
+          "source": "NIST",
+          "why": "用一个相对严谨、非营销化的定义校准“AI 到底是什么”。",
+          "url": "https://csrc.nist.gov/glossary/term/artificial_intelligence"
+        }
+      ]
+    },
+    "01": {
+      "title": "第 1 章 · AI 技术路线战争",
+      "intro": "这一章的延伸重点是：不要只背赢家，要看路线如何兴衰、融合。",
+      "items": [
+        {
+          "type": "中文视频",
+          "level": "优先",
+          "title": "人工智能简史（上）",
+          "source": "清华大学 AIR / Bilibili",
+          "why": "覆盖符号推理、专家系统、统计机器学习、感知机、深度学习等路线，适合和本章时间线对照着看。",
+          "url": "https://www.bilibili.com/video/BV1Ze4y1V74w/"
+        },
+        {
+          "type": "英文阅读",
+          "level": "进阶",
+          "title": "A Short History of AI",
+          "source": "Stanford AI100",
+          "why": "一篇非常适合建立技术史骨架的权威短史，重点不是年份，而是几次范式变化。",
+          "url": "https://ai100.stanford.edu/2016-report/appendix-i-short-history-ai"
+        },
+        {
+          "type": "英文阅读",
+          "level": "进阶",
+          "title": "Where AI Was Born",
+          "source": "Dartmouth",
+          "why": "理解 1956 Dartmouth 项目为何成为 AI 领域的标志性起点。",
+          "url": "https://ai.dartmouth.edu/our-story"
+        },
+        {
+          "type": "站内深化",
+          "level": "优先",
+          "title": "Deep Dive 02 · AI 路线战争、寒冬与复兴",
+          "source": "AI Learning OS",
+          "why": "把 AI Winter、概率/统计路线、关键人物与路线融合进一步串起来。",
+          "url": "/ai-learning-platform/deep-dives/02-route-wars-winters.html"
+        }
+      ]
+    },
+    "02": {
+      "title": "第 2 章 · 模型为什么能学会东西",
+      "intro": "先看中文课程建立直觉，再进入教材和 Transformer 原典。",
+      "items": [
+        {
+          "type": "中文视频",
+          "level": "优先",
+          "title": "李宏毅《机器学习 2021》",
+          "source": "李宏毅 / Bilibili",
+          "why": "从机器学习基本概念、神经网络、Loss、优化到 Transformer，中文世界里非常适合系统打底的一套课。",
+          "url": "https://www.bilibili.com/video/BV1NEDYYqEF1/"
+        },
+        {
+          "type": "中文视频",
+          "level": "优先",
+          "title": "Self-Attention 与 Transformer",
+          "source": "李宏毅 / Bilibili",
+          "why": "如果只想专门把 Attention / Transformer 搞明白，这组讲解很适合作为本章配套。",
+          "url": "https://www.bilibili.com/video/BV1Xp4y1b7ih/"
+        },
+        {
+          "type": "英文教材",
+          "level": "进阶",
+          "title": "Deep Learning",
+          "source": "Goodfellow · Bengio · Courville",
+          "why": "深度学习经典教材。无需从头读，建议遇到 Backprop、Optimization、Representation Learning 时按章节查。",
+          "url": "https://www.deeplearningbook.org/"
+        },
+        {
+          "type": "英文论文",
+          "level": "原典",
+          "title": "Attention Is All You Need",
+          "source": "Vaswani et al. (2017)",
+          "why": "Transformer 原始论文。第一遍只看 Abstract、架构图与结论即可，不要求一次吃透公式。",
+          "url": "https://arxiv.org/abs/1706.03762"
+        },
+        {
+          "type": "站内深化",
+          "level": "优先",
+          "title": "Deep Dive 01 · 神经网络、Transformer 与 Scaling",
+          "source": "AI Learning OS",
+          "why": "承接本章原理，补神经网络表示学习、Transformer Block、Scaling、MoE 与推理时计算。",
+          "url": "/ai-learning-platform/deep-dives/01-neural-transformer.html"
+        }
+      ]
+    },
+    "03": {
+      "title": "第 3 章 · AI 能力地图与应用演进",
+      "intro": "从“模型分数”转向“真实能力 + 应用价值”，最好结合年度能力报告一起看。",
+      "items": [
+        {
+          "type": "中文视频",
+          "level": "优先",
+          "title": "李宏毅 2024《生成式人工智能导论》",
+          "source": "李宏毅 / Bilibili",
+          "why": "其中“从工具变为工具人”、大模型训练史等部分，非常适合对照生成、推理、工具与 Agent 能力跃迁。",
+          "url": "https://www.bilibili.com/video/BV1BJ4m1e7g8/"
+        },
+        {
+          "type": "英文报告",
+          "level": "进阶",
+          "title": "AI Index 2026 · Technical Performance",
+          "source": "Stanford HAI",
+          "why": "用真实 benchmark 看模型、Agent、机器人能力边界，不靠产品发布会判断。",
+          "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance"
+        },
+        {
+          "type": "英文案例",
+          "level": "进阶",
+          "title": "AlphaFold",
+          "source": "Google DeepMind",
+          "why": "AI for Science 的代表案例，适合理解 AI 不只是自动化知识工作，也可以改变科学发现成本。",
+          "url": "https://deepmind.google/science/alphafold/"
+        },
+        {
+          "type": "英文案例",
+          "level": "进阶",
+          "title": "Quantifying GitHub Copilot’s impact on developer productivity",
+          "source": "GitHub Research",
+          "why": "看 AI 能力如何转化为真实专业劳动生产率，而不是只看模型 benchmark。",
+          "url": "https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/"
+        }
+      ]
+    },
+    "04": {
+      "title": "第 4 章 · AI 运用层专家方法论",
+      "intro": "这一章建议以中文 Agent / Context 课程为主，再用官方工程指南校准。",
+      "items": [
+        {
+          "type": "中文视频",
+          "level": "优先",
+          "title": "李宏毅 2026：上下文工程 — AI Agent 背后的关键技术",
+          "source": "李宏毅 / Bilibili",
+          "why": "非常贴合本项目的学习目标：从 Prompt 走向 Context Engineering、工具与 Agent。",
+          "url": "https://www.bilibili.com/video/BV1W2nFzCEMb/"
+        },
+        {
+          "type": "中文视频",
+          "level": "进阶",
+          "title": "UC Berkeley《Agentic AI》",
+          "source": "Berkeley 课程中译 / Bilibili",
+          "why": "从 LLM Agent 架构一路讲到评估、多 Agent、科学发现、现实部署和安全，适合系统深化。",
+          "url": "https://www.bilibili.com/video/BV1SUf4B6Et5/"
+        },
+        {
+          "type": "官方指南",
+          "level": "优先",
+          "title": "A practical guide to building AI agents",
+          "source": "OpenAI",
+          "why": "非常适合 Builder：如何找 Agent use case、设计 orchestration，并把系统做得更可控。",
+          "url": "https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/"
+        },
+        {
+          "type": "官方指南",
+          "level": "进阶",
+          "title": "Building Effective Agents",
+          "source": "Anthropic",
+          "why": "强调简单、可组合的 Agent 模式，比盲目堆框架更值得学习。",
+          "url": "https://www.anthropic.com/engineering/building-effective-agents"
+        },
+        {
+          "type": "官方指南",
+          "level": "进阶",
+          "title": "Evaluation best practices",
+          "source": "OpenAI Developers",
+          "why": "把“感觉好用”升级成可测量的 Eval，是真正进入生产级 AI 的分水岭。",
+          "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+        }
+      ]
+    },
+    "05": {
+      "title": "第 5 章 · AI 商业机会与未来情景",
+      "intro": "商业部分建议一半看产业中文内容，一半看原始数据，避免只听二手观点。",
+      "items": [
+        {
+          "type": "中文视频",
+          "level": "优先",
+          "title": "AI 最烧钱的战场：数据中心的真实账单",
+          "source": "硅谷101 / Bilibili",
+          "why": "非常直观地理解 AI 基础设施的钱到底花在哪里，以及为什么算力扩张会牵动电力、冷却和工程建设。",
+          "url": "https://www.bilibili.com/video/BV1DcSkBxE7E/"
+        },
+        {
+          "type": "中文视频",
+          "level": "优先",
+          "title": "营销过后，AI 应用如何落地？解析巨头们的“全栈之战”",
+          "source": "硅谷101 / Bilibili",
+          "why": "适合理解芯片—云—模型—应用为什么开始走向全栈竞争，以及应用层的护城河问题。",
+          "url": "https://www.bilibili.com/video/BV1bdTvz7EPx/"
+        },
+        {
+          "type": "英文报告",
+          "level": "进阶",
+          "title": "AI Index 2026 · Economy",
+          "source": "Stanford HAI",
+          "why": "企业采用、资本投入、Agent 部署和就业变化的核心数据基线。",
+          "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/economy"
+        },
+        {
+          "type": "英文报告",
+          "level": "进阶",
+          "title": "Energy and AI",
+          "source": "IEA",
+          "why": "理解 AI 产业为什么逐渐从“软件问题”变成能源、电网与基础设施问题。",
+          "url": "https://www.iea.org/reports/energy-and-ai"
+        },
+        {
+          "type": "站内深化",
+          "level": "优先",
+          "title": "Deep Dive 03 · AI 利润池、商品化与商业机会",
+          "source": "AI Learning OS",
+          "why": "专门讨论模型商品化、利润池移动、垂直 AI 壁垒和 AI-native Services。",
+          "url": "/ai-learning-platform/deep-dives/03-ai-profit-pools.html"
+        }
+      ]
+    },
+    "06": {
+      "title": "第 6 章 · AI 风险与治理地图",
+      "intro": "风险部分中文材料质量已经很好，建议先看清华 / 信通院，再补国际框架。",
+      "items": [
+        {
+          "type": "中文视频",
+          "level": "优先",
+          "title": "什么是人工智能治理？",
+          "source": "清华大学 AIIG / 薛澜",
+          "why": "非常适合治理入门，先理解治理对象、治理视角和敏捷治理，而不是直接背法规。",
+          "url": "https://www.bilibili.com/video/BV1SL4y1q7zv/"
+        },
+        {
+          "type": "中文报告",
+          "level": "优先",
+          "title": "人工智能治理蓝皮书（2024年）",
+          "source": "中国信通院",
+          "why": "系统梳理技术系统、个人组织、国家社会和全人类不同层级的 AI 风险与治理框架。",
+          "url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202412/P020241227660032159191.pdf"
+        },
+        {
+          "type": "中文报告",
+          "level": "进阶",
+          "title": "从共识到行动：构建包容普惠的全球人工智能治理体系",
+          "source": "清华大学 AIIG",
+          "why": "较新的中文全球治理报告，适合建立发展、安全、公平三维治理框架。",
+          "url": "https://aiig.tsinghua.edu.cn/info/1025/2151.htm"
+        },
+        {
+          "type": "英文框架",
+          "level": "进阶",
+          "title": "AI Risk Management Framework",
+          "source": "NIST",
+          "why": "国际上非常常用的风险管理框架之一，适合把抽象风险转成组织管理流程。",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+        }
+      ]
+    },
+    "07": {
+      "title": "第 7 章 · 未来情景与领先信号",
+      "intro": "未来判断要同时看技术趋势、基础设施约束和组织采用，而不是押注单一 AGI 时间表。",
+      "items": [
+        {
+          "type": "中文视频",
+          "level": "优先",
+          "title": "未来一年，这 6 个 AI Agent 趋势会彻底改变你的工作方式",
+          "source": "Bilibili",
+          "why": "适合快速观察 Skills、Computer Use、通用 Agent 与模型成本等近期信号；建议作为趋势材料而非定论。",
+          "url": "https://www.bilibili.com/video/BV1g4gz6sEgn/"
+        },
+        {
+          "type": "中文课程",
+          "level": "进阶",
+          "title": "CMU 2026 Fall 11-768: AI Agents（中配+原声）",
+          "source": "CMU 课程中译 / Bilibili",
+          "why": "如果你想看 Agent 前沿研究正在教什么，这是非常好的 2026 技术窗口。",
+          "url": "https://www.bilibili.com/video/BV1a6Yx62EH4/"
+        },
+        {
+          "type": "英文报告",
+          "level": "进阶",
+          "title": "2026 AI Index Report",
+          "source": "Stanford HAI",
+          "why": "情景推演最重要的是数据基线。年度报告可以帮助判断能力、资本、采用、政策是否真的沿某条情景发展。",
+          "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report"
+        },
+        {
+          "type": "英文报告",
+          "level": "进阶",
+          "title": "Energy and AI",
+          "source": "IEA",
+          "why": "未来 AI 不只受算法限制，也受电力、数据中心建设周期和能源系统约束。",
+          "url": "https://www.iea.org/reports/energy-and-ai"
+        }
+      ]
+    },
+    "08": {
+      "title": "第 8 章 · 风险与治理深化",
+      "intro": "作为风险章节的进阶入口，重点看治理方法、可信 AI 与全球协同。",
+      "items": [
+        {
+          "type": "中文视频",
+          "level": "优先",
+          "title": "AI 治理对话录：可信智能的建立",
+          "source": "清华大学 AIIG / Bilibili",
+          "why": "从可信、可解释、可回溯等问题切入，比泛泛讨论“AI 危险吗”更具体。",
+          "url": "https://www.bilibili.com/video/BV1gW4y1s7ZJ/"
+        },
+        {
+          "type": "中文视频",
+          "level": "进阶",
+          "title": "如何构建一个平衡包容的人工智能治理体系",
+          "source": "清华大学 AIIG / 薛澜",
+          "why": "把治理从单一监管扩展到数据、算法、算力和多主体协同。",
+          "url": "https://www.bilibili.com/video/BV1CZ4y1z71L/"
+        },
+        {
+          "type": "中文报告",
+          "level": "优先",
+          "title": "人工智能治理蓝皮书（2024年）",
+          "source": "中国信通院",
+          "why": "适合作为中文治理框架的常备参考资料。",
+          "url": "https://www.caict.ac.cn/kxyj/qwfb/bps/202412/P020241227660032159191.pdf"
+        },
+        {
+          "type": "英文框架",
+          "level": "进阶",
+          "title": "AI Risk Management Framework",
+          "source": "NIST",
+          "why": "把风险识别、测量、管理与治理嵌入组织流程。",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+        }
+      ]
+    },
+    "deep01": {
+      "title": "Deep Dive 01 · 神经网络、Transformer 与 Scaling",
+      "intro": "这页的延伸重点是 Transformer 原理和深度学习底层直觉。",
+      "items": [
+        {
+          "type": "中文视频",
+          "level": "优先",
+          "title": "Self-Attention 与 Transformer",
+          "source": "李宏毅 / Bilibili",
+          "why": "中文解释清晰，适合作为论文前的桥梁。",
+          "url": "https://www.bilibili.com/video/BV1Xp4y1b7ih/"
+        },
+        {
+          "type": "英文教材",
+          "level": "进阶",
+          "title": "Deep Learning",
+          "source": "Goodfellow · Bengio · Courville",
+          "why": "按需查 Representation、Optimization、Backprop 等章节。",
+          "url": "https://www.deeplearningbook.org/"
+        },
+        {
+          "type": "英文论文",
+          "level": "原典",
+          "title": "Attention Is All You Need",
+          "source": "Vaswani et al. (2017)",
+          "why": "Transformer 原典，建议对照站内图解阅读。",
+          "url": "https://arxiv.org/abs/1706.03762"
+        }
+      ]
+    },
+    "deep02": {
+      "title": "Deep Dive 02 · AI 路线战争、寒冬与复兴",
+      "intro": "用一手历史材料校准“谁赢了、谁输了”的过度简化叙事。",
+      "items": [
+        {
+          "type": "中文视频",
+          "level": "优先",
+          "title": "人工智能简史（上）",
+          "source": "清华大学 AIR / Bilibili",
+          "why": "路线史中文视听补充。",
+          "url": "https://www.bilibili.com/video/BV1Ze4y1V74w/"
+        },
+        {
+          "type": "英文阅读",
+          "level": "进阶",
+          "title": "A Short History of AI",
+          "source": "Stanford AI100",
+          "why": "对 AI Winter 和路线迁移提供权威历史框架。",
+          "url": "https://ai100.stanford.edu/2016-report/appendix-i-short-history-ai"
+        },
+        {
+          "type": "英文论文",
+          "level": "原典",
+          "title": "Learning representations by back-propagating errors",
+          "source": "Rumelhart · Hinton · Williams (1986)",
+          "why": "理解连接主义复兴里 Backprop 的历史位置。",
+          "url": "https://www.nature.com/articles/323533a0"
+        }
+      ]
+    },
+    "deep03": {
+      "title": "Deep Dive 03 · AI 利润池、商品化与商业机会",
+      "intro": "商业深化重点看：钱流到哪里、什么会商品化、什么形成壁垒。",
+      "items": [
+        {
+          "type": "中文视频",
+          "level": "优先",
+          "title": "AI 最烧钱的战场：数据中心的真实账单",
+          "source": "硅谷101 / Bilibili",
+          "why": "把资本开支和物理基础设施拆开来看，适合理解利润池为什么先集中在瓶颈环节。",
+          "url": "https://www.bilibili.com/video/BV1DcSkBxE7E/"
+        },
+        {
+          "type": "中文视频",
+          "level": "进阶",
+          "title": "算力革命与云厂商三重进化：Agent 云",
+          "source": "硅谷101 / Bilibili",
+          "why": "理解 Agent 时代云的服务对象如何从“网站/训练”继续演化到任务执行基础设施。",
+          "url": "https://www.bilibili.com/video/BV11YKY6nEeo/"
+        },
+        {
+          "type": "英文报告",
+          "level": "进阶",
+          "title": "AI Index 2026 · Economy",
+          "source": "Stanford HAI",
+          "why": "商业分析的年度数据基线。",
+          "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/economy"
+        },
+        {
+          "type": "英文报告",
+          "level": "进阶",
+          "title": "Energy and AI",
+          "source": "IEA",
+          "why": "理解电力和数据中心如何成为 AI 经济的硬约束。",
+          "url": "https://www.iea.org/reports/energy-and-ai"
+        }
+      ]
+    }
+  }
+}
