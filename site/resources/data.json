@@ -470,6 +470,52 @@
           "url": "https://www.iea.org/reports/energy-and-ai"
         }
       ]
+    },
+    "deep04": {
+      "title": "Deep Dive 04 · Agent：从软件工具到数字劳动力",
+      "intro": "先用中文把 Agent 架构和 Context Engineering 看懂，再读官方生产工程指南。",
+      "items": [
+        {
+          "type": "中文视频",
+          "level": "优先",
+          "title": "一堂课搞懂 AI Agent 的原理",
+          "source": "李宏毅 / Bilibili",
+          "why": "从经验、工具、计划到实际 Agent 系统，是最合适的中文视听入口。",
+          "url": "https://www.bilibili.com/video/BV1WgTL6TEaA/"
+        },
+        {
+          "type": "中文课程",
+          "level": "进阶",
+          "title": "UC Berkeley《Agentic AI》",
+          "source": "Berkeley 课程中译 / Bilibili",
+          "why": "系统覆盖 Agent 架构、评估、多 Agent、现实部署和安全。",
+          "url": "https://www.bilibili.com/video/BV1SUf4B6Et5/"
+        },
+        {
+          "type": "官方指南",
+          "level": "进阶",
+          "title": "A practical guide to building agents",
+          "source": "OpenAI",
+          "why": "从 use case、工具、orchestration、guardrails 和 human intervention 理解生产 Agent。",
+          "url": "https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/"
+        },
+        {
+          "type": "官方指南",
+          "level": "进阶",
+          "title": "Building Effective Agents",
+          "source": "Anthropic",
+          "why": "非常适合建立“简单、可组合、能用 Workflow 就别硬上 Agent”的工程原则。",
+          "url": "https://www.anthropic.com/engineering/building-effective-agents"
+        },
+        {
+          "type": "前沿报告",
+          "level": "原典",
+          "title": "AI Index 2026 · Technical Performance / Economy",
+          "source": "Stanford HAI",
+          "why": "用 OSWorld、企业采用和 Agent 部署数据校准“Agent 已经成熟到什么程度”。",
+          "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report"
+        }
+      ]
     }
   }
 }
