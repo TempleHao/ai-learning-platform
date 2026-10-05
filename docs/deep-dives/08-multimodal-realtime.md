@@ -6,7 +6,7 @@ AI 正从回合制文字聊天，演化为持续感知、实时语音、视觉�
 
 ## 多模态
 
-Text / Image / Audio / Video / Screen / Sensor 是不同的信息空间，不只是不同文件格式。
+Text / Image / Audio / Video / Screen / Sensor 属于不同的信息空间，各自携带不同结构和时间特征。
 
 ## Voice
 
