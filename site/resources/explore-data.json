@@ -2132,6 +2132,188 @@
           }
         ]
       }
+    ],
+    "deep08": [
+      {
+        "anchor": "modalities",
+        "topic": "多模态基础：视觉与语言如何进入同一模型",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "多模态大模型路线概览",
+            "source": "Bilibili",
+            "url": "https://www.bilibili.com/video/BV1sXgf6MEzX/",
+            "why": "先建立 CLIP、BLIP、SAM、生成模型与多模态表示的整体地图。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文课程",
+            "title": "多模态大模型精讲",
+            "source": "Bilibili",
+            "url": "https://www.bilibili.com/video/BV1ok9aBHETg/",
+            "why": "进一步进入 CLIP、视觉模型、对比学习和模型融合。"
+          },
+          {
+            "depth": "原典",
+            "type": "论文",
+            "title": "Learning Transferable Visual Models From Natural Language Supervision",
+            "source": "OpenAI / CLIP",
+            "url": "https://arxiv.org/abs/2103.00020",
+            "why": "现代视觉—语言共同表示的重要原始论文。"
+          }
+        ]
+      },
+      {
+        "anchor": "realtime",
+        "topic": "Realtime 与 Full Duplex Voice",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "官方指南",
+            "title": "Realtime API",
+            "source": "OpenAI Developers",
+            "url": "https://developers.openai.com/api/docs/guides/realtime",
+            "why": "快速理解实时音频 Session、打断和工具调用。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "官方指南",
+            "title": "GPT-Live",
+            "source": "OpenAI Developers",
+            "url": "https://developers.openai.com/api/docs/guides/live",
+            "why": "理解前台持续对话与后台 Agent 并行工作的分层架构。"
+          },
+          {
+            "depth": "原典",
+            "type": "工程文章",
+            "title": "How OpenAI delivers low-latency voice AI at scale",
+            "source": "OpenAI",
+            "url": "https://openai.com/index/delivering-low-latency-voice-ai-at-scale/",
+            "why": "看实时语音为什么最终是 WebRTC、RTT、抖动和全局路由问题。"
+          }
+        ]
+      },
+      {
+        "anchor": "architectures",
+        "topic": "Voice Agent 架构选择",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "官方",
+            "title": "Voice agents architecture",
+            "source": "OpenAI Developers",
+            "url": "https://developers.openai.com/api/docs/guides/voice-agents",
+            "why": "一页看清 Live / Realtime / Chained 三种架构。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "官方",
+            "title": "Audio and voice",
+            "source": "OpenAI Developers",
+            "url": "https://developers.openai.com/api/docs/guides/audio",
+            "why": "把实时对话、转写、TTS、语音 Agent 放到统一技术图里。"
+          },
+          {
+            "depth": "原典",
+            "type": "网络协议",
+            "title": "WebRTC",
+            "source": "OpenAI Developers",
+            "url": "https://developers.openai.com/api/docs/guides/voice-webrtc",
+            "why": "浏览器实时语音真正的数据通路。"
+          }
+        ]
+      },
+      {
+        "anchor": "video",
+        "topic": "持续视觉与实时事件理解",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "中文视频",
+            "title": "实时主动视觉语言交互",
+            "source": "Bilibili",
+            "url": "https://www.bilibili.com/video/BV19Jjv6PEXk/",
+            "why": "非常直观地看到持续视觉和主动响应与传统图片问答的不同。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "中文课程",
+            "title": "AI 视觉大模型教程",
+            "source": "Bilibili",
+            "url": "https://www.bilibili.com/video/BV1BTpMzFEke/",
+            "why": "系统补视觉 Backbone、ViT、CLIP、Flamingo、LLaVA 等基础。"
+          },
+          {
+            "depth": "原典",
+            "type": "年度报告",
+            "title": "AI Index 2026 · Technical Performance",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance",
+            "why": "用视频、多模态推理和机器人 benchmark 判断现实能力边界。"
+          }
+        ]
+      },
+      {
+        "anchor": "latency",
+        "topic": "实时 AI 的延迟工程",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "官方指南",
+            "title": "WebRTC Voice",
+            "source": "OpenAI Developers",
+            "url": "https://developers.openai.com/api/docs/guides/voice-webrtc",
+            "why": "理解浏览器端为什么优先用 WebRTC 而不是普通 HTTP 请求。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "工程文章",
+            "title": "Low-latency voice AI at scale",
+            "source": "OpenAI",
+            "url": "https://openai.com/index/delivering-low-latency-voice-ai-at-scale/",
+            "why": "连接建立、媒体 RTT、Jitter、Packet Loss 如何影响对话体验。"
+          },
+          {
+            "depth": "原典",
+            "type": "官方",
+            "title": "GPT-Live WebSocket / SIP",
+            "source": "OpenAI Developers",
+            "url": "https://developers.openai.com/api/docs/guides/voice-websockets",
+            "why": "比较浏览器实时媒体和服务器 / 电话场景的连接方式。"
+          }
+        ]
+      },
+      {
+        "anchor": "safety",
+        "topic": "持续音视频的隐私与安全",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "站内",
+            "title": "第 6 章 · AI 风险与治理",
+            "source": "AI Learning OS",
+            "url": "/ai-learning-platform/chapters/06-risk-governance.html",
+            "why": "先用已有治理地图看持续采集、身份和行动风险。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "标准框架",
+            "title": "NIST AI RMF",
+            "source": "NIST",
+            "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+            "why": "把音视频能力带来的隐私、安全和责任风险纳入组织流程。"
+          },
+          {
+            "depth": "原典",
+            "type": "年度报告",
+            "title": "AI Index 2026 · Responsible AI",
+            "source": "Stanford HAI",
+            "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/responsible-ai",
+            "why": "跟踪能力扩张后事故和治理披露是否同步改善。"
+          }
+        ]
+      }
     ]
   }
 }
