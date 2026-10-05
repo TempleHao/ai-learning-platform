@@ -16,7 +16,7 @@
     <a class="chapter-brand" href="../index.html"><img class="brand-icon" src="/ai-learning-platform/assets/brand/favicon-64.png" alt="" aria-hidden="true" /><div><b>Learning OS</b><small>Core · Risk & Governance</small></div></a>
     <div class="toc-label">第 6 章</div>
     <nav>
-      <a href="#start" class="active">6.0 风险不是“反 AI”</a>
+      <a href="#start" class="active">6.0 风险控制是运用能力的一部分</a>
       <a href="#formula">6.1 风险半径</a>
       <a href="#model">6.2 模型风险</a>
       <a href="#security">6.3 Agent 与安全</a>
@@ -44,7 +44,7 @@
       <section class="chapter-hero" id="start">
         <div class="chapter-no">CHAPTER 06</div>
         <h1>AI 风险<br>与治理地图</h1>
-        <p class="lead">讨论风险不是为了否定 AI，而是为了知道：<strong>能力越强、权限越大、部署越广，错误和滥用的影响半径也会同步扩大。</strong> 真正成熟的 AI 运用能力，必须同时包括风险控制。</p>
+        <p class="lead">风险控制直接决定 AI 能否进入高价值场景：<strong>能力越强、权限越大、部署越广，错误和滥用的影响半径也会同步扩大。</strong> 成熟的 AI 运用能力必须包含风险控制。</p>
         <div class="objective-grid">
           <div><b>技术层</b><span>理解幻觉、鲁棒性、Prompt Injection、Agent 权限等风险。</span></div>
           <div><b>社会层</b><span>理解就业、分配、信息生态、垄断和治理问题。</span></div>
@@ -60,12 +60,12 @@
         <div class="section-kicker">6.1 · RISK RADIUS</div>
         <h2>一个实用的风险公式：别只看模型有多聪明</h2>
         <div class="risk-formula"><strong>风险半径</strong><span>≈ 能力 × 自主性 × 权限 × 部署规模 × 不可逆性</span></div>
-        <p>同一个模型，用来润色一封邮件和用来自动执行百万美元付款，风险完全不是一个量级。关键差别不是模型版本，而是系统给了它多少自主权、能接触什么资源、错误能影响多少人，以及能否轻易撤销。</p>
+        <p>同一个模型，用来润色一封邮件和用来自动执行百万美元付款，风险完全不在一个量级。关键变量是自主权、资源权限、影响范围和可撤销性。</p>
       </section>
 
       <section class="chapter-section" id="model">
         <div class="section-kicker">6.2 · MODEL RISK</div>
-        <h2>模型层：最常见的不是“邪恶 AI”，而是自信地错</h2>
+        <h2>模型层最常见的风险：自信地错</h2>
         <div class="risk-cards">
           <article><span>Hallucination</span><h3>幻觉</h3><p>语言上流畅，不代表事实正确。模型会在证据不足时生成合理形式的内容。</p></article>
           <article><span>Bias</span><h3>偏差</h3><p>训练数据、标注、评价标准和部署环境都可能放大系统性偏差。</p></article>
@@ -78,7 +78,7 @@
       <section class="chapter-section" id="security">
         <div class="section-kicker">6.3 · AGENT + SECURITY</div>
         <h2>Agent 把“错误输出”升级成“错误行动”</h2>
-        <p>当模型可以读邮件、浏览网页、执行代码、调用支付或修改数据库，它面对的不再只是普通 Prompt，而是来自外部世界的潜在恶意输入。</p>
+        <p>当模型可以读邮件、浏览网页、执行代码、调用支付或修改数据库，外部世界的恶意输入就会直接进入它的行动链。</p>
         <div class="attack-flow">
           <div><b>恶意内容</b><span>网页 / 文件 / 邮件</span></div><i>→</i>
           <div><b>Prompt Injection</b><span>诱导模型忽略原任务</span></div><i>→</i>
@@ -104,7 +104,7 @@
           <div><b>版权 / 来源</b><p>训练数据、检索材料和生成输出的权利边界仍在不断演化，不同司法辖区差异明显。</p></div>
           <div><b>数据投毒</b><p>攻击者可以通过恶意文档、网页、反馈或训练数据影响模型行为和检索结果。</p></div>
         </div>
-        <p>所以“企业 AI”很大一部分工程不是模型，而是身份、权限、数据分类、日志保留、来源追踪和删除机制。</p>
+        <p>因此，企业 AI 的大量工程工作集中在身份、权限、数据分类、日志保留、来源追踪和删除机制上。</p>
       </section>
 
       <section class="chapter-section" id="economy">
@@ -124,7 +124,7 @@
       <section class="chapter-section" id="information">
         <div class="section-kicker">6.6 · INFORMATION ECOSYSTEM</div>
         <h2>当生成成本趋近于零，稀缺品从“内容”变成“可信度”</h2>
-        <p>文本、图片、语音和视频生成成本下降后，垃圾内容、诈骗、深伪和规模化舆论操纵的成本也下降。问题不只是“假内容更多”，而是任何真实证据都更容易被质疑。</p>
+        <p>文本、图片、语音和视频生成成本下降后，垃圾内容、诈骗、深伪和规模化舆论操纵同步变便宜。更深的后果是：真实证据本身也更容易被质疑。</p>
         <div class="definition-box">
           <span>信息经济的变化</span>
           <strong>过去稀缺的是生产内容；未来越来越稀缺的是验证来源、身份和真实性。</strong>
@@ -158,7 +158,7 @@
 
       <section class="chapter-section" id="manage">
         <div class="section-kicker">6.9 · GOVERN / MAP / MEASURE / MANAGE</div>
-        <h2>风险治理不是写一份原则，而是形成闭环</h2>
+        <h2>风险治理要落成可执行、可追踪的闭环</h2>
         <p>NIST AI Risk Management Framework 把核心组织为 Govern、Map、Measure、Manage。对运用层可以翻译成：</p>
         <div class="risk-loop">
           <div><b>GOVERN</b><span>谁负责？哪些用途禁止？风险接受度多高？</span></div><i>→</i>
@@ -166,7 +166,7 @@
           <div><b>MEASURE</b><span>建立 Eval、红队、监控、事故指标。</span></div><i>→</i>
           <div><b>MANAGE</b><span>权限、审批、Fallback、修复、回滚与事故响应。</span></div>
         </div>
-        <div class="callout idea"><b>真正重要的是风险与收益一起设计</b><p>不是“先把 AI 做出来，再让安全团队审核”，而是在任务设计阶段就决定哪些动作自动化、哪些必须由人承担最终责任。</p></div>
+        <div class="callout idea"><b>风险与收益必须一起设计</b><p>任务设计阶段就要决定哪些动作自动化、哪些必须由人承担最终责任，并把审批和回滚机制嵌进流程。</p></div>
       </section>
 
       <section class="chapter-section" id="assessor">
@@ -207,7 +207,7 @@
           <div><b>损害怎么扩大？</b><span>自动重复、规模化用户、不可逆动作？</span></div>
           <div><b>最小控制是什么？</b><span>哪一个校验或权限闸门能显著缩小风险半径？</span></div>
         </div>
-        <label class="lab-check"><input type="checkbox" data-lab="06"><span>我已经能同时从能力、自主性、权限、规模和不可逆性分析一个 AI 系统的风险，而不是只说“模型可能幻觉”。</span></label>
+        <label class="lab-check"><input type="checkbox" data-lab="06"><span>我已经能从能力、自主性、权限、规模和不可逆性五个维度分析一个 AI 系统的风险。</span></label>
       </section>
 
       <section class="chapter-section sources">
@@ -224,7 +224,7 @@
       <div class="chapter-next">
         <span>CORE MAP COMPLETE</span>
         <h2>至此，第一轮“完整地图”闭环完成。</h2>
-        <p>下一阶段不再只是继续加章节，而是深化：补技术路线细节、人物与论文、专项商业研究、案例库、题库、Lab 项目和持续更新的 Frontier Radar。</p>
+        <p>下一阶段转入体系深化：补技术路线细节、人物与论文、专项商业研究、案例库、题库、Lab 项目和持续更新的 Frontier Radar。</p>
       </div>
     </article>
   </main>
