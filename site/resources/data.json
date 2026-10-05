@@ -646,6 +646,60 @@
           "url": "https://arxiv.org/abs/2005.11401"
         }
       ]
+    },
+    "deep08": {
+      "title": "Deep Dive 08 · Multimodal / Voice / Realtime AI",
+      "intro": "这一页建议先用中文多模态课程建立直觉，再用官方 Realtime / Voice 文档理解真正的产品架构。",
+      "items": [
+        {
+          "type": "中文视频",
+          "level": "优先",
+          "title": "多模态大模型学习路线：CLIP / BLIP / SAM / DALL·E",
+          "source": "Bilibili",
+          "why": "适合快速建立视觉—语言、多模态表示和主流模型家族的整体地图。",
+          "url": "https://www.bilibili.com/video/BV1sXgf6MEzX/"
+        },
+        {
+          "type": "中文视频",
+          "level": "进阶",
+          "title": "实时主动视觉语言交互模型",
+          "source": "Bilibili",
+          "why": "通过实时视觉交互案例理解“从图片问答到持续事件感知”之间的差异。",
+          "url": "https://www.bilibili.com/video/BV19Jjv6PEXk/"
+        },
+        {
+          "type": "中文实战",
+          "level": "进阶",
+          "title": "Qwen Omni Realtime 实时音视频机器人",
+          "source": "Bilibili",
+          "why": "看实时音频 + 动态视觉的工程形态，适合和 Voice / Video 章节对照。",
+          "url": "https://www.bilibili.com/video/BV1Fok6BRE4s/"
+        },
+        {
+          "type": "英文官方",
+          "level": "优先",
+          "title": "Voice agents",
+          "source": "OpenAI Developers",
+          "why": "直接比较 GPT-Live、Realtime Session 与 Chained Voice Pipeline 三种架构。",
+          "url": "https://developers.openai.com/api/docs/guides/voice-agents"
+        },
+        {
+          "type": "英文官方",
+          "level": "进阶",
+          "title": "Getting started with GPT-Live",
+          "source": "OpenAI Developers",
+          "why": "理解 full-duplex、backend delegation、WebRTC / WebSocket / SIP 这些实时语音核心组件。",
+          "url": "https://developers.openai.com/api/docs/guides/live"
+        },
+        {
+          "type": "英文报告",
+          "level": "进阶",
+          "title": "AI Index 2026 · Technical Performance",
+          "source": "Stanford HAI",
+          "why": "用图像、视频、语音、多模态推理、Agent 与 Robotics 的数据校准“多模态有多强”。",
+          "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance"
+        }
+      ]
     }
   }
 }
