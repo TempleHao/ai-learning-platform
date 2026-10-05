@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 2026-10-05 · Learning Dashboard + consistency audit
+- 学习进度页升级为完整 Learning Dashboard
+- 统一统计 9 Core + 9 Core Labs + 8 Deep Dives + 10 Lab Track，共 36 个完成节点
+- 核心章节进度从早期 00–06 补齐到 00–08
+- 清理所有章节 / Deep Dive 左上角的历史发行版本号，改为稳定语义标签
+- 修复主页早期“第 0 章刚上线”遗留文案
+- ROADMAP 与 Learning System 文档同步到 v0.16
+
+
 ## 2026-10-05 · v0.16 Multimodal / Voice / Realtime AI
 - 新增 Deep Dive 08《Multimodal、Voice 与 Realtime AI》
 - 系统拆解 Text / Image / Audio / Video / Screen / Sensor 六种模态
