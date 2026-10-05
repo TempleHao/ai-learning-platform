@@ -63,7 +63,7 @@
         <div class="formula-box"><span>预测：</span><strong>ŷ = w × x</strong></div>
         <p>如果真实世界的规律是 <strong>y = 2x</strong>，那么最好的参数就是 w ≈ 2。w 就像一个旋钮：太小会低估，太大会高估。</p>
         <p>现代神经网络做的事情本质类似，只是“旋钮”不再是一个，而可能是数十亿甚至更多参数，并且它们之间通过很多层复杂计算相互作用。</p>
-        <div class="callout warn"><b>参数是计算结构，不是事实清单</b><p>10 亿参数无法对应成 10 亿条独立事实。它们共同决定模型如何把输入映射成输出。</p></div>
+        <div class="callout warn"><b>参数构成计算结构</b><p>10 亿参数无法对应成 10 亿条独立事实。它们共同决定模型如何把输入映射成输出。</p></div>
       </section>
 
       <section class="chapter-section" id="train">
@@ -103,7 +103,7 @@
         <p>在深层神经网络里，一个输出往往经过很多层计算。模型出错时，我们需要知道：前面每一层、每一个参数如果稍微变化一点，会让最终 Loss 变大还是变小？</p>
         <div class="definition-box">
           <span>最实用的理解</span>
-          <strong>Backprop 的职责是高效计算梯度；真正的参数更新由优化器完成。</strong>
+          <strong>Backprop 负责高效计算梯度；优化器根据这些梯度完成参数更新。</strong>
         </div>
         <p>梯度告诉优化器：哪些参数该增加、哪些该减小，以及敏感程度。Goodfellow、Bengio 和 Courville 的《Deep Learning》也特别区分了这两件事：反向传播负责计算梯度，优化算法再利用梯度更新参数。</p>
         <div class="train-loop compact">
