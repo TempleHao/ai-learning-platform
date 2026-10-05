@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2026-10-05 · Writing Style Audit
+- 全站审校明显的生成式模板腔，重点清理“不是 X，而是 Y”“不只是 X，而是 Y”“重点不是……而是……”等高频对比句式
+- 首页 Banner 改为更直接的品牌表达：把 AI 学成一套可以判断、构建与行动的认知系统
+- Core、Deep Dive、Cases、Labs、Resources、Review 与源稿同步改为更直接的判断句、定义句和因果句
+- 在 CONTENT_POLICY 新增长期文风规范，后续内容默认执行
+
+
 ## 2026-10-05 · Learning Dashboard + consistency audit
 - 学习进度页升级为完整 Learning Dashboard
 - 统一统计 9 Core + 9 Core Labs + 8 Deep Dives + 10 Lab Track，共 36 个完成节点
