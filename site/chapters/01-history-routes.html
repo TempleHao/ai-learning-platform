@@ -16,7 +16,7 @@
     <a class="chapter-brand" href="../index.html"><img class="brand-icon" src="/ai-learning-platform/assets/brand/favicon-64.png" alt="" aria-hidden="true" /><div><b>Learning OS</b><small>Core · Route History</small></div></a>
     <div class="toc-label">第 1 章</div>
     <nav>
-      <a href="#start" class="active">1.0 历史不是年份表</a>
+      <a href="#start" class="active">1.0 从路线竞争读 AI 历史</a>
       <a href="#question">1.1 五种智能观</a>
       <a href="#symbolic">1.2 符号主义</a>
       <a href="#connectionist">1.3 连接主义</a>
@@ -42,7 +42,7 @@
       <section class="chapter-hero" id="start">
         <div class="chapter-no">CHAPTER 01</div>
         <h1>AI 技术路线战争</h1>
-        <p class="lead">AI 历史不是“某年发明了什么”的流水账。真正应该追踪的是：<strong>人类对“智能从哪里来”给出了哪些不同答案，以及现实约束为什么让某些路线兴盛、衰退、复兴或融合。</strong></p>
+        <p class="lead">理解 AI 历史，要追踪两件事：<strong>人类曾经如何解释“智能从哪里来”，以及现实约束如何推动不同路线兴盛、衰退、复兴和融合。</strong></p>
         <div class="objective-grid">
           <div><b>核心问题</b><span>智能应该被人写出来，还是从数据里学出来？</span></div>
           <div><b>分析框架</b><span>算法 × 数据 × 算力 × 任务 × 产品化成本。</span></div>
@@ -86,27 +86,27 @@
         <div class="section-kicker">1.3 · CONNECTIONISM</div>
         <h2>连接主义：不要告诉机器全部规则，让它从样本里形成表示</h2>
         <p>连接主义借鉴神经系统的抽象思想，用大量简单计算单元组成网络，通过调整连接权重来学习。它的关键转变是：<strong>知识不再主要以人工可读规则存在，而分布在大量参数之中。</strong></p>
-        <p>神经网络并非 2010 年后才出现。它经历过多轮兴衰。长期限制它的，不只是理论，也包括训练深层网络的困难、数据规模和计算能力。</p>
+        <p>神经网络并非 2010 年后才出现。它经历过多轮兴衰，长期受到训练深层网络的困难、数据规模和计算能力等多重限制。</p>
         <div class="definition-box">
           <span>深度学习真正改变的事情</span>
           <strong>从“人先设计特征，模型再学习”逐步转向“模型自己学习多层表示”。</strong>
         </div>
-        <p>2015 年 LeCun、Bengio 与 Hinton 在 Nature 的综述指出，深度学习通过多层表示学习，在语音识别、视觉、目标检测等领域取得显著进展。这里的关键不是单一算法，而是表示学习、反向传播、数据和计算资源共同达到可用规模。</p>
+        <p>2015 年 LeCun、Bengio 与 Hinton 在 Nature 的综述指出，深度学习通过多层表示学习，在语音识别、视觉、目标检测等领域取得显著进展。突破来自表示学习、反向传播、数据和计算资源共同达到可用规模。</p>
       </section>
 
       <section class="chapter-section" id="statistical">
         <div class="section-kicker">1.4 · STATISTICAL MACHINE LEARNING</div>
-        <h2>统计学习：现实不是逻辑题，而是充满不确定性的分布</h2>
+        <h2>统计学习：用概率分布处理现实世界的不确定性</h2>
         <p>1990 年代以后，越来越多 AI 系统把任务转化成从数据中估计模式：哪个邮件更可能是垃圾邮件？哪个网页更相关？哪个广告更可能被点击？哪个用户更可能购买？</p>
-        <div class="business-lens"><b>为什么这条路线对互联网商业极其重要</b><p>搜索、推荐、广告、风控天然就是“大量数据 + 概率预测 + 在线反馈”的问题。统计学习因此不仅是学术路线，也直接进入大规模互联网商业系统。</p></div>
-        <p>这一阶段让 AI 从“试图复制完整人类思考”转向大量狭窄但有价值的预测任务。很多人第一次真正从 AI 获得巨大经济价值，并不是因为聊天机器人，而是因为排序、推荐、广告和预测。</p>
+        <div class="business-lens"><b>为什么这条路线对互联网商业极其重要</b><p>搜索、推荐、广告、风控天然就是“大量数据 + 概率预测 + 在线反馈”的问题。统计学习因此直接成为大规模互联网商业系统的核心能力。</p></div>
+        <p>这一阶段把 AI 的商业价值集中到大量狭窄但高频的预测任务。排序、推荐、广告和风险预测由此成为最早的大规模利润来源之一。</p>
       </section>
 
       <section class="chapter-section" id="reinforcement">
         <div class="section-kicker">1.5 · REINFORCEMENT + SEARCH</div>
-        <h2>强化学习与搜索：智能不仅要认识世界，还要在世界里行动</h2>
+        <h2>强化学习与搜索：让系统从“认识”进一步走向“行动”</h2>
         <p>监督学习通常告诉模型“正确答案是什么”；强化学习则更像教会一个主体做事：给它目标和反馈，让它通过行动获得奖励，逐渐学会策略。</p>
-        <p>AlphaGo 是理解“路线融合”的绝佳案例。2016 年发表的系统并不是只靠一种技术，而是结合深度神经网络、监督学习、强化学习与蒙特卡洛树搜索。它说明真正强大的 AI 系统往往不是路线纯洁主义，而是把不同技术组合在一起。</p>
+        <p>AlphaGo 是理解“路线融合”的绝佳案例。2016 年发表的系统同时使用深度神经网络、监督学习、强化学习与蒙特卡洛树搜索。它展示了多种技术在同一系统内分工协作的力量。</p>
         <div class="route-card">
           <div><b>搜索</b><p>在可能行动空间中向前探索。</p></div>
           <div><b>神经网络</b><p>估计哪些局面、行动更有希望。</p></div>
@@ -125,10 +125,10 @@
           <div><b>2020s</b><span>大规模预训练与基础模型把“一个模型服务大量任务”变成主流范式，生成式 AI 进入大众产品。</span></div>
         </div>
         <div class="constraints">
-          <b>为什么不是 1985 年就发生？</b>
+          <b>为什么突破要等到 2012 年前后？</b>
           <div><span>算法成熟</span><span>大规模数据</span><span>GPU / 加速器</span><span>云基础设施</span><span>互联网分发</span><span>资本投入</span></div>
         </div>
-        <p>这给商业判断一个非常重要的启示：<strong>技术机会往往不是某个单点发明造成的，而是多个互补要素同时越过阈值。</strong></p>
+        <p>这给商业判断一个非常重要的启示：<strong>技术机会往往来自多个互补要素同时越过阈值。</strong></p>
       </section>
 
       <section class="chapter-section" id="unselected">
@@ -141,7 +141,7 @@
           <div><b>纯知识图谱路线</b><p>结构化知识在搜索、企业数据、检索与推理中仍重要，但“先把全世界知识结构化再获得智能”没有成为唯一主线。</p></div>
           <div><b>神经形态 / 类脑计算</b><p>试图从硬件和计算机制上更接近生物神经系统，仍是值得长期观察的潜在分叉。</p></div>
         </div>
-        <p>学习这些路线不是为了怀旧，而是为了防止“赢家偏差”：今天的大模型路线非常强，但历史反复证明，当前主流并不等于未来终局。</p>
+        <p>学习这些路线可以避免“赢家偏差”。今天的大模型路线非常强，历史却反复提醒我们：主流路线会随着约束条件变化而重新洗牌。</p>
       </section>
 
       <section class="chapter-section" id="today">
@@ -155,22 +155,22 @@
           <div><span>Retrieval / Data</span><b>外部事实、企业知识、实时状态</b></div>
           <div><span>Feedback</span><b>强化学习、评测、人类反馈、运行结果</b></div>
         </div>
-        <div class="callout frontier-note"><b>路线判断</b><p>未来值得关注的不是“神经网络会不会彻底消灭其他方法”，而是哪些组合能让 AI 更可靠、更便宜、更能持续行动。</p></div>
+        <div class="callout frontier-note"><b>路线判断</b><p>未来重点观察各种技术如何组合，以及哪些组合能让 AI 更可靠、更便宜、更能持续行动。</p></div>
       </section>
 
       <section class="chapter-section" id="lab">
         <div class="section-kicker">1.9 · LAB 01</div>
         <h2>做一张自己的《AI 技术路线战争图》</h2>
         <p>不用画得漂亮。至少画出五条路线：符号主义、连接主义、统计学习、强化学习、其他支线；然后标出它们的兴衰、融合点，以及 2012、2016、2017 三个关键节点。</p>
-        <label class="lab-check"><input type="checkbox" data-lab="01"><span>我已经能解释：为什么今天深度学习是主干，但这不等于其他路线已经消失。</span></label>
+        <label class="lab-check"><input type="checkbox" data-lab="01"><span>我已经能解释：为什么深度学习成为今天的主干，以及其他路线仍在哪些问题上保有价值。</span></label>
       </section>
 
       <section class="chapter-section" id="check">
         <div class="section-kicker">1.10 · SELF CHECK</div>
         <h2>本章自测</h2>
         <details><summary>Q1：符号主义最大的优势和最大的工程问题分别是什么？</summary><p>优势是知识、逻辑和推理链条相对显式、可解释；工程问题是知识获取与维护成本高，面对开放世界的噪声、例外和组合爆炸时很脆弱。</p></details>
-        <details><summary>Q2：为什么说 2012 的突破不是“神经网络突然被发明”？</summary><p>神经网络早已存在。重要变化是算法、数据规模、GPU 计算能力和工程实现共同越过临界点，使深层网络在实际基准上形成明显优势。</p></details>
-        <details><summary>Q3：AlphaGo 为什么体现“混合路线”而不是单一路线胜利？</summary><p>因为它结合了深度神经网络、监督学习、强化学习和树搜索，不同组件承担不同功能。</p></details>
+        <details><summary>Q2：2012 年为什么成为神经网络复兴的阈值事件？</summary><p>神经网络早已存在。真正变化的是算法、数据规模、GPU 计算能力和工程实现共同越过临界点，使深层网络在实际基准上形成明显优势。</p></details>
+        <details><summary>Q3：AlphaGo 为什么是“混合路线”的经典案例？</summary><p>它把深度神经网络、监督学习、强化学习和树搜索组合在同一系统中，不同组件承担不同功能。</p></details>
         <details><summary>Q4：商业上为什么要研究“被淘汰的技术路线”？</summary><p>因为主流路线可能改变，旧路线也可能在新算力、新任务或与新模型结合后重新获得价值。理解失败原因比记住赢家更能帮助判断未来。</p></details>
       </section>
 
