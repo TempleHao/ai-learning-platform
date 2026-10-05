@@ -53,12 +53,12 @@
 
       <section class="chapter-section">
         <div class="callout idea"><b>最重要的分析公式</b><p>AI 的产业影响 ≈ 新增能力 × 可靠性 × 成本下降 × 分发能力 × 工作流嵌入。</p></div>
-        <p>一个能力在实验室出现，不等于它已经形成产业价值。只有当能力足够可靠、价格足够低，并且被嵌入真实工作流，才会从“技术演示”变成“经济基础设施”。</p>
+        <p>实验室里的能力突破只是起点。只有当可靠性、价格和工作流嵌入同时过关，它才会从“技术演示”变成“经济基础设施”。</p>
       </section>
 
       <section class="chapter-section" id="ladder">
         <div class="section-kicker">3.1 · CAPABILITY LADDER</div>
-        <h2>能力不是一个总分，而是一层层扩出来的</h2>
+        <h2>AI 能力沿多个维度逐层扩展</h2>
         <div class="cap-controls" aria-label="能力筛选">
           <button class="active" data-cap-filter="all">全部</button>
           <button data-cap-filter="sense">感知 / 预测</button>
@@ -68,10 +68,10 @@
         <div class="capability-ladder">
           <article data-cap-group="sense"><b>01</b><span>Prediction</span><h3>预测 / 分类 / 排序</h3><p>从数据中估计概率：哪个结果更可能、哪个内容更相关、哪个用户更可能点击。</p><small>价值：降低决策和匹配成本</small></article>
           <article data-cap-group="sense"><b>02</b><span>Perception</span><h3>看见与听见</h3><p>图像、语音、视频和传感器信息被机器直接识别和表征。</p><small>价值：把现实世界变成可计算数据</small></article>
-          <article data-cap-group="create"><b>03</b><span>Generation</span><h3>生成内容</h3><p>不再只选择答案，而是生成文本、代码、图像、音频、视频等新内容。</p><small>价值：降低内容生产边际成本</small></article>
+          <article data-cap-group="create"><b>03</b><span>Generation</span><h3>生成内容</h3><p>能力从“选择已有答案”扩展到生成文本、代码、图像、音频和视频。</p><small>价值：降低内容生产边际成本</small></article>
           <article data-cap-group="create"><b>04</b><span>Generalization</span><h3>指令与上下文泛化</h3><p>同一个模型通过自然语言说明或少量示例，临时适应大量不同任务。</p><small>价值：降低“为每个任务单独开发模型”的成本</small></article>
           <article data-cap-group="act"><b>05</b><span>Reasoning</span><h3>多步推理与规划</h3><p>对数学、代码、搜索、复杂问题进行中间步骤推演和计划。</p><small>价值：进入高认知复杂度任务</small></article>
-          <article data-cap-group="act"><b>06</b><span>Tool Use</span><h3>调用外部工具</h3><p>搜索网页、查询数据库、运行代码、操作 API，而不是仅凭内部参数回答。</p><small>价值：连接实时世界与企业系统</small></article>
+          <article data-cap-group="act"><b>06</b><span>Tool Use</span><h3>调用外部工具</h3><p>通过搜索网页、查询数据库、运行代码和调用 API，把模型连接到实时世界与企业系统。</p><small>价值：连接实时世界与企业系统</small></article>
           <article data-cap-group="act"><b>07</b><span>Agent</span><h3>持续执行任务</h3><p>围绕一个目标，观察环境、拆分任务、选择工具、执行、检查、继续。</p><small>价值：从“回答”升级到“完成工作”</small></article>
           <article data-cap-group="act"><b>08</b><span>Embodiment</span><h3>物理行动</h3><p>感知、规划和控制机器人、车辆或其他物理设备。</p><small>价值：开始替代或增强物理劳动</small></article>
         </div>
@@ -99,12 +99,12 @@
           <strong>自然语言第一次大规模成为“通用软件接口”。</strong>
         </div>
         <p>过去，用户想让软件做新事情，往往需要工程师写新功能；现在，越来越多任务可以先用自然语言描述，再由通用模型解释并生成结果。</p>
-        <p>2021 年 GitHub Copilot 技术预览把这种能力嵌进 IDE：模型不只是“聊天”，而是在程序员正在工作的界面里读取代码上下文并建议整行或完整函数。2022 年 11 月 ChatGPT 又把指令模型通过对话界面交付给大众，极大降低了普通人使用生成式 AI 的门槛。</p>
+        <p>2021 年 GitHub Copilot 技术预览把模型直接嵌进 IDE，在程序员工作的界面里读取代码上下文并建议整行或完整函数。2022 年 11 月 ChatGPT 又通过对话界面把指令模型交付给大众，极大降低了普通人使用生成式 AI 的门槛。</p>
       </section>
 
       <section class="chapter-section" id="reasoning">
         <div class="section-kicker">3.4 · REASONING → TOOLS → AGENT</div>
-        <h2>下一次跃迁：不只是生成答案，而是为了目标连续做事</h2>
+        <h2>下一次跃迁：从生成答案走向连续完成目标</h2>
         <div class="agent-loop">
           <div><b>目标</b><span>“帮我分析这家公司”</span></div><i>→</i>
           <div><b>计划</b><span>需要财报、竞品、行业数据</span></div><i>→</i>
@@ -143,7 +143,7 @@
 
       <section class="chapter-section" id="value">
         <div class="section-kicker">3.7 · VALUE MECHANISMS</div>
-        <h2>AI 的价值不是一个“自动化”词就能概括</h2>
+        <h2>AI 的价值要拆成多种具体机制</h2>
         <div class="value-mechanisms">
           <article><span>01</span><h3>降低搜索成本</h3><p>更快找到网页、商品、知识、代码和答案。</p><b>搜索 / 推荐 / RAG</b></article>
           <article><span>02</span><h3>提高匹配效率</h3><p>让广告、信贷、招聘、内容和供需匹配更准确。</p><b>Ranking / Prediction</b></article>
@@ -177,7 +177,7 @@
           <article><strong>12%</strong><span>真实家庭机器人任务成功率</span><small>物理智能与数字 Agent 仍有巨大鸿沟。</small></article>
           <article><strong>88%</strong><span>组织报告使用 AI</span><small>采用很广，但深度流程自动化明显滞后。</small></article>
         </div>
-        <div class="callout frontier-note"><b>2026–未来几年的核心观察点</b><p>不是再问“AI 会不会写东西”，而是追踪：可靠性、长任务长度、工具权限、安全、单位推理成本和物理世界成功率是否跨过经济阈值。</p></div>
+        <div class="callout frontier-note"><b>2026–未来几年的核心观察点</b><p>重点追踪六个变量：可靠性、长任务长度、工具权限、安全、单位推理成本和物理世界成功率。它们决定 AI 何时跨过真正的经济阈值。</p></div>
       </section>
 
       <section class="chapter-section" id="lab">
@@ -185,7 +185,7 @@
         <h2>选一个行业，画出“能力 → 工作流 → 价值”的链条</h2>
         <p>建议直接选你熟悉的行业。不要从“我要做一个 AI 产品”开始，而从下面四步开始：</p>
         <div class="drawer-grid">
-          <div><b>A · 工作是什么？</b><span>把岗位拆成高频任务，而不是岗位名称。</span></div>
+          <div><b>A · 工作是什么？</b><span>先把岗位拆成高频任务，再判断每类任务的 AI 增益。</span></div>
           <div><b>B · 需要哪种能力？</b><span>预测、生成、推理、工具、Agent 还是物理行动？</span></div>
           <div><b>C · 最大瓶颈是什么？</b><span>准确率、数据、权限、成本、法规还是组织接受度？</span></div>
           <div><b>D · 谁拿走价值？</b><span>基础模型、软件平台、垂直公司、服务商还是最终企业？</span></div>
