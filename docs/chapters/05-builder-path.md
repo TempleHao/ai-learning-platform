@@ -4,7 +4,7 @@
 Prompt → Context Engineering → RAG → Tool Use → Workflow → Agent → Eval → Guardrails → Cost / Routing。
 
 核心判断：
-AI 运用层专家不是更会写 Prompt，而是能够把模型能力转化为可重复业务结果。
+AI 运用层专家的核心能力，是把模型能力转化为可重复的业务结果。
 
 工程原则：
 - 缺事实时用检索，不靠 Prompt 硬猜
