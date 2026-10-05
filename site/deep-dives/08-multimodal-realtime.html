@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="AI Learning OS Deep Dive：Multimodal、Voice、Realtime AI 与下一代人机界面" />
+  <title>Deep Dive 08 · Multimodal / Voice / Realtime AI | AI Learning OS</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/chapter.css" />
+  <link rel="stylesheet" href="../assets/multimodal-realtime.css" />
+  <link rel="icon" type="image/png" sizes="64x64" href="/ai-learning-platform/assets/brand/favicon-64.png" />
+  <meta name="theme-color" content="#07111f" />
+</head>
+<body data-chapter="deep08">
+<div class="chapter-shell">
+  <aside class="chapter-toc" id="chapterToc">
+    <a class="chapter-brand" href="../index.html"><img class="brand-icon" src="/ai-learning-platform/assets/brand/favicon-64.png" alt="" aria-hidden="true" /><div><b>Learning OS</b><small>v0.16 · Multimodal / Realtime</small></div></a>
+    <div class="toc-label">Deep Dive 08</div>
+    <nav>
+      <a href="#start" class="active">D8.0 从文字界面走向现实接口</a>
+      <a href="#modalities">D8.1 什么叫“多模态”</a>
+      <a href="#vision">D8.2 Vision：AI 开始看见</a>
+      <a href="#audio">D8.3 Audio：听见与说话</a>
+      <a href="#realtime">D8.4 Realtime：从轮流说话到连续交互</a>
+      <a href="#architectures">D8.5 Voice Agent 三种架构</a>
+      <a href="#video">D8.6 Video 与持续视觉</a>
+      <a href="#screen">D8.7 Screen / Computer Use</a>
+      <a href="#interface">D8.8 下一代人机界面</a>
+      <a href="#latency">D8.9 延迟为什么是产品能力</a>
+      <a href="#safety">D8.10 语音 / 视觉风险</a>
+      <a href="#selector">D8.11 交互式架构选择器</a>
+      <a href="#business">D8.12 商业机会</a>
+      <a href="#lab">D8.13 Lab：做一个实时多模态助手</a>
+      <a href="#frontier">D8.14 2026 Frontier</a>
+      <a href="#check">D8.15 自测</a>
+    </nav>
+    <div class="toc-progress"><span>Deep Dive 状态</span><b id="chapterStatus">未完成</b><button id="completeChapter">标记本页完成</button></div>
+  </aside>
+
+  <main class="chapter-main">
+    <header class="chapter-top">
+      <button class="icon-btn chapter-menu" id="chapterMenu">☰</button>
+      <a href="../chapters/03-capabilities-applications.html">← 返回能力地图</a>
+      <span>Multimodal · Voice · Realtime · Interface</span>
+    </header>
+
+    <article class="chapter-article">
+      <section class="chapter-hero" id="start">
+        <div class="chapter-no">DEEP DIVE 08</div>
+        <h1>Multimodal、Voice 与 Realtime AI</h1>
+        <p class="lead">文字聊天只是 AI 的第一个大众界面。真正更接近“智能体”的系统，需要同时<strong>看、听、说、理解屏幕、感知环境，并在用户说话时继续思考和行动</strong>。</p>
+        <div class="objective-grid">
+          <div><b>能力</b><span>理解图像、音频、视频、屏幕与文本为什么不是简单“多输入格式”。</span></div>
+          <div><b>产品</b><span>知道 Realtime / Full Duplex / Barge-in / Latency 如何直接决定用户体验。</span></div>
+          <div><b>商业</b><span>识别语音 Agent、视觉助手、现场服务、客服、销售和 Physical AI 的机会边界。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section">
+        <div class="callout idea"><b>关键转折</b><p>当 AI 从“你问一句，我回一句”变成“持续看着环境、听你说话、允许你打断、同时调用后台工具”，交互范式就从 Chatbot 变成了一个持续运行的实时系统。</p></div>
+      </section>
+
+      <section class="chapter-section" id="modalities">
+        <div class="section-kicker">D8.1 · MODALITIES</div>
+        <h2>多模态不是“支持上传图片”，而是不同感知空间被映射进同一个决策系统</h2>
+        <div class="modality-grid">
+          <article><span>TEXT</span><h3>文本</h3><p>离散 Token，结构清晰，最容易存储、检索和审计。</p><b>适合：知识、代码、规则、长文。</b></article>
+          <article><span>IMAGE</span><h3>图像</h3><p>空间信息密集，模型需要同时理解对象、关系、布局和视觉细节。</p><b>适合：文档、界面、场景、商品、医疗影像。</b></article>
+          <article><span>AUDIO</span><h3>音频</h3><p>除了内容，还有语速、停顿、情绪、噪声、说话人等时间信息。</p><b>适合：对话、客服、会议、现场协作。</b></article>
+          <article><span>VIDEO</span><h3>视频</h3><p>图像 + 时间。除了“有什么”，还要理解“发生了什么变化”。</p><b>适合：行为、运动、流程、监控、教学。</b></article>
+          <article><span>SCREEN</span><h3>屏幕 / UI</h3><p>视觉语义和可操作元素结合，必须理解状态和操作后果。</p><b>适合：Computer Use、软件自动化。</b></article>
+          <article><span>SENSOR</span><h3>传感器 / 物理世界</h3><p>连续、噪声、实时，并且行动会改变环境。</p><b>适合：机器人、自动驾驶、工业系统。</b></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="vision">
+        <div class="section-kicker">D8.2 · VISION</div>
+        <h2>视觉能力的价值，是把“现实世界”变成模型可以推理的 Context</h2>
+        <p>传统计算机视觉往往是一项任务一个模型：分类、检测、OCR、分割。多模态基础模型把这些能力压进更通用的视觉—语言空间后，同一个模型可以看截图解释报错、读表格、理解图表、比较商品、分析界面甚至作为 Agent 的观察器。</p>
+        <div class="mechanism-grid">
+          <article><span>01</span><h3>Visual Question Answering</h3><p>对图片直接提问，不先强制转成固定标签。</p></article>
+          <article><span>02</span><h3>Document Intelligence</h3><p>结合文字、布局、表格、图表和页面结构理解文档。</p></article>
+          <article><span>03</span><h3>UI Understanding</h3><p>看懂按钮、菜单、页面状态，是 Computer Use 的感知层。</p></article>
+          <article><span>04</span><h3>Vision + Reasoning</h3><p>视觉不再只做识别，而进入多步推理和决策。</p></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="audio">
+        <div class="section-kicker">D8.3 · AUDIO</div>
+        <h2>语音 AI 有两条完全不同的技术路线</h2>
+        <div class="compare-grid">
+          <article><span>CHAINED</span><h3>ASR → LLM → TTS</h3><p>先语音转文字，再交给文本模型，最后转回语音。</p><ul><li>可检查中间文本</li><li>组件可替换</li><li>容易接现有文本 Agent</li><li>延迟通常更高</li></ul></article>
+          <article><span>NATIVE AUDIO</span><h3>Speech-to-Speech</h3><p>模型直接处理和输出音频，不一定需要把每一步都显式转成文字。</p><ul><li>延迟更低</li><li>更自然的语气和节奏</li><li>能处理打断与实时 turn-taking</li><li>调试与审计更复杂</li></ul></article>
+        </div>
+        <p>因此，“语音 Agent”不是给 Chatbot 套一个 TTS。真正实时的语音产品需要单独处理音频流、打断、会话状态、工具调用和网络传输。</p>
+      </section>
+
+      <section class="chapter-section" id="realtime">
+        <div class="section-kicker">D8.4 · REALTIME</div>
+        <h2>Realtime AI 的关键，不只是“快”，而是它能在时间流里存在</h2>
+        <div class="realtime-loop">
+          <div><b>Listen</b><span>持续接收音频 / 视觉流</span></div><i>→</i>
+          <div><b>Interpret</b><span>判断用户意图和当前状态</span></div><i>→</i>
+          <div><b>Speak</b><span>边生成边输出</span></div><i>↔</i>
+          <div><b>Barge-in</b><span>用户可随时打断</span></div><i>↔</i>
+          <div><b>Delegate</b><span>后台 Agent 同时搜索 / 用工具</span></div>
+        </div>
+        <p>OpenAI 2026 的 GPT-Live 把这件事拆成两层：Live 模型负责自然实时对话，后台 Agent 负责更重的推理、搜索和工具任务。前台可以继续交流，而后台工作不必阻塞整个对话。</p>
+      </section>
+
+      <section class="chapter-section" id="architectures">
+        <div class="section-kicker">D8.5 · VOICE ARCHITECTURES</div>
+        <h2>三种 Voice Agent 架构，各自适合完全不同的产品</h2>
+        <div class="architecture-cards">
+          <article><span>GPT-LIVE STYLE</span><h3>实时前台 + 独立后台</h3><p>语音模型负责完整对话体验，后台 Agent 负责复杂任务。</p><b>适合：客服、销售、实时助理。</b></article>
+          <article><span>REALTIME SESSION</span><h3>一个实时模型承担对话 + 工具</h3><p>音频、状态、工具和对话都放在同一实时 Session 内。</p><b>适合：逻辑较紧凑的语音应用。</b></article>
+          <article><span>CHAINED PIPELINE</span><h3>ASR + Text Agent + TTS</h3><p>每个阶段独立，最容易观察和替换。</p><b>适合：强审计、已有文本 Agent、流程型系统。</b></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="video">
+        <div class="section-kicker">D8.6 · VIDEO + CONTINUOUS VISION</div>
+        <h2>视频真正难的不是“每秒看一张图”，而是持续理解事件</h2>
+        <p>视频比图片多了一个核心维度：时间。系统必须知道某个动作何时开始、持续多久、是否完成，以及前后状态是否改变。</p>
+        <div class="failure-grid">
+          <div><b>采样问题</b><span>抽帧太少会错过关键事件，太多又成本高。</span></div>
+          <div><b>状态连续性</b><span>需要知道前几秒发生过什么，而不只是当前一帧。</span></div>
+          <div><b>主动发言</b><span>真正实时助手要判断“什么时候应该主动说话”。</span></div>
+          <div><b>长期记忆</b><span>持续视频流无法全部塞进 Context，需要事件摘要和外部状态。</span></div>
+        </div>
+        <p>这也是为什么“实时视觉助手”比单张图片问答难得多：它其实是 perception + event detection + memory + policy 的组合问题。</p>
+      </section>
+
+      <section class="chapter-section" id="screen">
+        <div class="section-kicker">D8.7 · SCREEN + COMPUTER USE</div>
+        <h2>屏幕是一种非常特殊的视觉：看见之后必须能正确行动</h2>
+        <p>Computer Use 的基本循环可以写成：</p>
+        <div class="computer-loop">
+          <div><b>Screenshot</b><span>观察当前界面</span></div><i>→</i>
+          <div><b>Locate</b><span>理解可点击对象</span></div><i>→</i>
+          <div><b>Decide</b><span>根据任务选择操作</span></div><i>→</i>
+          <div><b>Act</b><span>点击 / 输入 / 滚动</span></div><i>→</i>
+          <div><b>Verify</b><span>重新观察状态</span></div>
+        </div>
+        <p>它最大的难点是脆弱性：同一页面的布局变化、弹窗、网络延迟、错误点击，都可能让下一步状态和计划完全不同。因此 Computer Use 必须和状态验证、权限、恢复机制一起设计。</p>
+      </section>
+
+      <section class="chapter-section" id="interface">
+        <div class="section-kicker">D8.8 · INTERFACE SHIFT</div>
+        <h2>下一代 AI 产品的界面，可能不再是“输入框”</h2>
+        <div class="interface-grid">
+          <article><span>VOICE</span><h3>说出来</h3><p>适合驾驶、走路、现场维修、客服、老人和无手交互。</p></article>
+          <article><span>CAMERA</span><h3>让 AI 看见</h3><p>用户不必描述“我看到什么”，直接把环境作为输入。</p></article>
+          <article><span>SCREEN</span><h3>共享当前工作</h3><p>AI 理解用户正在操作的软件，并直接辅助。</p></article>
+          <article><span>AMBIENT</span><h3>环境式 AI</h3><p>系统持续存在，根据事件而不是点击按钮被触发。</p></article>
+        </div>
+        <div class="business-lens"><b>产品机会</b><p>每当输入成本下降，原本不会主动使用软件的人群和场景就会进入市场。语音和视觉最大的商业价值之一，是把“不会写 Prompt”这个门槛继续降下去。</p></div>
+      </section>
+
+      <section class="chapter-section" id="latency">
+        <div class="section-kicker">D8.9 · LATENCY</div>
+        <h2>在实时产品里，延迟不是基础设施指标，而是“智能感”的一部分</h2>
+        <p>文字聊天延迟 2 秒可能还能接受；语音对话多等 2 秒，人会直接感觉“它没听懂”。Realtime 产品必须同时关注：</p>
+        <div class="decision-grid">
+          <div><b>First Audio Latency</b><span>用户说完后多久听见第一段响应？</span></div>
+          <div><b>Round-trip Time</b><span>音频从用户到模型再回来需要多久？</span></div>
+          <div><b>Jitter</b><span>延迟是否稳定，还是忽快忽慢？</span></div>
+          <div><b>Barge-in</b><span>用户打断后，系统多久停下并重新听？</span></div>
+          <div><b>Tool Latency</b><span>搜索 / 数据库 / 后台 Agent 是否拖慢对话？</span></div>
+          <div><b>Recovery</b><span>断线或工具超时后能否自然继续？</span></div>
+        </div>
+        <p>OpenAI 2026 的实时语音工程文章把连接建立、媒体往返时间、抖动和丢包都视为核心体验问题，因为对话节奏本身就是产品质量。</p>
+      </section>
+
+      <section class="chapter-section" id="safety">
+        <div class="section-kicker">D8.10 · SAFETY + PRIVACY</div>
+        <h2>摄像头和麦克风让 AI 更有用，也让风险半径明显扩大</h2>
+        <div class="risk-ladder">
+          <div><span>PRIVACY</span><b>持续采集</b><p>音频 / 画面可能包含旁观者和环境敏感信息。</p></div>
+          <div><span>IDENTITY</span><b>声音与人物</b><p>语音克隆、冒充和身份验证变得更重要。</p></div>
+          <div><span>ACTION</span><b>实时建议</b><p>驾驶、医疗、工业等场景中的错误建议更难撤销。</p></div>
+          <div><span>RECORDING</span><b>存储与留存</b><p>实时流是否保存、保存多久、谁能访问必须明确。</p></div>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="selector">
+        <div class="section-kicker">D8.11 · INTERACTIVE ARCHITECTURE SELECTOR</div>
+        <h2>这个产品到底该用文字、语音、Realtime 还是视觉？</h2>
+        <div class="modality-selector">
+          <div class="selector-inputs">
+            <label>是否需要双手忙碌 / 无手交互 <input type="range" min="1" max="5" value="3" data-mm-score="handsfree"><b>3</b></label>
+            <label>是否依赖视觉现场信息 <input type="range" min="1" max="5" value="2" data-mm-score="vision"><b>2</b></label>
+            <label>是否需要自然连续对话 <input type="range" min="1" max="5" value="3" data-mm-score="conversation"><b>3</b></label>
+            <label>延迟敏感度 <input type="range" min="1" max="5" value="3" data-mm-score="latency"><b>3</b></label>
+            <label>是否需要强审计 / 文本留痕 <input type="range" min="1" max="5" value="3" data-mm-score="audit"><b>3</b></label>
+            <label>环境隐私风险 <input type="range" min="1" max="5" value="2" data-mm-score="privacy"><b>2</b></label>
+          </div>
+          <div class="selector-output">
+            <span>RECOMMENDED INTERFACE</span>
+            <strong id="mmMode">Text + Optional Voice</strong>
+            <b id="mmScore">Balanced</b>
+            <p id="mmReason"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="business">
+        <div class="section-kicker">D8.12 · BUSINESS OPPORTUNITIES</div>
+        <h2>多模态最大的机会，往往发生在“原来输入成本太高”的场景</h2>
+        <div class="mechanism-grid">
+          <article><span>01</span><h3>Voice Customer Service</h3><p>电话渠道直接变成 Agent 接口，不要求用户安装 App 或打字。</p></article>
+          <article><span>02</span><h3>Field Copilot</h3><p>维修、巡检、仓储、医疗现场可以边看边说边得到指导。</p></article>
+          <article><span>03</span><h3>Sales / Coaching</h3><p>实时听对话、读取屏幕和 CRM，为销售提供下一步建议。</p></article>
+          <article><span>04</span><h3>Accessibility</h3><p>视觉 / 语音接口可显著降低残障和数字能力门槛。</p></article>
+          <article><span>05</span><h3>Ambient Assistants</h3><p>AI 不再等用户主动提问，而是根据环境事件触发。</p></article>
+          <article><span>06</span><h3>Physical AI Bridge</h3><p>视觉 + 语音 + Agent 是走向机器人和实体自动化的重要中间层。</p></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="lab">
+        <div class="section-kicker">D8.13 · LAB 10</div>
+        <h2>做一个“实时多模态助手”，而不是语音版 Chatbot</h2>
+        <div class="lab-checklist">
+          <label><input type="checkbox" data-mm-lab="1"><span>选一个必须使用语音或视觉才明显优于文字的真实场景。</span></label>
+          <label><input type="checkbox" data-mm-lab="2"><span>画出输入流：Mic / Camera / Screen / Text 哪些是实时、哪些是按需。</span></label>
+          <label><input type="checkbox" data-mm-lab="3"><span>在 Chained / Realtime Session / Live + Backend 三种架构中做选择并说明原因。</span></label>
+          <label><input type="checkbox" data-mm-lab="4"><span>记录 First Response、打断、工具调用三个延迟指标。</span></label>
+          <label><input type="checkbox" data-mm-lab="5"><span>设计至少 10 个对话任务，其中包含 3 个打断 / 改口 / 模糊场景。</span></label>
+          <label><input type="checkbox" data-mm-lab="6"><span>加入隐私边界：什么时候不记录、什么时候必须提示用户。</span></label>
+          <label><input type="checkbox" data-mm-lab="7"><span>比较“文字版”和“多模态版”的完成率、时长和用户体验。</span></label>
+        </div>
+        <div class="lab-progress"><span>Lab 10</span><b id="mmLabProgress">0 / 7</b><i><em id="mmLabBar"></em></i></div>
+      </section>
+
+      <section class="chapter-section frontier-section" id="frontier">
+        <div class="section-kicker">D8.14 · FRONTIER · 2026</div>
+        <h2>2026：多模态已经进入强能力阶段，但实时和物理世界仍是系统工程问题</h2>
+        <div class="frontier-grid">
+          <article><strong>MMMU ≈ human+</strong><span>多模态推理 benchmark 已接近 / 超过既有人类基线</span><small>“看图推理”已从弱项变成前沿强项之一。</small></article>
+          <article><strong>Full Duplex</strong><span>Voice 可以边听边说，并允许 Barge-in</span><small>实时交互开始从轮流回合制转向连续会话。</small></article>
+          <article><strong>12%</strong><span>真实家庭机器人任务成功率仍很低</span><small>从看懂现实到可靠改变现实，中间还有巨大鸿沟。</small></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="check">
+        <div class="section-kicker">D8.15 · SELF CHECK</div>
+        <h2>本页自测</h2>
+        <details><summary>为什么 Native Speech-to-Speech 和 ASR → LLM → TTS 不是一回事？</summary><p>Chained Pipeline 把每个阶段拆开，易审计和替换；Native Speech-to-Speech 直接在音频空间进行理解和生成，延迟更低、自然度更高，但中间状态更难观察。</p></details>
+        <details><summary>为什么视频理解比图像理解难很多？</summary><p>视频必须理解时间、状态变化和事件边界，还要管理长时间流带来的 Context 与 Memory 问题。</p></details>
+        <details><summary>为什么实时 AI 的延迟本身就是“智能感”的一部分？</summary><p>人类对话依赖快速 turn-taking 和打断。如果系统响应慢、打断迟钝，即使回答内容正确，也会显得不理解当前互动。</p></details>
+        <details><summary>什么时候不应该优先做语音 / 视觉？</summary><p>当任务需要强审计、精确编辑、复杂结构化信息、环境隐私风险高，或文字输入已经足够高效时，多模态未必更优。</p></details>
+      </section>
+
+      <section class="chapter-section sources">
+        <div class="section-kicker">SOURCES</div>
+        <h2>本页来源</h2>
+        <ol>
+          <li><a href="https://developers.openai.com/api/docs/guides/realtime" target="_blank" rel="noreferrer">OpenAI · Realtime API</a></li>
+          <li><a href="https://developers.openai.com/api/docs/guides/live" target="_blank" rel="noreferrer">OpenAI · GPT-Live</a></li>
+          <li><a href="https://developers.openai.com/api/docs/guides/voice-agents" target="_blank" rel="noreferrer">OpenAI · Voice agents architecture</a></li>
+          <li><a href="https://openai.com/index/delivering-low-latency-voice-ai-at-scale/" target="_blank" rel="noreferrer">OpenAI · Low-latency voice AI at scale (2026)</a></li>
+          <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance" target="_blank" rel="noreferrer">Stanford AI Index 2026 · Technical Performance</a></li>
+        </ol>
+      </section>
+
+      <div class="chapter-next">
+        <span>NEXT · MODEL ECONOMICS + INFERENCE</span>
+        <h2>下一步：模型越来越强以后，成本、延迟、路由和推理基础设施怎么决定商业可行性。</h2>
+        <p>这会把“能力”继续连接到真正的 AI 产品经济学。</p>
+      </div>
+    </article>
+  </main>
+</div>
+<script src="../assets/chapter.js"></script>
+<script src="../assets/multimodal-realtime.js"></script>
+</body>
+</html>
