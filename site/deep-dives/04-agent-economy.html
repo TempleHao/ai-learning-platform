@@ -48,7 +48,7 @@
       <section class="chapter-hero" id="start">
         <div class="chapter-no">DEEP DIVE 04</div>
         <h1>Agent：从软件工具<br>到数字劳动力</h1>
-        <p class="lead">Agent 真正重要的地方，不是“AI 会自动点击按钮”，而是软件第一次开始把<strong>目标</strong>而不是<strong>操作步骤</strong>作为主要输入：用户说要什么，系统自己决定下一步、调用工具、观察结果、修正计划并完成任务。</p>
+        <p class="lead">Agent 的关键变化，是把<strong>目标</strong>提升为软件的主要输入：用户说明要什么，系统自行决定下一步、调用工具、观察结果、修正计划并完成任务。</p>
         <div class="objective-grid">
           <div><b>系统视角</b><span>理解 Goal、Context、Model、Tools、Memory、Loop、Eval 与 Guardrails 如何组成 Agent。</span></div>
           <div><b>工程视角</b><span>理解为什么长任务失败、何时需要人审、预算和状态管理。</span></div>
@@ -57,13 +57,13 @@
       </section>
 
       <section class="chapter-section">
-        <div class="callout idea"><b>先建立一个定义</b><p>这里把 Agent 定义为：围绕一个目标，能够根据当前状态动态选择下一步行动、调用工具并根据结果继续执行的 AI 系统。重点不是“自动”，而是<strong>决策权被部分交给模型</strong>。</p></div>
+        <div class="callout idea"><b>先建立一个定义</b><p>这里把 Agent 定义为：围绕一个目标，根据当前状态动态选择下一步行动、调用工具并根据结果继续执行的 AI 系统。它的核心特征是<strong>一部分决策权被交给模型</strong>。</p></div>
         <p>传统软件通常要求人决定每一步：打开页面、找字段、点击按钮。Agent 则把部分“下一步做什么”的判断交给模型。OpenAI 的 Agent 指南也把这类系统描述为能够代表用户以较高独立性执行工作流，并通过数据、行动和编排类工具与外部系统交互。</p>
       </section>
 
       <section class="chapter-section" id="anatomy">
         <div class="section-kicker">D4.1 · AGENT ANATOMY</div>
-        <h2>Agent 不是一个模型，而是一套运行系统</h2>
+        <h2>Agent 是一套由模型、工具、状态与控制逻辑组成的运行系统</h2>
         <div class="agent-anatomy">
           <div><span>GOAL</span><b>目标</b><p>成功到底是什么？什么时候算完成？</p></div>
           <div><span>CONTEXT</span><b>上下文</b><p>任务说明、文件、业务状态、规则与历史。</p></div>
@@ -88,13 +88,13 @@
           <article><span>L4</span><h3>Long-running Agent</h3><p>跨小时 / 天持续执行，管理任务、状态、失败与恢复。</p><small>决策权：更高自主性。</small></article>
           <article><span>L5</span><h3>Delegated Worker</h3><p>人只定义目标、预算和边界，系统负责大部分执行与交付。</p><small>商业形态：更接近数字劳动力。</small></article>
         </div>
-        <div class="callout warn"><b>自主性不是越高越好</b><p>任务越稳定、监管越严格、错误越昂贵，就越应该把决策留在 Workflow、规则和审批节点里。Agent 的价值来自“不确定路径”，而不是来自“自动化看起来更酷”。</p></div>
+        <div class="callout warn"><b>自主性必须与任务风险匹配</b><p>任务越稳定、监管越严格、错误越昂贵，就越应该把决策留在 Workflow、规则和审批节点里。Agent 最擅长处理路径不确定、需要动态判断的任务。</p></div>
       </section>
 
       <section class="chapter-section" id="workflow">
         <div class="section-kicker">D4.3 · WORKFLOW vs AGENT</div>
-        <h2>最成熟的 Agent 系统，往往不是“全自动自由发挥”</h2>
-        <p>Anthropic 在其 Agent 工程总结中区分了两类系统：一种是预定义代码路径的 workflow；另一种由模型动态决定过程和工具使用的 agent。其经验是，成功实现往往依赖简单、可组合的模式，而不是一开始就堆复杂框架。</p>
+        <h2>成熟 Agent 系统依靠受控自治，而非无限自由度</h2>
+        <p>Anthropic 在其 Agent 工程总结中区分了两类系统：预定义代码路径的 workflow，以及由模型动态决定过程和工具使用的 agent。其经验表明，简单、可组合的模式往往更容易取得稳定结果。</p>
         <div class="compare-grid">
           <article><span>WORKFLOW</span><h3>可预测路径</h3><p>步骤、分支和检查点可以提前定义。</p><ul><li>更稳定</li><li>更容易测试</li><li>成本更可控</li><li>适合高风险流程</li></ul></article>
           <article><span>AGENT</span><h3>开放路径</h3><p>任务需要搜索、尝试、反复决策，无法提前穷举步骤。</p><ul><li>适合开放问题</li><li>适应性更强</li><li>错误路径更多</li><li>更需要 Eval 与预算边界</li></ul></article>
@@ -105,7 +105,7 @@
       <section class="chapter-section" id="reliability">
         <div class="section-kicker">D4.4 · RELIABILITY COMPOUNDS</div>
         <h2>为什么“单步 95% 正确”仍然可能做不好长任务？</h2>
-        <p>长任务的麻烦是：很多步骤必须都成功。如果为了建立直觉，暂时把每一步看成独立事件，那么总体成功率会近似按连乘衰减。这不是严格的真实生产模型，但非常适合理解为什么 Agent 需要检查点、重试和局部验收。</p>
+        <p>长任务要求很多步骤连续成功。为了建立直觉，可以暂时把每一步看成独立事件，此时总体成功率会近似按连乘衰减。这个简化模型足以解释为什么 Agent 需要检查点、重试和局部验收。</p>
         <div class="agent-sim-card">
           <div class="sim-head"><div><span>INTERACTIVE · RELIABILITY</span><h3>长任务成功率直觉实验</h3></div><b id="agentTotalSuccess">59.9%</b></div>
           <div class="sim-controls">
@@ -118,7 +118,7 @@
         </div>
         <div class="mechanism-grid">
           <article><span>01</span><h3>局部验收</h3><p>不要等 20 步全部结束才检查。每个高风险阶段都验证输出。</p></article>
-          <article><span>02</span><h3>可恢复状态</h3><p>失败时从最近检查点继续，而不是整个任务重来。</p></article>
+          <article><span>02</span><h3>可恢复状态</h3><p>失败时从最近检查点继续，避免整段任务重新执行。</p></article>
           <article><span>03</span><h3>预算边界</h3><p>限制最大步骤、时间、Token、工具调用和金钱成本。</p></article>
           <article><span>04</span><h3>Human Handoff</h3><p>超过失败阈值或进入高风险动作时，把控制权交还给人。</p></article>
         </div>
@@ -136,19 +136,19 @@
 
       <section class="chapter-section" id="memory">
         <div class="section-kicker">D4.6 · MEMORY + CONTEXT</div>
-        <h2>Agent 的“记忆”不是一个东西，而是四类状态</h2>
+        <h2>Agent 的“记忆”至少包含四类不同状态</h2>
         <div class="memory-grid">
           <article><span>WORKING</span><h3>工作记忆</h3><p>当前任务里的短期上下文、计划和中间结果。</p></article>
           <article><span>EPISODIC</span><h3>经历记忆</h3><p>过去做过什么、哪些路径失败、用户曾经怎样纠正。</p></article>
           <article><span>SEMANTIC</span><h3>知识记忆</h3><p>文档、数据库、知识库和可检索事实。</p></article>
           <article><span>STATE</span><h3>业务状态</h3><p>CRM、订单、工单、Git、日历等真实系统当前状态。</p></article>
         </div>
-        <p>很多“Agent 记忆问题”其实不是模型忘了，而是系统没有决定：什么应该保存在对话里、什么应该进数据库、什么应该检索、什么必须从 source of truth 实时读取。</p>
+        <p>很多“Agent 记忆问题”源于状态设计不清：系统没有决定哪些信息留在对话里、哪些进数据库、哪些通过检索获得、哪些必须从 source of truth 实时读取。</p>
       </section>
 
       <section class="chapter-section" id="multi">
         <div class="section-kicker">D4.7 · MULTI-AGENT</div>
-        <h2>Multi-Agent 不是默认答案，它只是组织复杂度的一种方式</h2>
+        <h2>Multi-Agent 是组织复杂度的一种方式，需要明确收益再使用</h2>
         <p>把一个系统拆成 Research Agent、Coding Agent、Reviewer Agent、Manager Agent，确实可以让职责更清晰；但每增加一个 Agent，也增加上下文传递、冲突、延迟、成本和调试难度。</p>
         <div class="decision-grid">
           <div><b>适合拆</b><span>不同任务需要明显不同工具、权限、上下文或评测标准。</span></div>
@@ -161,7 +161,7 @@
 
       <section class="chapter-section" id="control">
         <div class="section-kicker">D4.8 · CONTROL PLANE</div>
-        <h2>企业真正采购的不是“Agent 智商”，而是可控性</h2>
+        <h2>企业采购 Agent 时，最看重的是可控性与结果责任</h2>
         <div class="control-plane">
           <div><span>IDENTITY</span><b>身份</b><p>谁启动了任务？Agent 代表谁行动？</p></div>
           <div><span>PERMISSION</span><b>权限</b><p>能读什么、写什么、最大金额 / 范围是多少？</p></div>
@@ -178,7 +178,7 @@
       <section class="chapter-section" id="economics">
         <div class="section-kicker">D4.9 · AGENT UNIT ECONOMICS</div>
         <h2>Agent 是否值得部署？先算“每个任务”的账</h2>
-        <p>下面不是财务模型，而是一个保守的思考器：把模型调用、人审和失败后人工重做都算进去，再和纯人工基线比较。</p>
+        <p>下面提供一个保守的成本思考器：把模型调用、人审和失败后人工重做全部计入，再和纯人工基线比较。</p>
         <div class="agent-econ-card">
           <div class="econ-inputs">
             <label>人工每次耗时（分钟）<input id="humanMinutes" type="number" min="1" value="30"></label>
@@ -197,7 +197,7 @@
           <p id="econExplain"></p>
           <small>简化假设：失败任务由人工按完整基线耗时重做；成功任务仍进行设定时长的人审。未计实施、集成、销售、运维、错误外部性和资本成本。</small>
         </div>
-        <div class="business-lens"><b>核心判断</b><p>Agent 的商业价值不是“Token 很便宜”，而是<strong>每个成功任务的完全成本</strong>低于人工或旧流程，同时错误仍处在组织可接受范围。</p></div>
+        <div class="business-lens"><b>核心判断</b><p>Agent 的商业价值最终看<strong>每个成功任务的完全成本</strong>：它要低于人工或旧流程，同时把错误控制在组织可接受范围。</p></div>
       </section>
 
       <section class="chapter-section" id="economy">
@@ -209,18 +209,18 @@
           <div><b>Agent</b><span>卖自动完成的任务</span></div><i>→</i>
           <div><b>Outcome</b><span>按结果 / 交易 / 节省收费</span></div>
         </div>
-        <p>这不是说 SaaS 会消失，而是价值计量方式可能改变。如果客户不再亲自操作软件，而只提出“把这个客户名单清洗完”“把这批发票对账完”“把这个代码迁移完成”，那么软件供应商开始和内部人工、外包、BPO、咨询费用处在同一个预算池里竞争。</p>
+        <p>SaaS 的价值计量方式可能发生变化。如果客户只提出“把这个客户名单清洗完”“把这批发票对账完”“把这个代码迁移完成”，软件供应商就会开始和内部人工、外包、BPO、咨询费用进入同一个预算池竞争。</p>
         <div class="mechanism-grid">
           <article><span>01</span><h3>Seat → Task</h3><p>从按用户数收费转向按任务量、调用量或自动化量收费。</p></article>
           <article><span>02</span><h3>Task → Outcome</h3><p>当系统能承担结果责任，收费进一步靠近“完成了什么”。</p></article>
-          <article><span>03</span><h3>Software → Labor Budget</h3><p>AI 公司可触达的不只是 IT 预算，也包括人工与外包预算。</p></article>
+          <article><span>03</span><h3>Software → Labor Budget</h3><p>AI 公司可以从 IT 预算进一步进入人工与外包预算。</p></article>
           <article><span>04</span><h3>Tool → Operator</h3><p>软件厂商从提供功能，逐渐变成替客户运行流程的运营者。</p></article>
         </div>
       </section>
 
       <section class="chapter-section" id="org">
         <div class="section-kicker">D4.11 · ORGANIZATION</div>
-        <h2>企业最先变化的可能不是“岗位消失”，而是管理半径和任务边界</h2>
+        <h2>企业最先变化的往往是管理半径和任务边界</h2>
         <p>在短期里，更现实的变化往往是：一个人可以管理更多并行任务；初级工作被 AI 先做第一遍；高级人员从“亲自执行”转向定义目标、设计流程、处理异常和承担责任。</p>
         <div class="org-shift">
           <div><span>旧组织</span><b>经理 → 多名执行人员 → 软件工具</b></div>
@@ -245,7 +245,7 @@
 
       <section class="chapter-section" id="risks">
         <div class="section-kicker">D4.13 · RISK SURFACE</div>
-        <h2>Agent 风险不是“模型说错一句话”，而是“错误产生副作用”</h2>
+        <h2>Agent 风险的关键在于错误会产生真实副作用</h2>
         <div class="risk-matrix">
           <article><span>INJECTION</span><h3>提示注入</h3><p>外部网页、邮件或文件可能诱导 Agent 偏离原任务。</p></article>
           <article><span>AUTHORITY</span><h3>越权</h3><p>模型尝试读取或修改超出用户授权的数据。</p></article>
