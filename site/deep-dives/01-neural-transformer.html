@@ -43,7 +43,7 @@
       <section class="chapter-hero" id="start">
         <div class="chapter-no">DEEP DIVE 01</div>
         <h1>神经网络、Transformer<br>与 Scaling</h1>
-        <p class="lead">你不需要先成为算法工程师，但如果想成为真正的 AI 运用层专家，必须能看懂大模型内部的几个关键结构：<strong>参数如何组合成层、层如何形成表示、Attention 如何交换上下文，以及规模为什么会持续带来能力变化。</strong></p>
+        <p class="lead">AI 运用层专家需要看懂大模型内部的几个关键结构：<strong>参数如何组合成层、层如何形成表示、Attention 如何交换上下文，以及规模为什么会持续带来能力变化。</strong> 这不要求你先成为算法工程师。</p>
         <div class="objective-grid">
           <div><b>直觉</b><span>知道“神经元、层、表示、残差、Attention”分别在做什么。</span></div>
           <div><b>结构</b><span>能画出一个简化 Transformer Block。</span></div>
@@ -56,7 +56,7 @@
         <h2>一个“神经元”本质上仍然是加权求和 + 变换</h2>
         <div class="formula-box"><span>最简形式</span><strong>z = w₁x₁ + w₂x₂ + … + b</strong></div>
         <p>输入 x 代表特征，权重 w 决定每个特征影响多大，b 是偏置。单个线性单元能力很有限，但大量单元组成多层网络，并加入非线性激活后，就可以表示非常复杂的函数。</p>
-        <div class="callout idea"><b>运用层需要抓住的点</b><p>“参数很多”不是为了存很多独立答案，而是让模型拥有更大的函数表示能力；真正的知识和能力分布在大量参数共同形成的计算结构中。</p></div>
+        <div class="callout idea"><b>运用层需要抓住的点</b><p>大量参数带来更强的函数表示能力。知识和能力分布在整个计算结构中，无法拆成一条条独立答案。</p></div>
       </section>
 
       <section class="chapter-section" id="nonlinear">
@@ -90,7 +90,7 @@
           <article><span>RNN / LSTM</span><h3>循环网络</h3><p>按序列一步步传递状态，适合语言和时间序列，但长距离依赖与并行训练较难。</p></article>
           <article><span>Transformer</span><h3>Attention 驱动</h3><p>让序列位置直接彼此交互，更适合并行和大规模训练。</p></article>
         </div>
-        <p>Transformer 的成功并不意味着 CNN / RNN 的所有思想“错误”，而是它在大规模通用序列建模上更适合当时的数据与硬件条件。</p>
+        <p>Transformer 在大规模通用序列建模上更适合当时的数据与硬件条件，因此取得主导地位；CNN / RNN 的许多思想仍在不同问题中继续发挥作用。</p>
       </section>
 
       <section class="chapter-section" id="attention">
@@ -106,7 +106,7 @@
           </div>
           <div class="attention-result" id="attentionResult"></div>
         </div>
-        <p>真实模型不是简单地“找代词指代”，而是在很多 Attention Head 中同时学习不同关系。不同 Head 可能关注位置、语法、实体、局部模式或其他模型自行形成的结构。</p>
+        <p>真实模型会在大量 Attention Head 中同时学习不同关系。不同 Head 可能关注位置、语法、实体、局部模式或其他模型自行形成的结构。</p>
       </section>
 
       <section class="chapter-section" id="block">
@@ -181,7 +181,7 @@
         <details><summary>Q1：为什么“模型参数 = 知识数据库”是错误类比？</summary><p>参数共同定义一个计算函数和表示空间，知识分散编码在大量权重交互中，并不能像数据库行那样逐条读取。</p></details>
         <details><summary>Q2：Attention 的 Q / K / V 可以怎样理解？</summary><p>Q 表示当前位置想找什么，K 表示其他位置提供什么匹配线索，V 是被加权汇总的实际信息。</p></details>
         <details><summary>Q3：Scaling Laws 为什么对产业资本开支如此重要？</summary><p>因为它让“投入更多计算、模型和数据通常能换来更低 Loss / 更高性能”变得相对可预测，从而支持巨额基础设施投资。</p></details>
-        <details><summary>Q4：MoE 为什么可能让“参数数”和“单次计算量”脱钩？</summary><p>因为每个输入只路由到部分专家参数，而不是激活整个模型。</p></details>
+        <details><summary>Q4：MoE 为什么可能让“参数数”和“单次计算量”脱钩？</summary><p>每个输入只路由到部分专家参数，因此单次推理无需激活整个模型。</p></details>
       </section>
 
       <section class="chapter-section sources">
