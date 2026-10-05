@@ -22,7 +22,7 @@
       <a href="#rag">D7.2 RAG 的真正结构</a>
       <a href="#retrieval">D7.3 检索为什么最难</a>
       <a href="#chunking">D7.4 Chunking / Metadata / Rerank</a>
-      <a href="#memory">D7.5 Memory 不是 RAG</a>
+      <a href="#memory">D7.5 Memory 与 RAG 的分工</a>
       <a href="#context">D7.6 Context Budget</a>
       <a href="#permissions">D7.7 权限与知识治理</a>
       <a href="#eval">D7.8 RAG Eval</a>
@@ -47,11 +47,11 @@
       <section class="chapter-hero" id="start">
         <div class="chapter-no">DEEP DIVE 07</div>
         <h1>RAG、Memory 与 Knowledge Systems</h1>
-        <p class="lead">强模型不等于知道你公司的制度、今天的库存、客户刚刚发来的邮件、某份合同第 17 条，或者你上周为什么做了某个决策。真正可用的 AI 系统，需要一层<strong>可检索、可更新、可授权、可追溯的知识基础设施</strong>。</p>
+        <p class="lead">强模型无法自动获得你公司的制度、今天的库存、客户刚发来的邮件、某份合同第 17 条，或上周的内部决策。可用的 AI 系统需要一层<strong>可检索、可更新、可授权、可追溯的知识基础设施</strong>。</p>
         <div class="objective-grid">
           <div><b>概念</b><span>彻底区分 Parametric Knowledge、Context、RAG 与 Memory。</span></div>
           <div><b>工程</b><span>理解 Chunking、Embedding、Hybrid Search、Rerank、Metadata 与 Eval。</span></div>
-          <div><b>企业</b><span>知道知识系统真正难在权限、更新、来源、责任和维护，而不是向量数据库。</span></div>
+          <div><b>企业</b><span>把重点放在权限、更新、来源、责任和维护；向量数据库只是其中一个基础组件。</span></div>
         </div>
       </section>
 
@@ -67,12 +67,12 @@
           <article><span>CONTEXT</span><h3>这一次调用看见的信息</h3><p>Prompt、文件片段、工具结果、当前对话、系统指令。</p><b>优点：即时。缺点：窗口有限、太多会稀释重点。</b></article>
           <article><span>EXTERNAL STATE</span><h3>外部知识与记忆</h3><p>数据库、文档、搜索、CRM、Memory files、事件日志。</p><b>优点：可更新、可审计。缺点：必须检索和治理。</b></article>
         </div>
-        <p>很多“模型胡说”的根因并不是模型太笨，而是它根本没有接触到正确的事实源，或者系统取回了错误的片段。</p>
+        <p>很多“模型胡说”的根因来自证据链：系统没有提供正确事实源，或者检索阶段取回了错误片段。</p>
       </section>
 
       <section class="chapter-section" id="rag">
         <div class="section-kicker">D7.2 · RAG PIPELINE</div>
-        <h2>RAG 不是“向量数据库”，而是一条完整证据流水线</h2>
+        <h2>RAG 是一条完整证据流水线：摄取、检索、重排、生成、引用</h2>
         <div class="rag-pipeline">
           <div><b>① Ingest</b><span>解析文档、表格、网页、附件。</span></div><i>→</i>
           <div><b>② Chunk</b><span>切成可检索单元。</span></div><i>→</i>
@@ -81,7 +81,7 @@
           <div><b>⑤ Rerank</b><span>重新排序最相关片段。</span></div><i>→</i>
           <div><b>⑥ Generate</b><span>带来源生成回答。</span></div>
         </div>
-        <p>OpenAI 当前的 File Search 也是这个思想：模型在生成前可以对已上传知识库做语义与关键词检索，并可按 Metadata 过滤。真正要优化的，是“取回什么证据”，而不只是最后的 Prompt。</p>
+        <p>OpenAI 当前的 File Search 也是这个思想：模型在生成前可以对已上传知识库做语义与关键词检索，并可按 Metadata 过滤。优化重点应放在“取回什么证据”以及如何组织这些证据。</p>
       </section>
 
       <section class="chapter-section" id="retrieval">
@@ -89,7 +89,7 @@
         <h2>一个很反直觉的事实：RAG 的瓶颈经常不在生成，而在检索</h2>
         <div class="failure-grid">
           <div><b>没取到</b><span>正确答案明明在资料里，但检索没有命中。</span></div>
-          <div><b>取错了</b><span>关键词相似，却不是当前问题需要的文档。</span></div>
+          <div><b>取错了</b><span>关键词相似，但文档与当前问题没有真实关联。</span></div>
           <div><b>取旧了</b><span>同一制度有多个版本，系统拿了过期版。</span></div>
           <div><b>取太多</b><span>大量无关片段占满 Context，反而降低回答质量。</span></div>
           <div><b>权限错了</b><span>取到了用户本来无权看的知识。</span></div>
@@ -100,7 +100,7 @@
 
       <section class="chapter-section" id="chunking">
         <div class="section-kicker">D7.4 · CHUNKING + HYBRID SEARCH</div>
-        <h2>检索质量来自很多小决策，不是换一个 Embedding 就解决</h2>
+        <h2>检索质量由 Chunk、关键词、语义、Metadata 和 Rerank 共同决定</h2>
         <div class="decision-grid">
           <div><b>Chunk Size</b><span>太小没上下文，太大又混入太多主题。</span></div>
           <div><b>Chunk Boundary</b><span>按字符切，还是按标题、段落、表格、章节语义切？</span></div>
@@ -109,7 +109,7 @@
           <div><b>Metadata Filter</b><span>部门、时间、客户、版本、权限可以先缩小范围。</span></div>
           <div><b>Reranker</b><span>对候选结果做第二次更精细排序。</span></div>
         </div>
-        <p>成熟企业系统常常使用 Hybrid Retrieval：语义检索 + 关键词检索 + Metadata + Reranking，而不是“向量相似度一把梭”。</p>
+        <p>成熟企业系统常常使用 Hybrid Retrieval：语义检索 + 关键词检索 + Metadata + Reranking，把单一向量相似度扩展成多层证据筛选。</p>
       </section>
 
       <section class="chapter-section" id="memory">
@@ -119,12 +119,12 @@
           <article><span>RAG</span><h3>知识检索</h3><p>从已有知识源里找到当前问题的证据。</p><ul><li>制度</li><li>合同</li><li>产品文档</li><li>历史邮件</li><li>知识库</li></ul></article>
           <article><span>MEMORY</span><h3>经验与状态</h3><p>跨会话保留用户、项目或 Agent 自己学到的信息。</p><ul><li>偏好</li><li>历史决策</li><li>任务进度</li><li>失败教训</li><li>长期状态</li></ul></article>
         </div>
-        <p>Anthropic 的 Memory Tool 就是一个很清晰的例子：Agent 可以把信息存成持久文件，需要时再读取，而不是永远把全部历史塞在上下文窗口里。</p>
+        <p>Anthropic 的 Memory Tool 展示了一种清晰做法：Agent 把信息存成持久文件，需要时再读取，从而避免让全部历史长期占据上下文窗口。</p>
       </section>
 
       <section class="chapter-section" id="context">
         <div class="section-kicker">D7.6 · CONTEXT BUDGET</div>
-        <h2>Context Window 不是垃圾桶：越大不代表塞得越多越好</h2>
+        <h2>Context Window 需要预算管理：容量越大，筛选仍然越重要</h2>
         <p>现实工作会不断产生文件、搜索结果、日志、工具输出和历史对话。如果全部保留，系统会变慢、变贵，也会把真正重要的信息淹没。</p>
         <div class="context-budget">
           <div><span>STABLE</span><b>System / Rules</b><p>长期稳定的行为约束。</p></div>
@@ -182,7 +182,7 @@
 
       <section class="chapter-section" id="enterprise">
         <div class="section-kicker">D7.10 · ENTERPRISE KNOWLEDGE LAYER</div>
-        <h2>真正的企业 Knowledge Layer，不只是一个聊天机器人</h2>
+        <h2>企业 Knowledge Layer 是一层可复用的知识基础设施</h2>
         <div class="knowledge-layer">
           <div><span>SOURCES</span><b>Docs · Drive · Email · CRM · DB · Tickets · Web</b></div>
           <i>↓</i>
@@ -199,7 +199,7 @@
 
       <section class="chapter-section" id="economics">
         <div class="section-kicker">D7.11 · ECONOMICS</div>
-        <h2>企业知识系统的价值，通常不是“回答更聪明”，而是降低搜索与协调成本</h2>
+        <h2>企业知识系统的核心价值：降低搜索、确认与协调成本</h2>
         <div class="mechanism-grid">
           <article><span>01</span><h3>减少找资料时间</h3><p>知识工作中大量时间消耗在找文件、问人、确认版本。</p></article>
           <article><span>02</span><h3>降低新人上手成本</h3><p>组织隐性知识可以被更快检索和解释。</p></article>
@@ -211,10 +211,10 @@
 
       <section class="chapter-section" id="lab">
         <div class="section-kicker">D7.12 · LAB 09</div>
-        <h2>做一个“可信知识库”，不要只做一个能聊天的 Demo</h2>
+        <h2>Lab 目标：做出可验证、可追溯的可信知识库</h2>
         <div class="lab-checklist">
           <label><input type="checkbox" data-knowledge-lab="1"><span>选择 30–100 份真实文档，并明确版本和来源。</span></label>
-          <label><input type="checkbox" data-knowledge-lab="2"><span>设计 Chunking + Metadata，而不是只用默认切块。</span></label>
+          <label><input type="checkbox" data-knowledge-lab="2"><span>主动设计 Chunking + Metadata，并说明默认切块为什么足够或不足。</span></label>
           <label><input type="checkbox" data-knowledge-lab="3"><span>准备至少 30 个真实问题，并标注正确证据。</span></label>
           <label><input type="checkbox" data-knowledge-lab="4"><span>单独测 Retrieval：正确证据是否进入 Top-K。</span></label>
           <label><input type="checkbox" data-knowledge-lab="5"><span>单独测 Answer：是否忠于证据、是否引用、证据不足时是否拒答。</span></label>
@@ -227,10 +227,10 @@
       <section class="chapter-section frontier-section" id="frontier">
         <div class="section-kicker">D7.13 · FRONTIER · 2026</div>
         <h2>知识系统正在从“RAG Chatbot”走向 Agent Context Infrastructure</h2>
-        <p>2026 年更明显的趋势，是检索、Memory 和 Context Management 逐渐合流：Agent 不再把所有历史都塞在窗口里，而是把知识、经验和状态留在外部，需要时 Just-in-Time 读取。Anthropic 甚至把更先进模型上的系统 Prompt 大幅精简，强调动态 Context Engineering。</p>
+        <p>2026 年更明显的趋势，是检索、Memory 和 Context Management 逐渐合流：Agent 把知识、经验和状态留在外部，只在需要时 Just-in-Time 读取。Anthropic 甚至把更先进模型上的系统 Prompt 大幅精简，强调动态 Context Engineering。</p>
         <div class="frontier-grid">
-          <article><strong>Hybrid</strong><span>Semantic + Keyword + Metadata + Rerank</span><small>企业检索越来越不是单一向量搜索。</small></article>
-          <article><strong>JIT</strong><span>Just-in-time context retrieval</span><small>长期 Agent 更依赖按需加载，而不是无限堆 Context。</small></article>
+          <article><strong>Hybrid</strong><span>Semantic + Keyword + Metadata + Rerank</span><small>企业检索正在从单一向量搜索升级为多层混合检索。</small></article>
+          <article><strong>JIT</strong><span>Just-in-time context retrieval</span><small>长期 Agent 更依赖按需加载，持续减少无关 Context 占用。</small></article>
           <article><strong>ACL</strong><span>Permission-aware retrieval</span><small>权限继承成为企业知识系统能否真正部署的关键。</small></article>
         </div>
       </section>
