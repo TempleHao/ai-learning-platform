@@ -62,7 +62,7 @@
           "level": "进阶",
           "title": "A Short History of AI",
           "source": "Stanford AI100",
-          "why": "一篇非常适合建立技术史骨架的权威短史，重点不是年份，而是几次范式变化。",
+          "why": "一篇非常适合建立技术史骨架的权威短史，重点放在几次范式变化及其发生原因。",
           "url": "https://ai100.stanford.edu/2016-report/appendix-i-short-history-ai"
         },
         {
@@ -154,7 +154,7 @@
           "level": "进阶",
           "title": "AlphaFold",
           "source": "Google DeepMind",
-          "why": "AI for Science 的代表案例，适合理解 AI 不只是自动化知识工作，也可以改变科学发现成本。",
+          "why": "AI for Science 的代表案例，适合理解 AI 如何从知识工作进一步进入科学发现，并改变研究成本。",
           "url": "https://deepmind.google/science/alphafold/"
         },
         {
@@ -162,7 +162,7 @@
           "level": "进阶",
           "title": "Quantifying GitHub Copilot’s impact on developer productivity",
           "source": "GitHub Research",
-          "why": "看 AI 能力如何转化为真实专业劳动生产率，而不是只看模型 benchmark。",
+          "why": "看 AI 能力如何转化为真实专业劳动生产率，把 benchmark 与真实工作结果对照起来。",
           "url": "https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/"
         }
       ]
@@ -268,7 +268,7 @@
           "level": "优先",
           "title": "什么是人工智能治理？",
           "source": "清华大学 AIIG / 薛澜",
-          "why": "非常适合治理入门，先理解治理对象、治理视角和敏捷治理，而不是直接背法规。",
+          "why": "非常适合治理入门，先理解治理对象、治理视角和敏捷治理，再进入具体法规。",
           "url": "https://www.bilibili.com/video/BV1SL4y1q7zv/"
         },
         {
@@ -299,7 +299,7 @@
     },
     "07": {
       "title": "第 7 章 · 未来情景与领先信号",
-      "intro": "未来判断要同时看技术趋势、基础设施约束和组织采用，而不是押注单一 AGI 时间表。",
+      "intro": "未来判断要同时看技术趋势、基础设施约束和组织采用，并用情景树替代单一 AGI 时间表。",
       "items": [
         {
           "type": "中文视频",
@@ -519,7 +519,7 @@
     },
     "deep05": {
       "title": "Deep Dive 05 · AI-native Organization",
-      "intro": "未来工作不是简单“被 AI 取代 / 不被取代”，而是任务拆分、组织重构和责任变化。",
+      "intro": "未来工作的变化集中在任务拆分、组织重构和责任迁移，二元化的“取代 / 不取代”难以描述真实过程。",
       "items": [
         {
           "type": "中文视频",
@@ -634,7 +634,7 @@
           "level": "进阶",
           "title": "Memory Tool",
           "source": "Anthropic",
-          "why": "理解跨会话持久状态与 Just-in-Time Context，而不是把所有历史塞进窗口。",
+          "why": "理解跨会话持久状态与 Just-in-Time Context，减少把全部历史长期塞进窗口的做法。",
           "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool"
         },
         {
@@ -649,7 +649,7 @@
     },
     "deep08": {
       "title": "Deep Dive 08 · Multimodal / Voice / Realtime AI",
-      "intro": "这一页建议先用中文多模态课程建立直觉，再用官方 Realtime / Voice 文档理解真正的产品架构。",
+      "intro": "这一页建议先用中文多模态课程建立直觉，再用官方 Realtime / Voice 文档理解生产级产品架构。",
       "items": [
         {
           "type": "中文视频",
