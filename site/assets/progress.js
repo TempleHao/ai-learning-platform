@@ -5,10 +5,11 @@ const chapters=[
   {id:'03',title:'第 3 章 · AI 能力地图与应用演进',href:'chapters/03-capabilities-applications.html'},
   {id:'04',title:'第 4 章 · AI 运用层专家方法论',href:'chapters/04-application-expert.html'},
   {id:'05',title:'第 5 章 · AI 商业机会与未来情景',href:'chapters/05-business-future.html'},
-  {id:'06',title:'第 6 章 · AI 风险与治理地图',href:'chapters/06-risk-governance.html'}
+  {id:'06',title:'第 6 章 · AI 风险与治理地图',href:'chapters/06-risk-governance.html'},
+  {id:'07',title:'第 7 章 · 未来情景与领先信号',href:'chapters/07-future-scenarios.html'},
+  {id:'08',title:'第 8 章 · 风险与治理深化',href:'chapters/08-risk-governance.html'}
 ];
 const list=document.getElementById('progressList');
-function read(id,type){return localStorage.getItem(`ai-learning-${type}${id}-done`)==='1'||localStorage.getItem(`ai-learning-${type}${id}`)==='1'}
 function render(){
   let chDone=0,labDone=0;
   list.innerHTML=chapters.map((c,i)=>{
