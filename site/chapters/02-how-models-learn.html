@@ -43,7 +43,7 @@
       <section class="chapter-hero" id="start">
         <div class="chapter-no">CHAPTER 02</div>
         <h1>模型为什么能学会东西？</h1>
-        <p class="lead">这一章只建立一个底层直觉：<strong>模型并不是被“灌入答案”，而是在大量例子和反馈中不断调整参数，让预测越来越符合目标。</strong></p>
+        <p class="lead">这一章先建立一个底层直觉：<strong>训练会让模型在大量例子和反馈中不断调整参数，使预测逐步逼近目标。</strong></p>
         <div class="objective-grid">
           <div><b>你会理解</b><span>参数、训练、损失、梯度、反向传播和推理的关系。</span></div>
           <div><b>你会看懂</b><span>Token、Embedding、Attention、预训练和后训练在系统中的位置。</span></div>
@@ -63,7 +63,7 @@
         <div class="formula-box"><span>预测：</span><strong>ŷ = w × x</strong></div>
         <p>如果真实世界的规律是 <strong>y = 2x</strong>，那么最好的参数就是 w ≈ 2。w 就像一个旋钮：太小会低估，太大会高估。</p>
         <p>现代神经网络做的事情本质类似，只是“旋钮”不再是一个，而可能是数十亿甚至更多参数，并且它们之间通过很多层复杂计算相互作用。</p>
-        <div class="callout warn"><b>参数不是“知识条目”</b><p>不能把 10 亿参数理解成 10 亿条事实。参数是模型内部计算结构里的数字，它们共同决定模型如何把输入映射成输出。</p></div>
+        <div class="callout warn"><b>参数是计算结构，不是事实清单</b><p>10 亿参数无法对应成 10 亿条独立事实。它们共同决定模型如何把输入映射成输出。</p></div>
       </section>
 
       <section class="chapter-section" id="train">
@@ -94,7 +94,7 @@
           <div class="lab-explain" id="trainExplain">现在 w = -1，模型方向都猜反了。训练会根据误差来调整它。</div>
         </div>
 
-        <p>这里的 Loss（损失函数）只是一个“有多错”的数字。训练算法的目标不是让模型理解“我错了”，而是把这个数字变小。</p>
+        <p>Loss（损失函数）把“有多错”压缩成一个可优化的数字。训练算法持续调整参数，目标就是让这个数字下降。</p>
       </section>
 
       <section class="chapter-section" id="backprop">
@@ -103,7 +103,7 @@
         <p>在深层神经网络里，一个输出往往经过很多层计算。模型出错时，我们需要知道：前面每一层、每一个参数如果稍微变化一点，会让最终 Loss 变大还是变小？</p>
         <div class="definition-box">
           <span>最实用的理解</span>
-          <strong>Backprop 不是“学习本身”，而是高效计算梯度的方法。</strong>
+          <strong>Backprop 的职责是高效计算梯度；真正的参数更新由优化器完成。</strong>
         </div>
         <p>梯度告诉优化器：哪些参数该增加、哪些该减小，以及敏感程度。Goodfellow、Bengio 和 Courville 的《Deep Learning》也特别区分了这两件事：反向传播负责计算梯度，优化算法再利用梯度更新参数。</p>
         <div class="train-loop compact">
@@ -145,12 +145,12 @@
           <div><span>小王</span><span>杯子</span><span class="hot">桌上</span><span>因为</span><span class="focus">它</span><span class="hot">很稳</span></div>
           <small>这里的“它”究竟指什么，需要结合上下文关系。Attention 的思想就是让当前位置动态聚合其他位置的信息。</small>
         </div>
-        <p>Transformer 并不等于 LLM，但今天绝大多数主流 LLM 都建立在 Transformer 或其变体上。</p>
+        <p>Transformer 是主流 LLM 的核心架构基础之一；LLM 还包含数据、训练目标、后训练和推理系统等更多层次。</p>
       </section>
 
       <section class="chapter-section" id="pretrain">
         <div class="section-kicker">2.7 · PRETRAIN + POST-TRAIN</div>
-        <h2>大模型通常不是“一次训练完成”，而是多阶段塑形</h2>
+        <h2>大模型通常通过多阶段训练逐步塑形</h2>
         <div class="stage-grid">
           <article><b>1 · 预训练</b><p>在巨大语料上学习语言、知识、模式和广泛能力。通常是成本最高的阶段。</p></article>
           <article><b>2 · 指令 / 监督微调</b><p>让模型更会理解人类任务格式和期望回答方式。</p></article>
@@ -164,22 +164,22 @@
         <div class="section-kicker">2.8 · NEXT TOKEN PREDICTION</div>
         <h2>为什么“预测下一个 Token”会涌现出这么多能力？</h2>
         <p>语言里压缩了大量关于世界的信息：事实、因果、逻辑、人物行为、代码结构、数学表达、写作方式。如果模型要在极大规模文本上持续预测“接下来最可能是什么”，它就被迫学习大量隐含结构。</p>
-        <div class="callout idea"><b>但不要神化</b><p>“预测下一个 Token”描述的是训练目标的一部分，不等于模型只会机械补词。复杂能力来自模型规模、数据分布、架构、优化和后训练共同作用；同时，这种训练目标也解释了为什么模型会生成“听起来合理但实际上错误”的内容。</p></div>
-        <p>从运用层看，这一点非常重要：LLM 首先是一个<strong>生成概率分布的模型</strong>，不是天然的事实数据库、搜索引擎或确定性规则引擎。</p>
+        <div class="callout idea"><b>别把训练目标理解得过窄</b><p>“预测下一个 Token”描述了训练目标的重要部分，但模型能力来自规模、数据分布、架构、优化和后训练的共同作用。这种目标也解释了为什么模型会生成“听起来合理但实际上错误”的内容。</p></div>
+        <p>从运用层看，这一点非常重要：LLM 首先是一个<strong>生成概率分布的模型</strong>。事实数据库、搜索引擎和确定性规则引擎需要由外部系统补上。</p>
       </section>
 
       <section class="chapter-section" id="limits">
         <div class="section-kicker">2.9 · WHY MODELS FAIL</div>
         <h2>理解训练方式，就能理解很多失败模式</h2>
         <div class="myth-list">
-          <div><b>幻觉</b><p>模型优化的是生成合理输出，不是“每句话必须来自数据库中的已验证事实”。</p></div>
+          <div><b>幻觉</b><p>训练目标追求高概率输出，并不会自动要求“每句话都来自已验证事实”。</p></div>
           <div><b>上下文失误</b><p>模型只看到当前提供的信息和内部参数，没有自动拥有完整企业背景与实时世界状态。</p></div>
           <div><b>分布外问题</b><p>训练中很少见的输入、任务或环境可能让模型表现骤降。</p></div>
           <div><b>非确定性</b><p>生成通常涉及概率采样，同一问题不一定每次得到完全相同结果。</p></div>
           <div><b>能力锯齿</b><p>一个模型可能会高难度代码，却在简单计数、空间关系或特定边界条件上失败。</p></div>
           <div><b>系统错误</b><p>即使模型本身正确，工具权限、检索数据、Prompt、解析器和下游软件也可能出错。</p></div>
         </div>
-        <div class="business-lens"><b>运用层专家真正关心什么？</b><p>不是“模型是不是聪明”，而是：在我的任务分布上，正确率多少？失败能否检测？错误代价多大？是否需要检索、工具、规则、人审或多模型协作？</p></div>
+        <div class="business-lens"><b>运用层专家真正关心什么？</b><p>把问题落到任务分布：正确率多少？失败能否检测？错误代价多大？是否需要检索、工具、规则、人审或多模型协作？</p></div>
       </section>
 
       <section class="chapter-section" id="lab">
@@ -199,9 +199,9 @@
         <div class="section-kicker">2.11 · SELF CHECK</div>
         <h2>本章自测</h2>
         <details><summary>Q1：参数、训练、推理三者分别是什么？</summary><p>参数是模型内部可调整的数值；训练根据数据和 Loss 更新参数；推理是在参数基本固定后，用新输入计算输出。</p></details>
-        <details><summary>Q2：反向传播是不是训练算法的全部？</summary><p>不是。Backprop 负责高效计算梯度；优化器利用梯度更新参数；训练还包含数据、目标函数、批次、正则化等很多环节。</p></details>
+        <details><summary>Q2：反向传播在训练流程里具体负责什么？</summary><p>Backprop 负责高效计算梯度；优化器利用梯度更新参数。完整训练还包含数据、目标函数、批次、正则化等环节。</p></details>
         <details><summary>Q3：为什么 Token 成本会成为商业问题？</summary><p>推理时输入和输出 Token 都需要计算。高频、大上下文、长输出的产品会放大单位调用成本和延迟。</p></details>
-        <details><summary>Q4：为什么 RAG 和工具调用不是“模型训练”的同一件事？</summary><p>它们通常是在推理时给模型提供外部信息或行动能力，并不必然修改基础模型权重。</p></details>
+        <details><summary>Q4：RAG 和工具调用为什么属于推理系统层？</summary><p>它们通常在推理时给模型提供外部信息或行动能力，基础模型权重可以保持不变。</p></details>
       </section>
 
       <section class="chapter-section sources">
