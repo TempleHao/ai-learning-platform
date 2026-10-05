@@ -48,7 +48,7 @@
       <section class="chapter-hero" id="start">
         <div class="chapter-no">DEEP DIVE 06</div>
         <h1>AI Coding、Vibe Coding 与软件工程新范式</h1>
-        <p class="lead">AI 编程真正改变的，不只是“写代码更快”。当 Agent 可以读仓库、改多个文件、运行命令、执行测试、修 Bug、提 PR，人的核心工作开始从<strong>亲手写每一行代码</strong>转向<strong>定义问题、提供上下文、设计验收、控制风险和审查结果</strong>。</p>
+        <p class="lead">AI 编程正在重写软件生产分工。Agent 可以读仓库、改多个文件、运行命令、执行测试、修 Bug、提 PR；人的重心因此转向<strong>定义问题、提供上下文、设计验收、控制风险和审查结果</strong>。</p>
         <div class="objective-grid">
           <div><b>使用者</b><span>知道什么时候可以大胆 Vibe，什么时候必须收紧工程约束。</span></div>
           <div><b>Builder</b><span>学会把仓库、测试、文档和任务拆解改造成适合 Agent 工作的环境。</span></div>
@@ -84,7 +84,7 @@
           <article><span>03</span><h3>反馈周期缩短</h3><p>“改一下 → 跑一下 → 看结果 → 再改”可以在分钟级反复进行。</p></article>
           <article><span>04</span><h3>探索成本下降</h3><p>以前不值得专门排期的小工具、内部应用和一次性自动化，现在可能值得做。</p></article>
         </div>
-        <div class="business-lens"><b>最深的商业变化</b><p>软件开发成本下降，不只是让已有软件公司利润更高，也会让一大批过去“不值得开发”的长尾软件变得经济可行。</p></div>
+        <div class="business-lens"><b>最深的商业变化</b><p>软件开发成本下降会直接扩大软件供给：一批过去“不值得开发”的长尾工具和内部系统开始具备经济可行性。</p></div>
       </section>
 
       <section class="chapter-section" id="failure">
@@ -99,7 +99,7 @@
           <div><b>安全债务</b><span>为了“先跑起来”绕过权限、校验、密钥或输入安全。</span></div>
           <div><b>不可解释技术债</b><span>用户不知道代码为何这样写，也不知道哪里不能动。</span></div>
         </div>
-        <div class="definition-box"><span>成熟 Vibe Coding 的分水岭</span><strong>不是你会不会 Prompt，而是你的系统有没有“机器可以读取的工程约束”。</strong></div>
+        <div class="definition-box"><span>成熟 Vibe Coding 的分水岭</span><strong>系统必须具备机器可读取的工程约束：规格、测试、边界、权限和验收标准。</strong></div>
       </section>
 
       <section class="chapter-section" id="context">
@@ -126,13 +126,13 @@
           <div><b>④ Plan</b><span>哪些文件 / 模块需要变化？</span></div><i>→</i>
           <div><b>⑤ Execute</b><span>Agent 修改和验证。</span></div>
         </div>
-        <p>一个成熟任务描述应该尽量包含：现状、目标、非目标、边界条件、示例、验收标准、允许修改范围。这样 Agent 面对的是一个工程问题，而不是猜谜。</p>
-        <div class="callout frontier-note"><b>Prompt 不是越长越好</b><p>关键是把高价值 Context 放到正确位置。稳定规则进仓库说明，单次任务进 Issue / Spec，动态状态通过工具读取，不要每次把整个世界塞进 Prompt。</p></div>
+        <p>一个成熟任务描述应该尽量包含：现状、目标、非目标、边界条件、示例、验收标准、允许修改范围。信息越完整，Agent 越能把任务当成工程问题来处理。</p>
+        <div class="callout frontier-note"><b>Prompt 长度从来不是目标</b><p>高价值 Context 要放在正确位置：稳定规则进仓库说明，单次任务进 Issue / Spec，动态状态通过工具读取。</p></div>
       </section>
 
       <section class="chapter-section" id="tests">
         <div class="section-kicker">D6.6 · TESTS AS MACHINE LANGUAGE</div>
-        <h2>在 Agent 时代，测试不只是质量工具，也是“机器验收语言”</h2>
+        <h2>在 Agent 时代，测试同时承担质量控制和机器验收两项职责</h2>
         <p>人可以看界面说“差不多对了”，Agent 需要更明确的反馈。如果测试、类型检查、Lint、截图比较、性能基准或业务 Eval 可以自动运行，Agent 就能形成闭环：</p>
         <div class="agent-loop">
           <div><b>实现</b><span>修改代码</span></div><i>→</i>
@@ -151,7 +151,7 @@
           <article><span>AI 更适合</span><h3>执行密集工作</h3><ul><li>搜代码</li><li>机械迁移</li><li>生成测试</li><li>重构</li><li>修重复 Bug</li><li>文档同步</li></ul></article>
           <article><span>人更关键</span><h3>高杠杆判断</h3><ul><li>需求取舍</li><li>架构边界</li><li>安全 / 风险</li><li>异常判断</li><li>产品体验</li><li>最终责任</li></ul></article>
         </div>
-        <div class="business-lens"><b>专家不会失去价值，而是杠杆变大</b><p>当执行变便宜，能够定义正确问题、识别坏方案和设计验证机制的人，可能控制更多软件产出。</p></div>
+        <div class="business-lens"><b>专家的杠杆正在变大</b><p>当执行变便宜，能够定义正确问题、识别坏方案和设计验证机制的人，可以控制更多软件产出。</p></div>
       </section>
 
       <section class="chapter-section" id="security">
@@ -164,12 +164,12 @@
           <div><span>HIGH</span><b>可访问外部服务</b><p>GitHub、数据库、云、内部 API。</p></div>
           <div><span>CRITICAL</span><b>可写生产环境</b><p>部署、删除、付款、敏感数据。</p></div>
         </div>
-        <p>Anthropic 2026 年关于 agent containment 的工程文章直接把问题描述成“如何限制 blast radius”。成熟系统不是不给 Agent 权限，而是让权限按任务最小化、可审批、可追踪、可回滚。</p>
+        <p>Anthropic 2026 年关于 agent containment 的工程文章直接把问题描述成“如何限制 blast radius”。成熟系统会按任务最小化权限，并要求可审批、可追踪、可回滚。</p>
       </section>
 
       <section class="chapter-section" id="parallel">
         <div class="section-kicker">D6.9 · PARALLEL AGENTS</div>
-        <h2>真正的下一步不是“一个 Agent 更聪明”，而是多个任务可以并行</h2>
+        <h2>下一步：让多个 Coding Agent 并行处理独立任务</h2>
         <p>传统开发的很多瓶颈来自人类注意力串行：一个人同一时刻只能深度处理少量问题。Coding Agent 可以在独立 worktree / environment 中并行工作。</p>
         <div class="parallel-board">
           <div><span>AGENT A</span><b>修支付 Bug</b><i>Running tests…</i></div>
@@ -188,15 +188,15 @@
           <article><span>02</span><h3>原型 → 产品更快</h3><p>创业者验证需求所需的工程资本下降。</p></article>
           <article><span>03</span><h3>定制化增加</h3><p>“买通用 SaaS 并忍受不合适”与“自己做一个”之间的成本差缩小。</p></article>
           <article><span>04</span><h3>维护需求暴涨</h3><p>软件数量越多，安全、测试、升级、可观测和技术债治理越重要。</p></article>
-          <article><span>05</span><h3>代码本身贬值</h3><p>“有一堆代码”越来越不是壁垒，用户、数据、工作流和分发更重要。</p></article>
+          <article><span>05</span><h3>代码本身贬值</h3><p>代码供给变便宜后，用户、数据、工作流和分发会承担更多壁垒价值。</p></article>
           <article><span>06</span><h3>工程管理成为杠杆</h3><p>能让多个 Agent 安全并行的人，产出边界可能明显扩大。</p></article>
         </div>
       </section>
 
       <section class="chapter-section" id="nondev">
         <div class="section-kicker">D6.11 · NON-DEVELOPER BUILDERS</div>
-        <h2>非程序员真正该学什么？不是背语法，而是获得“软件系统感”</h2>
-        <p>AI 降低了语法门槛，但没有消灭系统思维。对非程序员 Builder，最值得学的不是先背完整语言，而是下面这些概念：</p>
+        <h2>非程序员最该补的能力：软件系统感</h2>
+        <p>AI 降低了语法门槛，却提高了系统判断的重要性。对非程序员 Builder，优先掌握下面这些概念：</p>
         <div class="builder-skills">
           <div><b>文件与目录</b><span>知道代码大致放在哪里。</span></div>
           <div><b>前端 / 后端 / 数据库</b><span>知道一条请求经过哪些层。</span></div>
@@ -256,15 +256,15 @@
           <article><strong>≈400k</strong><span>Claude Code sessions 被用于人机协作研究</span><small>数据显示领域经验仍能显著提高 Agent 的杠杆。</small></article>
           <article><strong>70%+</strong><span>SWE-bench Verified 顶级 Agent / 模型已解决的大致区间</span><small>Benchmark 已很强，但真实仓库仍受 Context、工具、测试和权限影响。</small></article>
         </div>
-        <p>因此，真正的竞争焦点正在从“模型会不会写代码”迁移到 <strong>Harness、Context、Testing、Parallelism、Review 和 Governance</strong>。模型能力只是软件生产系统的一层。</p>
+        <p>竞争焦点正在迁移到 <strong>Harness、Context、Testing、Parallelism、Review 和 Governance</strong>。模型能力只是软件生产系统的一层。</p>
       </section>
 
       <section class="chapter-section" id="check">
         <div class="section-kicker">D6.15 · SELF CHECK</div>
         <h2>本页自测</h2>
         <details><summary>为什么 Vibe Coding 特别适合原型，却容易在长期项目中失控？</summary><p>原型更关注快速验证，错误可逆且系统较小；长期项目会积累隐性约束、依赖和历史决策。如果没有 Spec、测试、架构和仓库级 Context，Agent 容易不断叠加局部正确但整体混乱的改动。</p></details>
-        <details><summary>为什么测试在 Coding Agent 时代比以前更重要？</summary><p>测试把“是否完成”变成机器可读取的反馈，让 Agent 能自动运行—失败—修正，形成闭环，而不是依赖人每次手工检查。</p></details>
-        <details><summary>非程序员使用 AI 编程，最需要补的能力是什么？</summary><p>不是先背大量语法，而是系统感：前后端、数据、API、状态、权限、版本控制、测试、日志和验收。</p></details>
+        <details><summary>为什么测试在 Coding Agent 时代比以前更重要？</summary><p>测试把“是否完成”变成机器可读取的反馈，让 Agent 自动运行—失败—修正，形成闭环，并显著减少人工逐次检查。</p></details>
+        <details><summary>非程序员使用 AI 编程，最需要补的能力是什么？</summary><p>系统感最重要：前后端、数据、API、状态、权限、版本控制、测试、日志和验收。</p></details>
         <details><summary>并行 Agent 最可能把新的瓶颈推到哪里？</summary><p>任务拆解、Context 准备、测试基础设施、Review 带宽、冲突合并、权限和成本治理。</p></details>
       </section>
 
