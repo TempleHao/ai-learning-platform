@@ -12,7 +12,7 @@ Last reviewed: 2026-10-05
 能解释 AI、ML、DL、Transformer、LLM、Multimodal、RAG、Agent、Robotics 的关系。
 
 ### Level 1 · 理解技术演进
-把 AI 历史理解成路线竞争、算法 / 数据 / 算力 / 工程约束变化，而不是背年份。
+用路线竞争、算法 / 数据 / 算力 / 工程约束变化解释 AI 历史，年份只作为转折坐标。
 
 ### Level 2 · 成为高阶使用者
 掌握任务拆解、Context Engineering、文件、检索、结构化输出、工具、Eval、AI Coding 与实时多模态交互。
