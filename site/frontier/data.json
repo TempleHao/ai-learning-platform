@@ -3,6 +3,19 @@
   "review_interval_days": 90,
   "signals": [
     {
+      "id": "multimodal-reasoning",
+      "domain": "capability",
+      "label": "MULTIMODAL",
+      "period": "2025–2026",
+      "title": "多模态推理进入人类基线区间",
+      "value": "MMMU reaches / exceeds established human baseline",
+      "summary": "Stanford AI Index 2026 显示，前沿系统在多模态推理 benchmark 上已经达到或超过既有人类基线。",
+      "why": "AI 的主界面正在从纯文本扩展到图像、音频、屏幕和实时环境。",
+      "watch": "持续视频理解、实时视觉可靠性、音频交互延迟，以及多模态能力在真实任务中的稳定性。",
+      "source_name": "Stanford AI Index",
+      "source_url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance"
+    },
+    {
       "id": "capability-jagged",
       "domain": "capability",
       "label": "CAPABILITY",
