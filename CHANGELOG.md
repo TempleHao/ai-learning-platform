@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## 2026-10-05 · v0.16 Multimodal / Voice / Realtime AI
+- 新增 Deep Dive 08《Multimodal、Voice 与 Realtime AI》
+- 系统拆解 Text / Image / Audio / Video / Screen / Sensor 六种模态
+- 增加 Chained Voice、Realtime Session、Live + Backend 三种 Voice Agent 架构
+- 补充 Full Duplex、Barge-in、WebRTC、延迟工程与持续视觉
+- 新增交互式多模态架构选择器
+- 新增 Lab 10：实时多模态助手
+- 增加中文多模态视频与 OpenAI / Stanford 一手资料
+- 首页 Lab Track 数量从历史残留 7 关统一校正到 10 关
+
+
 ## 2026-10-05 · v0.15 RAG / Memory / Knowledge Systems
 - 新增 Deep Dive 07《RAG、Memory 与 Knowledge Systems》
 - 区分模型参数知识、当前 Context、外部 Knowledge / Memory
