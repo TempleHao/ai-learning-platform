@@ -23,7 +23,7 @@
     <article class="track-lab" data-track-lab="01">
       <div class="track-index">LAB 01</div><div class="track-body"><span>CONTEXT</span><h2>同一个任务：Prompt vs Context Engineering</h2>
       <p>选一个你真实做过的研究/分析任务。第一轮只写详细 Prompt；第二轮额外提供结构化背景、目标、历史决策、样例和必要文件。比较两轮结果。</p>
-      <div class="deliverables"><b>产物</b><span>两组输入、两组输出、差异表、你的结论。</span><b>验收</b><span>你能指出至少 3 个“不是模型变强，而是 Context 变好”带来的改进。</span></div></div>
+      <div class="deliverables"><b>产物</b><span>两组输入、两组输出、差异表、你的结论。</span><b>验收</b><span>你能指出至少 3 个由 Context 改善带来的变化，并与模型能力变化明确区分。</span></div></div>
       <label><input type="checkbox">完成</label>
     </article>
 
@@ -36,7 +36,7 @@
 
     <article class="track-lab" data-track-lab="03">
       <div class="track-index">LAB 03</div><div class="track-body"><span>RAG</span><h2>做一个“只基于资料回答”的知识库</h2>
-      <p>选择一组你熟悉的文档，完成切块、检索、上下文组装和带来源回答。重点不是做漂亮界面，而是证明检索真的找对证据。</p>
+      <p>选择一组你熟悉的文档，完成切块、检索、上下文组装和带来源回答。核心验收只有一个：检索必须稳定命中正确证据。</p>
       <div class="deliverables"><b>产物</b><span>文档集、至少 30 个问题、检索结果、回答和引用。</span><b>验收</b><span>分别记录 Retrieval 命中率和最终 Answer 正确率，不把两者混在一起。</span></div></div>
       <label><input type="checkbox">完成</label>
     </article>
@@ -79,7 +79,7 @@
 
     <article class="track-lab" data-track-lab="09">
       <div class="track-index">LAB 09</div><div class="track-body"><span>KNOWLEDGE SYSTEM · SPECIALIZATION</span><h2>做一个可信 RAG / 企业知识库</h2>
-      <p>使用真实文档，而不是玩具数据。把 Retrieval 和 Answer 分开评测，并加入 Metadata / 权限与文档更新测试。</p>
+      <p>使用真实文档，避开玩具数据。把 Retrieval 和 Answer 分开评测，并加入 Metadata / 权限与文档更新测试。</p>
       <div class="deliverables"><b>产物</b><span>30–100 份真实资料、Metadata 方案、30 个问题 + 正确证据、Retrieval Eval、Answer Eval、权限过滤、版本更新测试。</span><b>验收</b><span>能明确区分“没找到证据”和“模型没用好证据”；旧文档更新后不会继续主导答案；证据不足时能拒答。</span></div>
       <a class="lab-deep-link" href="../deep-dives/07-knowledge-systems.html">先学习 Deep Dive 07 · Knowledge Systems →</a></div>
       <label><input type="checkbox">完成</label>
@@ -88,7 +88,7 @@
     <article class="track-lab" data-track-lab="10">
       <div class="track-index">LAB 10</div><div class="track-body"><span>MULTIMODAL · REALTIME SPECIALIZATION</span><h2>做一个真正有必要使用语音 / 视觉的实时助手</h2>
       <p>选一个“如果只用文字会明显更差”的真实场景。设计 Mic / Camera / Screen 输入、Realtime / Chained 架构、打断机制、延迟指标和隐私边界。</p>
-      <div class="deliverables"><b>产物</b><span>场景定义、输入流图、架构选择、10 个真实任务、延迟记录、隐私规则、文字版 vs 多模态版对比。</span><b>验收</b><span>证明多模态不是为了炫技：完成率、时长或体验至少一项明显优于文字基线，并能解释代价与风险。</span></div>
+      <div class="deliverables"><b>产物</b><span>场景定义、输入流图、架构选择、10 个真实任务、延迟记录、隐私规则、文字版 vs 多模态版对比。</span><b>验收</b><span>用数据证明多模态带来实际收益：完成率、时长或体验至少一项明显优于文字基线，并能解释代价与风险。</span></div>
       <a class="lab-deep-link" href="../deep-dives/08-multimodal-realtime.html">先学习 Deep Dive 08 · Multimodal / Realtime →</a></div>
       <label><input type="checkbox">完成</label>
     </article>
