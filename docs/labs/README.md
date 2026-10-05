@@ -10,6 +10,7 @@
 7. Capstone：发布一个真实 AI 产品
 8. AI Coding Specialization：把真实 Repo 改造成 Agent-ready
 9. Knowledge Systems Specialization：构建可信 RAG / 企业知识库
+10. Multimodal / Realtime Specialization：构建实时语音 / 视觉助手
 
 原则：
 - 每个 Lab 必须有真实产物。
@@ -27,3 +28,8 @@
 ## Lab 09 · Knowledge Systems Specialization
 
 使用真实文档构建可信知识库。必须将 Retrieval 与 Answer 分开 Eval，并处理 Metadata、权限、版本与来源追踪；目标不是“能聊天”，而是能证明证据链可靠。
+
+
+## Lab 10 · Multimodal / Realtime Specialization
+
+选择只有语音、视觉或实时交互才能显著改善的真实任务。比较文字 Baseline 与多模态版本，并记录延迟、打断、完成率、隐私与失败模式。
