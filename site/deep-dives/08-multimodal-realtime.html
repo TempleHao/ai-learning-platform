@@ -50,7 +50,7 @@
         <h1>Multimodal、Voice 与 Realtime AI</h1>
         <p class="lead">文字聊天只是 AI 的第一个大众界面。真正更接近“智能体”的系统，需要同时<strong>看、听、说、理解屏幕、感知环境，并在用户说话时继续思考和行动</strong>。</p>
         <div class="objective-grid">
-          <div><b>能力</b><span>理解图像、音频、视频、屏幕与文本为什么不是简单“多输入格式”。</span></div>
+          <div><b>能力</b><span>理解图像、音频、视频、屏幕与文本各自携带的结构差异，以及它们如何进入同一决策系统。</span></div>
           <div><b>产品</b><span>知道 Realtime / Full Duplex / Barge-in / Latency 如何直接决定用户体验。</span></div>
           <div><b>商业</b><span>识别语音 Agent、视觉助手、现场服务、客服、销售和 Physical AI 的机会边界。</span></div>
         </div>
@@ -62,7 +62,7 @@
 
       <section class="chapter-section" id="modalities">
         <div class="section-kicker">D8.1 · MODALITIES</div>
-        <h2>多模态不是“支持上传图片”，而是不同感知空间被映射进同一个决策系统</h2>
+        <h2>多模态的核心：把不同感知空间映射进同一个决策系统</h2>
         <div class="modality-grid">
           <article><span>TEXT</span><h3>文本</h3><p>离散 Token，结构清晰，最容易存储、检索和审计。</p><b>适合：知识、代码、规则、长文。</b></article>
           <article><span>IMAGE</span><h3>图像</h3><p>空间信息密集，模型需要同时理解对象、关系、布局和视觉细节。</p><b>适合：文档、界面、场景、商品、医疗影像。</b></article>
@@ -92,12 +92,12 @@
           <article><span>CHAINED</span><h3>ASR → LLM → TTS</h3><p>先语音转文字，再交给文本模型，最后转回语音。</p><ul><li>可检查中间文本</li><li>组件可替换</li><li>容易接现有文本 Agent</li><li>延迟通常更高</li></ul></article>
           <article><span>NATIVE AUDIO</span><h3>Speech-to-Speech</h3><p>模型直接处理和输出音频，不一定需要把每一步都显式转成文字。</p><ul><li>延迟更低</li><li>更自然的语气和节奏</li><li>能处理打断与实时 turn-taking</li><li>调试与审计更复杂</li></ul></article>
         </div>
-        <p>因此，“语音 Agent”不是给 Chatbot 套一个 TTS。真正实时的语音产品需要单独处理音频流、打断、会话状态、工具调用和网络传输。</p>
+        <p>语音 Agent 需要独立处理音频流、打断、会话状态、工具调用和网络传输。给 Chatbot 加一层 TTS 只能解决最表面的输出问题。</p>
       </section>
 
       <section class="chapter-section" id="realtime">
         <div class="section-kicker">D8.4 · REALTIME</div>
-        <h2>Realtime AI 的关键，不只是“快”，而是它能在时间流里存在</h2>
+        <h2>Realtime AI 的关键：持续存在于时间流中</h2>
         <div class="realtime-loop">
           <div><b>Listen</b><span>持续接收音频 / 视觉流</span></div><i>→</i>
           <div><b>Interpret</b><span>判断用户意图和当前状态</span></div><i>→</i>
@@ -120,11 +120,11 @@
 
       <section class="chapter-section" id="video">
         <div class="section-kicker">D8.6 · VIDEO + CONTINUOUS VISION</div>
-        <h2>视频真正难的不是“每秒看一张图”，而是持续理解事件</h2>
+        <h2>视频理解的核心难题：持续跟踪事件与状态变化</h2>
         <p>视频比图片多了一个核心维度：时间。系统必须知道某个动作何时开始、持续多久、是否完成，以及前后状态是否改变。</p>
         <div class="failure-grid">
           <div><b>采样问题</b><span>抽帧太少会错过关键事件，太多又成本高。</span></div>
-          <div><b>状态连续性</b><span>需要知道前几秒发生过什么，而不只是当前一帧。</span></div>
+          <div><b>状态连续性</b><span>系统必须保留前几秒的事件状态，单看当前一帧远远不够。</span></div>
           <div><b>主动发言</b><span>真正实时助手要判断“什么时候应该主动说话”。</span></div>
           <div><b>长期记忆</b><span>持续视频流无法全部塞进 Context，需要事件摘要和外部状态。</span></div>
         </div>
@@ -152,14 +152,14 @@
           <article><span>VOICE</span><h3>说出来</h3><p>适合驾驶、走路、现场维修、客服、老人和无手交互。</p></article>
           <article><span>CAMERA</span><h3>让 AI 看见</h3><p>用户不必描述“我看到什么”，直接把环境作为输入。</p></article>
           <article><span>SCREEN</span><h3>共享当前工作</h3><p>AI 理解用户正在操作的软件，并直接辅助。</p></article>
-          <article><span>AMBIENT</span><h3>环境式 AI</h3><p>系统持续存在，根据事件而不是点击按钮被触发。</p></article>
+          <article><span>AMBIENT</span><h3>环境式 AI</h3><p>系统持续存在，由环境事件直接触发，无需等待用户点击按钮。</p></article>
         </div>
         <div class="business-lens"><b>产品机会</b><p>每当输入成本下降，原本不会主动使用软件的人群和场景就会进入市场。语音和视觉最大的商业价值之一，是把“不会写 Prompt”这个门槛继续降下去。</p></div>
       </section>
 
       <section class="chapter-section" id="latency">
         <div class="section-kicker">D8.9 · LATENCY</div>
-        <h2>在实时产品里，延迟不是基础设施指标，而是“智能感”的一部分</h2>
+        <h2>在实时产品里，延迟直接塑造“智能感”</h2>
         <p>文字聊天延迟 2 秒可能还能接受；语音对话多等 2 秒，人会直接感觉“它没听懂”。Realtime 产品必须同时关注：</p>
         <div class="decision-grid">
           <div><b>First Audio Latency</b><span>用户说完后多久听见第一段响应？</span></div>
@@ -212,14 +212,14 @@
           <article><span>02</span><h3>Field Copilot</h3><p>维修、巡检、仓储、医疗现场可以边看边说边得到指导。</p></article>
           <article><span>03</span><h3>Sales / Coaching</h3><p>实时听对话、读取屏幕和 CRM，为销售提供下一步建议。</p></article>
           <article><span>04</span><h3>Accessibility</h3><p>视觉 / 语音接口可显著降低残障和数字能力门槛。</p></article>
-          <article><span>05</span><h3>Ambient Assistants</h3><p>AI 不再等用户主动提问，而是根据环境事件触发。</p></article>
+          <article><span>05</span><h3>Ambient Assistants</h3><p>AI 根据环境事件主动触发，把交互入口从“用户提问”扩展到“环境变化”。</p></article>
           <article><span>06</span><h3>Physical AI Bridge</h3><p>视觉 + 语音 + Agent 是走向机器人和实体自动化的重要中间层。</p></article>
         </div>
       </section>
 
       <section class="chapter-section" id="lab">
         <div class="section-kicker">D8.13 · LAB 10</div>
-        <h2>做一个“实时多模态助手”，而不是语音版 Chatbot</h2>
+        <h2>Lab 目标：做出具有实时感知价值的多模态助手</h2>
         <div class="lab-checklist">
           <label><input type="checkbox" data-mm-lab="1"><span>选一个必须使用语音或视觉才明显优于文字的真实场景。</span></label>
           <label><input type="checkbox" data-mm-lab="2"><span>画出输入流：Mic / Camera / Screen / Text 哪些是实时、哪些是按需。</span></label>
@@ -245,7 +245,7 @@
       <section class="chapter-section" id="check">
         <div class="section-kicker">D8.15 · SELF CHECK</div>
         <h2>本页自测</h2>
-        <details><summary>为什么 Native Speech-to-Speech 和 ASR → LLM → TTS 不是一回事？</summary><p>Chained Pipeline 把每个阶段拆开，易审计和替换；Native Speech-to-Speech 直接在音频空间进行理解和生成，延迟更低、自然度更高，但中间状态更难观察。</p></details>
+        <details><summary>Native Speech-to-Speech 和 ASR → LLM → TTS 的核心差异是什么？</summary><p>Chained Pipeline 把每个阶段拆开，易审计和替换；Native Speech-to-Speech 直接在音频空间进行理解和生成，延迟更低、自然度更高，但中间状态更难观察。</p></details>
         <details><summary>为什么视频理解比图像理解难很多？</summary><p>视频必须理解时间、状态变化和事件边界，还要管理长时间流带来的 Context 与 Memory 问题。</p></details>
         <details><summary>为什么实时 AI 的延迟本身就是“智能感”的一部分？</summary><p>人类对话依赖快速 turn-taking 和打断。如果系统响应慢、打断迟钝，即使回答内容正确，也会显得不理解当前互动。</p></details>
         <details><summary>什么时候不应该优先做语音 / 视觉？</summary><p>当任务需要强审计、精确编辑、复杂结构化信息、环境隐私风险高，或文字输入已经足够高效时，多模态未必更优。</p></details>
@@ -266,7 +266,7 @@
       <div class="chapter-next">
         <span>NEXT · MODEL ECONOMICS + INFERENCE</span>
         <h2>下一步：模型越来越强以后，成本、延迟、路由和推理基础设施怎么决定商业可行性。</h2>
-        <p>这会把“能力”继续连接到真正的 AI 产品经济学。</p>
+        <p>下一阶段会把模型能力继续连接到 AI 产品的成本、延迟和单位经济性。</p>
       </div>
     </article>
   </main>
