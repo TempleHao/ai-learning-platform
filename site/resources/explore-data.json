@@ -34,7 +34,7 @@
       },
       {
         "anchor": "model",
-        "topic": "模型、系统与产品不是一回事",
+        "topic": "模型、系统与产品处在不同层级",
         "items": [
           {
             "depth": "20 分钟",
@@ -679,7 +679,7 @@
           {
             "depth": "20 分钟",
             "type": "站内",
-            "title": "Deep Dive 03 · 应用层真正的护城河",
+            "title": "Deep Dive 03 · 应用层护城河",
             "source": "AI Learning OS",
             "url": "/ai-learning-platform/deep-dives/03-ai-profit-pools.html#apps",
             "why": "快速回到工作流、数据、分发、责任和反馈闭环。"
@@ -698,7 +698,7 @@
             "title": "AI Index 2026 · Economy",
             "source": "Stanford HAI",
             "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/economy",
-            "why": "验证采用率、Agent 部署和资本投入，而不是只听商业叙事。"
+            "why": "用采用率、Agent 部署和资本投入校准商业叙事。"
           }
         ]
       },
@@ -912,7 +912,7 @@
             "title": "Energy and AI",
             "source": "IEA",
             "url": "https://www.iea.org/reports/energy-and-ai",
-            "why": "未来 AI 的硬约束之一不是模型，而是能源和基础设施。"
+            "why": "能源和基础设施已经成为未来 AI 的关键硬约束。"
           }
         ]
       },
@@ -1140,7 +1140,7 @@
             "title": "MoE 的核心直觉",
             "source": "AI Learning OS",
             "url": "/ai-learning-platform/deep-dives/01-neural-transformer.html#moe",
-            "why": "先理解为什么不是每个 Token 都要激活全部参数。"
+            "why": "先理解 MoE 如何让每个 Token 只激活部分专家参数。"
           },
           {
             "depth": "2 小时",
@@ -1210,7 +1210,7 @@
             "title": "A Short History of AI",
             "source": "Stanford AI100",
             "url": "https://ai100.stanford.edu/2016-report/appendix-i-short-history-ai",
-            "why": "理解寒冬不是单一技术路线“输掉”的结果。"
+            "why": "理解 AI 寒冬如何由技术、成本和市场预期共同造成。"
           },
           {
             "depth": "原典",
@@ -1655,7 +1655,7 @@
           {
             "depth": "20 分钟",
             "type": "站内",
-            "title": "岗位不是原子：先拆任务",
+            "title": "岗位由任务构成：先拆任务",
             "source": "AI Learning OS",
             "url": "/ai-learning-platform/deep-dives/05-ai-native-organization.html#allocation",
             "why": "先用任务分解避免“整个职业会不会消失”的二元判断。"
@@ -2220,7 +2220,7 @@
             "title": "WebRTC",
             "source": "OpenAI Developers",
             "url": "https://developers.openai.com/api/docs/guides/voice-webrtc",
-            "why": "浏览器实时语音真正的数据通路。"
+            "why": "浏览器实时语音的核心数据通路。"
           }
         ]
       },
@@ -2264,7 +2264,7 @@
             "title": "WebRTC Voice",
             "source": "OpenAI Developers",
             "url": "https://developers.openai.com/api/docs/guides/voice-webrtc",
-            "why": "理解浏览器端为什么优先用 WebRTC 而不是普通 HTTP 请求。"
+            "why": "理解浏览器端为什么通常优先用 WebRTC 处理实时媒体。"
           },
           {
             "depth": "2 小时",
