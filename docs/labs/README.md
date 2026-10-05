@@ -22,12 +22,12 @@
 
 ## Lab 08 · AI Coding Specialization
 
-目标不是“让 AI 再写一个 Demo”，而是把一个长期维护项目升级成 Agent-ready 仓库：Mission、Instructions、架构边界、Tests、Spec / Issue、Agent 执行与失败复盘。
+目标是把一个长期维护项目升级成 Agent-ready 仓库：Mission、Instructions、架构边界、Tests、Spec / Issue、Agent 执行与失败复盘。
 
 
 ## Lab 09 · Knowledge Systems Specialization
 
-使用真实文档构建可信知识库。必须将 Retrieval 与 Answer 分开 Eval，并处理 Metadata、权限、版本与来源追踪；目标不是“能聊天”，而是能证明证据链可靠。
+使用真实文档构建可信知识库。必须将 Retrieval 与 Answer 分开 Eval，并处理 Metadata、权限、版本与来源追踪；最终验收标准是证据链可验证。
 
 
 ## Lab 10 · Multimodal / Realtime Specialization
