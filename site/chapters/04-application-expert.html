@@ -16,7 +16,7 @@
     <a class="chapter-brand" href="../index.html"><img class="brand-icon" src="/ai-learning-platform/assets/brand/favicon-64.png" alt="" aria-hidden="true" /><div><b>Learning OS</b><small>Core · Application Expert</small></div></a>
     <div class="toc-label">第 4 章</div>
     <nav>
-      <a href="#start" class="active">4.0 不是 Prompt 高手</a>
+      <a href="#start" class="active">4.0 超越 Prompt 技巧</a>
       <a href="#task">4.1 先拆任务</a>
       <a href="#prompt">4.2 Prompt</a>
       <a href="#context">4.3 Context Engineering</a>
@@ -44,7 +44,7 @@
       <section class="chapter-hero" id="start">
         <div class="chapter-no">CHAPTER 04</div>
         <h1>从“会聊天”<br>到 AI 运用层专家</h1>
-        <p class="lead">真正的高手不是能写一段神奇 Prompt，而是知道：<strong>这个任务该给模型什么上下文、何时检索、何时调用工具、何时使用确定性流程、什么时候才值得上 Agent，以及怎么证明系统真的可靠。</strong></p>
+        <p class="lead">AI 运用层专家的核心能力，是把任务设计成一个可靠系统：<strong>该给模型什么上下文、何时检索、何时调用工具、何时使用确定性流程、什么时候值得上 Agent，以及如何证明结果可靠。</strong></p>
         <div class="objective-grid">
           <div><b>设计能力</b><span>把真实工作拆成 AI 能处理的任务、数据与动作。</span></div>
           <div><b>系统能力</b><span>选择 Context、RAG、Tool、Workflow、Agent 等组件。</span></div>
@@ -55,12 +55,12 @@
       <section class="chapter-section">
         <div class="callout idea"><b>运用层专家的核心公式</b><p>结果质量 ≈ 模型能力 × 上下文质量 × 工具/数据质量 × 工作流设计 × Eval 与纠错。</p></div>
         <div class="callout frontier-note"><b>AI Coding 深化已上线</b><p>如果你已经开始用 AI 写应用，建议同步读 <a href="../deep-dives/06-ai-coding.html">Deep Dive 06 · AI Coding、Vibe Coding 与软件工程新范式 →</a>。它重点解决“怎样从能跑，升级到可维护、可测试、可托管”。</p></div>
-        <p>如果把所有问题都归结为“模型不够聪明”，你就很难成为真正的 AI 使用专家。很多失败不是模型能力不足，而是上下文缺失、检索错误、工具无权限、任务拆解不清、输出无法验证，或者根本用了错误的系统架构。</p>
+        <p>把所有问题都归结为“模型不够聪明”会误导系统设计。大量失败来自上下文缺失、检索错误、工具无权限、任务拆解不清、输出无法验证，或者架构本身选错。</p>
       </section>
 
       <section class="chapter-section" id="task">
         <div class="section-kicker">4.1 · TASK ANATOMY</div>
-        <h2>第一步永远不是写 Prompt，而是拆任务</h2>
+        <h2>第一步：先拆任务，再写 Prompt</h2>
         <p>面对一个真实工作，先拆成五个问题：</p>
         <div class="decision-grid">
           <div><b>输入</b><span>用户问题、文件、数据库、网页、图片还是历史对话？</span></div>
@@ -70,15 +70,15 @@
           <div><b>验收标准</b><span>什么叫正确？谁检查？错误能否自动发现？</span></div>
           <div><b>错误代价</b><span>错一次只是重写，还是会造成付款、法律、医疗或生产事故？</span></div>
         </div>
-        <div class="business-lens"><b>为什么这一步比 Prompt 更值钱</b><p>企业工作往往不是一道题，而是一串跨系统流程。能把流程拆清楚的人，才有能力判断哪些步骤适合 AI，哪些必须保留确定性代码或人工责任。</p></div>
+        <div class="business-lens"><b>为什么任务拆解更值钱</b><p>企业工作通常是一串跨系统流程。把流程拆清楚之后，才能判断哪些步骤适合 AI，哪些必须保留确定性代码或人工责任。</p></div>
       </section>
 
       <section class="chapter-section" id="prompt">
         <div class="section-kicker">4.2 · PROMPT</div>
-        <h2>Prompt 是“当前这次调用的指令”，不是全部上下文</h2>
+        <h2>Prompt 管当前指令，Context 决定模型这次能看见什么</h2>
         <p>好的 Prompt 主要解决四件事：告诉模型要做什么、依据什么、输出成什么样、什么不能做。</p>
         <div class="prompt-frame">
-          <div><span>ROLE / GOAL</span><b>任务目标</b><p>你要模型完成什么，而不是堆“你是一位世界级专家”。</p></div>
+          <div><span>ROLE / GOAL</span><b>任务目标</b><p>直接写清模型要完成什么，减少“你是一位世界级专家”这类装饰性角色设定。</p></div>
           <div><span>INPUT</span><b>输入事实</b><p>把当前任务真正需要的数据、定义和边界给进去。</p></div>
           <div><span>CONSTRAINT</span><b>约束</b><p>来源、格式、长度、禁止事项、判断标准。</p></div>
           <div><span>OUTPUT</span><b>输出契约</b><p>人读的文字，还是下游程序要解析的 JSON / 字段？</p></div>
@@ -89,7 +89,7 @@
       <section class="chapter-section" id="context">
         <div class="section-kicker">4.3 · CONTEXT ENGINEERING</div>
         <h2>Context Engineering：决定“模型这次到底看见什么”</h2>
-        <p>上下文不仅是你的最后一句 Prompt。它可以包括系统规则、用户历史、文件片段、搜索结果、数据库记录、工具状态、示例、时间、权限和前面步骤的中间结果。</p>
+        <p>上下文覆盖整个任务现场：系统规则、用户历史、文件片段、搜索结果、数据库记录、工具状态、示例、时间、权限和前面步骤的中间结果。</p>
         <div class="context-stack">
           <div><b>系统规则</b><span>角色、权限、边界、安全策略</span></div>
           <div><b>任务指令</b><span>当前目标和输出要求</span></div>
@@ -98,8 +98,8 @@
           <div><b>示例</b><span>好输出 / 坏输出 / few-shot demonstrations</span></div>
           <div><b>工具反馈</b><span>API 返回值、报错、环境状态</span></div>
         </div>
-        <p>“上下文窗口越来越长”也不等于可以把一切资料无脑塞进去。研究显示，模型对长上下文中的信息利用并不总是均匀，关键证据的位置、噪声和上下文结构都会影响表现。</p>
-        <div class="callout idea"><b>运用原则</b><p>不是 Context 越多越好，而是让“此刻决策真正需要的信息”尽可能准确、相关、结构清晰地进入模型。</p></div>
+        <p>更长的上下文窗口并不会自动带来更高质量。研究显示，关键证据的位置、噪声和上下文结构都会影响模型对长上下文的利用效率。</p>
+        <div class="callout idea"><b>运用原则</b><p>Context 追求的是准确、相关和结构清晰。只把当前决策真正需要的信息送进模型。</p></div>
       </section>
 
       <section class="chapter-section" id="rag">
@@ -117,13 +117,13 @@
           <article><span>适合 RAG</span><h3>知识会更新、需要出处</h3><p>公司政策、产品文档、法规、研究资料、客户知识库。</p></article>
           <article><span>不一定需要 RAG</span><h3>只是常识生成或固定格式</h3><p>改写一段文字、头脑风暴、简单格式转换。</p></article>
         </div>
-        <div class="callout warn"><b>RAG 不是“解决幻觉”的魔法按钮</b><p>检索错了、切块错了、排名错了、证据矛盾或 Prompt 没要求引用，最终输出仍然会错。RAG 本身也必须被 Eval。</p></div>
+        <div class="callout warn"><b>RAG 需要自己的质量体系</b><p>检索、切块、排名、证据冲突和引用策略任何一环出错，最终回答都会失真。RAG 本身也必须被 Eval。</p></div>
       </section>
 
       <section class="chapter-section" id="structured">
         <div class="section-kicker">4.5 · STRUCTURED OUTPUT</div>
         <h2>当结果要进入程序，别让模型自由发挥格式</h2>
-        <p>人类可以读一段自然语言再理解字段，但软件工作流更需要稳定 Schema。比如抽取发票时，不要只说“整理一下”，而是要求固定字段：</p>
+        <p>软件工作流需要稳定 Schema。比如抽取发票时，直接要求固定字段，比“整理一下”这类开放指令可靠得多：</p>
         <div class="code-card"><pre>{
   "invoice_no": "INV-2026-0182",
   "supplier": "Example Ltd.",
@@ -162,13 +162,13 @@
           <div><b>Observe</b><span>读取结果</span></div><i>↺</i>
           <div><b>Stop</b><span>满足完成条件</span></div>
         </div>
-        <div class="callout warn"><b>Agent 的最大问题不是“不会想”，而是错误会累积</b><p>一次 95% 正确的步骤，连续执行很多步后总体成功率会显著下降。长任务因此需要检查点、重试、状态管理和停止条件。</p></div><div class="callout frontier-note"><b>Agent 深化已上线</b><p>如果你想把 Agent Anatomy、长任务可靠性、Computer Use、生产控制面和单位经济性彻底串起来，继续读 <a href="../deep-dives/04-agent-economy.html">Deep Dive 04 · Agent：从软件工具到数字劳动力 →</a></p></div>
+        <div class="callout warn"><b>Agent 的核心风险：错误会沿长链路累积</b><p>一次 95% 正确的步骤，连续执行很多步后总体成功率会显著下降。长任务因此需要检查点、重试、状态管理和停止条件。</p></div><div class="callout frontier-note"><b>Agent 深化已上线</b><p>如果你想把 Agent Anatomy、长任务可靠性、Computer Use、生产控制面和单位经济性彻底串起来，继续读 <a href="../deep-dives/04-agent-economy.html">Deep Dive 04 · Agent：从软件工具到数字劳动力 →</a></p></div>
       </section>
 
       <section class="chapter-section" id="eval">
         <div class="section-kicker">4.8 · EVALUATION</div>
         <h2>没有 Eval，就没有可持续的 AI 系统</h2>
-        <p>“我试了十次感觉不错”不是评测。最基础的 Eval 是建立一组代表真实任务分布的测试案例，并定义明确成功标准。</p>
+        <p>“我试了十次感觉不错”只能算体验。Eval 需要一组代表真实任务分布的测试案例，以及明确、可重复的成功标准。</p>
         <div class="eval-stack">
           <div><span>L1</span><b>输出格式</b><p>JSON 能不能解析？必填字段有没有？</p></div>
           <div><span>L2</span><b>事实正确</b><p>答案是否被给定证据支持？</p></div>
@@ -195,7 +195,7 @@
       <section class="chapter-section" id="architect">
         <div class="section-kicker">4.10 · INTERACTIVE ARCHITECT</div>
         <h2>AI 架构选择器：这个任务到底需要哪些组件？</h2>
-        <p>勾选任务特征，下方会给一个最小可行架构建议。目标不是“组件越多越高级”，而是只加真正必要的复杂度。</p>
+        <p>勾选任务特征，下方会给一个最小可行架构建议。原则很简单：只为真实需求增加复杂度。</p>
         <div class="architect-card">
           <div class="architect-options">
             <label><input type="checkbox" data-arch="current">需要实时 / 私有知识</label>
@@ -223,14 +223,14 @@
           <div><b>3 · Tools</b><span>哪些事实或动作不能靠语言模型自己完成？</span></div>
           <div><b>4 · Eval</b><span>准备至少 20 个真实案例验证成功率。</span></div>
         </div>
-        <label class="lab-check"><input type="checkbox" data-lab="04"><span>我已经把一个真实工作任务设计成“模型 + Context / RAG + Tool / Workflow + Eval”的系统，而不是只写一个 Prompt。</span></label>
+        <label class="lab-check"><input type="checkbox" data-lab="04"><span>我已经把一个真实工作任务设计成“模型 + Context / RAG + Tool / Workflow + Eval”的完整系统。</span></label>
       </section>
 
       <section class="chapter-section" id="check">
         <div class="section-kicker">4.12 · SELF CHECK</div>
         <h2>本章自测</h2>
         <details><summary>Q1：Prompt Engineering 和 Context Engineering 最大的区别是什么？</summary><p>Prompt 主要是当前调用的任务指令；Context Engineering 关心模型在这一时刻能看到的全部信息，包括系统规则、历史、文件、检索结果、工具状态和示例。</p></details>
-        <details><summary>Q2：什么时候应该用 RAG，而不是直接把所有文档塞进长上下文？</summary><p>文档很多、会更新、需要按问题选取证据或需要引用来源时，RAG 往往更高效；长上下文本身也可能存在注意力利用不均和成本问题。</p></details>
+        <details><summary>Q2：哪些场景更适合使用 RAG？</summary><p>文档很多、会更新、需要按问题选取证据或需要引用来源时，RAG 往往更高效；长上下文本身也可能存在注意力利用不均和成本问题。</p></details>
         <details><summary>Q3：为什么 Workflow 往往比 Agent 更适合企业生产？</summary><p>如果流程路径稳定，确定性 Workflow 更容易测试、审计、控制权限和保证可靠性。Agent 适用于无法预先穷举路径的开放任务。</p></details>
         <details><summary>Q4：为什么 Eval 是运用层专家的核心能力？</summary><p>因为没有稳定测试集，就无法判断模型、Prompt、RAG 或工具改动是否真正提升了业务成功率，也无法控制回归。</p></details>
       </section>
@@ -246,7 +246,7 @@
         </ol>
       </section>
 
-      <a class="chapter-next" href="05-business-future.html"><span>NEXT · CHAPTER 05</span><h2>下一步：从“AI 很火”进入真正的商业判断。 →</h2><p>进入价值链、利润池、护城河、单位经济、机会评分与未来情景。</p></a>
+      <a class="chapter-next" href="05-business-future.html"><span>NEXT · CHAPTER 05</span><h2>下一步：把技术热度转化为商业判断。 →</h2><p>进入价值链、利润池、护城河、单位经济、机会评分与未来情景。</p></a>
     </article>
   </main>
 </div>
