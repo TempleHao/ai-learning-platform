@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="AI Learning OS Deep Dive：推理经济学、模型路由、缓存、批处理与 AI 产品单位经济性" />
+  <title>Deep Dive 09 · Inference Economics / Model Routing | AI Learning OS</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/chapter.css" />
+  <link rel="stylesheet" href="../assets/inference-economics.css" />
+  <link rel="icon" type="image/png" sizes="64x64" href="/ai-learning-platform/assets/brand/favicon-64.png" />
+  <meta name="theme-color" content="#07111f" />
+</head>
+<body data-chapter="deep09">
+<div class="chapter-shell">
+  <aside class="chapter-toc" id="chapterToc">
+    <a class="chapter-brand" href="../index.html"><img class="brand-icon" src="/ai-learning-platform/assets/brand/favicon-64.png" alt="" aria-hidden="true" /><div><b>Learning OS</b><small>Deep Dive 09 · Inference Economics</small></div></a>
+    <div class="toc-label">Deep Dive 09</div>
+    <nav>
+      <a href="#start" class="active">D9.0 从“最强模型”转向系统最优</a>
+      <a href="#cost">D9.1 一次任务到底花多少钱</a>
+      <a href="#gate">D9.2 质量门槛与延迟 SLO</a>
+      <a href="#routing">D9.3 五级模型路由</a>
+      <a href="#tokens">D9.4 Token Economics</a>
+      <a href="#delivery">D9.5 Cache / Batch / Flex</a>
+      <a href="#economics">D9.6 单位经济性</a>
+      <a href="#calculator">D9.7 成本路由计算器</a>
+      <a href="#observability">D9.8 生产观测</a>
+      <a href="#lab">D9.9 Lab 11</a>
+      <a href="#check">D9.10 自测</a>
+    </nav>
+    <div class="toc-progress"><span>Deep Dive 状态</span><b id="chapterStatus">未完成</b><button id="completeChapter">标记本页完成</button></div>
+  </aside>
+  <main class="chapter-main">
+    <header class="chapter-top"><button class="icon-btn chapter-menu" id="chapterMenu">☰</button><a href="08-multimodal-realtime.html">← 返回 Deep Dive 08</a><span>Quality · Latency · Cost · Routing</span></header>
+    <article class="chapter-article">
+      <section class="chapter-hero" id="start">
+        <div class="chapter-no">DEEP DIVE 09</div>
+        <h1>Inference Economics<br />与 Model Routing</h1>
+        <p class="lead">AI 产品进入生产阶段后，模型能力只是一个变量。系统要在<strong>质量门槛、响应时间、风险边界和单位任务成本</strong>之间找到可持续组合。</p>
+        <div class="objective-grid">
+          <div><b>工程</b><span>拆解 TTFT、尾延迟、Token、缓存与异步处理对体验和成本的影响。</span></div>
+          <div><b>决策</b><span>用 Eval 建立模型准入门槛，再用规则、分类器和级联策略分配请求。</span></div>
+          <div><b>商业</b><span>把 API 账单连接到成功任务成本、毛利率、人工接管和错误损失。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section"><div class="callout idea"><b>核心判断</b><p>生产系统应选择“通过任务质量门槛的最低总成本路径”。总成本包含模型、工具、基础设施、人工复核、重试与错误损失。</p></div></section>
+
+      <section class="chapter-section" id="cost">
+        <div class="section-kicker">D9.1 · COST PER TASK</div>
+        <h2>API 单价只是成本表的第一行</h2>
+        <div class="econ-formula"><span>TOTAL VARIABLE COST</span><strong>C_task = Σ(模型输入 + 缓存输入 + 模型输出) + 工具 + 基础设施 + 人工复核 + 预期错误成本</strong></div>
+        <div class="metric-cards">
+          <div><b>调用结构</b><span>一个用户动作可能触发规划、检索、生成、验证和重试等多次调用。</span></div>
+          <div><b>成功口径</b><span>便宜但失败率高的路径会增加返工。应计算每个“被接受任务”的成本。</span></div>
+          <div><b>尾部任务</b><span>平均值会掩盖长上下文、超长输出和异常循环。P95 往往更接近真实风险。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="gate">
+        <div class="section-kicker">D9.2 · QUALITY GATE + SLO</div>
+        <h2>先定义可接受，再讨论便宜</h2>
+        <div class="compare-grid">
+          <article><span>QUALITY GATE</span><h3>任务级 Eval</h3><p>用真实任务集测正确性、格式、引用、工具结果、拒答和安全边界。每类任务可以拥有不同门槛。</p><ul><li>小模型达到门槛即可进入候选</li><li>风险越高，门槛和验证越严格</li><li>路由策略变化必须跑回归测试</li></ul></article>
+          <article><span>LATENCY SLO</span><h3>用户体验预算</h3><p>同时观察首 Token 时间、完整完成时间与 P95 / P99。流式输出可以改善感知速度，却不会缩短后台真实完成时间。</p><ul><li>实时交互关注 TTFT 与 P95</li><li>离线任务允许换取更低成本</li><li>工具链延迟需单独分解</li></ul></article>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="routing">
+        <div class="section-kicker">D9.3 · ROUTING LADDER</div>
+        <h2>路由成熟度从固定分工走向可验证的动态升级</h2>
+        <div class="routing-ladder">
+          <div><b>01 静态分工</b><span>按功能固定模型，易解释、易调试。</span></div>
+          <div><b>02 规则路由</b><span>依据长度、模态、风险、语言和时限。</span></div>
+          <div><b>03 分类器</b><span>预测任务难度或最合适的模型档位。</span></div>
+          <div><b>04 级联升级</b><span>低成本路径先跑，未通过验证再升级。</span></div>
+          <div><b>05 高价值双检</b><span>生成器与检查器分离，必要时人工审批。</span></div>
+        </div>
+        <div class="callout warn"><b>路由陷阱</b><p>“模型自评信心”不能直接当作可靠路由信号。应结合可观测特征、外部验证器、任务风险和历史 Eval 校准。</p></div>
+      </section>
+
+      <section class="chapter-section" id="tokens">
+        <div class="section-kicker">D9.4 · TOKEN ECONOMICS</div>
+        <h2>上下文设计同时影响质量、延迟和账单</h2>
+        <div class="decision-grid">
+          <div><b>输入 Token</b><span>系统指令、工具定义、历史消息、检索片段和文件都会反复进入请求。</span></div>
+          <div><b>输出 Token</b><span>输出通常更贵；限制冗余、使用结构化输出可直接降低成本和等待时间。</span></div>
+          <div><b>推理预算</b><span>复杂任务可提高推理强度，简单任务应限制额外计算。</span></div>
+          <div><b>Context Growth</b><span>长会话需要摘要、压缩或外部状态，避免每轮完整重放。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="delivery">
+        <div class="section-kicker">D9.5 · DELIVERY MODES</div>
+        <h2>把任务的“时间价值”纳入系统设计</h2>
+        <div class="cap-grid">
+          <article><span>CACHE</span><h3>复用稳定前缀</h3><p>保持系统指令、工具定义和固定资料前缀稳定，可减少重复计算。监控命中率，避免前缀轻微变化导致缓存失效。</p></article>
+          <article><span>BATCH</span><h3>聚合离线请求</h3><p>Eval、批量分类、Embedding、离线抽取适合异步批处理。用户不等待的任务无需购买实时性。</p></article>
+          <article><span>FLEX / ASYNC</span><h3>用时间换成本</h3><p>低优先级服务档位和后台任务适合容忍更慢响应的工作。前台应返回清晰状态与恢复路径。</p></article>
+        </div>
+        <p>OpenAI 当前官方文档把 Batch、Flex、Prompt Caching 与减少请求 / Token 并列为成本优化路径。具体折扣、支持模型和限制会变化，实施时应以供应商最新文档为准。</p>
+      </section>
+
+      <section class="chapter-section" id="economics">
+        <div class="section-kicker">D9.6 · UNIT ECONOMICS</div>
+        <h2>从“单次调用”上升到“每个成功任务”</h2>
+        <div class="econ-formula"><span>ACCEPTED TASK ECONOMICS</span><strong>每个成功任务成本 = 总可变成本 ÷ 被接受任务数　｜　毛利率 =（收入 − 可变成本）÷ 收入</strong></div>
+        <div class="metric-cards">
+          <div><b>升级率</b><span>反映低成本路径覆盖能力。持续过高需要重做分工或首选模型。</span></div>
+          <div><b>人工接管率</b><span>是质量与成本的共同信号，不能从 AI 账单中漏掉。</span></div>
+          <div><b>错误损失</b><span>退款、客户流失、合规事件和错误决策会放大“便宜模型”的真实代价。</span></div>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="calculator">
+        <div class="section-kicker">D9.7 · INTERACTIVE CALCULATOR</div>
+        <h2>模型路由与单位经济性计算器</h2>
+        <div class="cost-lab">
+          <span>EDITABLE ASSUMPTIONS · USD</span><h3>用你的真实流量替换示例值</h3>
+          <p>价格均为可编辑假设，不代表任何供应商的当前报价。小模型占比、缓存和 Batch 只在相应任务满足质量与时效要求时才有意义。</p>
+          <div class="cost-inputs">
+            <label>月请求数<input data-cost="requests" type="number" min="0" value="100000"></label>
+            <label>小模型路由占比（%）<input data-cost="smallShare" type="number" min="0" max="100" value="70"></label>
+            <label>平均输入 Token<input data-cost="inputTokens" type="number" min="0" value="2500"></label>
+            <label>平均输出 Token<input data-cost="outputTokens" type="number" min="0" value="500"></label>
+            <label>小模型输入价 / 1M<input data-cost="smallInput" type="number" min="0" step=".01" value=".25"></label>
+            <label>小模型输出价 / 1M<input data-cost="smallOutput" type="number" min="0" step=".01" value="2"></label>
+            <label>强模型输入价 / 1M<input data-cost="largeInput" type="number" min="0" step=".01" value="2"></label>
+            <label>强模型输出价 / 1M<input data-cost="largeOutput" type="number" min="0" step=".01" value="12"></label>
+            <label>缓存输入占比（%）<input data-cost="cacheHit" type="number" min="0" max="100" value="40"></label>
+            <label>缓存输入价格系数<input data-cost="cacheMultiplier" type="number" min="0" max="1" step=".05" value=".1"></label>
+            <label>Batch / 低优先任务占比（%）<input data-cost="batchShare" type="number" min="0" max="100" value="20"></label>
+            <label>Batch 价格系数<input data-cost="batchMultiplier" type="number" min="0" max="1" step=".05" value=".5"></label>
+            <label>成功验收率（%）<input data-cost="acceptRate" type="number" min="0" max="100" value="92"></label>
+            <label>每成功任务收入<input data-cost="revenuePerAccepted" type="number" min="0" step=".01" value=".12"></label>
+            <label>单请求其他可变成本<input data-cost="otherCost" type="number" min="0" step=".001" value=".01"></label>
+          </div>
+          <div class="cost-results">
+            <div><span>每请求模型成本</span><strong id="costRequest">$0.00</strong></div>
+            <div><span>月总可变成本</span><strong id="costMonth">$0.00</strong></div>
+            <div><span>每成功任务成本</span><strong id="costAccepted">$0.00</strong></div>
+            <div><span>估算毛利率</span><strong id="grossMargin">0%</strong></div>
+          </div>
+          <p class="cost-note">计算器未纳入一次请求内的多次模型调用、重试和错误损失。真实项目应把这些变量加入日志与成本表。</p>
+        </div>
+      </section>
+
+      <section class="chapter-section" id="observability">
+        <div class="section-kicker">D9.8 · OBSERVABILITY</div>
+        <h2>路由系统需要一张可以解释决策的账</h2>
+        <div class="decision-grid">
+          <div><b>质量</b><span>任务成功率、人工评分、拒答、引用正确率、回归测试。</span></div>
+          <div><b>延迟</b><span>TTFT、完整时长、工具时长、P50 / P95 / P99。</span></div>
+          <div><b>成本</b><span>输入 / 缓存 / 输出 Token、调用次数、工具与人工成本。</span></div>
+          <div><b>路由</b><span>模型分布、升级率、缓存命中率、Batch 覆盖率、回退原因。</span></div>
+        </div>
+        <p>日志必须保留任务类型、路由原因、模型版本、Prompt 版本和 Eval 结果。缺少这些字段时，成本波动和质量回归很难追溯。</p>
+      </section>
+
+      <section class="chapter-section" id="lab">
+        <div class="section-kicker">D9.9 · LAB 11</div>
+        <h2>为一个真实 AI 应用建立模型路由与成本基准</h2>
+        <div class="lab-checklist">
+          <label><input type="checkbox"><span>收集至少 50 个真实任务，并按难度、模态和风险分层。</span></label>
+          <label><input type="checkbox"><span>选择两种以上模型或推理档位，定义统一输出与测试接口。</span></label>
+          <label><input type="checkbox"><span>为每类任务设置质量门槛、延迟 SLO 和升级条件。</span></label>
+          <label><input type="checkbox"><span>记录 Token、缓存、延迟、错误、重试和人工接管。</span></label>
+          <label><input type="checkbox"><span>比较“全量强模型”与“路由方案”的成功率、P95 延迟和单位成本。</span></label>
+          <label><input type="checkbox"><span>对失败样本复盘，并将新规则加入回归测试。</span></label>
+        </div>
+        <div class="callout idea"><b>验收标准</b><p>交付路由规则、50+ 任务 Eval、成本表、延迟分布、失败案例和明确决策。成本下降必须保持质量门槛与风险边界。</p></div>
+      </section>
+
+      <section class="chapter-section" id="check">
+        <div class="section-kicker">D9.10 · SELF CHECK</div><h2>本页自测</h2>
+        <details><summary>为什么不能只比较模型的 Token 单价？</summary><p>总成本还受调用次数、上下文长度、输出长度、工具、重试、人工接管与错误损失影响。产品需要比较每个成功任务的成本。</p></details>
+        <details><summary>模型路由为什么必须建立在 Eval 之上？</summary><p>路由的目标是在质量门槛内优化成本和延迟。缺少真实任务 Eval 时，系统无法知道低成本路径是否已经突破质量边界。</p></details>
+        <details><summary>Cache、Batch 和流式输出分别解决什么问题？</summary><p>Cache 复用重复前缀；Batch 用等待时间换成本和吞吐；流式输出改善首段响应体验。三者处理的瓶颈不同。</p></details>
+        <details><summary>什么时候应该直接选择更强模型？</summary><p>高影响、难验证、失败代价高的任务，以及低成本路径频繁升级或返工的任务，通常适合更强模型并配合独立验证。</p></details>
+      </section>
+
+      <section class="chapter-section sources">
+        <div class="section-kicker">SOURCES · REVIEWED 2026-10-07</div><h2>本页来源</h2>
+        <ol>
+          <li><a href="https://developers.openai.com/api/docs/guides/cost-optimization" target="_blank" rel="noreferrer">OpenAI · Cost optimization</a></li>
+          <li><a href="https://developers.openai.com/api/docs/guides/model-selection" target="_blank" rel="noreferrer">OpenAI · Model selection</a></li>
+          <li><a href="https://developers.openai.com/api/docs/guides/prompt-caching" target="_blank" rel="noreferrer">OpenAI · Prompt caching</a></li>
+          <li><a href="https://developers.openai.com/api/docs/guides/batch" target="_blank" rel="noreferrer">OpenAI · Batch API</a></li>
+          <li><a href="https://developers.openai.com/api/docs/guides/flex-processing" target="_blank" rel="noreferrer">OpenAI · Flex processing</a></li>
+          <li><a href="https://developers.openai.com/api/docs/guides/latency-optimization" target="_blank" rel="noreferrer">OpenAI · Latency optimization</a></li>
+          <li><a href="https://arxiv.org/abs/2406.18665" target="_blank" rel="noreferrer">Ong et al. (2024) · RouteLLM</a></li>
+        </ol>
+      </section>
+
+      <a class="chapter-next" href="../progress.html"><span>NEXT · APPLY THE SYSTEM</span><h2>把路由策略放进 Lab 11，并用 Learning Dashboard 记录完成状态。</h2><p>下一阶段将进入 AI for Science、Robotics 与 Physical AI。</p></a>
+    </article>
+  </main>
+</div>
+<script src="../assets/chapter.js"></script>
+<script src="../assets/inference-economics.js"></script>
+</body>
+</html>

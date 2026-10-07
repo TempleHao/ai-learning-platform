@@ -17,12 +17,14 @@ const deep=[
   {id:'deep05',n:'D05',title:'AI-native Organization',href:'deep-dives/05-ai-native-organization.html'},
   {id:'deep06',n:'D06',title:'AI Coding、Vibe Coding 与软件工程',href:'deep-dives/06-ai-coding.html'},
   {id:'deep07',n:'D07',title:'RAG、Memory 与 Knowledge Systems',href:'deep-dives/07-knowledge-systems.html'},
-  {id:'deep08',n:'D08',title:'Multimodal、Voice 与 Realtime AI',href:'deep-dives/08-multimodal-realtime.html'}
+  {id:'deep08',n:'D08',title:'Multimodal、Voice 与 Realtime AI',href:'deep-dives/08-multimodal-realtime.html'},
+  {id:'deep09',n:'D09',title:'Inference Economics 与 Model Routing',href:'deep-dives/09-inference-economics.html'}
 ];
 const track=[
   ['01','Context Engineering 对比实验'],['02','Structured Output'],['03','可信 RAG 知识库'],['04','Tool + Workflow'],
   ['05','Eval 回归测试'],['06','Agent：观察—行动—检查'],['07','Capstone：发布真实 AI 产品'],
-  ['08','AI Coding：Agent-ready Repo'],['09','Knowledge Systems：企业 RAG'],['10','Multimodal / Realtime Assistant']
+  ['08','AI Coding：Agent-ready Repo'],['09','Knowledge Systems：企业 RAG'],['10','Multimodal / Realtime Assistant'],
+  ['11','Inference Economics：模型路由与成本基准']
 ];
 
 function isCoreDone(id){return localStorage.getItem(`ai-learning-ch${id}-done`)==='1'}

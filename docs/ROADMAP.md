@@ -1,6 +1,6 @@
 # AI Learning OS · Roadmap
 
-Last reviewed: 2026-10-05
+Last reviewed: 2026-10-07
 
 ## 终极目标
 
@@ -31,7 +31,7 @@ Last reviewed: 2026-10-05
 
 ---
 
-## 当前版本 · v0.16
+## 当前版本 · v0.17
 
 ### Core · 已完成
 - 00 AI 世界全地图
@@ -53,9 +53,10 @@ Last reviewed: 2026-10-05
 6. AI Coding / Vibe Coding
 7. RAG / Memory / Knowledge Systems
 8. Multimodal / Voice / Realtime AI
+9. Inference Economics / Model Routing
 
 ### Practice · 已发布
-- 10 个 Lab Track
+- 11 个 Lab Track
 - 20 个应用 / 失败案例
 - Review / 术语 / 综合题
 - 节点级“继续探索”
@@ -74,19 +75,17 @@ Last reviewed: 2026-10-05
 
 ---
 
-## v0.17 · Inference Economics / Model Routing
+## v0.17 · Inference Economics / Model Routing · 已完成
 
-目标：回答“同一个 AI 产品为什么不能永远只接最强模型”。
-
-计划：
-- Latency / Cost / Quality 三角
-- Model Routing
-- Small / Large / Reasoning Model 分工
-- Cache / Batch / Async / Background jobs
-- Token economics
-- Inference infrastructure
-- Unit economics 与毛利
-- Lab：为一个 AI 应用做模型路由与成本基准
+已发布：
+- Quality Gate / Latency SLO / Total Cost 三重约束
+- 静态分工、规则、分类器、级联升级、高价值双检五级路由
+- Small / Large / Reasoning Model 分工方法
+- Cache / Batch / Flex / Background jobs
+- Token economics 与上下文增长控制
+- 单位任务成本、毛利、人工接管与错误损失
+- 交互式路由成本计算器
+- Lab 11：为真实 AI 应用建立模型路由与成本基准
 
 ## v0.18 · AI for Science / Robotics / Physical AI
 

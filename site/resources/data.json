@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-10-05",
+  "reviewed_at": "2026-10-07",
   "principles": [
     "中文优先：同等质量下优先中文视频、中文课程和中文报告。",
     "一手优先：论文、大学课程、官方白皮书、监管/研究机构原文优先。",
@@ -698,6 +698,52 @@
           "source": "Stanford HAI",
           "why": "用图像、视频、语音、多模态推理、Agent 与 Robotics 的数据校准“多模态有多强”。",
           "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance"
+        }
+      ]
+    },
+    "deep09": {
+      "title": "Deep Dive 09 · Inference Economics / Model Routing",
+      "intro": "先用成本与延迟官方指南建立生产约束，再用 RouteLLM 论文理解数据驱动路由。",
+      "items": [
+        {
+          "type": "英文官方",
+          "level": "优先",
+          "title": "Cost optimization",
+          "source": "OpenAI Developers",
+          "why": "从减少请求与 Token、模型选择、Batch 和 Flex 建立成本优化清单。",
+          "url": "https://developers.openai.com/api/docs/guides/cost-optimization"
+        },
+        {
+          "type": "英文官方",
+          "level": "优先",
+          "title": "Prompt caching",
+          "source": "OpenAI Developers",
+          "why": "理解稳定前缀如何影响缓存命中、输入成本与首 Token 延迟。",
+          "url": "https://developers.openai.com/api/docs/guides/prompt-caching"
+        },
+        {
+          "type": "英文官方",
+          "level": "进阶",
+          "title": "Batch API",
+          "source": "OpenAI Developers",
+          "why": "把 Eval、分类与离线抽取从实时链路移到异步批处理。",
+          "url": "https://developers.openai.com/api/docs/guides/batch"
+        },
+        {
+          "type": "英文官方",
+          "level": "进阶",
+          "title": "Latency optimization",
+          "source": "OpenAI Developers",
+          "why": "拆解感知延迟、生成速度、请求数量与架构之间的关系。",
+          "url": "https://developers.openai.com/api/docs/guides/latency-optimization"
+        },
+        {
+          "type": "英文论文",
+          "level": "原典",
+          "title": "RouteLLM: Learning to Route LLMs with Preference Data",
+          "source": "Ong et al. (2024)",
+          "why": "研究如何用偏好数据在强弱模型之间学习路由，并分析质量—成本权衡。",
+          "url": "https://arxiv.org/abs/2406.18665"
         }
       ]
     }

@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 2026-10-07 · v0.17 Inference Economics / Model Routing
+- 新增 Deep Dive 09《Inference Economics / Model Routing》
+- 建立 Quality Gate / Latency SLO / Total Cost 的生产决策框架
+- 增加静态分工、规则、分类器、级联升级与高价值双检五级路由
+- 补齐 Token、Prompt Cache、Batch、Flex、异步任务与尾延迟
+- 新增可编辑的模型路由与单位经济性计算器
+- 新增 Lab 11：为真实 AI 应用建立模型路由与成本基准
+- Learning Dashboard 更新为 9 Core + 9 Core Labs + 9 Deep Dives + 11 Lab Track，共 38 个节点
+- 修复首页“地图构建期 / 25%”等历史阶段文案，统一版本与数量
+
 ## 2026-10-05 · Writing Style Audit
 - 全站审校明显的生成式模板腔，重点清理“不是 X，而是 Y”“不只是 X，而是 Y”“重点不是……而是……”等高频对比句式
 - 首页 Banner 改为更直接的品牌表达：把 AI 学成一套可以判断、构建与行动的认知系统
