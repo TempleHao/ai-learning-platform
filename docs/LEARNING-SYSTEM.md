@@ -1,6 +1,6 @@
 # AI Learning OS · Learning System
 
-Last reviewed: 2026-10-05
+Last reviewed: 2026-10-09
 
 ## 设计目标
 
@@ -38,7 +38,7 @@ Deep Dive 用于把高价值节点向下钻。
 
 ## 3. Lab Track
 
-当前 10 关：
+当前 11 关：
 
 1. Context Engineering
 2. Structured Output
@@ -50,6 +50,7 @@ Deep Dive 用于把高价值节点向下钻。
 8. AI Coding / Agent-ready Repo
 9. Knowledge Systems / Trusted RAG
 10. Multimodal / Realtime Assistant
+11. Inference Economics / Model Routing
 
 每个 Lab 必须：
 - 有真实问题
@@ -125,10 +126,10 @@ Review 负责主动回忆和迁移检验，避免用重复阅读替代真正掌�
 
 - 9 Core Chapters
 - 9 Core Labs
-- 8 Deep Dives
-- 10 Lab Track
+- 9 Deep Dives
+- 11 Lab Track
 
-共 36 个当前可完成节点。
+共 38 个当前可完成节点。
 
 不上传个人学习数据。
 
