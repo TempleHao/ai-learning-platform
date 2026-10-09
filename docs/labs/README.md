@@ -11,6 +11,8 @@
 8. AI Coding Specialization：把真实 Repo 改造成 Agent-ready
 9. Knowledge Systems Specialization：构建可信 RAG / 企业知识库
 10. Multimodal / Realtime Specialization：构建实时语音 / 视觉助手
+11. Inference Economics：模型路由与成本基准
+12. Physical AI：科学与实体智能机会尽调
 
 原则：
 - 每个 Lab 必须有真实产物。
