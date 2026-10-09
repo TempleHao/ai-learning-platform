@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2026-10-09 · Repository presentation and release documentation
+- 重写 README：完整说明项目定位、适用人群、能力目标、学习路径、模块规模、仓库结构与反馈入口。
+- 区分 v0.17 正式发布与 v0.18 开发中状态，提供版本、提交、Actions 与在线站点入口。
+- 明确每次发布需同步 README / CHANGELOG / ROADMAP、节点计数和部署检查；本次为文档改进，不提升正式版本。
+
 ## 2026-10-07 · v0.17 Inference Economics / Model Routing
 - 新增 Deep Dive 09《Inference Economics / Model Routing》
 - 建立 Quality Gate / Latency SLO / Total Cost 的生产决策框架
