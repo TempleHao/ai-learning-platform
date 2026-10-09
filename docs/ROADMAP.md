@@ -1,6 +1,6 @@
 # AI Learning OS · Roadmap
 
-Last reviewed: 2026-10-07
+Last reviewed: 2026-10-09
 
 ## 终极目标
 
@@ -87,7 +87,9 @@ Last reviewed: 2026-10-07
 - 交互式路由成本计算器
 - Lab 11：为真实 AI 应用建立模型路由与成本基准
 
-## v0.18 · AI for Science / Robotics / Physical AI
+## v0.18 · AI for Science / Robotics / Physical AI · 进行中
+
+2026-10-09：Lab 12 源稿与一手来源已入库；Learning System 已修正历史统计；在线课程页面、交互组件和全站接线尚未发布。
 
 目标：补齐“软件智能走向科学发现和物理世界”的长期路线。
 
