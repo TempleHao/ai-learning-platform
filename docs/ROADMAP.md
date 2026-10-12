@@ -1,6 +1,6 @@
 # AI Learning OS · Roadmap
 
-Last reviewed: 2026-10-09
+Last reviewed: 2026-10-12
 
 ## 终极目标
 
