@@ -1,6 +1,6 @@
 # AI Learning OS · Roadmap
 
-Last reviewed: 2026-10-12
+Last reviewed: 2026-10-15
 
 ## 终极目标
 
@@ -89,7 +89,9 @@ Last reviewed: 2026-10-12
 
 ## v0.18 · AI for Science / Robotics / Physical AI · 进行中
 
-2026-10-09：Lab 12 源稿与一手来源已入库；Learning System 已修正历史统计；在线课程页面、交互组件和全站接线尚未发布。
+2026-10-15：Draft PR #11 已集成 Deep Dive 10、Physical AI 成本计算器、Lab 12 独立实验、进度保存、Dashboard 40 节点、首页课程入口与资源库。以上内容仍在开发分支，未合并至 `main`，正式版保持 v0.17 / 38 节点。
+
+发布前待完成：完整站点静态检查及浏览器交互验收；Pages 构建验证；合并 PR；同步正式版本号与首页、README、CHANGELOG。
 
 目标：补齐“软件智能走向科学发现和物理世界”的长期路线。
 
