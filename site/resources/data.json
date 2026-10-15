@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-10-07",
+  "reviewed_at": "2026-10-15",
   "principles": [
     "中文优先：同等质量下优先中文视频、中文课程和中文报告。",
     "一手优先：论文、大学课程、官方白皮书、监管/研究机构原文优先。",
@@ -744,6 +744,44 @@
           "source": "Ong et al. (2024)",
           "why": "研究如何用偏好数据在强弱模型之间学习路由，并分析质量—成本权衡。",
           "url": "https://arxiv.org/abs/2406.18665"
+        }
+      ]
+    },
+    "deep10": {
+      "title": "Deep Dive 10 · AI for Science / Physical AI",
+      "intro": "从原始论文和官方技术资料核对科学预测、世界模型与机器人演示的证据边界；关注真实实验、现场部署和单位有效任务成本。",
+      "items": [
+        {
+          "type": "英文论文",
+          "level": "原典",
+          "title": "AlphaFold 3 · Accurate structure prediction of biomolecular interactions",
+          "source": "Nature · 2024",
+          "why": "了解分子复合物结构预测的评测与适用范围。结构预测仍需要实验验证。",
+          "url": "https://www.nature.com/articles/s41586-024-07487-w"
+        },
+        {
+          "type": "英文官方",
+          "level": "优先",
+          "title": "GNoME · Millions of new materials discovered with deep learning",
+          "source": "Google DeepMind",
+          "why": "分析材料候选预测与合成、性能测试之间的证据链。",
+          "url": "https://deepmind.google/blog/millions-of-new-materials-discovered-with-deep-learning/"
+        },
+        {
+          "type": "英文官方",
+          "level": "进阶",
+          "title": "Genie 3 · A new frontier for world models",
+          "source": "Google DeepMind",
+          "why": "阅读交互环境生成能力与限制，设计仿真到现实的验证方法。",
+          "url": "https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/"
+        },
+        {
+          "type": "英文官方",
+          "level": "进阶",
+          "title": "Gemini Robotics 1.5",
+          "source": "Google DeepMind",
+          "why": "理解具身推理与视觉语言动作模型，设计真实机器人任务验收。",
+          "url": "https://deepmind.google/en/models/gemini-robotics/gemini-robotics/"
         }
       ]
     }
