@@ -48,7 +48,7 @@ AI Learning OS 是一个长期维护的中文 AI 学习项目。它把技术演�
 
 **v0.17 已发布**：模型路由、推理成本、缓存、Batch、延迟约束、单位经济性计算器，以及 Lab 11。
 
-**v0.18 开发中**：AI for Science、World Models、Robotics、Physical AI、仿真到现实的差距、商业化分析和 Lab 12。研究源稿已入库；在线课程、交互组件和全站接线仍待完成。
+**v0.18 开发中（[Draft PR #11](https://github.com/TempleHao/ai-learning-platform/pull/11)）**：AI for Science、World Models、Robotics、Physical AI、仿真到现实的差距、商业化分析和 Lab 12。开发分支已有 Deep Dive 10、成本计算器、Lab 12 独立实验、40 节点 Dashboard 与课程资源入口；尚未合并至 `main`，完整站点验收及 Pages 正式部署仍待完成。
 
 **v0.19 规划中**：全站事实、来源、文风、导航、移动端、无障碍和版本一致性审校。
 
