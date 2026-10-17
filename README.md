@@ -4,7 +4,7 @@
 
 [在线学习平台](https://templehao.github.io/ai-learning-platform/) · [学习路线图](docs/ROADMAP.md) · [版本更新日志](CHANGELOG.md) · [内容与来源规范](docs/CONTENT_POLICY.md)
 
-> 当前正式发布：**v0.17 · Inference Economics / Model Routing**（38 个可完成节点）。**v0.18 · AI for Science / Robotics / Physical AI 正在开发**；源稿与实验规范不代表网页已发布。请以线上页面和 CHANGELOG 为准。
+> 当前发布候选：**v0.18 · AI for Science / Robotics / Physical AI**（40 个学习节点），已合并至 main；正式 Pages 构建与浏览器验收状态请查看 GitHub Actions。
 
 ## 项目是什么
 
@@ -32,7 +32,7 @@ AI Learning OS 是一个长期维护的中文 AI 学习项目。它把技术演�
 | Review | 术语、综合题与知识复盘 | 50+ 术语、15 道综合题 |
 | Frontier Radar | 能力、Agent / Robotics、经济、基础设施、科学与治理信号 | 持续更新 |
 
-**可完成节点总数：9 Core + 9 Core Labs + 9 Deep Dive + 11 Lab Track = 38。** 案例、术语与雷达信号单独统计，避免重复计数。
+**可完成节点总数：9 Core + 9 Core Labs + 10 Deep Dive + 12 Lab Track = 40。** 案例、术语与雷达信号单独统计，避免重复计数。
 
 ## 建议学习顺序
 
