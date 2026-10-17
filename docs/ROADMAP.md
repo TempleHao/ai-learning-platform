@@ -1,6 +1,6 @@
 # AI Learning OS · Roadmap
 
-Last reviewed: 2026-10-15
+Last reviewed: 2026-10-17
 
 ## 终极目标
 
@@ -87,7 +87,7 @@ Last reviewed: 2026-10-15
 - 交互式路由成本计算器
 - Lab 11：为真实 AI 应用建立模型路由与成本基准
 
-## v0.18 · AI for Science / Robotics / Physical AI · 进行中
+## v0.18 · AI for Science / Robotics / Physical AI · 已合并 main，待 Pages 验收
 
 2026-10-15：Draft PR #11 已集成 Deep Dive 10、Physical AI 成本计算器、Lab 12 独立实验、进度保存、Dashboard 40 节点、首页课程入口与资源库。以上内容仍在开发分支，未合并至 `main`，正式版保持 v0.17 / 38 节点。
 
