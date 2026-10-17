@@ -1,10 +1,10 @@
 # CHANGELOG
 
-## Unreleased · v0.18 Physical AI / Science integration (2026-10-15)
+## 2026-10-17 · v0.18 Physical AI / Science integration (merged; Pages verification pending)
 - 开发分支 PR #11：接通 Deep Dive 10、Lab 12 独立实验、Lab Track 完成状态与 40 节点 Dashboard。
 - 首页加入 Deep Dive 10 入口，Lab Track 调整为 12 关；课程与实验可相互跳转。
 - 资源库增加 AlphaFold 3、GNoME、Genie 3、Gemini Robotics 1.5 的一手来源，Deep Dive 10 可加载对应延伸阅读。
-- 本条为尚未合并的候选更新；正式发布版本仍为 v0.17，需完成静态检查、浏览器验收和 Pages 部署。
+- PR #11 已于 2026-10-17 合并至 main（710d348）；仍需核实 Pages 构建与浏览器交互验收。
 
 ## 2026-10-09 · Repository presentation and release documentation
 - 重写 README：完整说明项目定位、适用人群、能力目标、学习路径、模块规模、仓库结构与反馈入口。
