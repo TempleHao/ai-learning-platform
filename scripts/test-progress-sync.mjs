@@ -63,7 +63,7 @@ function labTrackTest() {
   listeners.storage({ key: 'ai-learning-tracklab-12' });
   assert.equal(progress.textContent, '1 / 12');
   assert.equal(labs[11].box.checked, true);
-  assert.equal(bar.style.width, (100 / 12) + '%');
+  assert.equal(bar.style.width, (1 / 12 * 100) + '%');
 }
 
 dashboardTest();
