@@ -4,7 +4,7 @@
 
 [在线学习平台](https://templehao.github.io/ai-learning-platform/) · [学习路线图](docs/ROADMAP.md) · [版本更新日志](CHANGELOG.md) · [内容与来源规范](docs/CONTENT_POLICY.md)
 
-> 当前发布候选：**v0.18 · AI for Science / Robotics / Physical AI**（40 个学习节点），已合并至 main；正式 Pages 构建与浏览器验收状态请查看 GitHub Actions。
+> 当前版本：**v0.18 · AI for Science / Robotics / Physical AI**（40 个学习节点），已合并至 main；GitHub Pages 构建与浏览器验收状态请以 GitHub Actions 为准。
 
 ## 项目是什么
 
@@ -26,8 +26,8 @@ AI Learning OS 是一个长期维护的中文 AI 学习项目。它把技术演�
 | --- | --- | --- |
 | Core | AI 全地图、技术路线、学习机制、能力与应用、方法论、商业、未来和风险 | 9 章 |
 | Core Labs | 随核心章节完成的基础实验 | 9 个 |
-| Deep Dive | Transformer、路线竞争、利润池、Agent、组织、AI Coding、RAG、多模态、推理经济学 | 9 个 |
-| Lab Track | 从应用设计到系统评估的专项实践 | 11 关 |
+| Deep Dive | Transformer、路线竞争、利润池、Agent、组织、AI Coding、RAG、多模态、推理经济学、科学 AI 与实体智能 | 10 个 |
+| Lab Track | 从应用设计到系统评估的专项实践 | 12 关 |
 | Cases | 成功与失败案例，训练迁移判断 | 20 个 |
 | Review | 术语、综合题与知识复盘 | 50+ 术语、15 道综合题 |
 | Frontier Radar | 能力、Agent / Robotics、经济、基础设施、科学与治理信号 | 持续更新 |
@@ -46,9 +46,9 @@ AI Learning OS 是一个长期维护的中文 AI 学习项目。它把技术演�
 
 ## 当前进度与下一阶段
 
-**v0.17 已发布**：模型路由、推理成本、缓存、Batch、延迟约束、单位经济性计算器，以及 Lab 11。
+**v0.17 历史版本**：模型路由、推理成本、缓存、Batch、延迟约束、单位经济性计算器，以及 Lab 11。
 
-**v0.18 开发中（[Draft PR #11](https://github.com/TempleHao/ai-learning-platform/pull/11)）**：AI for Science、World Models、Robotics、Physical AI、仿真到现实的差距、商业化分析和 Lab 12。开发分支已有 Deep Dive 10、成本计算器、Lab 12 独立实验、40 节点 Dashboard 与课程资源入口；尚未合并至 `main`，完整站点验收及 Pages 正式部署仍待完成。
+**v0.18 已合并 main**：Deep Dive 10、Physical AI 成本计算器、Lab 12 独立实验、40 节点 Dashboard、课程导航与一手资料已集成；Lab Track 与 Dashboard 支持跨标签页学习进度刷新。GitHub Pages 构建和线上浏览器交互验收仍待独立确认。
 
 **v0.19 规划中**：全站事实、来源、文风、导航、移动端、无障碍和版本一致性审校。
 
