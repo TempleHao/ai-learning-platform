@@ -1,6 +1,6 @@
 # AI Learning OS · Roadmap
 
-Last reviewed: 2026-10-17
+Last reviewed: 2026-10-18
 
 ## 终极目标
 
@@ -31,7 +31,7 @@ Last reviewed: 2026-10-17
 
 ---
 
-## 当前版本 · v0.17
+## 当前版本 · v0.18（已合并 main，待 Pages 验收）
 
 ### Core · 已完成
 - 00 AI 世界全地图
@@ -54,9 +54,10 @@ Last reviewed: 2026-10-17
 7. RAG / Memory / Knowledge Systems
 8. Multimodal / Voice / Realtime AI
 9. Inference Economics / Model Routing
+10. AI for Science / Robotics / Physical AI
 
 ### Practice · 已发布
-- 11 个 Lab Track
+- 12 个 Lab Track
 - 20 个应用 / 失败案例
 - Review / 术语 / 综合题
 - 节点级“继续探索”
@@ -89,9 +90,11 @@ Last reviewed: 2026-10-17
 
 ## v0.18 · AI for Science / Robotics / Physical AI · 已合并 main，待 Pages 验收
 
-2026-10-15：Draft PR #11 已集成 Deep Dive 10、Physical AI 成本计算器、Lab 12 独立实验、进度保存、Dashboard 40 节点、首页课程入口与资源库。以上内容仍在开发分支，未合并至 `main`，正式版保持 v0.17 / 38 节点。
+2026-10-17：PR #11 已合并至 main（710d348），集成 Deep Dive 10、Physical AI 成本计算器、Lab 12、Dashboard 40 节点、首页入口和资源库。
 
-发布前待完成：完整站点静态检查及浏览器交互验收；Pages 构建验证；合并 PR；同步正式版本号与首页、README、CHANGELOG。
+2026-10-18：修复 Lab Track 和 Dashboard 的跨标签页学习进度刷新，统一首页与文档版本标识。
+
+发布验收待完成：完整站点静态检查及真实浏览器交互测试；确认 GitHub Pages 最新构建成功；将静态检查接入部署工作流（此前写入尝试被工具限制）。
 
 目标：补齐“软件智能走向科学发现和物理世界”的长期路线。
 

@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2026-10-18 · v0.18 integration follow-up (Pages verification pending)
+- 修复 Lab Track 与 Learning Dashboard 跨标签页学习进度刷新；保留既有 Local Storage 键，不迁移或清除数据。
+- 统一首页、Dashboard、Lab Track 与 README、ROADMAP 的 v0.18 状态和 40 节点说明。
+- GitHub Pages 构建与真实浏览器验收仍待确认；静态检查接入部署工作流尚未完成。
+
 ## 2026-10-17 · v0.18 Physical AI / Science integration (merged; Pages verification pending)
 - 开发分支 PR #11：接通 Deep Dive 10、Lab 12 独立实验、Lab Track 完成状态与 40 节点 Dashboard。
 - 首页加入 Deep Dive 10 入口，Lab Track 调整为 12 关；课程与实验可相互跳转。
