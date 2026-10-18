@@ -7,3 +7,6 @@ function render(){
  document.getElementById('trackBar').style.width=(done/labs.length*100)+'%';
 }
 labs.forEach(lab=>lab.querySelector('input').addEventListener('change',e=>{localStorage.setItem(key(lab.dataset.trackLab),e.target.checked?'1':'0');render()}));render();
+window.addEventListener('storage', event => {
+  if (event.key === null || (event.key && event.key.startsWith('ai-learning-tracklab-'))) render();
+});

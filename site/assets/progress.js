@@ -66,3 +66,6 @@ document.getElementById('resetProgress')?.addEventListener('click',()=>{
   render();
 });
 render();
+window.addEventListener('storage', event => {
+  if (event.key === null || (event.key && event.key.startsWith('ai-learning-'))) render();
+});
