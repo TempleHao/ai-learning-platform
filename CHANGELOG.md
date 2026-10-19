@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2026-10-19 · v0.18 learning-path integration and release verification
+- 为 Deep Dive 10 的科学预测、世界模型与机器人三处关键节点补齐「继续探索」，每处提供 20 分钟 / 2 小时 / 原典三档资料；核对 AlphaFold 3、GNoME、World Models、RT-2 与 Gemini Robotics 一手来源。
+- 新增 Physical AI 成本计算器与 v0.18 导航、40 节点一致性回归测试脚本；保留原有进度同步测试。
+- 核实 2026-10-18 GitHub Pages [部署记录](https://github.com/TempleHao/ai-learning-platform/actions/runs/39138427172)：对应 main 提交 53e6391，Upload static site 和 Deploy to GitHub Pages 均成功。线上浏览器交互与移动端仍未完成验收。
+- 尝试将自动校验加入 Pages 工作流时，GitHub 写入工具返回安全检查阻断；未将 CI 接入计为已完成。
+
 ## 2026-10-18 · v0.18 integration follow-up (Pages verification pending)
 - 修复 Lab Track 与 Learning Dashboard 跨标签页学习进度刷新；保留既有 Local Storage 键，不迁移或清除数据。
 - 统一首页、Dashboard、Lab Track 与 README、ROADMAP 的 v0.18 状态和 40 节点说明。
