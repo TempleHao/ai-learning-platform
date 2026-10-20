@@ -13,14 +13,14 @@ function walk(dir) {
 walk(root);
 const known = new Set(files);
 const pages = new Map(files.filter(p => p.endsWith('.html')).map(p => [p, fs.readFileSync(p, 'utf8')]));
-const ids = new Map([...pages].map(([p, html]) => [p, [...html.matchAll(/\\bid\\s*=\\s*["']([^"']+)["']/g)].map(m => m[1])]));
+const ids = new Map([...pages].map(([p, html]) => [p, [...html.matchAll(/\bid\s*=\s*["']([^"']+)["']/g)].map(m => m[1])]));
 const errors = [];
 let checked = 0;
 for (const [page, html] of pages) {
   const ownIds = ids.get(page);
   for (const id of new Set(ownIds)) if (ownIds.filter(x => x === id).length > 1) errors.push(page + ': duplicate id #' + id);
-  for (const [, raw] of html.matchAll(/\\b(?:href|src)\\s*=\\s*["']([^"']+)["']/gi)) {
-    if (/^(?:https?:|mailto:|tel:|data:|javascript:|\\/\\/)/i.test(raw)) continue;
+  for (const [, raw] of html.matchAll(/\b(?:href|src)\s*=\s*["']([^"']+)["']/gi)) {
+    if (/^(?:https?:|mailto:|tel:|data:|javascript:|\/\/)/i.test(raw)) continue;
     const [withoutFragment, fragment] = raw.split('#');
     const relative = withoutFragment.split('?')[0];
     if (!relative && !fragment) continue;
@@ -38,7 +38,7 @@ for (const [page, html] of pages) {
   }
 }
 if (errors.length) {
-  console.error(errors.join('\\n'));
+  console.error(errors.join('\n'));
   process.exitCode = 1;
 } else {
   console.log('Site link audit passed: ' + pages.size + ' HTML pages, ' + checked + ' internal references.');
