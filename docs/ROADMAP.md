@@ -94,6 +94,8 @@ Last reviewed: 2026-10-18
 
 2026-10-18：修复 Lab Track 和 Dashboard 的跨标签页学习进度刷新，统一首页与文档版本标识。
 
+2026-10-20：开发分支补齐章节页与章内 Lab 的跨标签页刷新，Node 模拟测试通过；尚待合并及 Pages 复验。
+
 2026-10-19：核实 2026-10-18 [Pages 部署](https://github.com/TempleHao/ai-learning-platform/actions/runs/39138427172) 成功，上传与部署步骤均通过；新增 Physical AI 计算器、40 节点导航回归测试及 Deep Dive 10 节点级继续探索。
 
 发布验收仍待完成：真实浏览器与移动端交互；全站静态检查在 CI 中执行并通过；将现有检查脚本接入部署工作流（本轮工作流写入被工具安全检查拦截）。
