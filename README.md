@@ -66,6 +66,19 @@ AI Learning OS 是一个长期维护的中文 AI 学习项目。它把技术演�
 
 完整标准：[docs/CONTENT_POLICY.md](docs/CONTENT_POLICY.md)。
 
+## 本地回归检查
+
+仓库根目录需要 Node.js 22 或更新版本。部署前可以运行：
+
+```bash
+node scripts/test-progress-sync.mjs
+node scripts/test-physical-ai.mjs
+node scripts/test-v018-integration.mjs
+node scripts/check-site-links.mjs
+```
+
+这些脚本分别检查学习进度、Physical AI 成本模型、40 节点集成和站内链接。GitHub Pages 目前尚未把这些检查设为部署门槛；真实浏览器与移动端仍需单独验收。
+
 ## 版本与更新记录
 
 项目采用语义清晰的里程碑版本号。**只有内容实际发布、入口接通并完成必要检查后，才提升正式版本**；开发中源稿不会提前计入已发布节点。
