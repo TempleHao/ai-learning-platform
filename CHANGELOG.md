@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2026-10-20 · Release gate
+- Added internal link audit script covering 32 HTML pages and 585 local references.
+- Physical AI calculator, progress synchronization and 40-node integration logic checked; CI and browser tests remain pending.
+
 ## 2026-10-19 · v0.18 learning-path integration and release verification
 - 为 Deep Dive 10 的科学预测、世界模型与机器人三处关键节点补齐「继续探索」，每处提供 20 分钟 / 2 小时 / 原典三档资料；核对 AlphaFold 3、GNoME、World Models、RT-2 与 Gemini Robotics 一手来源。
 - 新增 Physical AI 成本计算器与 v0.18 导航、40 节点一致性回归测试脚本；保留原有进度同步测试。
