@@ -4,7 +4,7 @@
 
 [在线学习平台](https://templehao.github.io/ai-learning-platform/) · [学习路线图](docs/ROADMAP.md) · [版本更新日志](CHANGELOG.md) · [内容与来源规范](docs/CONTENT_POLICY.md)
 
-> 当前版本：**v0.18 · AI for Science / Robotics / Physical AI**（40 个学习节点），已合并至 main；GitHub Pages 构建与浏览器验收状态请以 GitHub Actions 为准。
+> 当前版本：**v0.18 · AI for Science / Robotics / Physical AI**（40 个学习节点），已合并至 main；GitHub Pages 已有成功构建记录；最新开发分支的自动回归门禁与浏览器验收以 GitHub Actions 为准。
 
 ## 项目是什么
 

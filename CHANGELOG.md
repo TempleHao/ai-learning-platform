@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2026-10-21 · Release gate (development branch)
+- Added CI verification for site structure, internal links, progress synchronization, Physical AI calculator and v0.18 integration.
+- Deployment now depends on verification; actual Actions result and browser testing remain pending.
+
+
 ## 2026-10-20 · Release gate
 - 开发分支修复章节页与章内 Lab 的跨标签页刷新；独立 Node 模拟测试通过，尚未合并或部署。
 - Added internal link audit script covering 32 HTML pages and 585 local references.

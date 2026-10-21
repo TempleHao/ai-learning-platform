@@ -25,7 +25,8 @@ for (const [page, html] of pages) {
     const relative = withoutFragment.split('?')[0];
     if (!relative && !fragment) continue;
     let target;
-    if (relative.startsWith('/ai-learning-platform/')) target = path.posix.join(root, relative.slice('/ai-learning-platform/'.length));
+    if (relative === '/ai-learning-platform/' || relative === '/ai-learning-platform') target = 'site/index.html';
+    else if (relative.startsWith('/ai-learning-platform/')) target = path.posix.join(root, relative.slice('/ai-learning-platform/'.length));
     else if (relative === '/ai-learning-platform') target = 'site/index.html';
     else if (relative.startsWith('/')) { errors.push(page + ': unexpected root URL ' + raw); continue; }
     else target = relative ? path.posix.normalize(path.posix.join(path.posix.dirname(page), relative)) : page;
