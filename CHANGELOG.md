@@ -2,7 +2,7 @@
 
 ## 2026-10-21 · Release gate (development branch)
 - Added CI verification for site structure, internal links, progress synchronization, Physical AI calculator and v0.18 integration.
-- Deployment now depends on verification; actual Actions result and browser testing remain pending.
+- PR #13 verification passed on 2026-10-21 (Actions run 39531480131); deploy was correctly skipped for the pull request. Merge, main Pages deployment and browser testing remain pending.
 
 
 ## 2026-10-20 · Release gate
