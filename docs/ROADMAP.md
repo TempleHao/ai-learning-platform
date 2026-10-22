@@ -1,6 +1,6 @@
 # AI Learning OS · Roadmap
 
-Last reviewed: 2026-10-21
+Last reviewed: 2026-10-22
 
 ## 终极目标
 
@@ -99,6 +99,8 @@ Last reviewed: 2026-10-21
 2026-10-19：核实 2026-10-18 [Pages 部署](https://github.com/TempleHao/ai-learning-platform/actions/runs/39138427172) 成功，上传与部署步骤均通过；新增 Physical AI 计算器、40 节点导航回归测试及 Deep Dive 10 节点级继续探索。
 
 2026-10-21：PR #13 的 Actions 运行 39531480131 已通过 verify：静态检查、站内链接、学习进度与章节同步、Physical AI 计算器、v0.18 集成测试；PR 的部署作业按预期跳过。
+
+2026-10-22：发现 Dashboard 的 Lab 01–11 入口只跳到列表顶部；开发分支增加实验锚点、精准导航与集成断言，待 CI 复验。
 
 发布验收仍待完成：PR #13 合并至 main、正式 Pages 新构建、真实浏览器与移动端交互。
 

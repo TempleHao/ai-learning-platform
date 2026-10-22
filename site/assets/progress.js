@@ -48,7 +48,7 @@ function render(){
 
   document.getElementById('trackLabList').innerHTML=track.map(([id,title])=>{
     const done=isTrackDone(id);if(done)trackDone++;
-    return `<a class="progress-row ${done?'done':''}" href="${id==='12'?'labs/lab12.html':'labs/'}"><span>L${id}</span><div><b>${title}</b><small>${done?'✓ 已完成':'○ 未完成'} · 独立实战产物</small></div><i>${done?'DONE':'BUILD'} →</i></a>`;
+    return `<a class="progress-row ${done?'done':''}" href="${id==='12'?'labs/lab12.html':'labs/#lab'+id}"><span>L${id}</span><div><b>${title}</b><small>${done?'✓ 已完成':'○ 未完成'} · 独立实战产物</small></div><i>${done?'DONE':'BUILD'} →</i></a>`;
   }).join('');
 
   document.getElementById('coreCount').textContent=`${coreDone} / ${core.length}`;

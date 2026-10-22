@@ -28,4 +28,11 @@ for (const id of ['science', 'world', 'robotics']) {
   assert.ok(anchors.has(id), 'Missing Physical AI explore node: ' + id);
   assert.match(deep10, new RegExp('id="' + id + '"'));
 }
+
+// Dashboard rows must navigate directly to the selected Lab instead of the Lab Track top.
+assert.ok(dashboard.includes("'labs/#lab'+id"), 'Dashboard must use Lab anchors');
+for (let i = 1; i <= 11; i++) {
+  const id = String(i).padStart(2, '0');
+  assert.match(labTrack, new RegExp('data-track-lab="' + id + '" id="lab' + id + '"'));
+}
 console.log('v0.18 integration checks passed: 40 nodes, links, Lab 12 and exploration.');

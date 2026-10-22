@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2026-10-22 · Lab Track deep links (development branch)
+- 修复 Dashboard 中 Lab 01–11 全部跳转到实验列表顶部的问题；为每个实验添加独立锚点并补充回归断言。
+- 变更位于 PR #13 开发分支；待 CI 复验、合并及 Pages 部署后才计入正式站点。
+
 ## 2026-10-21 · Release gate (development branch)
 - Added CI verification for site structure, internal links, progress synchronization, Physical AI calculator and v0.18 integration.
 - PR #13 verification passed on 2026-10-21 (Actions run 39531480131); deploy was correctly skipped for the pull request. Merge, main Pages deployment and browser testing remain pending.
