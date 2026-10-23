@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 2026-10-24 · Scheme 1 brand refresh
+- 采用选定的流线型 A Logo，建立蓝—青—紫渐变品牌识别系统；提供透明矢量标志与深色底板图标。
+- 全站 32 个 HTML 页面使用统一浏览器图标，替换 Core、Deep Dive、Lab、Dashboard、Frontier、Review、Resources、Cases 及首页现有旧图标，补齐 Deep Dive 10 和 Lab 12 的品牌入口。
+- 主界面配色由旧荧光绿改为深海军蓝与冰蓝 / 紫色，并统一导航、主要按钮、状态提示和移动端品牌尺寸。
+- 新增 brand coverage 回归检查，接入 Pages 发布前验证；无新增课程节点、不提升版本号。
+- 部署后的真实浏览器与手机端细节仍需检查。
+
+
 ## 2026-10-24 · v0.18 integration release and Lab 12 state fix
 - PR #13 已合并到 `main`（eb7e7e0），此前积压的 Physical AI 分层延伸阅读、Lab 导航、跨标签页进度刷新及部署前自动检查已纳入正式站点。
 - 本次合并的 GitHub Actions 验证和 Pages 部署均成功（run 40016502601）。

@@ -27,7 +27,7 @@ function ensureGlobalCornerLogo(){
   a.className='global-corner-logo';
   a.href='/ai-learning-platform/';
   a.setAttribute('aria-label','AI Learning OS 首页');
-  a.innerHTML='<img src="/ai-learning-platform/assets/brand/favicon-64.png" alt="AI Learning OS" />';
+  a.innerHTML='<img src="/ai-learning-platform/assets/brand/app-icon.svg" alt="AI Learning OS" />';
   document.body.appendChild(a);
 }
 ensureGlobalCornerLogo();

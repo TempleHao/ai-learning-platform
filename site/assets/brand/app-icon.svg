@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="brandTitle">
+<title id="brandTitle">AI Learning OS — gradient ribbon A</title>
+<defs>
+  <linearGradient id="left" x1="0.05" y1="1" x2="0.90" y2="0.05"><stop offset="0" stop-color="#9768F8"/><stop offset="0.28" stop-color="#676FF9"/><stop offset="0.62" stop-color="#438FFB"/><stop offset="1" stop-color="#71E6FF"/></linearGradient>
+  <linearGradient id="right" x1="0.2" y1="0.02" x2="0.94" y2="1"><stop offset="0" stop-color="#80DFFF"/><stop offset="0.37" stop-color="#42C5F7"/><stop offset="0.63" stop-color="#10BACB"/><stop offset="1" stop-color="#6A7CFF"/></linearGradient>
+  <linearGradient id="fold" x1="0" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#131575"/><stop offset="0.37" stop-color="#3445CB"/><stop offset="0.8" stop-color="#7657DE"/><stop offset="1" stop-color="#AB7DFF"/></linearGradient>
+  <linearGradient id="highlight" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#BDF5FF" stop-opacity=".8"/><stop offset=".7" stop-color="#89E8FF" stop-opacity=".08"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+</defs>
+<rect x="4" y="4" width="248" height="248" rx="55" fill="#0B1428"/><path d="M102 140 C120 111 146 115 162 145 L195 207 C202 221 217 228 230 216 C241 206 241 193 234 179 L204 117 C189 87 171 66 150 61 C133 58 115 71 105 94 Z" fill="url(#fold)"/>
+<path d="M112 49 C129 20 160 24 177 51 C193 76 203 107 218 138 L236 176 C246 194 240 216 224 223 C206 232 190 224 181 209 L154 151 C143 130 134 109 124 96 C118 90 108 87 99 93 L83 110 Z" fill="url(#right)"/>
+<path d="M21 177 L95 56 C114 27 134 24 151 34 C165 43 170 61 163 77 C154 94 140 113 128 131 L89 201 C79 220 61 228 45 221 C27 213 18 198 21 184 C21 181 21 179 21 177 Z" fill="url(#left)"/>
+<path d="M95 56 C114 27 134 24 151 34 C165 43 170 61 163 77 C161 80 159 83 157 85 C158 62 142 44 126 46 C112 48 102 66 86 96 Z" fill="url(#highlight)" opacity=".62"/>
+</svg>

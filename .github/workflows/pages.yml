@@ -35,6 +35,8 @@ jobs:
         run: node scripts/test-physical-ai.mjs
       - name: Test v0.18 integration
         run: node scripts/test-v018-integration.mjs
+      - name: Verify Scheme 1 brand assets and page coverage
+        run: node scripts/test-branding.mjs
 
   deploy:
     if: github.event_name != 'pull_request'

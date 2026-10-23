@@ -44,6 +44,10 @@ AI Learning OS 是一个长期维护的中文 AI 学习项目。它把技术演�
 
 可以从 [在线学习平台](https://templehao.github.io/ai-learning-platform/) 直接开始；学习进度以网站实际支持的功能为准。
 
+## 品牌视觉 · 方案 1
+
+2026-10-24 起，网站采用用户选定的流线型 A 品牌标志：蓝—青—紫渐变、深海军蓝背景、克制的光效与简洁的 AI Learning OS 字标。全站共用矢量资产 `site/assets/brand/logo-mark.svg`（透明背景）和 `site/assets/brand/app-icon.svg`（深色图标底板），覆盖首页、Core、Deep Dive、Lab、Dashboard、资源、复习、案例和前沿页面；浏览器图标使用统一 SVG，深色主题亦与新标志协调。品牌图标、布局和内部链接纳入部署前自动检查。此次为视觉更新，学习节点仍为 40。
+
 ## 当前进度与下一阶段
 
 **v0.17 历史版本**：模型路由、推理成本、缓存、Batch、延迟约束、单位经济性计算器，以及 Lab 11。
