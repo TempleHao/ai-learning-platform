@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## 2026-10-22 · Lab Track deep links (development branch)
+- 修复 Dashboard 中 Lab 01–11 全部跳转到实验列表顶部的问题；为每个实验添加独立锚点并补充回归断言。
+- 变更位于 PR #13 开发分支；待 CI 复验、合并及 Pages 部署后才计入正式站点。
+
+## 2026-10-21 · Release gate (development branch)
+- Added CI verification for site structure, internal links, progress synchronization, Physical AI calculator and v0.18 integration.
+- PR #13 verification passed on 2026-10-21 (Actions run 39531480131); deploy was correctly skipped for the pull request. Merge, main Pages deployment and browser testing remain pending.
+
+
+## 2026-10-20 · Release gate
+- 开发分支修复章节页与章内 Lab 的跨标签页刷新；独立 Node 模拟测试通过，尚未合并或部署。
+- Added internal link audit script covering 32 HTML pages and 585 local references.
+- Physical AI calculator, progress synchronization and 40-node integration logic checked; CI and browser tests remain pending.
+
+## 2026-10-19 · v0.18 learning-path integration and release verification
+- 为 Deep Dive 10 的科学预测、世界模型与机器人三处关键节点补齐「继续探索」，每处提供 20 分钟 / 2 小时 / 原典三档资料；核对 AlphaFold 3、GNoME、World Models、RT-2 与 Gemini Robotics 一手来源。
+- 新增 Physical AI 成本计算器与 v0.18 导航、40 节点一致性回归测试脚本；保留原有进度同步测试。
+- 核实 2026-10-18 GitHub Pages [部署记录](https://github.com/TempleHao/ai-learning-platform/actions/runs/39138427172)：对应 main 提交 53e6391，Upload static site 和 Deploy to GitHub Pages 均成功。线上浏览器交互与移动端仍未完成验收。
+- 尝试将自动校验加入 Pages 工作流时，GitHub 写入工具返回安全检查阻断；未将 CI 接入计为已完成。
+
 ## 2026-10-18 · v0.18 integration follow-up (Pages verification pending)
 - 修复 Lab Track 与 Learning Dashboard 跨标签页学习进度刷新；保留既有 Local Storage 键，不迁移或清除数据。
 - 统一首页、Dashboard、Lab Track 与 README、ROADMAP 的 v0.18 状态和 40 节点说明。

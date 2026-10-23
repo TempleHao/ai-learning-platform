@@ -35,3 +35,9 @@ function ensureGlobalCornerLogo(){
   document.body.appendChild(a);
 }
 ensureGlobalCornerLogo();
+
+// Reflect progress changes from other browser tabs and storage resets.
+window.addEventListener('storage', event => {
+  const labKey = lab ? `ai-learning-lab${lab.dataset.lab}` : null;
+  if (event.key === null || event.key === doneKey || (labKey && event.key === labKey)) render();
+});

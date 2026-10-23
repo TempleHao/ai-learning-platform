@@ -1,6 +1,6 @@
 # AI Learning OS · Roadmap
 
-Last reviewed: 2026-10-18
+Last reviewed: 2026-10-22
 
 ## 终极目标
 
@@ -31,7 +31,7 @@ Last reviewed: 2026-10-18
 
 ---
 
-## 当前版本 · v0.18（已合并 main，待 Pages 验收）
+## 当前版本 · v0.18（Pages 构建成功，浏览器验收待完成）
 
 ### Core · 已完成
 - 00 AI 世界全地图
@@ -88,13 +88,21 @@ Last reviewed: 2026-10-18
 - 交互式路由成本计算器
 - Lab 11：为真实 AI 应用建立模型路由与成本基准
 
-## v0.18 · AI for Science / Robotics / Physical AI · 已合并 main，待 Pages 验收
+## v0.18 · AI for Science / Robotics / Physical AI · Pages 构建成功，浏览器验收待完成
 
 2026-10-17：PR #11 已合并至 main（710d348），集成 Deep Dive 10、Physical AI 成本计算器、Lab 12、Dashboard 40 节点、首页入口和资源库。
 
 2026-10-18：修复 Lab Track 和 Dashboard 的跨标签页学习进度刷新，统一首页与文档版本标识。
 
-发布验收待完成：完整站点静态检查及真实浏览器交互测试；确认 GitHub Pages 最新构建成功；将静态检查接入部署工作流（此前写入尝试被工具限制）。
+2026-10-20：开发分支补齐章节页与章内 Lab 的跨标签页刷新，Node 模拟测试通过；尚待合并及 Pages 复验。
+
+2026-10-19：核实 2026-10-18 [Pages 部署](https://github.com/TempleHao/ai-learning-platform/actions/runs/39138427172) 成功，上传与部署步骤均通过；新增 Physical AI 计算器、40 节点导航回归测试及 Deep Dive 10 节点级继续探索。
+
+2026-10-21：PR #13 的 Actions 运行 39531480131 已通过 verify：静态检查、站内链接、学习进度与章节同步、Physical AI 计算器、v0.18 集成测试；PR 的部署作业按预期跳过。
+
+2026-10-22：发现 Dashboard 的 Lab 01–11 入口只跳到列表顶部；开发分支增加实验锚点、精准导航与集成断言，待 CI 复验。
+
+发布验收仍待完成：PR #13 合并至 main、正式 Pages 新构建、真实浏览器与移动端交互。
 
 目标：补齐“软件智能走向科学发现和物理世界”的长期路线。
 

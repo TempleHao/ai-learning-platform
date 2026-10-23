@@ -1,25 +1,52 @@
-name: Deploy framework demo to GitHub Pages
+name: Verify and deploy AI Learning OS
 
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
+  verify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate site files
+        run: node scripts/validate-site.mjs
+      - name: Audit internal links
+        run: node scripts/check-site-links.mjs
+      - name: Test learning progress sync
+        run: node scripts/test-progress-sync.mjs
+      - name: Test chapter progress sync
+        run: node scripts/test-chapter-progress.mjs
+      - name: Test Physical AI calculator
+        run: node scripts/test-physical-ai.mjs
+      - name: Test v0.18 integration
+        run: node scripts/test-v018-integration.mjs
+
   deploy:
+    if: github.event_name != 'pull_request'
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4

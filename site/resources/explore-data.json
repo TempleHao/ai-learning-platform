@@ -2314,6 +2314,101 @@
           }
         ]
       }
+    ],
+    "deep10": [
+      {
+        "anchor": "science",
+        "topic": "科学预测、实验验证与材料发现",
+        "reviewed_at": "2026-10-19",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "官方概览",
+            "title": "AlphaFold · 从结构预测理解科学 AI",
+            "source": "Google DeepMind",
+            "url": "https://deepmind.google/science/alphafold/",
+            "why": "先看结构预测解决什么问题，再列出药效、实验和临床仍需哪些证据。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "原始论文",
+            "title": "AlphaFold 3 · 分子相互作用结构预测",
+            "source": "Nature · 2024",
+            "url": "https://www.nature.com/articles/s41586-024-07487-w",
+            "why": "对照方法、测试集和局限，练习区分预测精度与真实实验结果。"
+          },
+          {
+            "depth": "原典",
+            "type": "原始论文",
+            "title": "GNoME · Scaling deep learning for materials discovery",
+            "source": "Nature · 2023",
+            "url": "https://www.nature.com/articles/s41586-023-06735-9",
+            "why": "阅读材料稳定性预测与实验确认的区别，记录可合成性和实际性能的证据缺口。"
+          }
+        ]
+      },
+      {
+        "anchor": "world",
+        "topic": "世界模型与 Sim-to-Real 证据边界",
+        "reviewed_at": "2026-10-19",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "官方介绍",
+            "title": "Genie 3 · 可交互世界模型与限制",
+            "source": "Google DeepMind",
+            "url": "https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/",
+            "why": "识别交互生成能力与物理准确性、长时一致性之间的差别。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "研究演示",
+            "title": "World Models · 可交互论文",
+            "source": "David Ha / Jürgen Schmidhuber",
+            "url": "https://worldmodels.github.io/",
+            "why": "结合交互示例理解学习环境动态、潜在状态与策略迁移。"
+          },
+          {
+            "depth": "原典",
+            "type": "原始论文",
+            "title": "World Models (2018)",
+            "source": "Ha & Schmidhuber · arXiv",
+            "url": "https://arxiv.org/abs/1803.10122",
+            "why": "追溯世界模型用于策略训练的早期方法，并区分模拟训练成功与现实泛化。"
+          }
+        ]
+      },
+      {
+        "anchor": "robotics",
+        "topic": "机器人策略、具身推理与安全评测",
+        "reviewed_at": "2026-10-19",
+        "items": [
+          {
+            "depth": "20 分钟",
+            "type": "官方介绍",
+            "title": "Gemini Robotics 1.5 · 具身模型与任务演示",
+            "source": "Google DeepMind",
+            "url": "https://deepmind.google/blog/gemini-robotics-15-brings-ai-agents-into-the-physical-world/",
+            "why": "理解高层具身推理、视觉语言动作模型和低层控制的职责。"
+          },
+          {
+            "depth": "2 小时",
+            "type": "官方技术资料",
+            "title": "Gemini Robotics · 模型能力与适用范围",
+            "source": "Google DeepMind",
+            "url": "https://deepmind.google/en/models/gemini-robotics/gemini-robotics/",
+            "why": "逐项核对通用性、交互性、部署范围与安全控制要求。"
+          },
+          {
+            "depth": "原典",
+            "type": "原始论文",
+            "title": "RT-2 · Vision-Language-Action Models",
+            "source": "Brohan et al. · arXiv 2023",
+            "url": "https://arxiv.org/abs/2307.15818",
+            "why": "研究如何将视觉语言预训练迁移到机器人动作，并检查评测任务与泛化边界。"
+          }
+        ]
+      }
     ]
   }
 }
