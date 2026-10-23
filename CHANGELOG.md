@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2026-10-24 · Corner icon & favicon consistency correction
+- Fix: browser tab used a separately drawn SVG favicon, visually different from the approved Scheme 1 logo. Replace with a transparent 64px PNG made from the same approved artwork.
+- Add dedicated 180px iOS home-screen icon; use new filenames to avoid stale favicon caches.
+- Restore a subtle transparent upper-right corner mark on all 32 pages. Remove old injected black badge if present; reserve header space on desktop and mobile to prevent overlap.
+- Add regression coverage for icon image dimensions/transparency, page references, visual asset identity, and idempotent corner mounting. Preserve all learning and localStorage state.
+
+
 ## 2026-10-24 · Scheme 1 visual fidelity correction
 - 按已确认的方案 1 原稿重新提取透明背景的彩色丝带 A 图形，取代与参考图形状不一致的前版可见 SVG；为网站全部页面统一真实参考图形。
 - 重做首页品牌横向组合（字标、比例、间距、英文标语），删除首页、章节和工具页额外注入的深色底板悬浮 Logo。
