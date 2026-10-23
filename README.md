@@ -46,7 +46,7 @@ AI Learning OS 是一个长期维护的中文 AI 学习项目。它把技术演�
 
 ## 品牌视觉 · 方案 1
 
-2026-10-24 起，网站采用用户选定的流线型 A 品牌标志：蓝—青—紫渐变、深海军蓝背景、克制的光效与简洁的 AI Learning OS 字标。全站共用矢量资产 `site/assets/brand/logo-mark.svg`（透明背景）和 `site/assets/brand/app-icon.svg`（深色图标底板），覆盖首页、Core、Deep Dive、Lab、Dashboard、资源、复习、案例和前沿页面；浏览器图标使用统一 SVG，深色主题亦与新标志协调。品牌图标、布局和内部链接纳入部署前自动检查。方案 1 已在 [PR #14](https://github.com/TempleHao/ai-learning-platform/pull/14) 合并，并于 [GitHub Pages](https://github.com/TempleHao/ai-learning-platform/actions/runs/40022270852) 通过验证及正式部署。此次为视觉更新，学习节点仍为 40。
+2026-10-24 品牌复核：旧版矢量图与确认稿的丝带折叠结构存在偏差，且部分 JavaScript 仍额外插入带底板的悬浮角标。新版直接从已确认的方案 1 原稿提取透明底主体图形，存为 `site/assets/brand/logo-scheme1.webp`（作为全站可见 Logo），保留 `logo-mark.svg` 和同内容的 `app-icon.svg` 作为无底板矢量备用 / 浏览器标签图标。首页采用参考方案的横向 AI Learning OS 字标及 `LEARN TODAY. BUILD TOMORROW.` 标语。取消悬浮黑底徽标，为 HTML、样式表和图标资源增加新的资源地址，降低浏览器旧缓存影响。**仅更新视觉，不改变现有课程、数据或完成状态。**
 
 ## 当前进度与下一阶段
 
