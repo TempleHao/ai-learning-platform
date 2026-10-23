@@ -20,6 +20,7 @@ assert.equal(artwork.toString('ascii',0,4),'RIFF','Reference artwork must be a W
 assert.equal(artwork.toString('ascii',8,12),'WEBP');
 assert.ok(artwork.length>4000,'Transparent reference artwork is unexpectedly small');
 assert.ok((artwork[20]&0x10)!==0,'Reference WebP must contain alpha transparency');
+for(const old of ['site/assets/brand/favicon-64.png','site/assets/brand/logo-header.webp'])assert.equal(fs.existsSync(old),false,'Legacy black-tile asset must be removed: '+old);
 assert.match(home,/class="hero-brand-lockup"/);
 assert.match(home,/LEARN TODAY\. BUILD TOMORROW\./);
 assert.match(home,/logo-scheme1\.webp/);
