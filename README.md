@@ -46,13 +46,13 @@ AI Learning OS 是一个长期维护的中文 AI 学习项目。它把技术演�
 
 ## 品牌视觉 · 方案 1
 
-2026-10-24 起，网站采用用户选定的流线型 A 品牌标志：蓝—青—紫渐变、深海军蓝背景、克制的光效与简洁的 AI Learning OS 字标。全站共用矢量资产 `site/assets/brand/logo-mark.svg`（透明背景）和 `site/assets/brand/app-icon.svg`（深色图标底板），覆盖首页、Core、Deep Dive、Lab、Dashboard、资源、复习、案例和前沿页面；浏览器图标使用统一 SVG，深色主题亦与新标志协调。品牌图标、布局和内部链接纳入部署前自动检查。此次为视觉更新，学习节点仍为 40。
+2026-10-24 起，网站采用用户选定的流线型 A 品牌标志：蓝—青—紫渐变、深海军蓝背景、克制的光效与简洁的 AI Learning OS 字标。全站共用矢量资产 `site/assets/brand/logo-mark.svg`（透明背景）和 `site/assets/brand/app-icon.svg`（深色图标底板），覆盖首页、Core、Deep Dive、Lab、Dashboard、资源、复习、案例和前沿页面；浏览器图标使用统一 SVG，深色主题亦与新标志协调。品牌图标、布局和内部链接纳入部署前自动检查。方案 1 已在 [PR #14](https://github.com/TempleHao/ai-learning-platform/pull/14) 合并，并于 [GitHub Pages](https://github.com/TempleHao/ai-learning-platform/actions/runs/40022270852) 通过验证及正式部署。此次为视觉更新，学习节点仍为 40。
 
 ## 当前进度与下一阶段
 
 **v0.17 历史版本**：模型路由、推理成本、缓存、Batch、延迟约束、单位经济性计算器，以及 Lab 11。
 
-**v0.18 已部署（浏览器验收待完成）**：Deep Dive 10、Physical AI 成本计算器、Lab 12、40 节点 Dashboard、分层延伸阅读及跨标签页进度同步均已发布。2026-10-24，PR #13 合并至主分支，包含 Lab 01–11 精准导航、部署前自动检查和课程进度修复；随后补齐 Lab 12 在其他标签页清空学习进度时的同步修复。最新 [Pages 构建与部署](https://github.com/TempleHao/ai-learning-platform/actions/runs/40016836107) 已成功，真实浏览器和移动端人工验收仍待完成。
+**v0.18 已部署（浏览器验收待完成）**：Deep Dive 10、Physical AI 成本计算器、Lab 12、40 节点 Dashboard、分层延伸阅读及跨标签页进度同步均已发布。2026-10-24，PR #13 合并至主分支，包含 Lab 01–11 精准导航、部署前自动检查和课程进度修复；随后补齐 Lab 12 在其他标签页清空学习进度时的同步修复。最新 [Pages 构建与部署](https://github.com/TempleHao/ai-learning-platform/actions/runs/40022270852) 已成功，真实浏览器和移动端人工验收仍待完成。
 
 **v0.19 规划中**：全站事实、来源、文风、导航、移动端、无障碍和版本一致性审校。
 
@@ -79,6 +79,7 @@ node scripts/test-progress-sync.mjs
 node scripts/test-physical-ai.mjs
 node scripts/test-v018-integration.mjs
 node scripts/check-site-links.mjs
+node scripts/test-branding.mjs
 ```
 
 这些脚本分别检查学习进度、Physical AI 成本模型、40 节点集成（含 Lab 12 跨标签页清空进度的回归测试）和站内链接。自动校验已接入 GitHub Pages 部署前的验证步骤；真实浏览器与移动端仍需单独验收。

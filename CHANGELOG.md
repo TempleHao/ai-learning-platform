@@ -5,7 +5,7 @@
 - 全站 32 个 HTML 页面使用统一浏览器图标，替换 Core、Deep Dive、Lab、Dashboard、Frontier、Review、Resources、Cases 及首页现有旧图标，补齐 Deep Dive 10 和 Lab 12 的品牌入口。
 - 主界面配色由旧荧光绿改为深海军蓝与冰蓝 / 紫色，并统一导航、主要按钮、状态提示和移动端品牌尺寸。
 - 新增 brand coverage 回归检查，接入 Pages 发布前验证；无新增课程节点、不提升版本号。
-- 部署后的真实浏览器与手机端细节仍需检查。
+- [PR #14](https://github.com/TempleHao/ai-learning-platform/pull/14) 已合并至 main（de6e3e1），全量静态检查、站内链接、学习进度与品牌回归检查通过，[GitHub Pages 部署](https://github.com/TempleHao/ai-learning-platform/actions/runs/40022270852) 成功；真实桌面及手机浏览器外观细节仍待人工验收。
 
 
 ## 2026-10-24 · v0.18 integration release and Lab 12 state fix

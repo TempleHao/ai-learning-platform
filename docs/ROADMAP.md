@@ -118,12 +118,12 @@ Last reviewed: 2026-10-24
 - 商业化周期与资本强度
 - Lab：Physical AI / Science opportunity teardown
 
-## 2026-10-24 · Scheme 1 品牌系统（待合并发布）
+## 2026-10-24 · Scheme 1 品牌系统（已合并，已部署）
 
 - 统一流线型 A 标志、AI Learning OS 字标、SVG 浏览器图标及页面入口。
 - 网站深色视觉配色与蓝—青—紫渐变标志统一；首页、课程、实验与工具页保持品牌一致性。
 - 新增覆盖全部 HTML 页面与公共资源引用的品牌自动回归检查；保留 40 节点及现有进度键。
-- 完成 PR 验证与 Pages 部署后更新发布状态，继续手机端真实视觉验收。
+- PR #14 已合并（de6e3e1），GitHub Actions 40022270852 验证与 Pages 部署均成功。后续继续桌面和手机端真实视觉验收。
 
 ## v0.19 · Content Audit
 
