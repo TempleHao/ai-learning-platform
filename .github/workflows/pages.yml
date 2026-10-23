@@ -1,0 +1,63 @@
+name: Verify and deploy AI Learning OS
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate site files
+        run: node scripts/validate-site.mjs
+      - name: Audit internal links
+        run: node scripts/check-site-links.mjs
+      - name: Test learning progress sync
+        run: node scripts/test-progress-sync.mjs
+      - name: Test chapter progress sync
+        run: node scripts/test-chapter-progress.mjs
+      - name: Test Physical AI calculator
+        run: node scripts/test-physical-ai.mjs
+      - name: Test v0.18 integration
+        run: node scripts/test-v018-integration.mjs
+      - name: Verify Scheme 1 brand assets and page coverage
+        run: node scripts/test-branding.mjs
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
