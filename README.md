@@ -4,7 +4,7 @@
 
 [在线学习平台](https://templehao.github.io/ai-learning-platform/) · [学习路线图](docs/ROADMAP.md) · [版本更新日志](CHANGELOG.md) · [内容与来源规范](docs/CONTENT_POLICY.md)
 
- > 当前版本：**v0.18 · AI for Science / Robotics / Physical AI**（40 个学习节点），已合并至 main；GitHub Pages 已有成功构建记录；v0.18 发布检查在 PR #13 的 GitHub Actions 中通过（2026-10-21），新代码仍待合并和正式 Pages 部署，浏览器验收未完成。
+> 当前版本：**v0.18 · AI for Science / Robotics / Physical AI**（40 个学习节点）。2026-10-24 的 [GitHub Pages 发布](https://github.com/TempleHao/ai-learning-platform/actions/runs/40016836107) 已成功，自动回归检查通过；真实浏览器和移动端验收仍待完成。
 
 ## 项目是什么
 
@@ -48,9 +48,7 @@ AI Learning OS 是一个长期维护的中文 AI 学习项目。它把技术演�
 
 **v0.17 历史版本**：模型路由、推理成本、缓存、Batch、延迟约束、单位经济性计算器，以及 Lab 11。
 
-**v0.18 已部署（浏览器验收待完成）**：Deep Dive 10、Physical AI 成本计算器、Lab 12、40 节点 Dashboard 与跨标签页进度同步已进入 main。2026-10-18 的 [Pages 部署](https://github.com/TempleHao/ai-learning-platform/actions/runs/39138427172) 成功，包含上传和部署步骤。2026-10-19 补充了 Deep Dive 10 的节点级「继续探索」与计算器、导航回归测试；真实浏览器和移动端验收仍待完成，部署前自动校验尚未接入工作流。
-
-**v0.18 导航修复（PR #13 待合并）**：Dashboard 中 Lab 01–11 的入口将直接定位到对应实验，Lab 12 保持独立页面；增加集成断言防止回归。
+**v0.18 已部署（浏览器验收待完成）**：Deep Dive 10、Physical AI 成本计算器、Lab 12、40 节点 Dashboard、分层延伸阅读及跨标签页进度同步均已发布。2026-10-24，PR #13 合并至主分支，包含 Lab 01–11 精准导航、部署前自动检查和课程进度修复；随后补齐 Lab 12 在其他标签页清空学习进度时的同步修复。最新 [Pages 构建与部署](https://github.com/TempleHao/ai-learning-platform/actions/runs/40016836107) 已成功，真实浏览器和移动端人工验收仍待完成。
 
 **v0.19 规划中**：全站事实、来源、文风、导航、移动端、无障碍和版本一致性审校。
 
@@ -79,7 +77,7 @@ node scripts/test-v018-integration.mjs
 node scripts/check-site-links.mjs
 ```
 
-这些脚本分别检查学习进度、Physical AI 成本模型、40 节点集成和站内链接。GitHub Pages 目前尚未把这些检查设为部署门槛；真实浏览器与移动端仍需单独验收。
+这些脚本分别检查学习进度、Physical AI 成本模型、40 节点集成（含 Lab 12 跨标签页清空进度的回归测试）和站内链接。自动校验已接入 GitHub Pages 部署前的验证步骤；真实浏览器与移动端仍需单独验收。
 
 ## 版本与更新记录
 
