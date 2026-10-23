@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import vm from 'node:vm';
 import fs from 'node:fs';
 
 const read = path => fs.readFileSync(path, 'utf8');
@@ -35,4 +36,34 @@ for (let i = 1; i <= 11; i++) {
   const id = String(i).padStart(2, '0');
   assert.match(labTrack, new RegExp('data-track-lab="' + id + '" id="lab' + id + '"'));
 }
+
+ 
+// Exercise Lab 12's actual inline script: an external tab can clear all saved progress.
+const lab12Script = [...lab12.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)]
+  .map(match => match[1]).find(source => source.includes('ai-learning-tracklab-12'));
+assert.ok(lab12Script, 'Lab 12 completion script must be present');
+const store = new Map();
+const button = {
+  textContent: '',
+  setAttribute(name, value) { this[name] = value; },
+  addEventListener(name, callback) { this[name] = callback; },
+};
+const state = {textContent: ''};
+const listeners = {};
+vm.runInNewContext(lab12Script, {
+  document: {getElementById: id => id === 'lab12Done' ? button : id === 'lab12State' ? state : null},
+  localStorage: {getItem: key => store.get(key) ?? null, setItem: (key, value) => store.set(key, value)},
+  window: {addEventListener: (name, callback) => { listeners[name] = callback; }},
+});
+assert.equal(state.textContent, '未完成', 'Lab 12 initial completion state');
+store.set('ai-learning-tracklab-12', '1');
+listeners.storage({key: 'ai-learning-tracklab-12'});
+assert.match(state.textContent, /已完成/, 'Lab 12 recognizes another tab marking completion');
+store.clear();
+listeners.storage({key: null});
+assert.equal(state.textContent, '未完成', 'Lab 12 handles another tab clearing all progress');
+assert.equal(button['aria-pressed'], 'false', 'Lab 12 accessible completion state resets');
+button.click();
+assert.equal(store.get('ai-learning-tracklab-12'), '1', 'Lab 12 can mark completion after reset');
+
 console.log('v0.18 integration checks passed: 40 nodes, links, Lab 12 and exploration.');

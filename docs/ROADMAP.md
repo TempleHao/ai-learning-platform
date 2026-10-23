@@ -1,6 +1,6 @@
 # AI Learning OS · Roadmap
 
-Last reviewed: 2026-10-22
+Last reviewed: 2026-10-24
 
 ## 终极目标
 
@@ -89,6 +89,8 @@ Last reviewed: 2026-10-22
 - Lab 11：为真实 AI 应用建立模型路由与成本基准
 
 ## v0.18 · AI for Science / Robotics / Physical AI · Pages 构建成功，浏览器验收待完成
+
+2026-10-24：PR #13 已合并 main（eb7e7e0），六项自动检查通过，Pages 构建和部署成功（Actions 40016502601）；修复 Lab 12 在其他页面清除本地进度时的状态刷新，并补充实际脚本回归测试。剩余：浏览器及移动端人工交互验收。
 
 2026-10-17：PR #11 已合并至 main（710d348），集成 Deep Dive 10、Physical AI 成本计算器、Lab 12、Dashboard 40 节点、首页入口和资源库。
 

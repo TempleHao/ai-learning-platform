@@ -13,7 +13,7 @@
     localStorage.setItem(key, localStorage.getItem(key) === '1' ? '0' : '1');
     render();
   });
-  window.addEventListener('storage', e => { if (e.key === key) render(); });
+  window.addEventListener('storage', e => { if (e.key === null || e.key === key) render(); });
   render();
 })();
 </script></body></html>

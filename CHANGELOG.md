@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2026-10-24 · v0.18 integration release and Lab 12 state fix
+- PR #13 已合并到 `main`（eb7e7e0），此前积压的 Physical AI 分层延伸阅读、Lab 导航、跨标签页进度刷新及部署前自动检查已纳入正式站点。
+- 本次合并的 GitHub Actions 验证和 Pages 部署均成功（run 40016502601）。
+- 修复 Lab 12 在其他标签页清除全部 `localStorage` 时没有重新渲染完成状态的问题；新增执行内联页面脚本的回归测试，覆盖跨标签页标记、清空与重新完成。
+- 浏览器和移动端人工体验验收仍待完成；维持 v0.18，不增加课程节点。
+
 ## 2026-10-22 · Lab Track deep links (development branch)
 - 修复 Dashboard 中 Lab 01–11 全部跳转到实验列表顶部的问题；为每个实验添加独立锚点并补充回归断言。
 - 变更位于 PR #13 开发分支；待 CI 复验、合并及 Pages 部署后才计入正式站点。
