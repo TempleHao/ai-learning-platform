@@ -1,1 +1,1 @@
-(()=>{if(document.querySelector('.global-corner-logo'))return;const a=document.createElement('a');a.className='global-corner-logo';a.href='/ai-learning-platform/';a.setAttribute('aria-label','AI Learning OS 首页');a.innerHTML='<img src="/ai-learning-platform/assets/brand/app-icon.svg" alt="AI Learning OS" />';document.body.appendChild(a)})();
+// Legacy entrypoint retained for old page caches. Scheme 1 uses the transparent page lockup; no floating badge.

@@ -1,13 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="brandTitle">
-<title id="brandTitle">AI Learning OS — gradient ribbon A</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 990 864" role="img" aria-labelledby="mark-title">
+<title id="mark-title">AI Learning OS · gradient ribbon A</title>
 <defs>
-  <linearGradient id="left" x1="0.05" y1="1" x2="0.90" y2="0.05"><stop offset="0" stop-color="#9768F8"/><stop offset="0.28" stop-color="#676FF9"/><stop offset="0.62" stop-color="#438FFB"/><stop offset="1" stop-color="#71E6FF"/></linearGradient>
-  <linearGradient id="right" x1="0.2" y1="0.02" x2="0.94" y2="1"><stop offset="0" stop-color="#80DFFF"/><stop offset="0.37" stop-color="#42C5F7"/><stop offset="0.63" stop-color="#10BACB"/><stop offset="1" stop-color="#6A7CFF"/></linearGradient>
-  <linearGradient id="fold" x1="0" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#131575"/><stop offset="0.37" stop-color="#3445CB"/><stop offset="0.8" stop-color="#7657DE"/><stop offset="1" stop-color="#AB7DFF"/></linearGradient>
-  <linearGradient id="highlight" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#BDF5FF" stop-opacity=".8"/><stop offset=".7" stop-color="#89E8FF" stop-opacity=".08"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="bridge" x1=".03" y1=".05" x2=".90" y2="1"><stop stop-color="#182c9a"/><stop offset=".46" stop-color="#3432aa"/><stop offset="1" stop-color="#7367fa"/></linearGradient>
+<linearGradient id="left" x1=".09" y1=".10" x2=".54" y2="1"><stop stop-color="#004aca"/><stop offset=".36" stop-color="#3e8efb"/><stop offset=".70" stop-color="#5b91ff"/><stop offset="1" stop-color="#ad72fa"/></linearGradient>
+<linearGradient id="face" x1=".12" y1=".05" x2=".71" y2="1"><stop stop-color="#0348cd"/><stop offset=".25" stop-color="#0c4bd4"/><stop offset=".62" stop-color="#467ff5"/><stop offset="1" stop-color="#a786ff"/></linearGradient>
+<linearGradient id="top" x1="0" y1=".60" x2="1" y2=".22"><stop stop-color="#4866f8"/><stop offset=".43" stop-color="#5198ff"/><stop offset="1" stop-color="#8deaff"/></linearGradient>
+<linearGradient id="right" x1=".40" y1="0" x2="1" y2="1"><stop stop-color="#91eeff"/><stop offset=".39" stop-color="#37d4fa"/><stop offset=".68" stop-color="#05bbca"/><stop offset="1" stop-color="#5388fa"/></linearGradient>
+<linearGradient id="right-base" x1=".25" y1=".1" x2=".8" y2=".97"><stop stop-color="#a5fbff"/><stop offset=".43" stop-color="#66c7fd"/><stop offset=".78" stop-color="#65a3fd"/><stop offset="1" stop-color="#6484f9"/></linearGradient>
+<linearGradient id="seam" x1="0" y1=".4" x2="1" y2=".7"><stop stop-color="#78ebff"/><stop offset=".58" stop-color="#90e5ff"/><stop offset="1" stop-color="#deffff"/></linearGradient>
 </defs>
-<rect x="4" y="4" width="248" height="248" rx="55" fill="#0B1428"/><path d="M102 140 C120 111 146 115 162 145 L195 207 C202 221 217 228 230 216 C241 206 241 193 234 179 L204 117 C189 87 171 66 150 61 C133 58 115 71 105 94 Z" fill="url(#fold)"/>
-<path d="M112 49 C129 20 160 24 177 51 C193 76 203 107 218 138 L236 176 C246 194 240 216 224 223 C206 232 190 224 181 209 L154 151 C143 130 134 109 124 96 C118 90 108 87 99 93 L83 110 Z" fill="url(#right)"/>
-<path d="M21 177 L95 56 C114 27 134 24 151 34 C165 43 170 61 163 77 C154 94 140 113 128 131 L89 201 C79 220 61 228 45 221 C27 213 18 198 21 184 C21 181 21 179 21 177 Z" fill="url(#left)"/>
-<path d="M95 56 C114 27 134 24 151 34 C165 43 170 61 163 77 C161 80 159 83 157 85 C158 62 142 44 126 46 C112 48 102 66 86 96 Z" fill="url(#highlight)" opacity=".62"/>
+<path d="M318 645 C371 557 428 496 481 489 C547 480 602 508 654 585 C685 632 715 713 781 757 C761 788 722 788 683 762 C636 731 597 658 533 631 C476 604 432 620 382 657 L316 707Z" fill="url(#bridge)"/>
+<path d="M437 71 C508 51 567 75 604 132 C649 200 687 331 735 432 C769 502 789 535 853 570 C910 602 935 648 925 704 C915 772 872 794 806 798 C745 799 697 774 664 712 C631 655 599 575 567 501 C530 408 501 343 480 310 C444 259 410 252 370 278 L318 334 C338 245 373 151 437 71Z" fill="url(#right-base)"/>
+<path d="M508 66 C555 71 583 98 605 133 C653 205 693 342 739 433 C772 499 793 535 853 568 C873 578 887 590 900 609 C829 590 738 562 669 527 C597 489 542 436 510 367 C487 318 467 281 449 269 C495 207 563 141 508 66Z" fill="url(#right)"/>
+<path d="M80 616 C128 535 220 366 295 239 C331 173 373 107 411 86 C453 63 510 64 548 88 C588 113 598 159 584 206 C574 241 546 286 513 337 C457 429 407 519 348 617 C307 688 284 735 237 754 C184 774 135 749 107 728 C74 701 64 654 80 616Z" fill="url(#left)"/>
+<path d="M205 424 C268 294 330 201 385 201 C445 186 488 269 511 332 C466 410 416 502 348 616 C310 686 279 736 235 753 C183 773 135 747 108 723 C76 695 74 653 92 609Z" fill="url(#face)" opacity=".97"/>
+<path d="M247 356 C307 249 363 134 411 87 C459 52 522 58 555 84 C597 112 594 160 577 204 C561 242 530 289 511 330 C490 288 469 244 444 221 C399 180 343 201 309 230 C289 251 265 309 247 356Z" fill="url(#top)"/>
+<path d="M244 362 C281 293 317 231 350 215 C409 178 468 200 512 324" fill="none" stroke="url(#seam)" stroke-width="4" stroke-linecap="round" opacity=".36"/>
+<path d="M506 338 C561 450 613 573 662 704 C686 757 725 788 785 792" fill="none" stroke="#cdfbff" stroke-width="3.3" stroke-linecap="round" opacity=".42"/>
 </svg>

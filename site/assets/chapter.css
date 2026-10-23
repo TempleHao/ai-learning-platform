@@ -4,3 +4,6 @@
 
 /* Scheme 1 branding: preserve clear chapter identity at small sizes */
 .chapter-brand .brand-icon{background:none;border:0;object-fit:contain}
+
+/* Scheme 1: the chapter mark uses the same transparent ribbon artwork as the homepage. */
+.chapter-brand .brand-icon{background:none;border:0}
