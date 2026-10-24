@@ -4,7 +4,7 @@
 - Learning Dashboard 增加本地进度 JSON 导出、导入与确认覆盖，解决清理浏览器数据或更换设备时难以迁移学习状态的问题；数据不上传服务器。
 - 备份只包含已发布的 40 个节点完成状态，导入使用严格的版本与键白名单、大小限制和重复项检查，不改动无关 localStorage 项。
 - 修复同标签页导入后 Dashboard 不会自动刷新的问题；增加导出、恢复、取消、恶意键与超大文件回归测试，纳入部署前 CI。
-- 保持 v0.18、40 节点和既有学习进度键不变；以合并后的 GitHub Actions 验证与 Pages 部署结果作为上线依据。
+- 保持 v0.18、40 节点和既有学习进度键不变。[PR #17](https://github.com/TempleHao/ai-learning-platform/pull/17) 已合并（e346dec）；[Actions 40054414831](https://github.com/TempleHao/ai-learning-platform/actions/runs/40054414831) 的 verify 与 Pages deploy 均成功。真实浏览器和移动端导入 / 下载仍待人工验收。
 
 
 ## 2026-10-24 · Corner icon & favicon consistency correction
