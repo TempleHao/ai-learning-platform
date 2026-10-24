@@ -29,6 +29,19 @@
       <div class="dashboard-note"><b>40 个可完成节点</b><span>9 核心章节 + 9 章内 Lab + 10 Deep Dive + 12 专项 Lab</span></div>
     </section>
 
+    <section class="progress-backup" aria-labelledby="backupTitle">
+      <div class="progress-backup-copy">
+        <h2 id="backupTitle">备份与恢复学习进度</h2>
+        <p>学习记录只保存在本机浏览器。导出 JSON 可以迁移到其他设备或在清除浏览器数据后恢复；导入将覆盖当前 40 个学习节点的完成状态，不会上传文件。</p>
+      </div>
+      <div class="progress-backup-controls">
+        <button id="exportProgress" type="button">导出进度 JSON</button>
+        <button id="importProgress" type="button">从备份恢复</button>
+        <input id="importProgressFile" type="file" accept=".json,application/json" hidden aria-label="选择学习进度备份 JSON 文件" />
+        <p id="backupStatus" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
     <section class="progress-section">
       <div class="progress-section-head"><div><span>CORE PATH</span><h2>核心地图 · 00–08</h2></div><button id="resetProgress">重置本地进度</button></div>
       <p class="section-note">第一轮先完成主干。每章同时记录“阅读完成”和章内 Lab，两者分别计入整体进度。</p>
@@ -60,6 +73,7 @@
     <footer>AI Learning OS · Learning Dashboard · 本页只读取当前浏览器本地学习状态。</footer>
   </main>
 <script src="assets/progress.js"></script>
+<script src="assets/progress-backup.js"></script>
 <script src="/ai-learning-platform/assets/brand.js"></script>
 <script src="/ai-learning-platform/assets/corner-brand-v3.js?v=20261024c"></script></body>
 </html>

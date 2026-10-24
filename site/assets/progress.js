@@ -66,6 +66,8 @@ document.getElementById('resetProgress')?.addEventListener('click',()=>{
   render();
 });
 render();
+// Same-tab imports do not trigger native storage events.
+window.addEventListener('ai-learning-progress-updated', render);
 window.addEventListener('storage', event => {
   if (event.key === null || (event.key && event.key.startsWith('ai-learning-'))) render();
 });

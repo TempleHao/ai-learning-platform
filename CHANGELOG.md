@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2026-10-24 · Local progress backup and restore (v0.18 maintenance)
+- Learning Dashboard 增加本地进度 JSON 导出、导入与确认覆盖，解决清理浏览器数据或更换设备时难以迁移学习状态的问题；数据不上传服务器。
+- 备份只包含已发布的 40 个节点完成状态，导入使用严格的版本与键白名单、大小限制和重复项检查，不改动无关 localStorage 项。
+- 修复同标签页导入后 Dashboard 不会自动刷新的问题；增加导出、恢复、取消、恶意键与超大文件回归测试，纳入部署前 CI。
+- 保持 v0.18、40 节点和既有学习进度键不变；以合并后的 GitHub Actions 验证与 Pages 部署结果作为上线依据。
+
+
 ## 2026-10-24 · Corner icon & favicon consistency correction
 - Fix: browser tab used a separately drawn SVG favicon, visually different from the approved Scheme 1 logo. Replace with a transparent 64px PNG made from the same approved artwork.
 - Add dedicated 180px iOS home-screen icon; use new filenames to avoid stale favicon caches.

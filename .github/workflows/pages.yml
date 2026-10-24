@@ -29,6 +29,8 @@ jobs:
         run: node scripts/check-site-links.mjs
       - name: Test learning progress sync
         run: node scripts/test-progress-sync.mjs
+      - name: Test local progress backup and restore
+        run: node scripts/test-progress-backup.mjs
       - name: Test chapter progress sync
         run: node scripts/test-chapter-progress.mjs
       - name: Test Physical AI calculator
