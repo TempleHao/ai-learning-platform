@@ -34,6 +34,8 @@ AI Learning OS 是一个长期维护的中文 AI 学习项目。它把技术演�
 
 **可完成节点总数：9 Core + 9 Core Labs + 10 Deep Dive + 12 Lab Track = 40。** 案例、术语与雷达信号单独统计，避免重复计数。
 
+**进度备份与迁移**：Learning Dashboard 支持将 40 个节点的完成状态导出为 JSON 文件，并从备份恢复。备份保存在用户设备上，网站不接收文件；导入前会确认覆盖当前进度。换设备或清理浏览器数据前建议先导出，其他站点数据不会随备份迁移。
+
 ## 建议学习顺序
 
 1. **建立地图**：从 Core 00 开始，完成核心章节及配套实验。
@@ -80,13 +82,14 @@ AI Learning OS 是一个长期维护的中文 AI 学习项目。它把技术演�
 
 ```bash
 node scripts/test-progress-sync.mjs
+node scripts/test-progress-backup.mjs
 node scripts/test-physical-ai.mjs
 node scripts/test-v018-integration.mjs
 node scripts/check-site-links.mjs
 node scripts/test-branding.mjs
 ```
 
-这些脚本分别检查学习进度、Physical AI 成本模型、40 节点集成（含 Lab 12 跨标签页清空进度的回归测试）和站内链接。自动校验已接入 GitHub Pages 部署前的验证步骤；真实浏览器与移动端仍需单独验收。
+这些脚本分别检查学习进度、JSON 备份与恢复、Physical AI 成本模型、40 节点集成（含 Lab 12 跨标签页清空进度的回归测试）和站内链接。自动校验已接入 GitHub Pages 部署前的验证步骤；真实浏览器与移动端仍需单独验收。
 
 ## 版本与更新记录
 

@@ -31,6 +31,9 @@ function dashboardTest() {
   listeners.storage({ key: 'ai-learning-tracklab-12' });
   assert.equal(nodes.trackCount.textContent, '1 / 12');
   assert.match(nodes.trackLabList.innerHTML, /labs\/lab12\.html/);
+  storage.setItem('ai-learning-tracklab-11', '1');
+  listeners['ai-learning-progress-updated']();
+  assert.equal(nodes.trackCount.textContent, '2 / 12', 'same-tab import refreshes Dashboard');
   listeners['resetProgress:click']();
   assert.equal(nodes.trackCount.textContent, '0 / 12');
 }
