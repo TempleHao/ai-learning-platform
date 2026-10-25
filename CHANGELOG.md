@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2026-10-25 · Pages deployment retry artifact fix
+- PR #18 的静态检查与课程回归验证通过；main Actions 40152696463 首次部署失败，日志显示 GitHub Pages ID Token 请求超时，`id-token: write` 权限在 workflow 中已配置。
+- 重试该 run 时产生两份同名 `github-pages` artifact，导致 `deploy-pages` 无法选择唯一工件；这与课程代码或内容检查无关。
+- 修复 Pages 工作流：上传与部署使用 `github-pages-${{ github.run_attempt }}` 配对命名，使后续重试的工件可唯一识别。新版本是否成功部署以 GitHub Actions 实际结果为准。
+
+
 ## 2026-10-25 · Dashboard counts and mobile readability (v0.18 maintenance / v0.19 audit)
 - 修复 Dashboard 仅展示 Core / Deep Dive / Track 三类数量、遗漏 9 个章内 Lab 独立计数的问题；现在四类完成数与 40 节点总百分比可相互核对。
 - 调整进度页响应式统计卡片、阅读字号、文字对比度、按钮触控区域与键盘焦点；补充减少动画偏好支持。
