@@ -19,9 +19,10 @@
     <section class="progress-hero">
       <span>YOUR LEARNING DASHBOARD</span>
       <h1>学习进度</h1>
-      <p>这里读取当前浏览器的 Local Storage，把主干、深化和实战放到同一张进度图里。数据不上传；换浏览器或清除站点数据后会重置。</p>
-      <div class="progress-summary">
+      <p>这里读取当前浏览器的 Local Storage，把主干、深化和实战放到同一张进度图里。数据不上传；更换浏览器或清除站点数据会丢失本机记录，请提前在下方导出备份。</p>
+      <div class="progress-summary" role="group" aria-label="40 个学习节点的完成统计">
         <div><strong id="coreCount">0 / 9</strong><span>核心章节</span></div>
+        <div><strong id="coreLabCount">0 / 9</strong><span>章内 Lab</span></div>
         <div><strong id="deepCount">0 / 10</strong><span>Deep Dive</span></div>
         <div><strong id="trackCount">0 / 12</strong><span>专项 Lab Track</span></div>
         <div><strong id="overallPercent">0%</strong><span>整体学习闭环</span></div>
@@ -43,7 +44,7 @@
     </section>
 
     <section class="progress-section">
-      <div class="progress-section-head"><div><span>CORE PATH</span><h2>核心地图 · 00–08</h2></div><button id="resetProgress">重置本地进度</button></div>
+      <div class="progress-section-head"><div><span>CORE PATH</span><h2>核心地图 · 00–08</h2></div><button id="resetProgress" type="button">重置本地进度</button></div>
       <p class="section-note">第一轮先完成主干。每章同时记录“阅读完成”和章内 Lab，两者分别计入整体进度。</p>
       <div class="progress-list" id="coreList"></div>
     </section>
