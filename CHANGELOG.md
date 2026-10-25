@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2026-10-25 · Dashboard counts and mobile readability (v0.18 maintenance / v0.19 audit)
+- 修复 Dashboard 仅展示 Core / Deep Dive / Track 三类数量、遗漏 9 个章内 Lab 独立计数的问题；现在四类完成数与 40 节点总百分比可相互核对。
+- 调整进度页响应式统计卡片、阅读字号、文字对比度、按钮触控区域与键盘焦点；补充减少动画偏好支持。
+- 扩展现有 CI 进度同步测试，覆盖章内 Lab 计数、40 节点百分比、重置和页面可读性标记。保留既有本地存储键和 v0.18 版本；实际 Pages 发布状态以 Actions 结果为准。
+
+
 ## 2026-10-24 · Local progress backup and restore (v0.18 maintenance)
 - Learning Dashboard 增加本地进度 JSON 导出、导入与确认覆盖，解决清理浏览器数据或更换设备时难以迁移学习状态的问题；数据不上传服务器。
 - 备份只包含已发布的 40 个节点完成状态，导入使用严格的版本与键白名单、大小限制和重复项检查，不改动无关 localStorage 项。

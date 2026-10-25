@@ -52,6 +52,7 @@ function render(){
   }).join('');
 
   document.getElementById('coreCount').textContent=`${coreDone} / ${core.length}`;
+  document.getElementById('coreLabCount').textContent=`${coreLabDone} / ${core.length}`;
   document.getElementById('deepCount').textContent=`${deepDone} / ${deep.length}`;
   document.getElementById('trackCount').textContent=`${trackDone} / ${track.length}`;
   const total=core.length+core.length+deep.length+track.length;
