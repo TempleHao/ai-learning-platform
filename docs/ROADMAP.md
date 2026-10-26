@@ -143,6 +143,10 @@ Last reviewed: 2026-10-26
 - 导入前明确提示覆盖，使用节点白名单校验文件，不影响其他站点数据；同标签页导入后立即刷新 Dashboard。
 - 增加自动化回归测试并纳入 Pages 发布前验证；不增加课程节点或提升正式版本。[PR #17](https://github.com/TempleHao/ai-learning-platform/pull/17) 已合并（e346dec），[main 的 Actions 40054414831](https://github.com/TempleHao/ai-learning-platform/actions/runs/40054414831) 验证与 Pages 部署均成功；真实浏览器和移动端下载 / 导入验收仍待完成。
 
+## 2026-10-26 · 首页续学入口
+- 首页已接入本机核心章节完成状态，优先进入第一章未完成章节，避免每次固定返回第 0 章。
+- 后续待办：精确记录上次阅读位置、显式“继续上次阅读”、真实浏览器验收及跨设备同步方案。
+
 ## v0.19 · Content Audit
 
 目标：停止扩张，系统审校。
