@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2026-10-26 · Homepage resume learning (v0.18 maintenance)
+- 首页“开始第 0 章”改为基于本机核心章节完成状态的动态续学入口；全部核心章节完成后转向 Dashboard。
+- 保留原有完成状态键，不修改已有记录；阅读到的段落位置尚未实现，跨设备仍需 JSON 手动迁移。
+
+
 ## 2026-10-26 · Mobile navigation keyboard and accessibility audit (v0.18 maintenance / v0.19)
 - 修复首页与 Core / Deep Dive 课程的移动侧栏：收起时使用 inert 避免键盘焦点进入屏幕外链接；展开状态同步 aria-expanded / aria-controls / 按钮名称。
 - 支持 Escape 关闭并将焦点返回菜单按钮，点击导航项关闭侧栏，屏幕尺寸变化时恢复桌面导航可访问性。
