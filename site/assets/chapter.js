@@ -1,6 +1,25 @@
 const toc=document.getElementById('chapterToc');
-document.getElementById('chapterMenu')?.addEventListener('click',()=>toc.classList.toggle('open'));
-document.querySelectorAll('.chapter-toc nav a').forEach(a=>a.addEventListener('click',()=>toc.classList.remove('open')));
+const chapterMenu=document.getElementById('chapterMenu');
+const chapterMobile=window.matchMedia?.('(max-width:900px)');
+function setChapterMenuOpen(open,restoreFocus=false){
+  if(!toc||!chapterMenu)return;
+  const expanded=Boolean(open&&(chapterMobile?.matches??true));
+  toc.classList.toggle('open',expanded);
+  toc.inert=Boolean(chapterMobile?.matches&&!expanded);
+  chapterMenu.setAttribute('aria-controls','chapterToc');
+  chapterMenu.setAttribute('aria-expanded',String(expanded));
+  chapterMenu.setAttribute('aria-label',expanded?'关闭目录':'打开目录');
+  if(restoreFocus)chapterMenu.focus();
+}
+if(toc&&chapterMenu){
+  setChapterMenuOpen(false);
+  chapterMenu.addEventListener('click',()=>setChapterMenuOpen(!toc.classList.contains('open')));
+  document.querySelectorAll('.chapter-toc nav a').forEach(a=>a.addEventListener('click',()=>setChapterMenuOpen(false)));
+  document.addEventListener('keydown',event=>{
+    if(event.key==='Escape'&&toc.classList.contains('open'))setChapterMenuOpen(false,true);
+  });
+  chapterMobile?.addEventListener?.('change',()=>setChapterMenuOpen(false));
+}
 const sections=[...document.querySelectorAll('.chapter-section[id],.chapter-hero[id]')],links=[...document.querySelectorAll('.chapter-toc nav a')];
 const ob=new IntersectionObserver(es=>{const v=es.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(!v)return;links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+v.target.id));},{rootMargin:'-20% 0px -65% 0px',threshold:[0,.2,.5]});
 sections.forEach(s=>ob.observe(s));

@@ -1,6 +1,6 @@
 # AI Learning OS · Roadmap
 
-Last reviewed: 2026-10-25
+Last reviewed: 2026-10-26
 
 ## 终极目标
 
@@ -146,6 +146,8 @@ Last reviewed: 2026-10-25
 ## v0.19 · Content Audit
 
 目标：停止扩张，系统审校。
+
+2026-10-26 导航无障碍修复：首页和 Core / Deep Dive 课程移动菜单增加键盘焦点隔离、ARIA 展开状态、Escape 返回焦点与响应式恢复；新增自动回归测试并纳入部署前验证。真实手机 / 屏幕阅读器验收仍待完成，合并和 Pages 上线以 Actions 为准。
 
 2026-10-25 发布流程补强：主分支部署曾遇 GitHub ID Token 请求超时，重试触发同名 Pages artifact 冲突；工作流已改为按运行尝试编号命名 artifact。需要核实修复后的 Pages 部署作业，不将 CI 成功等同于上线。
 
