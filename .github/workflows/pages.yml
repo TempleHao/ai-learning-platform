@@ -33,6 +33,8 @@ jobs:
         run: node scripts/test-progress-backup.mjs
       - name: Test chapter progress sync
         run: node scripts/test-chapter-progress.mjs
+      - name: Test accessible mobile navigation
+        run: node scripts/test-mobile-navigation.mjs
       - name: Test Physical AI calculator
         run: node scripts/test-physical-ai.mjs
       - name: Test v0.18 integration

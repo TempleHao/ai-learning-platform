@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2026-10-26 · Mobile navigation keyboard and accessibility audit (v0.18 maintenance / v0.19)
+- 修复首页与 Core / Deep Dive 课程的移动侧栏：收起时使用 inert 避免键盘焦点进入屏幕外链接；展开状态同步 aria-expanded / aria-controls / 按钮名称。
+- 支持 Escape 关闭并将焦点返回菜单按钮，点击导航项关闭侧栏，屏幕尺寸变化时恢复桌面导航可访问性。
+- 新增移动 / 桌面状态、键盘操作与焦点回归测试并接入 Pages 验证；40 个学习节点、进度键、课程内容和 v0.18 版本保持不变。合并与上线以 Actions 实际结果为准。
+
 ## 2026-10-25 · Pages deployment retry artifact fix
 - PR #18 的静态检查与课程回归验证通过；main Actions 40152696463 首次部署失败，日志显示 GitHub Pages ID Token 请求超时，`id-token: write` 权限在 workflow 中已配置。
 - 重试该 run 时产生两份同名 `github-pages` artifact，导致 `deploy-pages` 无法选择唯一工件；这与课程代码或内容检查无关。
