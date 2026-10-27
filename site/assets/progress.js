@@ -64,6 +64,8 @@ document.getElementById('resetProgress')?.addEventListener('click',()=>{
   core.forEach(c=>{localStorage.removeItem(`ai-learning-ch${c.id}-done`);localStorage.removeItem(`ai-learning-lab${c.id}`)});
   deep.forEach(d=>localStorage.removeItem(`ai-learning-ch${d.id}-done`));
   track.forEach(([id])=>localStorage.removeItem(`ai-learning-tracklab-${id}`));
+  // 用户明确重置全部本机进度时，也清除最近阅读书签。
+  localStorage.removeItem('ai-learning-last-read-v1');
   render();
 });
 render();

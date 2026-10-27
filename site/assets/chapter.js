@@ -20,8 +20,28 @@ if(toc&&chapterMenu){
   });
   chapterMobile?.addEventListener?.('change',()=>setChapterMenuOpen(false));
 }
+// 本机阅读书签：独立于 40 个完成节点，保存最近阅读的章节和小节。
+const readingKey = 'ai-learning-last-read-v1';
+const pageMatch = window.location?.pathname?.match(/(?:^|\/)(chapters|deep-dives)\/([0-9]{2}-[a-z0-9-]+\.html)$/);
+const readingPath = pageMatch ? pageMatch[1] + '/' + pageMatch[2] : null;
+let recordedSection = '';
+function saveReadingSection(section) {
+  if (!readingPath || !section || !document.getElementById(section) || section === recordedSection) return;
+  try {
+    localStorage.setItem(readingKey, JSON.stringify({ path: readingPath, section, at: Date.now() }));
+    recordedSection = section;
+  } catch { /* 浏览器禁用存储时，课程仍可正常阅读。 */ }
+}
+function rememberHashSection() {
+  const section = window.location?.hash?.slice(1);
+  if (section && /^[a-z][a-z0-9-]{0,48}$/.test(section)) saveReadingSection(section);
+}
+rememberHashSection();
+if (!recordedSection) saveReadingSection(document.querySelector('.chapter-hero[id]')?.id);
+window.addEventListener('hashchange', rememberHashSection);
+
 const sections=[...document.querySelectorAll('.chapter-section[id],.chapter-hero[id]')],links=[...document.querySelectorAll('.chapter-toc nav a')];
-const ob=new IntersectionObserver(es=>{const v=es.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(!v)return;links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+v.target.id));},{rootMargin:'-20% 0px -65% 0px',threshold:[0,.2,.5]});
+const ob=new IntersectionObserver(es=>{const v=es.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(!v)return;saveReadingSection(v.target.id);links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+v.target.id));},{rootMargin:'-20% 0px -65% 0px',threshold:[0,.2,.5]});
 sections.forEach(s=>ob.observe(s));
 const ch=document.body.dataset.chapter||'unknown',doneKey=`ai-learning-ch${ch}-done`;
 const status=document.getElementById('chapterStatus'),btn=document.getElementById('completeChapter'),lab=document.querySelector('[data-lab]');

@@ -40,7 +40,9 @@ function dashboardTest() {
   storage.setItem('ai-learning-tracklab-11', '1');
   listeners['ai-learning-progress-updated']();
   assert.equal(nodes.trackCount.textContent, '2 / 12', 'same-tab import refreshes Dashboard');
+  storage.setItem('ai-learning-last-read-v1', '{\"path\":\"chapters/00-world-map.html\"}');
   listeners['resetProgress:click']();
+  assert.equal(storage.getItem('ai-learning-last-read-v1'), null, 'reset clears last-read bookmark');
   assert.equal(nodes.trackCount.textContent, '0 / 12');
   assert.equal(nodes.coreLabCount.textContent, '0 / 9', 'Reset clears Core Lab count');
   assert.equal(nodes.overallPercent.textContent, '0%', 'Reset clears overall progress');

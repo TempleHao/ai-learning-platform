@@ -40,7 +40,7 @@ AI Learning OS 是一个长期维护的中文 AI 学习项目。它把技术演�
 
 **进度备份与迁移**：Learning Dashboard 支持将 40 个节点的完成状态导出为 JSON 文件，并从备份恢复。备份保存在用户设备上，网站不接收文件；导入前会确认覆盖当前进度。换设备或清理浏览器数据前建议先导出，其他站点数据不会随备份迁移。
 
-**首页续学入口（2026-10-26）**：首页主按钮按当前浏览器已完成的核心章节，指向第一章未完成内容；全部核心章节完成时进入 Dashboard。使用原有 localStorage 完成键，暂不保存阅读到的段落位置。
+**本机学习记忆（2026-10-27）**：Core 00–08 与 Deep Dive 01–10 自动记录最近阅读的课程和小节（本地书签）；首页分别提供“继续上次阅读”和“下一未完成章”，没有书签时按既有完成记录选择下一章。书签只在当前浏览器有效，不改变 40 个完成节点，也不包含在现有 JSON 进度备份中。重置本机全部进度时会清除书签。浏览器禁用存储时保留静态课程入口。书签定位到小节，不保证精确到段落或滚动像素；跨设备同步与真实手机验收仍待完成。
 
 ## 建议学习顺序
 
@@ -88,6 +88,7 @@ AI Learning OS 是一个长期维护的中文 AI 学习项目。它把技术演�
 
 ```bash
 node scripts/test-progress-sync.mjs
+node scripts/test-reading-memory.mjs
 node scripts/test-mobile-navigation.mjs
 node scripts/test-progress-backup.mjs
 node scripts/test-physical-ai.mjs
