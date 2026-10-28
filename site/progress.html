@@ -19,7 +19,7 @@
     <section class="progress-hero">
       <span>YOUR LEARNING DASHBOARD</span>
       <h1>学习进度</h1>
-      <p>这里读取当前浏览器的 Local Storage，把主干、深化和实战放到同一张进度图里。数据不上传；更换浏览器或清除站点数据会丢失本机记录，请提前在下方导出备份。最近阅读小节只在当前浏览器保存，不包含在 40 节点 JSON 备份中。</p>
+      <p>这里读取当前浏览器的 Local Storage，把主干、深化和实战放到同一张进度图里。数据不上传；更换浏览器或清除站点数据会丢失本机记录，请提前在下方导出备份。最近阅读小节与 40 个完成节点都可导出备份；不同设备之间仍需手动迁移 JSON。</p>
       <div class="progress-summary" role="group" aria-label="40 个学习节点的完成统计">
         <div><strong id="coreCount">0 / 9</strong><span>核心章节</span></div>
         <div><strong id="coreLabCount">0 / 9</strong><span>章内 Lab</span></div>
@@ -32,8 +32,8 @@
 
     <section class="progress-backup" aria-labelledby="backupTitle">
       <div class="progress-backup-copy">
-        <h2 id="backupTitle">备份与恢复学习进度</h2>
-        <p>学习记录只保存在本机浏览器。导出 JSON 可以迁移到其他设备或在清除浏览器数据后恢复；导入将覆盖当前 40 个学习节点的完成状态，不会上传文件。</p>
+        <h2 id="backupTitle">备份与恢复学习进度及阅读书签</h2>
+        <p>学习记录只保存在本机浏览器。导出 JSON 可以迁移到其他设备或在清除浏览器数据后恢复；新版 JSON 同时保存最近阅读小节；导入将覆盖当前 40 个学习节点的完成状态与本机阅读书签。旧版 JSON 仍可恢复完成进度，但会清除原有书签以避免误导。文件不会上传。</p>
       </div>
       <div class="progress-backup-controls">
         <button id="exportProgress" type="button">导出进度 JSON</button>
