@@ -147,7 +147,7 @@ Last reviewed: 2026-10-28
 - 2026-10-26 已完成按章节完成键进入第一未完成章节的首页入口。
 - 本轮为 Core 与 Deep Dive 新增最近阅读小节书签，首页分设“继续上次阅读”与“下一未完成章”，并覆盖异常数据与禁用存储回退。
 - 书签只保存小节锚点（非像素级滚动位置），不增加或更改 40 节点计数；重置学习进度会清除书签。
-- 2026-10-28：新增 JSON v2 书签备份迁移（兼容旧 v1）、导入书签一致性策略及恶意数据回归测试；PR 合并和部署以 Actions 为准。
+- 2026-10-28：新增 JSON v2 书签备份迁移（兼容旧 v1）、导入书签一致性策略及恶意数据回归测试；[PR #22](https://github.com/TempleHao/ai-learning-platform/pull/22) 已合并，[Actions 40617724248](https://github.com/TempleHao/ai-learning-platform/actions/runs/40617724248) 验证与 Pages 部署成功。
 - 未完成：真实桌面 / 移动端交互验收、跨设备自动同步、课程事实与外链全面审校。
 
 ## v0.19 · Content Audit

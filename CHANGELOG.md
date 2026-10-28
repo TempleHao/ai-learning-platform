@@ -4,7 +4,7 @@
 - Learning Dashboard 的 JSON 备份升级为 v2：导出 40 个完成节点及可选最近阅读小节书签；支持导入旧版 v1 备份。
 - 书签只允许已发布的 Core / Deep Dive 路径、合法小节标识与有效时间戳；导入异常数据直接拒绝，存储写入失败时尝试回滚完成节点及书签。
 - 旧版 v1 不含书签，恢复后清除当前书签，避免旧阅读位置误导；新版 v2 可一并迁移。新增回归测试覆盖恶意路径、取消、回滚和旧格式兼容。
-- 版本保持 v0.18 / 40 节点；真实浏览器与移动端文件选择、下载和恢复验收仍待完成。发布以 PR 合并及 Actions deploy 为准。
+- 版本保持 v0.18 / 40 节点；真实浏览器与移动端文件选择、下载和恢复验收仍待完成。[PR #22](https://github.com/TempleHao/ai-learning-platform/pull/22) 已合并；[Actions 40617724248](https://github.com/TempleHao/ai-learning-platform/actions/runs/40617724248) 验证与 Pages 部署成功。
 
 ## 2026-10-27 · Local reading memory and two-way resume (v0.18 maintenance / v0.19 UX audit)
 - Core 00–08 和 Deep Dive 01–10 记录最近阅读的小节书签，首页分开显示“继续上次阅读”和“下一未完成章”；支持跨标签页 / 返回首页刷新。
