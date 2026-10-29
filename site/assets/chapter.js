@@ -45,10 +45,43 @@ const ob=new IntersectionObserver(es=>{const v=es.filter(e=>e.isIntersecting).so
 sections.forEach(s=>ob.observe(s));
 const ch=document.body.dataset.chapter||'unknown',doneKey=`ai-learning-ch${ch}-done`;
 const status=document.getElementById('chapterStatus'),btn=document.getElementById('completeChapter'),lab=document.querySelector('[data-lab]');
-function render(){const done=localStorage.getItem(doneKey)==='1';if(status)status.textContent=done?'已完成':'未完成';if(btn)btn.textContent=done?'取消完成':'标记本章完成';if(lab){const key=`ai-learning-lab${lab.dataset.lab}`;lab.checked=localStorage.getItem(key)==='1'}}
+let progressReadable = true;
+function readProgress(key) {
+  try { return localStorage.getItem(key) === '1'; }
+  catch { progressReadable = false; return false; }
+}
+function render() {
+  const done = readProgress(doneKey);
+  if (status) status.textContent = progressReadable ? (done ? '已完成' : '未完成') : '无法读取本机进度';
+  if (btn) {
+    btn.textContent = done ? '取消完成' : '标记本章完成';
+    btn.disabled = !progressReadable;
+    if (!progressReadable) btn.title = '当前浏览器无法保存学习进度';
+  }
+  if (lab) {
+    lab.checked = readProgress(`ai-learning-lab${lab.dataset.lab}`);
+    lab.disabled = !progressReadable;
+    if (!progressReadable) lab.title = '当前浏览器无法保存学习进度';
+  }
+}
+function progressWriteFailed() {
+  if (status) status.textContent = '保存失败：本机存储不可用';
+}
 render();
-btn?.addEventListener('click',()=>{localStorage.setItem(doneKey,localStorage.getItem(doneKey)==='1'?'0':'1');document.querySelector('.toc-progress')?.classList.add('complete-flash');setTimeout(()=>document.querySelector('.toc-progress')?.classList.remove('complete-flash'),850);render()});
-lab?.addEventListener('change',()=>localStorage.setItem(`ai-learning-lab${lab.dataset.lab}`,lab.checked?'1':'0'));
+btn?.addEventListener('click', () => {
+  if (!progressReadable) return;
+  try { localStorage.setItem(doneKey, readProgress(doneKey) ? '0' : '1'); }
+  catch { progressWriteFailed(); return; }
+  document.querySelector('.toc-progress')?.classList.add('complete-flash');
+  setTimeout(() => document.querySelector('.toc-progress')?.classList.remove('complete-flash'), 850);
+  render();
+});
+lab?.addEventListener('change', () => {
+  if (!progressReadable) return;
+  const key = `ai-learning-lab${lab.dataset.lab}`;
+  try { localStorage.setItem(key, lab.checked ? '1' : '0'); }
+  catch { lab.checked = readProgress(key); progressWriteFailed(); }
+});
 if(document.body.dataset.chapter && !document.querySelector('script[data-extension-resources]')){
   const resourceScript=document.createElement('script');
   resourceScript.src='/ai-learning-platform/assets/resources.js';
