@@ -87,11 +87,38 @@ homeListeners.pageshow();
 assert.equal(resume.href, 'progress.html');
 assert.equal(next.hidden, true);
 
-// 禁用 localStorage 时首页仍可退化到静态入口，不会阻断阅读。
+// 禁用 localStorage 时：首页的 Lab 复选框不应中断续学入口初始化。
 const denied = { getItem() { throw Error('Storage denied'); } };
+const deniedBox = { dataset: { progress: 'lab1' }, checked: true, disabled: false };
+const deniedDocument = {
+  ...homeDocument,
+  querySelectorAll: selector => selector === '[data-progress]' ? [deniedBox] : []
+};
 vm.runInNewContext(fs.readFileSync('site/assets/app.js', 'utf8'), {
-  document: homeDocument, window: { addEventListener() {} }, localStorage: denied, Date,
+  document: deniedDocument, window: { addEventListener() {} }, localStorage: denied, Date,
   IntersectionObserver: class { observe() {} }
 });
-assert.match(hint.textContent, /无法读取/);
-console.log('Reading memory checks passed: section resume, fallback, allowlist, storage failure.');
+assert.equal(deniedBox.checked, false);
+assert.equal(deniedBox.disabled, true, 'unavailable storage disables misleading completion checkbox');
+assert.match(deniedBox.title, /无法保存/);
+assert.match(hint.textContent, /无法读取/, 'resume fallback still renders after checkbox storage error');
+
+// 存储可读但写入失败时，复选框必须回滚并停止接受误导性输入。
+const quotaBox = {
+  dataset: { progress: 'lab1' }, checked: false, disabled: false, listeners: {},
+  addEventListener(type, fn) { this.listeners[type] = fn; }
+};
+vm.runInNewContext(fs.readFileSync('site/assets/app.js', 'utf8'), {
+  document: {
+    ...homeDocument,
+    querySelectorAll: selector => selector === '[data-progress]' ? [quotaBox] : []
+  },
+  window: { addEventListener() {} },
+  localStorage: { getItem: () => '0', setItem() { throw Error('Quota denied'); } },
+  Date, IntersectionObserver: class { observe() {} }
+});
+quotaBox.checked = true;
+quotaBox.listeners.change();
+assert.equal(quotaBox.checked, false, 'failed write must not appear completed');
+assert.equal(quotaBox.disabled, true);
+console.log('Reading memory checks passed: section resume, fallback, allowlist, denied read/write.');
