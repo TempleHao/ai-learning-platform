@@ -1,10 +1,10 @@
 # CHANGELOG
 
-## 2026-10-29 · Browser storage failure fallback (PR validation pending)
+## 2026-10-29 · Browser storage failure fallback (merged and deployed)
 - 修复首页章内 Lab 复选框：Local Storage 拒绝读取时禁用控件，仍能渲染续学入口；拒绝写入时回滚勾选状态并提示无法保存。
 - 修复 Core / Deep Dive 课程页：存储读取失败时课程内容保持可读，完成按钮和章内 Lab 不会误报成功；写入失败时明确显示保存失败。
 - 新增模拟存储拒绝读取和写入的回归断言，复用现有部署前检查；保留 v0.18、40 节点、阅读书签和 v1/v2 JSON 备份兼容。
-- 状态：开发分支已提交，等待 PR verify；尚未合并或部署，真实浏览器验收待完成。
+- 验证与发布：PR #23 verify 成功（run 40879066691），合并提交 153ff9b 的 main verify / deploy 成功（run 40879133281）；真实浏览器验收待完成。
 
 
 ## 2026-10-28 · Local reading bookmark backup (v0.18 maintenance / v0.19 UX audit)
