@@ -36,10 +36,24 @@ const observer = new IntersectionObserver(entries => {
 }, { rootMargin: '-25% 0px -55% 0px', threshold: [0, .2, .5] });
 sections.forEach(s => observer.observe(s));
 
+// Progress controls remain readable when storage is denied; do not imply a
+// checkbox was saved if the browser rejected the write.
 document.querySelectorAll('[data-progress]').forEach(box => {
   const key = `ai-learning-${box.dataset.progress}`;
-  box.checked = localStorage.getItem(key) === '1';
-  box.addEventListener('change', () => localStorage.setItem(key, box.checked ? '1' : '0'));
+  const unavailable = () => {
+    box.disabled = true;
+    box.title = '当前浏览器无法保存学习进度';
+  };
+  try { box.checked = localStorage.getItem(key) === '1'; }
+  catch { box.checked = false; unavailable(); return; }
+  box.addEventListener('change', () => {
+    try { localStorage.setItem(key, box.checked ? '1' : '0'); }
+    catch {
+      try { box.checked = localStorage.getItem(key) === '1'; }
+      catch { box.checked = false; }
+      unavailable();
+    }
+  });
 });
 
 
