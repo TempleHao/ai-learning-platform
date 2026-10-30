@@ -35,6 +35,8 @@ jobs:
         run: node scripts/test-progress-backup.mjs
       - name: Test chapter progress sync
         run: node scripts/test-chapter-progress.mjs
+      - name: Test Core 02 worked examples and generalization
+        run: node scripts/test-core02-depth.mjs
       - name: Test accessible mobile navigation
         run: node scripts/test-mobile-navigation.mjs
       - name: Test Physical AI calculator
