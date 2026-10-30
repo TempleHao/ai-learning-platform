@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2026-10-30 · Core 02 worked gradient and generalization (v0.19 content audit)
+- 为《模型为什么能学会东西》新增与既有训练按钮一致的五样本 MSE 推导、梯度更新手算、学习率过大反例和可复算的答案。
+- 补充训练/验证/测试集边界、数据泄漏错误诊断、训练误差与泛化反例、商户拒付预测的时间切分迁移练习及一手教材章节来源。
+- 同步章节 Markdown 源稿、目录和两道自测；新增实际执行 Mini Lab 的 Node 回归并接入 PR / main verify。保持 v0.18、40 节点及既有学习进度/书签/备份协议。真实浏览器验收待完成；上线以 main deploy 结果为准。
+
 ## 2026-10-29 · Browser storage failure fallback (merged and deployed)
 - 修复首页章内 Lab 复选框：Local Storage 拒绝读取时禁用控件，仍能渲染续学入口；拒绝写入时回滚勾选状态并提示无法保存。
 - 修复 Core / Deep Dive 课程页：存储读取失败时课程内容保持可读，完成按钮和章内 Lab 不会误报成功；写入失败时明确显示保存失败。
