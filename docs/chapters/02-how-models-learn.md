@@ -61,6 +61,12 @@ Loss(w) = Σ(wx−2x)² / 5 = 2(w−2)²。
 
 把一个真实 AI 应用拆成：输入 → 模型任务 → 外部信息/工具 → Eval / 人审。
 
+## 中文优先延伸
+
+- 《动手学深度学习》3.2 节“线性回归的从零开始实现”：重点 3.2.5–3.2.7（损失、优化、训练），20–30 分钟，基础进阶。注意其平方损失含 1/2 系数，本课程 Mini Lab 使用不含该系数的 MSE。
+- 《动手学深度学习》4.9 节“环境和分布偏移”：重点协变量偏移与部署变化，15–20 分钟，进阶。
+- 官方中文入口：https://zh.d2l.ai/chapter_linear-networks/linear-regression-scratch.html 与 https://zh.d2l.ai/chapter_multilayer-perceptrons/environment.html
+
 ## Sources
 
 Goodfellow/Bengio/Courville, Deep Learning（第 5 章 Machine Learning；第 6 章 Backpropagation）; Vaswani et al. 2017.
