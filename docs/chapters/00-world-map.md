@@ -12,11 +12,22 @@ AI 是一个宽泛领域，不等同于聊天机器人。NIST 的一个定义将
 
 判断 AI 能力时，重点看机器能否完成感知、表示、学习 / 推理、决策与行动中的一个或多个环节。
 
-## 0.2 必须掌握的包含关系
+## 0.2 方法包含关系与跨维度分类（2026-10-31 审校）
 
-AI ⊃ Machine Learning ⊃ Deep Learning ⊃ Foundation Models，其中 LLM 是 Foundation Model 的重要类别之一。
+严格的常用方法包含关系：AI ⊃ Machine Learning ⊃ Deep Learning。梯度提升树是机器学习但通常不属于深度学习；传统规则系统可能属于 AI 但未必使用 ML。
 
-注意：Agent、RAG、Multimodal、Reasoning、Robotics 分别属于系统架构、能力形态或软硬件系统，不能简单塞进同一个层级套娃。
+Foundation Model 是广泛数据预训练、可适配多种下游任务的模型类别（Stanford CRFM，2021）；LLM 描述以语言/Token 序列建模为核心的大规模模型。许多 LLM 同时符合基础模型定义；基础模型还覆盖视觉、语音及多模态模型。基础模型与 LLM 不宜画成严格覆盖所有情形的套娃。
+
+Agent、RAG、Robotics 是系统架构或物理系统范畴；Multimodal 是模态能力，Reasoning 是能力或过程。它们可以和模型类别交叉组合。
+
+### 0.2A 四例诊断（12 分钟）
+
+1. 梯度提升树拒付预测：ML；通常非 DL。阈值和申诉属于业务系统。
+2. 广泛预训练的通用 LLM：通常同时属于 DL、LLM 与 Foundation Model；须核对训练/适配证据。
+3. 检索订单→LLM 草稿→人工审批→发送：整体是应用系统；模型调用与系统包含关系不同。
+4. 摄像头+控制器的机械臂：机器人系统；未必需要 LLM。
+
+验收：任选两例，说明对象类别、两个依赖部件、一个无法由名称直接推导的结论；再画出第三例流程与人工审批关口。
 
 ## 0.3 模型与产品处在不同层级
 
@@ -48,9 +59,9 @@ AI ⊃ Machine Learning ⊃ Deep Learning ⊃ Foundation Models，其中 LLM 是
 - 2017：Transformer 提出。
 - 2020s：基础模型、生成式 AI、多模态、推理与 Agent 快速发展。
 
-## 0.6 Frontier Snapshot（2026）
+## 0.6 Frontier Snapshot（2026；核验 2026-10-31）
 
-Stanford 2026 AI Index 的数据提示：Agent 在真实计算机任务上明显进步，但可靠性仍不足；机器人在开放真实家庭环境中的表现远弱于数字世界 Agent。当前主线正在从“生成答案”向“可靠执行任务”迁移。
+Stanford HAI《2026 AI Index》汇总 2025 年及此前证据：OSWorld 计算机操作任务成功率 66.3%；报告所引真实家庭机器人任务成功率 12%；受调查组织在至少一项业务职能使用 AI 的比例 88%。三个数字对应不同任务、样本与评测口径，不能直接比较。阅读原报告第 2 章技术表现与第 4 章经济采用率，并分别追问基准环境、调查对象、失败模式。
 
 ## 0.7 初学者常见误区
 
@@ -58,11 +69,12 @@ AI ≠ ChatGPT；模型 ≠ 数据库；Benchmark ≠ 真实生产表现；Agent
 
 ## Lab 00
 
-看到任何 AI 新名词时，先把它放到四个抽屉：技术方法 / 模型与能力 / 系统架构 / 产品与产业。
+遇到新名词时先查证据，再放到四个可交叉的类别：技术方法 / 模型与能力 / 系统架构 / 产品与产业。请对两个实际例子写出对象类别、依赖部件和适用边界。
 
 ## Sources
 
 - NIST Artificial Intelligence Glossary
 - Dartmouth AI history
 - Vaswani et al. (2017), Attention Is All You Need
-- Stanford HAI 2026 AI Index
+- Stanford HAI 2026 AI Index（第 2 章 Technical Performance、第 4 章 Economy；2026-10-31 核验）
+- Stanford CRFM (2021), Reflections on Foundation Models, https://crfm.stanford.edu/2021/10/18/reflections.html
