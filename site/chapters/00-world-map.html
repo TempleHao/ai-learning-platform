@@ -18,7 +18,8 @@
     <nav>
       <a href="#start" class="active">0.0 为什么先学地图</a>
       <a href="#definition">0.1 AI 到底是什么</a>
-      <a href="#hierarchy">0.2 概念层级图</a>
+      <a href="#hierarchy">0.2 层级与交叉分类</a>
+      <a href="#taxonomy-drill">0.2A 分类诊断练习</a>
       <a href="#model">0.3 模型、产品、系统</a>
       <a href="#branches">0.4 主要能力分支</a>
       <a href="#timeline">0.5 一条极简历史线</a>
@@ -68,19 +69,28 @@
 
       <section class="chapter-section" id="hierarchy">
         <div class="section-kicker">0.2 · HIERARCHY</div>
-        <h2>第一张必须刻进脑子里的图：包含关系 ≠ 演进顺序</h2>
+        <h2>先画严格的包含关系，再辨认交叉分类</h2>
+        <p>这张图只展示方法上的包含关系：<strong>AI ⊃ ML ⊃ DL</strong>。传统规则系统可以属于 AI，但未必使用机器学习；梯度提升树属于机器学习，通常不属于深度学习。</p>
         <div class="hierarchy-map">
           <div class="h-ai"><b>Artificial Intelligence · AI</b><span>最大集合：让机器表现出智能能力</span>
             <div class="h-ml"><b>Machine Learning · ML</b><span>让系统从数据中学习规律，减少对手工规则的依赖</span>
-              <div class="h-dl"><b>Deep Learning · DL</b><span>以多层神经网络为核心的一大类机器学习方法</span>
-                <div class="h-fm"><b>Foundation Models</b><span>大规模预训练，可适配大量下游任务</span>
-                  <div class="h-llm"><b>Large Language Models · LLM</b><span>以语言/Token 序列为核心对象的一类基础模型</span></div>
-                </div>
-              </div>
+              <div class="h-dl"><b>Deep Learning · DL</b><span>以多层神经网络为核心的一大类机器学习方法；大多数当代基础模型与 LLM 使用深度学习。</span></div>
             </div>
           </div>
         </div>
-        <div class="callout warn"><b>注意</b><p>Agent、RAG、Multimodal、Reasoning、Robotics 并不能简单继续塞进上面的“俄罗斯套娃”。它们更多是能力、系统架构或应用形态。比如 Agent 可以使用 LLM，也可以调用搜索、数据库和软件工具；机器人则是 AI 与物理硬件结合的系统。</p></div>
+        <div class="callout idea"><b>另一条分类轴：基础模型与语言模型</b><p><strong>Foundation Model（基础模型）</strong>强调广泛数据上的预训练，以及适配多种下游任务的能力；Stanford CRFM 于 2021 年提出这一用法。<strong>LLM（大语言模型）</strong>强调以语言或 Token 序列为主要建模对象及其规模。很多 LLM 同时是基础模型，但“基础模型”还包括视觉、语音及多模态模型；两者的名称回答不同问题，不能把所有深度学习模型都归为基础模型。</p></div>
+        <div class="callout warn"><b>系统与能力也有各自的分类轴</b><p>RAG 是检索增强的应用架构；Agent 是围绕目标进行观察、决策与行动的系统设计；Multimodal 描述处理多种模态的能力；Reasoning 描述推理能力或过程；Robotics 涉及感知、控制、执行器与物理环境。它们可以组合，例如一个机器人系统可能调用多模态基础模型，也可能完全不使用 LLM。</p></div>
+      </section>
+
+      <section class="chapter-section" id="taxonomy-drill">
+        <div class="section-kicker">0.2A · DIAGNOSTIC PRACTICE</div>
+        <h2>四个案例：先识别对象，再画依赖关系</h2>
+        <p>用三个问题判断：①它是模型、方法、能力还是系统？②它依赖哪些部件？③名称之间是包含、交叉还是调用关系？先独立写下答案，再展开解析。</p>
+        <details><summary>案例 A：银行用梯度提升树预测商户拒付风险。它一定属于深度学习吗？</summary><p>这是机器学习模型，梯度提升树通常属于非深度学习方法。模型输出风险分数；业务系统还需设置阈值、人工复核和申诉流程。ML ⊂ AI 成立，DL 标签在此不适用。</p></details>
+        <details><summary>案例 B：一个经过广泛预训练、可完成翻译与摘要的大语言模型。它有几个标签？</summary><p>通常同时属于 ML、DL、LLM，并符合基础模型的广泛预训练与可适配特征。LLM 描述语言建模类别；Foundation Model 描述预训练与迁移用途。实际分类应核对模型训练和适配证据。</p></details>
+        <details><summary>案例 C：客服系统先检索订单，再让 LLM 起草回复，最后等待人工审批。它属于什么？</summary><p>整体属于 AI 应用系统，包含检索增强流程、模型调用与人工控制。检索并不自动等于模型训练；人工审批使最终行动受权限约束。系统使用 LLM，不代表系统本身是一种 LLM。</p></details>
+        <details><summary>案例 D：机械臂通过摄像头定位包裹，再用控制器完成抓取。它一定需要 LLM 吗？</summary><p>这是机器人系统，涉及视觉感知、控制和物理执行。它可能采用传统算法或学习模型，是否使用 LLM 取决于具体架构。应分别评估感知准确率、抓取成功率和安全边界。</p></details>
+        <div class="callout idea"><b>验收标准 · 约 12 分钟</b><p>任选两例，分别写出对象类别、至少两个依赖部件及一个不能由名称直接推出的结论。再为案例 C 画出“订单检索 → LLM 草稿 → 人工审批 → 发送”的流程，并指出哪个环节决定是否真正发送。能独立解释因果关系后，再进入下一节。</p></div>
       </section>
 
       <section class="chapter-section" id="model">
@@ -128,11 +138,11 @@
       <section class="chapter-section frontier-section" id="frontier">
         <div class="section-kicker">0.6 · FRONTIER SNAPSHOT · 2026</div>
         <h2>今天我们站在哪里？</h2>
-        <p>把前沿数据放进单独的 Frontier 层，是为了以后更新它，而不破坏基础课程。Stanford 2026 AI Index 显示，前沿模型仍在快速提升；Agent 在真实计算机任务上的表现显著进步，但仍明显不可靠；机器人在开放的真实家庭环境里则远未达到通用水平。</p>
+        <p>以下是 Stanford HAI《2026 AI Index》对 2025 年及此前研究与调查的汇总，核验于 2026-10-31。OSWorld、家庭机器人任务与组织调查的样本和指标各不相同；它们可用来提出研究问题，不能相互作性能比较。</p>
         <div class="frontier-grid">
-          <article><strong>≈66%</strong><span>OSWorld 上 Agent 完成计算机任务的成功率量级</span><small>说明：已经从“回答问题”进入“操作电脑”，但仍会大量失败。</small></article>
-          <article><strong>≈12%</strong><span>真实家庭任务中的机器人成功率量级</span><small>说明：数字世界的 Agent 进步，远快于开放物理世界。</small></article>
-          <article><strong>88%</strong><span>组织层面报告使用 AI 的比例</span><small>说明：采用已经普及，深度流程重构仍明显滞后。</small></article>
+          <article><strong>66.3%</strong><span>OSWorld 计算机操作基准上的 Agent 任务成功率（2025 年报告数据）</span><small>评测集上的任务成功率；约三分之一任务仍失败，不能直接外推到任意生产工作流。</small></article>
+          <article><strong>12%</strong><span>报告所引真实家庭机器人任务的成功率</span><small>任务、环境和评分口径不同于 OSWorld；两个百分比不能直接当作同一能力的排名。</small></article>
+          <article><strong>88%</strong><span>受调查组织报告至少一项业务职能使用 AI 的比例（2025 年）</span><small>属于组织采用率，不能说明有 88% 的工作流程已实现自动化。</small></article>
         </div>
         <div class="callout frontier-note"><b>你应该形成的判断</b><p>2026 年的主线已经转向系统能力：模型能否可靠推理、使用工具、持续执行任务，并进入企业流程与物理世界。</p></div>
       </section>
@@ -154,10 +164,10 @@
       <section class="chapter-section" id="lab">
         <div class="section-kicker">0.8 · LAB 00</div>
         <h2>第一个练习：给所有 AI 名词“找位置”</h2>
-        <p>接下来一周，只要你看到一个 AI 新名词，就不要先背定义。先把它放进下面四个抽屉中的一个或多个：</p>
+        <p>接下来一周，遇到一个 AI 新名词，先查清它描述的对象和证据，再把它放进下面四个抽屉中的一个或多个。多个标签可以同时成立：</p>
         <div class="drawer-grid">
           <div><b>A · 技术方法</b><span>如 Transformer、强化学习、蒸馏</span></div>
-          <div><b>B · 模型/能力</b><span>如 LLM、Vision Model、Reasoning</span></div>
+          <div><b>B · 模型/能力</b><span>如 LLM、Foundation Model、Vision Model、Reasoning（需注明是模型类别还是能力）</span></div>
           <div><b>C · 系统架构</b><span>如 RAG、Agent、Memory、Tool Use</span></div>
           <div><b>D · 产品/产业</b><span>如 Copilot、机器人、AI 搜索、垂直 SaaS</span></div>
         </div>
@@ -167,9 +177,10 @@
       <section class="chapter-section" id="check">
         <div class="section-kicker">0.9 · SELF CHECK</div>
         <h2>本章自测：检查你的 AI 世界地图是否已经建立</h2>
-        <details><summary>Q1：为什么“LLM ⊂ AI”成立，而“Agent ⊂ LLM”不成立？</summary><p>LLM 是 AI 模型的一类；Agent 属于系统架构，可以把 LLM 作为决策核心，同时接入搜索、数据库、代码执行和其他模型。两者处在不同抽象层级。</p></details>
+        <details><summary>Q1：为什么“LLM ⊂ AI”成立，而“Agent ⊂ LLM”不成立？</summary><p>LLM 是 AI 模型的一类；Agent 是可调用模型与工具的系统设计。一个 Agent 可以使用 LLM，调用关系无法推导为包含关系。先区分对象层级，再判断是否存在模型依赖。</p></details>
         <details><summary>Q2：为什么模型能力提升不会自动转化为商业价值？</summary><p>真实价值还取决于数据接入、工作流、权限、安全、可靠性、成本、分发和组织变革。模型只是系统的一层。</p></details>
-        <details><summary>Q3：为什么 2026 年 Agent 是一个比“聊天机器人”更重要的观察方向？</summary><p>因为能力正在从生成答案向执行任务迁移。能否稳定操作软件、调用工具、完成长任务，会直接决定 AI 能否进入更大规模的真实生产流程。</p></details>
+        <details><summary>Q3：OSWorld 的 66.3% 与家庭机器人任务的 12% 能直接证明数字 Agent 比机器人“聪明”吗？</summary><p>不能。两项评测的任务、环境、样本和成功标准不同。应分别检查各自的基准定义、失败案例与目标应用环境，再讨论可靠性。</p></details>
+        <details><summary>Q4：基础模型与大语言模型的分类依据有何区别？</summary><p>基础模型关注广泛预训练与下游任务适配；LLM 关注语言或 Token 序列建模及规模。一个模型可能同时符合两种分类；具体结论需要训练方式和用途的证据。</p></details>
       </section>
 
       <section class="chapter-section sources">
@@ -179,7 +190,8 @@
           <li><a href="https://csrc.nist.gov/glossary/term/artificial_intelligence" target="_blank" rel="noreferrer">NIST · Artificial Intelligence Glossary</a></li>
           <li><a href="https://ai.dartmouth.edu/our-story" target="_blank" rel="noreferrer">Dartmouth · Where AI Was Born</a></li>
           <li><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noreferrer">Vaswani et al. (2017) · Attention Is All You Need</a></li>
-          <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report" target="_blank" rel="noreferrer">Stanford HAI · 2026 AI Index Report</a></li>
+          <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report" target="_blank" rel="noreferrer">Stanford HAI · 2026 AI Index Report（第 2 章技术表现、第 4 章经济与采用率；数据口径见正文）</a></li>
+          <li><a href="https://crfm.stanford.edu/2021/10/18/reflections.html" target="_blank" rel="noreferrer">Stanford CRFM · Reflections on Foundation Models（2021，基础模型定义）</a></li>
         </ol>
       </section>
 

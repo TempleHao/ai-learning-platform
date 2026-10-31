@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2026-10-31 · Core 00 taxonomy and evidence boundaries (v0.19 content audit)
+- 修正“AI ⊃ ML ⊃ DL”与 Foundation Model / LLM 分类维度混排的教学问题，补充 Stanford CRFM（2021）定义及模型、能力、应用系统的边界。
+- 新增四个案例的分类诊断、12 分钟验收任务及第四道自测；更新 Markdown 源稿和目录锚点。
+- 对照 Stanford HAI 2026 AI Index 核验 66.3% OSWorld、12% 家庭机器人任务和 88% 组织采用率，并明确不同评测口径不可直接比较。
+- 新增 Core 00 静态回归并接入 PR/main verify；保留 v0.18/40 学习节点与所有原有学习进度、书签及备份格式。真实浏览器验收仍待完成，发布以 main deploy 为准。
+
 ## 2026-10-30 · Core 02 worked gradient and generalization (v0.19 content audit)
 - 为《模型为什么能学会东西》新增与既有训练按钮一致的五样本 MSE 推导、梯度更新手算、学习率过大反例和可复算的答案。
 - 补充训练/验证/测试集边界、数据泄漏错误诊断、训练误差与泛化反例、商户拒付预测的时间切分迁移练习及一手教材章节来源。
