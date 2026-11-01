@@ -21,6 +21,7 @@ for (const id of ['falseRejectCost', 'missedFraudLoss', 'routeCostResult', 'rout
 assert.ok(html.includes('data-chapter="01"') && html.includes('data-lab="01"'), 'progress keys changed');
 assert.ok(html.includes('src="../assets/chapter.js"') && html.includes('src="../assets/route-choice.js"'), 'required scripts missing');
 assert.ok(html.includes('02-how-models-learn.html'), 'next chapter link missing');
+assert.equal((html.match(/https:\/\/www\.nature\.com\/articles\/nature16961/g) || []).length, 1, 'duplicate AlphaGo source link');
 assert.ok(!/localStorage|sessionStorage|document\.cookie/.test(source), 'experiment must not modify learning data');
 for (const tag of ['section', 'article', 'nav', 'main', 'details']) {
   const opens = (html.match(new RegExp('<' + tag + '(?=[\\s>])', 'g')) || []).length;
