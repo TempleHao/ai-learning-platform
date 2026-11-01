@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2026-11-01 · Core 01 route overlap and decision costs (v0.19 content audit)
+- 纠正“五种路线”容易被理解为互斥算法分类的问题，明确符号、统计、神经、强化学习和搜索的交叉层级，并保留历史路线叙事。
+- 新增支付风控虚构教学算例：在相同欺诈样本下比较召回率、误拒损失、漏判损失和维护成本，推导两方案的成本函数及误拒损失 20 元的临界值。
+- 增加双滑块可交互的成本敏感性实验、两道诊断/迁移自测、20 分钟 Lab 验收标准；同步 Core 01 Markdown 源稿与一手论文边界。
+- 新增 Node DOM 模拟与算例回归并接入 PR/main verify；保留 v0.18/40 节点、既有进度键、书签和 JSON v1/v2 备份格式。真实浏览器验收待完成，发布以 main deploy 为准。
+
 ## 2026-10-31 · Core 00 taxonomy and evidence boundaries (v0.19 content audit)
 - 修正“AI ⊃ ML ⊃ DL”与 Foundation Model / LLM 分类维度混排的教学问题，补充 Stanford CRFM（2021）定义及模型、能力、应用系统的边界。
 - 新增四个案例的分类诊断、12 分钟验收任务及第四道自测；更新 Markdown 源稿和目录锚点。

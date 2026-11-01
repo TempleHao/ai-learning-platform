@@ -25,8 +25,9 @@
       <a href="#turning">1.6 为什么 2012–2017 是拐点</a>
       <a href="#unselected">1.7 次要与未被选择路线</a>
       <a href="#today">1.8 今天其实是混合系统</a>
-      <a href="#lab">1.9 本章 Lab</a>
-      <a href="#check">1.10 自测</a>
+      <a href="#decision">1.9 路线选择与成本实验</a>
+      <a href="#lab">1.10 本章 Lab</a>
+      <a href="#check">1.11 自测</a>
     </nav>
     <div class="toc-progress"><span>本章状态</span><b id="chapterStatus">未完成</b><button id="completeChapter">标记本章完成</button></div>
   </aside>
@@ -67,6 +68,7 @@
           <article><span>REINFORCEMENT</span><h3>智能来自行动与反馈</h3><p>智能体在环境中尝试行动，通过奖励和后果学习策略。</p><b>代表直觉：像练技能一样，在试错中变强。</b></article>
           <article><span>EVOLUTION / OTHERS</span><h3>智能也可来自搜索、进化与其他机制</h3><p>进化算法、模糊逻辑、贝叶斯模型、群体智能等长期构成重要支线。</p><b>代表直觉：不存在唯一的智能生成机制。</b></article>
         </div>
+        <div class="callout idea"><b>分类边界：五条路线可以交叉</b><p>符号表示、神经网络结构、概率估计、奖励反馈和搜索过程处在不同技术层级。统计方法也能训练神经网络；强化学习可以用神经网络表示策略；搜索可以与两者组合。因此“五种智能观”是历史线索，不能当作互斥的算法分类。</p></div>
       </section>
 
       <section class="chapter-section" id="symbolic">
@@ -158,20 +160,45 @@
         <div class="callout frontier-note"><b>路线判断</b><p>未来重点观察各种技术如何组合，以及哪些组合能让 AI 更可靠、更便宜、更能持续行动。</p></div>
       </section>
 
+      <section class="chapter-section" id="decision">
+        <div class="section-kicker">1.9 · ROUTE CHOICE LAB</div>
+        <h2>路线选择：把“效果更好”转换为可检验的总损失</h2>
+        <p>一项风控任务可以同时采用规则、统计预测、人工复核和神经模型。选择方案前先写明数据规模、漏判损失、误拒损失、维护费用和可接受的响应时间。以下数字是<strong>教学假设</strong>，不代表任何支付机构的真实风控表现。</p>
+        <p>假设一个月有 10,000 笔交易，其中 100 笔最终确认欺诈。规则方案拦下 60 笔欺诈、误拒 300 笔正常交易，月度维护费 2,000 元；统计模型拦下 80 笔欺诈、误拒 500 笔正常交易，月度维护费 8,000 元。每漏过一笔欺诈损失 500 元，每误拒一笔正常交易损失 40 元。</p>
+        <div class="route-card">
+          <div><b>规则方案 R</b><p>漏判 40 笔 × 500 + 误拒 300 笔 × 40 + 维护 2,000 = <strong>34,000 元</strong>。</p></div>
+          <div><b>统计模型 M</b><p>漏判 20 笔 × 500 + 误拒 500 笔 × 40 + 维护 8,000 = <strong>38,000 元</strong>。</p></div>
+        </div>
+        <p>模型 M 的欺诈召回率为 80%，高于规则 R 的 60%；按本例成本假设，R 的总损失反而更低。一般式为 <strong>R = 40L + 300C + 2,000</strong>，<strong>M = 20L + 500C + 8,000</strong>；L 表示单笔漏判损失，C 表示单笔误拒损失。</p>
+        <div class="definition-box"><span>可复算的临界值</span><strong>当 L = 500 元时，M − R = 200C − 4,000；C = 20 元时两方案打平。</strong></div>
+        <p>改变下方参数，观察方案排名如何翻转。只改变教学假设中的成本，不改变两种方案的拦截数量。</p>
+        <div class="route-card">
+          <div><label for="falseRejectCost"><b>正常交易误拒损失 C（元/笔）</b></label><input id="falseRejectCost" type="range" min="0" max="100" step="5" value="40" /><p id="falseRejectCostValue">40 元</p></div>
+          <div><label for="missedFraudLoss"><b>欺诈漏判损失 L（元/笔）</b></label><input id="missedFraudLoss" type="range" min="200" max="1000" step="100" value="500" /><p id="missedFraudLossValue">500 元</p></div>
+        </div>
+        <div class="callout idea" aria-live="polite"><b>计算结果</b><p id="routeCostResult">规则方案：34,000 元；统计模型：38,000 元。</p><p id="routeChoiceResult">当前假设：规则方案总损失更低。</p></div>
+        <details><summary>诊断题：为什么不能凭召回率 80% 直接选统计模型？</summary><p>召回率只衡量已发生欺诈中被拦下的比例。需要同时核算正常交易误拒、部署维护成本、数据漂移、时延与人工接管。示例中模型每月多拦 20 笔欺诈，却额外误拒 200 笔正常交易并多花 6,000 元维护费。</p></details>
+        <details><summary>迁移题：如果误拒损失降到 10 元，哪种方案更优？</summary><p>固定 L = 500：R = 40×500 + 300×10 + 2,000 = 25,000 元；M = 20×500 + 500×10 + 8,000 = 23,000 元。模型方案低 2,000 元。再考虑真实交易标签延迟、欺诈率变化与合规硬约束，才能作生产决策。</p></details>
+        <p>模型上线前应在同一时间窗和同一标签定义下评估，并分开报告欺诈召回率、正常交易误拒率、损失金额、延迟及稳定性。本例忽略了欺诈金额分布、样本选择偏差和政策约束，不能直接外推为实际业务结论。</p>
+      </section>
+
       <section class="chapter-section" id="lab">
-        <div class="section-kicker">1.9 · LAB 01</div>
+        <div class="section-kicker">1.10 · LAB 01</div>
         <h2>做一张自己的《AI 技术路线战争图》</h2>
-        <p>不用画得漂亮。至少画出五条路线：符号主义、连接主义、统计学习、强化学习、其他支线；然后标出它们的兴衰、融合点，以及 2012、2016、2017 三个关键节点。</p>
+        <p>建议用 20 分钟完成：画出五条历史路线、2012/2016/2017 三个转折点，并在每个转折点写出“算法、数据、算力、任务”中发生变化的条件。再以本章风控案例为模板，写出两种方案的成本公式、一个临界值和一个可能推翻你结论的新证据。</p>
+        <p><strong>自检标准：</strong>能解释至少两条路线为何交叉；能独立复算 34,000 元与 38,000 元；能说清误拒成本变动为何改变选择；能列出至少一项本例没有覆盖的现实限制。下方勾选仍是学习者自行确认，网站不会自动批改开放式答案。</p>
         <label class="lab-check"><input type="checkbox" data-lab="01"><span>我已经能解释：为什么深度学习成为今天的主干，以及其他路线仍在哪些问题上保有价值。</span></label>
       </section>
 
       <section class="chapter-section" id="check">
-        <div class="section-kicker">1.10 · SELF CHECK</div>
+        <div class="section-kicker">1.11 · SELF CHECK</div>
         <h2>本章自测</h2>
         <details><summary>Q1：符号主义最大的优势和最大的工程问题分别是什么？</summary><p>优势是知识、逻辑和推理链条相对显式、可解释；工程问题是知识获取与维护成本高，面对开放世界的噪声、例外和组合爆炸时很脆弱。</p></details>
         <details><summary>Q2：2012 年为什么成为神经网络复兴的阈值事件？</summary><p>神经网络早已存在。真正变化的是算法、数据规模、GPU 计算能力和工程实现共同越过临界点，使深层网络在实际基准上形成明显优势。</p></details>
         <details><summary>Q3：AlphaGo 为什么是“混合路线”的经典案例？</summary><p>它把深度神经网络、监督学习、强化学习和树搜索组合在同一系统中，不同组件承担不同功能。</p></details>
         <details><summary>Q4：商业上为什么要研究“被淘汰的技术路线”？</summary><p>因为主流路线可能改变，旧路线也可能在新算力、新任务或与新模型结合后重新获得价值。理解失败原因比记住赢家更能帮助判断未来。</p></details>
+        <details><summary>Q5：统计学习、神经网络与强化学习可以组合吗？</summary><p>可以。统计学习强调用数据估计规律，神经网络是一类参数化模型，强化学习规定通过奖励信号改进策略；AlphaGo（2016）将深度网络、监督学习、强化学习与树搜索结合。</p></details>
+        <details><summary>Q6：本章风控算例中，误拒损失 C 何时让两方案打平？</summary><p>固定漏判损失 L = 500 元，R = 22,000 + 300C，M = 18,000 + 500C。令两者相等，得到 C = 20 元；C 低于 20 元时 M 成本较低，高于 20 元时 R 成本较低。</p></details>
       </section>
 
       <section class="chapter-section sources">
@@ -183,6 +210,7 @@
           <li><a href="https://www.nature.com/articles/nature14539" target="_blank" rel="noreferrer">LeCun, Bengio & Hinton (2015) · Deep learning</a></li>
           <li><a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks" target="_blank" rel="noreferrer">Krizhevsky, Sutskever & Hinton (2012) · AlexNet</a></li>
           <li><a href="https://www.nature.com/articles/nature16961" target="_blank" rel="noreferrer">Silver et al. (2016) · AlphaGo</a></li>
+          <li><a href="https://www.nature.com/articles/nature16961" target="_blank" rel="noreferrer">Silver et al. (2016) · AlphaGo 训练与树搜索的组合（原论文摘要及图 1–3）</a></li>
           <li><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noreferrer">Vaswani et al. (2017) · Attention Is All You Need</a></li>
         </ol>
       </section>
@@ -192,5 +220,6 @@
   </main>
 </div>
 <script src="../assets/chapter.js"></script>
+<script src="../assets/route-choice.js"></script>
 <script src="/ai-learning-platform/assets/corner-brand-v3.js?v=20261024c"></script></body>
 </html>
