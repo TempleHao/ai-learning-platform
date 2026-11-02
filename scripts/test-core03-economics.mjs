@@ -18,8 +18,8 @@ for (const s of ['6.75%','12,100 元','分类导航','不自动判分']) assert.
 assert.ok(workflow.includes('node scripts/test-core03-economics.mjs'));
 assert.ok(!/localStorage|sessionStorage|document\\.cookie/.test(source), 'calculator must not touch saved progress');
 for (const tag of ['section','article','nav','main','details']) {
-  const opens=(html.match(new RegExp('<'+tag+'(?=[\\\\s>])','g'))||[]).length;
-  const closes=(html.match(new RegExp('</'+tag+'\\\\s*>','g'))||[]).length;
+  const opens=(html.match(new RegExp('<'+tag+'(?=\\s|>)','g'))||[]).length;
+  const closes=(html.match(new RegExp('</'+tag+'\\s*>','g'))||[]).length;
   assert.equal(opens,closes,'unbalanced '+tag);
 }
 const ids = new Map();
@@ -29,7 +29,7 @@ function el(id) {
 }
 vm.runInNewContext(source,{document:{getElementById:el}},{filename:'capability-economics.js'});
 assert.match(el('capAICost').textContent,/10,600/);
-assert.match(el('capNetSavings').textContent,/\\+1,400/);
+assert.match(el('capNetSavings').textContent,/\+1,400/);
 el('capErrorRate').value='10';el('capErrorRate').handlers.input();
 assert.match(el('capAICost').textContent,/14,600/);
 assert.match(el('capNetSavings').textContent,/2,600/);
