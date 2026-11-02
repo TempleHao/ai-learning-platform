@@ -52,13 +52,14 @@
       </section>
 
       <section class="chapter-section">
-        <div class="callout idea"><b>最重要的分析公式</b><p>AI 的产业影响 ≈ 新增能力 × 可靠性 × 成本下降 × 分发能力 × 工作流嵌入。</p></div>
+        <div class="callout idea"><b>分析框架（定性）</b><p>先确认任务能力，再测量可靠性、单位成本、分发和工作流接入。五项因素相互制约，不能把不同单位的指标直接相乘得出产业影响。</p></div>
         <p>实验室里的能力突破只是起点。只有当可靠性、价格和工作流嵌入同时过关，它才会从“技术演示”变成“经济基础设施”。</p>
       </section>
 
       <section class="chapter-section" id="ladder">
         <div class="section-kicker">3.1 · CAPABILITY LADDER</div>
-        <h2>AI 能力沿多个维度逐层扩展</h2>
+        <h2>AI 能力沿多个维度扩展</h2>
+        <p>下方编号便于阅读，属于能力分类而非严格升级顺序。预测、感知、生成、工具调用和行动经常在同一系统中组合；拥有某一能力不能自动推出其余能力。</p>
         <div class="cap-controls" aria-label="能力筛选">
           <button class="active" data-cap-filter="all">全部</button>
           <button data-cap-filter="sense">感知 / 预测</button>
@@ -165,7 +166,23 @@
           <div><b>5. 分发与数据</b><span>谁拥有用户入口、专有数据和反馈闭环？</span></div>
           <div><b>6. 模型吞噬风险</b><span>这个功能会不会下一代基础模型原生免费提供？</span></div>
         </div>
-        <div class="callout idea"><b>一个重要结论</b><p>越靠近“单次生成”的应用，越容易被模型平台商品化；越深入真实工作流、专有数据、权限、责任和结果交付，通常越可能形成长期壁垒。</p></div>
+        <div class="callout idea"><b>商业判断的条件</b><p>通用生成能力更容易被基础模型平台集成；工作流、专有数据、权限、责任和结果交付可能提高迁移成本。是否形成长期壁垒仍需通过客户留存、成本与竞争数据验证。</p></div>
+        <div class="interactive-card" id="capabilityEconomicsLab">
+          <div class="interactive-head"><div><span>CORE 03 · UNIT ECONOMICS</span><h3>支付客服：自动化率高，就一定省钱吗？</h3></div></div>
+          <p>虚构教学场景：每月 1,000 单；全人工每单 12 分钟。人工每小时 60 元；AI 每单调用成本 0.6 元。AI 直接处理的单据仍需 4 分钟人工复核；升级人工处理需 14 分钟（2 分钟初审 + 12 分钟处理）。自动处理出错时，每次平均额外损失 100 元。</p>
+          <div class="score-inputs">
+            <label for="capAutoRate">自动直接处理比例 <input id="capAutoRate" type="range" min="0" max="100" step="5" value="80" /><output id="capAutoRateValue" for="capAutoRate">80%</output></label>
+            <label for="capErrorRate">自动处理后的错误率 <input id="capErrorRate" type="range" min="0" max="20" step="1" value="5" /><output id="capErrorRateValue" for="capErrorRate">5%</output></label>
+          </div>
+          <div class="training-metrics" aria-live="polite">
+            <div><span>全人工月成本</span><strong id="capBaselineCost">12,000 元</strong></div>
+            <div><span>AI 方案含错误损失</span><strong id="capAICost">10,600 元</strong></div>
+            <div><span>月净节省（负数为亏损）</span><strong id="capNetSavings">+1,400 元</strong></div>
+          </div>
+          <p id="capCostExplanation" role="status">计算中…</p>
+          <p>复算：每单人工分钟 = 4p + 14(1−p)；月总成本 = 1,000 × [4p + 14(1−p) + 0.6 + 100pe]，其中 p 是直接处理比例、e 是直接处理后的错误率。基准 p=80%、e=5% 时：人工 6,000 元 + 模型 600 元 + 错误损失 4,000 元 = 10,600 元，净节省 1,400 元。固定 p=80% 时，e=6.75% 恰好盈亏平衡。</p>
+          <div class="callout warn"><b>模型边界</b><p>这里只计算可量化的平均成本。真实上线还要核对错误率的测量方式、严重事故尾部损失、数据权限、法规和客户体验；“直接处理”必须通过质量验收，不能把未解决工单计为成功。</p></div>
+        </div>
       </section>
 
       <section class="chapter-section frontier-section" id="frontier">
@@ -190,7 +207,8 @@
           <div><b>C · 最大瓶颈是什么？</b><span>准确率、数据、权限、成本、法规还是组织接受度？</span></div>
           <div><b>D · 谁拿走价值？</b><span>基础模型、软件平台、垂直公司、服务商还是最终企业？</span></div>
         </div>
-        <label class="lab-check"><input type="checkbox" data-lab="03"><span>我已经能用“新增能力 → 改造任务 → 降低某种成本 → 形成商业价值”的方式分析一个 AI 应用。</span></label>
+        <p><b>独立验收（约 15 分钟）：</b>先在计算器中保持 p=80%，将错误率调至 10%，记录月成本与净节省；再把错误率调回 5%，将 p 调至 50%，解释为什么两种情景都可能不如全人工。最后列出真实业务上线前至少三项需要额外测量的指标。请先写预测，再用滑块检验并修正判断。</p>
+        <label class="lab-check"><input type="checkbox" data-lab="03"><span>我已记录两组可复算的成本结果、解释反例，并写下至少三项上线前需验证的指标（自我确认，不自动评分）。</span></label>
       </section>
 
       <section class="chapter-section" id="check">
@@ -200,6 +218,8 @@
         <details><summary>Q2：生成式 AI 相比传统预测模型，最大的产品变化是什么？</summary><p>模型从“在固定选项里判断”变成直接生成新内容，并且大模型可以通过自然语言指令临时适应大量任务。</p></details>
         <details><summary>Q3：Copilot 和 Agent 的边界是什么？</summary><p>Copilot 主要增强人在环工作；Agent 更强调围绕目标自行选择行动并持续执行。现实产品通常处在两者之间的连续谱上。</p></details>
         <details><summary>Q4：为什么机器人商业化可能比软件 Agent 更慢？</summary><p>现实世界不可完全复制，长尾复杂、数据收集昂贵、动作失败有物理成本，而且安全可靠性阈值通常更高。</p></details>
+        <details><summary>Q5：自动直接处理率达到 80%、错误率升至 10%，还节省成本吗？</summary><p>月成本 14,600 元，比全人工 12,000 元多 2,600 元。自动化率必须和质量、返工及事故损失一起评估。</p></details>
+        <details><summary>Q6：把八类能力排成严格先后顺序，为什么会误导产品判断？</summary><p>不同能力可以并行发展并组合使用。检索工具可以与预测模型搭配，生成能力也不自动带来可靠行动；应逐项测试真实任务的能力和边界。</p></details>
       </section>
 
       <section class="chapter-section sources">
@@ -222,5 +242,6 @@
 </div>
 <script src="../assets/chapter.js"></script>
 <script src="../assets/capability-map.js"></script>
+ <script src="../assets/capability-economics.js"></script>
 <script src="/ai-learning-platform/assets/corner-brand-v3.js?v=20261024c"></script></body>
 </html>
