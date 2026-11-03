@@ -1,3 +1,8 @@
+## 2026-11-03 · Core 04 Eval denominator audit (v0.19 draft)
+- 修正把模型、上下文、工具、流程和 Eval 直接相乘的无量纲假公式。
+- 新增 100 条虚构客服题的可复算评测：有证据题正确率、证据不足时的正确拒答率、总体正确率与抽样偏差诊断；同步 Markdown 源稿。
+- 保留 v0.18/40 节点、学习进度、书签和 JSON v1/v2；本改动在开发 PR 中，未经 CI 与真实浏览器验收，不计为正式发布。
+
 # CHANGELOG
 
 ## 2026-11-02 · Core 03 capability boundaries and unit economics (v0.19 content audit)
