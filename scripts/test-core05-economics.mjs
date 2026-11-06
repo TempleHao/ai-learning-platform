@@ -14,7 +14,7 @@ assert.equal(20 - 2 - 1 - 3 - 2, 12);
 for (const phrase of ['商业判断的六项约束', '虚构假设', '1,000 次客服任务', '8,000 元', '−1,000 元', '12 元/次', '固定研发与获客成本']) {
   assert.ok(html.includes(phrase), 'Core 05 HTML missing: ' + phrase);
 }
-for (const phrase of ['六项', '1,000 次客服任务', '8,000 元', '−1,000 元', '12 元/次', '样本偏差']) {
+for (const phrase of ['分别评估客户价值', '1,000 次客服任务', '8,000 元', '−1,000 元', '12 元/次', '样本偏差']) {
   assert.ok(notes.includes(phrase), 'Core 05 notes missing: ' + phrase);
 }
 assert.ok(!html.includes('机会质量 ≈'), 'invalid opportunity multiplication remains in HTML');
