@@ -43,6 +43,8 @@ jobs:
         run: node scripts/test-core03-economics.mjs
       - name: Test Core 04 evaluation denominators and teaching consistency
         run: node scripts/test-core04-eval.mjs
+      - name: Test Core 05 contribution economics and chapter consistency
+        run: node scripts/test-core05-economics.mjs
       - name: Test Core 00 taxonomy and benchmark boundaries
         run: node scripts/test-core00-taxonomy.mjs
       - name: Test accessible mobile navigation
