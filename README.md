@@ -64,7 +64,9 @@ AI Learning OS 是一个长期维护的中文 AI 学习项目。它把技术演�
 
 2026-10-24 品牌复核：旧版矢量图与确认稿的丝带折叠结构存在偏差，且部分 JavaScript 仍额外插入带底板的悬浮角标。新版直接从已确认的方案 1 原稿提取透明底主体图形，存为 `site/assets/brand/logo-scheme1.webp`（作为全站可见 Logo），保留 `logo-mark.svg` 和同内容的 `app-icon.svg` 作为无底板矢量备用 / 浏览器标签图标。首页采用参考方案的横向 AI Learning OS 字标及 `LEARN TODAY. BUILD TOMORROW.` 标语。取消悬浮黑底徽标，为 HTML、样式表和图标资源增加新的资源地址，降低浏览器旧缓存影响。**仅更新视觉，不改变现有课程、数据或完成状态。** [PR #15](https://github.com/TempleHao/ai-learning-platform/pull/15) 已合并，[GitHub Pages 发布](https://github.com/TempleHao/ai-learning-platform/actions/runs/40024942348) 的全站校验与部署均成功；本地桌面与 390px 手机布局试渲染无横向溢出，线上仍可继续细化视觉体验。
 
-**2026-11-05 Core 05 审校候选（未发布）：** 纠正商业机会的跨单位乘法公式，增加可复算的客服单位经济性与错误成本敏感性练习。维持 v0.18/40 节点和既有本机学习记录；合并与部署以 PR/main Actions 为准。
+**2026-11-07 Core 05 已合并发布（Actions 42375265474 success，真实浏览器待验收）：** 纠正商业机会的跨单位乘法公式，增加可复算的客服单位经济性与错误成本敏感性练习。维持 v0.18/40 节点和既有本机学习记录；合并与部署以 PR/main Actions 为准。
+
+**2026-11-08 Core 05 重试成本审校候选：** 明确单位经济性算例中重试成本的零值假设，并加入非零重试成本敏感性；待PR验证合并，不计入当前生产内容。
 
 ## 当前进度与下一阶段
 
