@@ -5,13 +5,14 @@ const html = readFileSync('site/chapters/05-business-future.html', 'utf8');
 const notes = readFileSync('docs/chapters/05-business-future.md', 'utf8');
 const contribution = (errorCost, count = 1000, retryCost = 0) => ({
   perTask: 20 - 2 - 1 - retryCost - 3 - errorCost - 2,
-  monthly: (20 - 2 - 1 - 3 - errorCost - 2) * count,
+  monthly: (20 - 2 - 1 - retryCost - 3 - errorCost - 2) * count,
 });
 assert.deepEqual(contribution(4), { perTask: 8, monthly: 8000 });
 assert.deepEqual(contribution(13), { perTask: -1, monthly: -1000 });
 assert.deepEqual(contribution(12), { perTask: 0, monthly: 0 });
 assert.equal(20 - 2 - 1 - 0 - 3 - 2, 12);
 assert.deepEqual(contribution(10, 1000, 2), { perTask: 0, monthly: 0 });
+assert.deepEqual(contribution(4, 1000, 2), { perTask: 6, monthly: 6000 });
 assert.ok(html.includes('重试 0 元（本例假设）'), 'retry cost assumption missing');
 assert.ok(html.includes('重试成本降至 10 元/次') || html.includes('盈亏平衡错误损失降至 10 元/次'), 'retry cost sensitivity missing');
 assert.ok(notes.includes('重试成本为 2 元'), 'notes missing retry sensitivity');
