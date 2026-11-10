@@ -1,3 +1,7 @@
+## 2026-11-08 · Core 05 retry-cost accounting correction (PR candidate)
+- 明确客服贡献利润示例假定重试成本为0，补齐公式中的重试项；增加每次2元重试成本导致盈亏平衡错误损失由12元降至10元的敏感性检查。
+- 同步网页、Markdown和Node回归；保持v0.18/40节点及进度/书签/备份协议。合并、CI与生产部署状态以GitHub Actions为准。
+
 ## 2026-11-05 · Core 05 commercial judgment and error-cost exercise (v0.19 draft)
 - 将跨单位的“机会质量乘法公式”改为六项约束分析，要求以真实收入、成本、留存及竞争证据验证。
 - 增加 1,000 次虚构客服任务的贡献利润算例、错误成本反例及盈亏平衡独立计算；同步 HTML 与 Markdown。
