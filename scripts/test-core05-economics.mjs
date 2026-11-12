@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 
 const html = readFileSync('site/chapters/05-business-future.html', 'utf8');
 const notes = readFileSync('docs/chapters/05-business-future.md', 'utf8');
+const home = readFileSync('site/index.html', 'utf8');
 const contribution = (errorCost, count = 1000, retryCost = 0) => ({
   perTask: 20 - 2 - 1 - retryCost - 3 - errorCost - 2,
   monthly: (20 - 2 - 1 - retryCost - 3 - errorCost - 2) * count,
@@ -22,6 +23,8 @@ for (const phrase of ['商业判断的六项约束', '虚构假设', '1,000 次�
 for (const phrase of ['分别评估客户价值', '1,000 次客服任务', '8,000 元', '−1,000 元', '12 元/次', '样本偏差']) {
   assert.ok(notes.includes(phrase), 'Core 05 notes missing: ' + phrase);
 }
+assert.ok(home.includes('不同指标不可直接相乘'), 'homepage must explain why opportunity factors are not multiplied');
+assert.ok(!home.includes('需求强度 × AI 增益 × 壁垒'), 'invalid opportunity multiplication remains on homepage');
 assert.ok(!html.includes('机会质量 ≈'), 'invalid opportunity multiplication remains in HTML');
 assert.ok(!notes.includes('机会质量 ≈'), 'invalid opportunity multiplication remains in notes');
 for (const id of ['economics', 'score', 'lab', 'check']) {
