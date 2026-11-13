@@ -60,7 +60,7 @@ function render(){
   document.getElementById('overallPercent').textContent=Math.round(done/total*100)+'%';
 }
 document.getElementById('resetProgress')?.addEventListener('click',()=>{
-  if(!confirm('确定重置当前浏览器里的全部学习进度吗？包括核心章节、Deep Dive 和 Lab Track。'))return;
+  if(!confirm('确定清除当前浏览器的全部学习进度及最近阅读书签吗？包括核心章节、章内 Lab、Deep Dive 和 Lab Track。此操作无法撤销，建议先导出 JSON 备份。'))return;
   core.forEach(c=>{localStorage.removeItem(`ai-learning-ch${c.id}-done`);localStorage.removeItem(`ai-learning-lab${c.id}`)});
   deep.forEach(d=>localStorage.removeItem(`ai-learning-ch${d.id}-done`));
   track.forEach(([id])=>localStorage.removeItem(`ai-learning-tracklab-${id}`));
