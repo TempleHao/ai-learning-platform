@@ -23,7 +23,7 @@ function dashboardTest() {
     localStorage: storage,
     document: { getElementById: id => nodes[id] },
     window: { addEventListener: (event, callback) => { listeners[event] = callback; } },
-    confirm: () => true
+    confirm: message => { assert.match(message, /最近阅读书签/); assert.match(message, /导出 JSON 备份/); return true; }
   };
   vm.runInNewContext(fs.readFileSync('site/assets/progress.js', 'utf8'), context);
   assert.equal(nodes.trackCount.textContent, '0 / 12');
