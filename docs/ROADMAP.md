@@ -1,6 +1,6 @@
 # AI Learning OS · Roadmap
 
-Last reviewed: 2026-10-28
+Last reviewed: 2026-11-13
 
 ## 终极目标
 
@@ -31,7 +31,10 @@ Last reviewed: 2026-10-28
 
 ---
 
-## 当前版本 · v0.18（Pages 构建成功，浏览器验收待完成）
+## 当前版本 · v0.18（Pages 部署成功，浏览器验收待完成）
+
+2026-11-13：核实 Core 05 首页六项约束修复已通过 main verify 与 Pages deploy（Actions 43223905268）。Dashboard 重置确认提示与本机读写边界说明在独立开发分支中完善，待 PR 验证、合并及部署；不改变学习节点与存储协议。
+
 
 ### Core · 已完成
 - 00 AI 世界全地图
