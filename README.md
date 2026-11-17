@@ -144,3 +144,6 @@ node scripts/test-branding.mjs
 
 **Project owner:** TempleHao  
 **Built collaboratively with ChatGPT.**
+
+
+2026-11-17：Deep Dive 10 与 Lab 12 增加虚构仓储成本推导、失败与接管口径、敏感性反例及独立练习；扩展现有成本计算器回归。保持 v0.18 / 40 节点及本机记录协议。候选变更，发布以 main deploy 为准，真实浏览器待验收。
