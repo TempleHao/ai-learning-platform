@@ -28,6 +28,15 @@ assert.equal(nodes.phyTotal.textContent, '34,026.67');
 assert.equal(nodes.phyUnit.textContent, '6.16');
 assert.equal(nodes.phyDelta.textContent, '-31.5%');
 
+for (const [success, takeover, accepted, total, unit] of [['80','20','4,800','57,066.67','11.89'],['85','15','5,100','47,466.67','9.31']]) {
+  nodes.phySuccess.value = success;
+  nodes.phyTakeover.value = takeover;
+  listeners['phySuccess:input']();
+  assert.equal(nodes.phyAccepted.textContent, accepted);
+  assert.equal(nodes.phyTotal.textContent, total);
+  assert.equal(nodes.phyUnit.textContent, unit);
+}
+nodes.phyTakeover.value = '8';
 nodes.phySuccess.value = '0';
 listeners['phySuccess:input']();
 assert.equal(nodes.phyUnit.textContent, '—');
