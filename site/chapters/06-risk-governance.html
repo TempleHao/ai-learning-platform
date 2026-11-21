@@ -59,7 +59,17 @@
       <section class="chapter-section" id="formula">
         <div class="section-kicker">6.1 · RISK RADIUS</div>
         <h2>一个实用的风险公式：别只看模型有多聪明</h2>
-        <div class="risk-formula"><strong>风险半径</strong><span>≈ 能力 × 自主性 × 权限 × 部署规模 × 不可逆性</span></div>
+        <div class="risk-formula"><strong>风险半径（定性检查表）</strong><span>能力 · 自主性 · 权限 · 部署规模 · 不可逆性</span></div>
+        <p>以上五项没有共同的计量单位，不能直接相乘得出事故概率或金额。它们用于排查损害如何扩大；做预算决策时，应单独估计每类事故的发生频率、损失与控制成本。</p>
+        <div class="business-lens" id="risk-worked-example">
+          <b>可复算案例 · 客服 Agent 错误退款（全部为虚构教学假设）</b>
+          <p>每月处理 10,000 笔退款申请。未经复核时，错误批准率为 1%，每笔错误批准平均损失 300 元；加入人工复核后，错误批准率降至 0.2%，复核每笔申请成本 1.5 元。假设两方案处理量相同，错误损失互不重复计费，暂不计入等待时间与客户体验。</p>
+          <p>无复核：10,000 × 1% × 300 = <strong>30,000 元/月</strong>。全部人工复核：10,000 × 0.2% × 300 + 10,000 × 1.5 = <strong>21,000 元/月</strong>。在这些假设下，每月净节约 <strong>9,000 元</strong>。</p>
+          <p>盈亏平衡：复核后每笔平均成本上限 = (1% − 0.2%) × 300 = <strong>2.4 元/笔</strong>。如果复核成本涨到 3 元/笔，则总成本为 36,000 元，反而高于不复核的 30,000 元。</p>
+          <p><strong>诊断：</strong>若模型输出的 99%“准确率”来自普通问答样本，能否代替这里的错误批准率？不能。必须按退款申请真实分布测量错误批准率，并检查高金额申请是否集中出错。</p>
+          <p><strong>迁移练习：</strong>假设仅复核 20% 的高风险申请，复核成本仍为每笔 1.5 元，未复核申请的错误率和复核后错误率需要分别测量。请列出分组期望损失公式，说明还需要哪些数据才能判断方案优劣。</p>
+          <p><small>延伸：<a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noreferrer">NIST AI RMF（官方原始框架）</a> 的 Map / Measure / Manage 可用于明确场景、测量错误和配置控制；本算例并非 NIST 提供的实测数据。</small></p>
+        </div>
         <p>同一个模型，用来润色一封邮件和用来自动执行百万美元付款，风险完全不在一个量级。关键变量是自主权、资源权限、影响范围和可撤销性。</p>
       </section>
 
