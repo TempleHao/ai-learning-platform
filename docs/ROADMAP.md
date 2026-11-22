@@ -1,6 +1,8 @@
 # AI Learning OS · Roadmap
 
-Last reviewed: 2026-11-13
+Last reviewed: 2026-11-21
+
+2026-11-21 Core 06 深度审校候选：纠正风险半径无量纲乘法的误导，增加虚构退款 Agent 错误损失、复核成本、盈亏平衡与诊断迁移题。仅在开发分支，待 PR verify、合并、Pages deploy 与真实浏览器验收；维持 v0.18/40 节点及现有学习进度协议。
 
 ## 终极目标
 
