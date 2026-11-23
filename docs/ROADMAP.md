@@ -1,6 +1,6 @@
 # AI Learning OS · Roadmap
 
-Last reviewed: 2026-11-21
+Last reviewed: 2026-11-23
 
 2026-11-23 Core 06 深度审校状态：PR #35 已于 2026-11-22 合并至 main（SHA 6d3e82666e27a7698f5d19aac193e2d4d96c4672），PR verify 成功；main Pages deploy 尚未取得本轮独立成功证据，真实浏览器验收待完成。修正风险半径无量纲乘法误导，新增退款 Agent 成本算例及诊断迁移题。维持 v0.18/40 节点及现有学习进度协议。
 
