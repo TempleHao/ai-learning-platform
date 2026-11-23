@@ -1,7 +1,7 @@
-## 2026-11-21 · Core 06 risk loss and governance cost (v0.19 candidate, not released)
+## 2026-11-21 · Core 06 risk loss and governance cost (merged 2026-11-22; production deploy pending verification)
 - 将“风险半径 = 五维相乘”改为定性检查表，避免将无共同单位的维度当作可计算概率。
 - 新增虚构退款 Agent 算例：无复核月损失 30,000 元；全部复核月成本 21,000 元；复核成本盈亏平衡 2.4 元/笔，包含反例、诊断和分组迁移题。
-- 保留 Core 06 完成键、章内 Lab、书签和 v1/v2 备份；本变更仅开发分支，待 CI 与真实浏览器验证，不计入已发布内容。
+- 保留 Core 06 完成键、章内 Lab、书签和 v1/v2 备份；PR #35 已于 2026-11-22 合并 main（6d3e82666e27a7698f5d19aac193e2d4d96c4672），PR verify 成功；本轮尚未核实 main deploy 成功或真实浏览器交互，不据此宣称已发布。
 
 ## 2026-11-17 · Physical AI cost scenario (PR candidate)
 
